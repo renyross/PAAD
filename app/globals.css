@@ -1534,7 +1534,7 @@
   font-weight: 800;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: #002d4a;
+  color: var(--purple-dark);
   text-decoration: none;
   height: 100%;
   padding: 0 4px;
@@ -1542,17 +1542,17 @@
 }
 
 .ocean-nav-anchor:hover {
-  color: #00c0e8;
+  color: var(--purple);
 }
 
 .ocean-caret-icon {
-  color: #002d4a;
+  color: var(--purple);
   transition: transform 0.2s ease, color 0.2s ease;
 }
 
 .ocean-nav-item:hover .ocean-caret-icon {
   transform: translateY(2px);
-  color: #00c0e8;
+  color: var(--purple-hover);
 }
 
 /* Panneau déroulant (Dropdown standard masqué par défaut) */
@@ -1563,8 +1563,8 @@
   left: 0;
   min-width: 240px;
   background: #ffffff;
-  border-top: 3px solid #00c0e8;
-  box-shadow: 0 14px 35px rgba(0, 45, 74, 0.16);
+  border-top: 3px solid var(--purple);
+  box-shadow: 0 14px 35px rgba(50, 19, 51, 0.16);
   padding: 8px 0;
   border-radius: 0 0 6px 6px;
   z-index: 50;
@@ -1592,8 +1592,8 @@
 }
 
 .ocean-dropdown-link:hover {
-  background: #f0f9ff;
-  color: #0077b6;
+  background: #fdf4fc;
+  color: var(--purple);
   padding-left: 26px;
 }
 
@@ -1613,7 +1613,7 @@
 }
 
 .ocean-nav-anchor:focus-visible {
-  outline: 2px solid #00c0e8;
+  outline: 2px solid var(--purple);
   outline-offset: -2px;
 }
 
@@ -1626,8 +1626,8 @@
   width: 100%;
   background: #fcfcfc;
   border-top: 1px solid #e5e7eb;
-  border-bottom: 2px solid #00c0e8;
-  box-shadow: 0 25px 50px -10px rgba(0, 45, 74, 0.16);
+  border-bottom: 2px solid var(--purple);
+  box-shadow: 0 25px 50px -10px rgba(50, 19, 51, 0.16);
   padding: 24px 0 28px;
   z-index: 99;
   animation: oceanDropdownFade 0.22s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1655,7 +1655,7 @@
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   display: block;
   text-decoration: none;
-  background: #002d4a;
+  background: var(--purple-dark);
 }
 
 .ocean-mega-card-img {
@@ -1690,20 +1690,20 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: #00c0e8;
+  background: var(--purple);
   color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 14px rgba(0, 192, 232, 0.45);
+  box-shadow: 0 4px 14px rgba(113, 16, 111, 0.45);
   transition: all 0.25s ease;
   flex-shrink: 0;
 }
 
 .ocean-mega-card:hover .ocean-mega-circle-btn {
   transform: scale(1.12) translateX(2px);
-  background: #00add1;
-  box-shadow: 0 6px 20px rgba(0, 192, 232, 0.65);
+  background: var(--purple-hover);
+  box-shadow: 0 6px 20px rgba(113, 16, 111, 0.65);
 }
 
 .ocean-mega-card-title {
@@ -1737,7 +1737,7 @@
   font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #002d4a;
+  color: var(--purple-dark);
 }
 
 .ocean-mega-side-links {
@@ -1750,7 +1750,7 @@
   font-family: Manrope, Arial, sans-serif;
   font-size: 14px;
   font-weight: 700;
-  color: #002d4a;
+  color: var(--purple-dark);
   text-decoration: none;
   padding: 10px 0;
   border-bottom: 1px solid transparent;
@@ -1758,7 +1758,7 @@
 }
 
 .ocean-mega-side-link:hover {
-  color: #00c0e8;
+  color: var(--purple);
   transform: translateX(4px);
 }
 
@@ -1774,7 +1774,7 @@
 .ocean-top-search-btn {
   background: transparent;
   border: none;
-  color: #002d4a;
+  color: var(--purple-dark);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1784,7 +1784,7 @@
 }
 
 .ocean-top-search-btn:hover {
-  color: #00c0e8;
+  color: var(--purple);
   transform: scale(1.12);
 }
 
@@ -1792,7 +1792,7 @@
   display: flex;
   align-items: center;
   gap: 4px;
-  color: #002d4a;
+  color: var(--purple-dark);
   font-weight: 700;
   font-size: 12px;
 }
@@ -1802,7 +1802,7 @@
   background: transparent;
   font-size: 12px;
   font-weight: 800;
-  color: #002d4a;
+  color: var(--purple-dark);
   cursor: pointer;
   padding: 2px 4px;
   appearance: none;
@@ -1812,7 +1812,7 @@
   display: none;
   background: transparent;
   border: none;
-  color: #002d4a;
+  color: var(--purple-dark);
   cursor: pointer;
   padding: 6px;
 }
@@ -1963,31 +1963,60 @@
   border-bottom: 3px solid var(--purple);
   padding: 20px 24px;
   gap: 14px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 30px rgba(50, 19, 51, 0.15);
 }
 
 .ocean-mobile-drawer a {
   font-family: Manrope, Arial, sans-serif;
   font-size: 15px;
   font-weight: 800;
-  color: #002d4a;
+  color: var(--purple-dark);
   text-transform: uppercase;
   text-decoration: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 0;
-  border-bottom: 1px solid #f1f5f9;
+  padding: 10px 0;
+  border-bottom: 1px solid #f2e9f4;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.ocean-mobile-drawer a:hover,
+.ocean-mobile-drawer a:active {
+  color: var(--purple);
+  padding-left: 4px;
+}
+
+.ocean-mobile-drawer a svg {
+  color: var(--purple);
+  transition: transform 0.2s ease;
+}
+
+.ocean-mobile-drawer a:hover svg,
+.ocean-mobile-drawer a:active svg {
+  transform: translate(2px, -2px);
 }
 
 .ocean-drawer-donate-btn {
   margin-top: 10px;
-  background: #002b49 !important;
+  background: var(--purple) !important;
   color: #ffffff !important;
   justify-content: center !important;
-  padding: 14px !important;
+  padding: 14px 20px !important;
   font-size: 14px !important;
+  font-weight: 800 !important;
+  border-radius: var(--radius-btn) !important;
   border-bottom: none !important;
+  box-shadow: 0 4px 16px rgba(113, 16, 111, 0.35) !important;
+  transition: all 0.2s ease !important;
+}
+
+.ocean-drawer-donate-btn:hover,
+.ocean-drawer-donate-btn:active {
+  background: var(--purple-hover) !important;
+  color: #ffffff !important;
+  box-shadow: 0 6px 22px rgba(113, 16, 111, 0.45) !important;
+  transform: translateY(-1px);
 }
 
 /* Responsive Navigation */
@@ -2944,7 +2973,7 @@
   font-family: Manrope, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: clamp(28px, 3.2vw, 42px);
   font-weight: 800;
-  color: #002d4a;
+  color: var(--purple-dark);
   line-height: 1.2;
   margin: 0 0 14px;
 }
