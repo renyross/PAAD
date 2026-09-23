@@ -1678,7 +1678,54 @@ export function ContentPage({ lang, slug, data }: { lang: 'fr' | 'en' | 'es'; sl
   </div><section className="page-cta"><div className="wrap"><h2>Construisons la suite ensemble.</h2><Link className="button button-light" href={`/${lang}/contact`}>Prendre contact <ArrowRight size={17}/></Link></div></section></>;
 }
 
-export function AboutPage({ lang, data }: { lang: 'fr' | 'en' | 'es'; data: SiteData }) {
+export function AboutPage({ lang }: { lang: 'fr' | 'en' | 'es'; data: SiteData }) {
+  const href = (path: string) => `/${lang}/${path}`;
+
+  return <main className="about-simple">
+    <section className="about-simple-intro">
+      <div className="wrap about-simple-intro-grid">
+        <div className="about-simple-copy">
+          <span>À propos de PAAD</span>
+          <h1>Une organisation haïtienne engagée dans l’éducation et l’autonomie.</h1>
+          <p>Créé en 2024, le Programme d’Actions et d’Aide pour le Développement est une organisation laïque, indépendante et à but non lucratif basée à Port-au-Prince.</p>
+          <p>PAAD construit ses actions avec les communautés afin que les enfants, les jeunes et les familles puissent apprendre, développer des compétences et bâtir leur propre avenir.</p>
+        </div>
+        <div className="about-simple-image">
+          <Image src="/images/haiti-cinematic-hero.jpg" alt="Jeunesse et communauté en Haïti" fill priority sizes="(max-width: 800px) 100vw, 46vw"/>
+          <div className="about-simple-facts">
+            <div><span>Création</span><strong>2024</strong></div>
+            <div><span>Siège</span><strong>Port-au-Prince</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section className="about-simple-mission">
+      <div className="wrap about-simple-mission-grid">
+        <div className="about-simple-heading"><span>Notre raison d’être</span><h2>Agir avec les communautés, dans la durée.</h2></div>
+        <div className="about-simple-principles">
+          <article><span>01</span><h3>Éducation</h3><p>Faciliter l’accès à l’école, aux ressources pédagogiques et aux compétences utiles.</p></article>
+          <article><span>02</span><h3>Autonomie économique</h3><p>Renforcer l’employabilité, l’entrepreneuriat et les initiatives locales durables.</p></article>
+          <article><span>03</span><h3>Action locale</h3><p>Écouter les besoins, travailler avec les acteurs du territoire et rendre compte des résultats.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section className="about-simple-team">
+      <div className="wrap">
+        <div className="about-simple-team-head"><div><span>Organisation</span><h2>Une responsabilité partagée.</h2></div><p>PAAD a été fondé par Renel Rosene, Renald Rosene et Esther Gladelle Toussaint autour d’une conviction commune : les solutions durables se construisent avec les personnes concernées.</p></div>
+        <div className="about-simple-founders">
+          <div><span>01</span><strong>Renel Rosene</strong><small>Cofondateur</small></div>
+          <div><span>02</span><strong>Renald Rosene</strong><small>Cofondateur</small></div>
+          <div><span>03</span><strong>Esther Gladelle Toussaint</strong><small>Cofondatrice</small></div>
+        </div>
+        <div className="about-simple-actions"><Link href={href('mission-vision')}>Découvrir notre mission <ArrowRight size={17}/></Link><Link href={href('contact')}>Prendre contact <ArrowRight size={17}/></Link></div>
+      </div>
+    </section>
+  </main>;
+}
+
+function LegacyAboutPage({ lang, data }: { lang: 'fr' | 'en' | 'es'; data: SiteData }) {
   const href = (path: string) => `/${lang}/${path}`;
 
   return (

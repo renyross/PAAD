@@ -5,6 +5,8 @@ export const actions = [
 
 export const pages: Record<string, { title: string; kicker: string; text: string; type?: string }> = {
   'qui-sommes-nous': { title: 'Éduquer. Créer des opportunités. Renforcer l’autonomie.', kicker: 'Qui sommes-nous', text: 'Créé en 2024, PAAD est une organisation haïtienne à but non lucratif qui agit dans l’éducation et le développement économique aux côtés des communautés.', type: 'about' },
+  'a-propos': { title: 'Une organisation haïtienne engagée dans l’éducation et l’autonomie.', kicker: 'À propos de nous', text: 'Créé en 2024, PAAD est une organisation laïque, indépendante et à but non lucratif basée à Port-au-Prince.', type: 'about' },
+  'etapes-cles': { title: 'Les étapes clés de notre action.', kicker: 'Étapes clés', text: 'Découvrez la trajectoire, les jalons franchis et les grandes phases de déploiement de PAAD en Haïti.', type: 'milestones' },
   'notre-histoire': { title: 'Une conviction partagée depuis 2024.', kicker: 'Notre histoire', text: 'PAAD a été fondé par Renel Rosene, Renald Rosene et Esther Gladelle Toussaint pour agir aux côtés des communautés haïtiennes.', type: 'history' },
   'mission-vision': { title: 'Renforcer les capacités, ouvrir des perspectives.', kicker: 'Mission & vision', text: 'PAAD travaille pour un Haïti où chacun peut apprendre, développer ses compétences, accéder à des opportunités économiques et contribuer à sa communauté.', type: 'about' },
   'equipe': { title: 'Une équipe au service de l’action collective.', kicker: 'Notre équipe', text: 'Les membres de PAAD contribuent à la stratégie, à la mise en œuvre des projets et au suivi des actions.', type: 'team' },

@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | PAAD · Programme d'Actions et d'Aide pour le Développement</title>
+  <meta name="description" content="Contactez l'équipe de PAAD en Haïti. Partenariats, bourses scolaires, mécénat d'entreprise, dons ou bénévolat : nous vous répondons sous 48h.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./app/globals.css">
+  <style>
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(24, 20, 25, 0.7);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      backdrop-filter: blur(5px);
+    }
+    .modal-backdrop.active { display: flex; }
+    .modal-content {
+      background: #fff;
+      max-width: 580px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 38px;
+      position: relative;
+      border-radius: 24px;
+      box-shadow: 0 20px 50px rgba(50, 19, 51, 0.3);
+    }
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+      color: var(--muted);
+      font-size: 24px;
+      line-height: 1;
+    }
+    .modal-close:hover { color: var(--purple); }
+
+    /* MODALE DON FARM AFRICA */
+    .modal-content.farm-modal-content {
+      max-width: 960px;
+      padding: 0;
+      border-radius: 24px;
+      overflow: hidden;
+      background: #fbf9f4;
+      box-shadow: 0 30px 70px rgba(15, 30, 20, 0.4);
+      position: relative;
+      border: 1px solid rgba(113, 16, 111, 0.15);
+    }
+    .farm-donate-card {
+      display: grid;
+      grid-template-columns: 1fr 1.25fr;
+      min-height: 580px;
+    }
+    .farm-donate-visual {
+      position: relative;
+      background: var(--purple-dark);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 36px 30px;
+    }
+    .farm-visual-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.65;
+    }
+    .farm-visual-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(50, 19, 51, 0.4) 0%, rgba(50, 19, 51, 0.95) 100%);
+    }
+    .farm-visual-content {
+      position: relative;
+      z-index: 2;
+      color: #ffffff;
+      margin-top: auto;
+    }
+    .farm-visual-quote {
+      font-family: Manrope, Arial, sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+    .farm-visual-author {
+      font-size: 13px;
+      opacity: 0.85;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .farm-badge-trust {
+      position: relative;
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(8px);
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #fff;
+      align-self: flex-start;
+    }
+    .farm-donate-form-side {
+      padding: 40px 42px;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .farm-form-header {
+      margin-bottom: 24px;
+    }
+    .farm-form-header h3 {
+      font-family: Manrope, Arial, sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--purple-dark);
+      margin: 0 0 6px 0;
+    }
+    .farm-form-header p {
+      font-size: 14px;
+      color: #6a626d;
+      margin: 0;
+    }
+    .farm-frequency-tabs {
+      display: flex;
+      background: #f4ecf5;
+      border-radius: 9999px;
+      padding: 4px;
+      margin-bottom: 24px;
+    }
+    .farm-freq-tab {
+      flex: 1;
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+      font-weight: 700;
+      border-radius: 9999px;
+      cursor: pointer;
+      color: var(--purple-dark);
+      transition: all 0.2s;
+    }
+    .farm-freq-tab.active {
+      background: var(--purple);
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(113, 16, 111, 0.25);
+    }
+    .farm-amounts-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .farm-amount-btn {
+      border: 2px solid #e8dfea;
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 14px 8px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+    }
+    .farm-amount-btn:hover {
+      border-color: var(--purple-hover);
+      background: #fdfafd;
+    }
+    .farm-amount-btn.active {
+      border-color: var(--purple);
+      background: #faf3fb;
+      box-shadow: 0 0 0 1px var(--purple);
+    }
+    .farm-amount-val {
+      font-family: Manrope, Arial, sans-serif;
+      font-size: 21px;
+      font-weight: 800;
+      color: var(--purple-dark);
+    }
+    .farm-amount-desc {
+      font-size: 11px;
+      color: #7b707e;
+      line-height: 1.2;
+    }
+    .farm-custom-input-wrap {
+      position: relative;
+      margin-bottom: 24px;
+    }
+    .farm-custom-input-wrap input {
+      width: 100%;
+      padding: 12px 16px 12px 34px;
+      border: 1.5px solid #e8dfea;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--purple-dark);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .farm-custom-input-wrap input:focus {
+      border-color: var(--purple);
+    }
+    .farm-custom-input-wrap span {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-weight: 800;
+      color: var(--purple);
+      font-size: 16px;
+    }
+    .farm-submit-btn {
+      width: 100%;
+      background: var(--purple);
+      color: #ffffff !important;
+      border: none;
+      padding: 15px;
+      font-family: Manrope, Arial, sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-radius: 9999px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 6px 20px rgba(113, 16, 111, 0.35);
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+    .farm-submit-btn:hover {
+      background: var(--purple-dark);
+      transform: translateY(-1px);
+    }
+
+    /* SECTION CONTACT HAUTE FIDÉLITÉ */
+    .contact-section {
+      padding: clamp(70px, 9vw, 120px) 0;
+      background: #faf8fb;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.35fr;
+      gap: clamp(40px, 6vw, 80px);
+      align-items: start;
+    }
+
+    /* COLONNE GAUCHE : COORDONNÉES ET BUREAUX */
+    .contact-info-col {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+    .contact-info-header span {
+      display: block;
+      color: var(--purple);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .contact-info-header h2 {
+      font-family: Manrope, Arial, sans-serif;
+      font-size: clamp(28px, 3.2vw, 42px);
+      font-weight: 800;
+      color: var(--purple-dark);
+      line-height: 1.15;
+      margin: 0 0 16px;
+    }
+    .contact-info-header p {
+      color: #635766;
+      font-size: 15.5px;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .contact-card-box {
+      background: #ffffff;
+      border: 1px solid #ebddea;
+      border-radius: 18px;
+      padding: 30px;
+      box-shadow: 0 6px 24px rgba(50, 19, 51, 0.04);
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .contact-channel-item {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+    .contact-channel-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: #f7eef8;
+      color: var(--purple);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-channel-text span {
+      display: block;
+      font-size: 11.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--purple);
+      margin-bottom: 4px;
+    }
+    .contact-channel-text strong {
+      display: block;
+      font-family: Manrope, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--purple-dark);
+      margin-bottom: 3px;
+    }
+    .contact-channel-text p {
+      font-size: 14px;
+      color: #6e6471;
+      margin: 0;
+      line-height: 1.5;
+    }
+    .contact-channel-text a {
+      color: var(--purple);
+      text-decoration: none;
+      font-weight: 700;
+      transition: color 0.2s;
+    }
+    .contact-channel-text a:hover {
+      color: var(--purple-dark);
+      text-decoration: underline;
+    }
+
+    .contact-pledge-badge {
+      background: linear-gradient(135deg, var(--purple-dark) 0%, #461448 100%);
+      color: #ffffff;
+      border-radius: 16px;
+      padding: 24px 28px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .contact-pledge-badge svg {
+      color: #f7a8f3;
+      flex-shrink: 0;
+    }
+    .contact-pledge-badge strong {
+      display: block;
+      font-family: Manrope, Arial, sans-serif;
+      font-size: 17px;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+    .contact-pledge-badge p {
+      font-size: 13.5px;
+      color: #edd3f0;
+      margin: 0;
+      line-height: 1.45;
+    }
+
+    /* COLONNE DROITE : FORMULAIRE DE CONTACT */
+    .contact-form-col {
+      background: #ffffff;
+      border: 1px solid #ebddea;
+      border-radius: 24px;
+      padding: clamp(32px, 5vw, 50px);
+      box-shadow: 0 12px 36px rgba(50, 19, 51, 0.06);
+    }
+    .contact-form-col h3 {
+      font-family: Manrope, Arial, sans-serif;
+      font-size: clamp(22px, 2.5vw, 28px);
+      font-weight: 800;
+      color: var(--purple-dark);
+      margin: 0 0 10px;
+    }
+    .contact-form-col p.form-subtitle {
+      font-size: 14.5px;
+      color: #6a5e6d;
+      margin: 0 0 30px;
+      line-height: 1.6;
+    }
+
+    .form-group-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-bottom: 20px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--purple-dark);
+    }
+    .form-group label span.req {
+      color: var(--purple);
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1.5px solid #e5d8e7;
+      border-radius: 12px;
+      font-family: inherit;
+      font-size: 14.5px;
+      color: var(--purple-dark);
+      background: #faf8fb;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--purple);
+      background: #ffffff;
+      box-shadow: 0 0 0 3px rgba(113, 16, 111, 0.12);
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 140px;
+      line-height: 1.6;
+    }
+
+    .form-checkbox-wrap {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .form-checkbox-wrap input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      margin-top: 3px;
+      accent-color: var(--purple);
+      cursor: pointer;
+    }
+    .form-checkbox-wrap label {
+      font-size: 13px;
+      color: #675c6a;
+      line-height: 1.5;
+      cursor: pointer;
+    }
+
+    .form-submit-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .btn-send-message {
+      background: var(--purple);
+      color: #ffffff !important;
+      border: none;
+      border-radius: 9999px;
+      padding: 16px 36px;
+      font-family: Manrope, Arial, sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 6px 22px rgba(113, 16, 111, 0.35);
+      transition: all 0.2s ease;
+    }
+    .btn-send-message:hover {
+      background: var(--purple-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 26px rgba(50, 19, 51, 0.4);
+    }
+    .form-security-note {
+      font-size: 12.5px;
+      color: #8b808e;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .form-alert-success {
+      display: none;
+      background: #edf8ef;
+      border: 1.5px solid #a3e2ad;
+      color: #1a6225;
+      padding: 18px 22px;
+      border-radius: 14px;
+      margin-bottom: 24px;
+      font-size: 14.5px;
+      line-height: 1.55;
+    }
+    .form-alert-success.active {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    /* FOIRE AUX QUESTIONS CONTACT */
+    .contact-faq-preview {
+      padding: 80px 0;
+      background: #ffffff;
+      border-top: 1px solid #ebddea;
+      border-bottom: 1px solid #ebddea;
+    }
+    .contact-faq-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 50px;
+    }
+    .contact-faq-header span {
+      display: block;
+      color: var(--purple);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .contact-faq-header h2 {
+      font-family: Manrope, Arial, sans-serif;
+      font-size: clamp(26px, 3vw, 36px);
+      font-weight: 800;
+      color: var(--purple-dark);
+      margin: 0;
+    }
+    .contact-faq-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+    .contact-faq-card {
+      background: #faf6fb;
+      border: 1px solid #ebddea;
+      border-radius: 18px;
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .contact-faq-card h4 {
+      font-family: Manrope, Arial, sans-serif;
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--purple-dark);
+      margin: 0 0 12px;
+    }
+    .contact-faq-card p {
+      font-size: 14px;
+      color: #635766;
+      line-height: 1.6;
+      margin: 0 0 20px;
+    }
+    .contact-faq-card a {
+      color: var(--purple);
+      font-weight: 800;
+      font-size: 13.5px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .contact-faq-card a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 900px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .form-group-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+      .contact-faq-grid {
+        grid-template-columns: 1fr;
+      }
+      .farm-donate-card {
+        grid-template-columns: 1fr;
+      }
+      .farm-donate-visual {
+        min-height: 240px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <!-- HEADER IDENTIQUE À LA CHARTE PAAD -->
+  <header class="ocean-header site-header">
+    <div class="ocean-top-bar">
+      <a class="ocean-logo-badge" href="./index.html" aria-label="PAAD, accueil">
+        <img src="./public/images/paad-emblem-white-trans.png" alt="Logo PAAD" class="ocean-logo-emblem" width="36" height="36">
+        <span class="ocean-logo-text">PAAD</span>
+      </a>
+
+      <nav class="ocean-nav-strip" aria-label="Navigation principale">
+        <div class="ocean-nav-item has-mega">
+          <a href="./index.html#domaines" class="ocean-nav-anchor">
+            <span>Éducation</span>
+            <svg class="ocean-caret-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m6 9 6 6 6-6"/></svg>
+          </a>
+          <div class="ocean-mega-dropdown">
+            <div class="wrap ocean-mega-inner">
+              <a href="./index.html#domaines" class="ocean-mega-card">
+                <img src="./public/images/haiti-student-classroom.jpg" alt="Bourses & Écoles en Haïti" class="ocean-mega-card-img">
+                <div class="ocean-mega-card-overlay"></div>
+                <div class="ocean-mega-card-dock">
+                  <span class="ocean-mega-circle-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+                  <span class="ocean-mega-card-title">Bourses &amp; Écoles</span>
+                </div>
+              </a>
+              <a href="./index.html#programmes" class="ocean-mega-card">
+                <img src="./public/images/haiti-digital-class.jpg" alt="Digital Lab en Haïti" class="ocean-mega-card-img">
+                <div class="ocean-mega-card-overlay"></div>
+                <div class="ocean-mega-card-dock">
+                  <span class="ocean-mega-circle-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+                  <span class="ocean-mega-card-title">Digital Lab</span>
+                </div>
+              </a>
+              <div class="ocean-mega-col-side">
+                <div class="ocean-mega-side-header"><span class="ocean-mega-side-title">PROGRAMMES ÉDUCATIFS</span></div>
+                <div class="ocean-mega-side-links">
+                  <a href="./index.html#domaines" class="ocean-mega-side-link">Retour à l’école</a>
+                  <a href="./index.html#domaines" class="ocean-mega-side-link">Soutien scolaire renforcé</a>
+                  <a href="./index.html#programmes" class="ocean-mega-side-link">Laboratoires numériques</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ocean-nav-item has-mega">
+          <a href="./index.html#domaines" class="ocean-nav-anchor">
+            <span>Développement économique</span>
+            <svg class="ocean-caret-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m6 9 6 6 6-6"/></svg>
+          </a>
+          <div class="ocean-mega-dropdown">
+            <div class="wrap ocean-mega-inner">
+              <a href="./index.html#domaines" class="ocean-mega-card">
+                <img src="./public/images/haiti-tech-workshop.jpg" alt="Ateliers solaires" class="ocean-mega-card-img">
+                <div class="ocean-mega-card-overlay"></div>
+                <div class="ocean-mega-card-dock">
+                  <span class="ocean-mega-circle-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+                  <span class="ocean-mega-card-title">Ateliers Solaires</span>
+                </div>
+              </a>
+              <a href="./index.html#programmes" class="ocean-mega-card">
+                <img src="./public/images/workshop-haiti.webp" alt="Entrepreneuriat local" class="ocean-mega-card-img">
+                <div class="ocean-mega-card-overlay"></div>
+                <div class="ocean-mega-card-dock">
+                  <span class="ocean-mega-circle-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+                  <span class="ocean-mega-card-title">Micro-entrepreneuriat</span>
+                </div>
+              </a>
+              <div class="ocean-mega-col-side">
+                <div class="ocean-mega-side-header"><span class="ocean-mega-side-title">AUTONOMIE ÉCONOMIQUE</span></div>
+                <div class="ocean-mega-side-links">
+                  <a href="./index.html#domaines" class="ocean-mega-side-link">Entrepreneuriat local</a>
+                  <a href="./index.html#domaines" class="ocean-mega-side-link">Formations certifiantes</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ocean-nav-item">
+          <a href="./index.html#programmes" class="ocean-nav-anchor"><span>Nos projets</span></a>
+        </div>
+        <div class="ocean-nav-item">
+          <a href="./index.html#impact" class="ocean-nav-anchor"><span>Impact</span></a>
+        </div>
+      </nav>
+
+      <div class="ocean-top-actions">
+        <button class="ocean-top-search-btn" aria-label="Recherche" onclick="alert('Recherche : Contact, Partenariats, Bureau...')">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        </button>
+
+        <div class="ocean-lang-select">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+          <select aria-label="Langue" id="lang-select">
+            <option value="fr" selected>FR</option>
+            <option value="en">EN</option>
+            <option value="es">ES</option>
+          </select>
+        </div>
+
+        <button class="ocean-mobile-burger" id="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false">
+          <svg id="menu-icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+          <svg id="menu-icon-close" style="display:none;" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- SOUS-BARRE : LES 4 SOUS-MENUS DU MENU À PROPOS -->
+    <div class="ocean-sub-bar">
+      <div class="ocean-sub-nav">
+        <a href="#formulaire" class="ocean-sub-link">Devenir partenaire</a>
+        <div class="ocean-sub-dropdown">
+          <span class="ocean-sub-link ocean-sub-dropdown-trigger" style="color:var(--purple);font-weight:800;">
+            <span>À propos</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg>
+          </span>
+          <div class="ocean-sub-dropdown-menu">
+            <a href="./qui-sommes-nous.html" class="ocean-sub-dropdown-item">À propos de nous</a>
+            <a href="./etapes-cles.html" class="ocean-sub-dropdown-item">Étapes clés</a>
+            <a href="./faq.html" class="ocean-sub-dropdown-item">FAQ</a>
+            <a href="./contact.html" class="ocean-sub-dropdown-item" style="color:var(--purple);font-weight:800;">Contact</a>
+          </div>
+        </div>
+        <div class="ocean-sub-dropdown">
+          <span class="ocean-sub-link ocean-sub-dropdown-trigger">
+            <span>Presse &amp; Actualités</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg>
+          </span>
+          <div class="ocean-sub-dropdown-menu">
+            <a href="./index.html#actualites" class="ocean-sub-dropdown-item">Actualités</a>
+            <a href="./index.html#actualites" class="ocean-sub-dropdown-item">Communiqués de presse</a>
+          </div>
+        </div>
+      </div>
+
+      <a href="#don" class="ocean-sub-donate-btn" onclick="openModal('donModal'); return false;">
+        FAITES UN DON MAINTENANT
+      </a>
+    </div>
+
+    <!-- TIROIR MOBILE HARMONISÉ -->
+    <nav class="ocean-mobile-drawer mobile-nav" id="mobile-nav" aria-label="Navigation mobile" style="display:none;">
+      <a href="./qui-sommes-nous.html">À propos de nous <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
+      <a href="./etapes-cles.html">Étapes clés <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
+      <a href="./faq.html">FAQ <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
+      <a href="./contact.html" style="color:var(--purple);font-weight:900;">Contact <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
+      <a href="./index.html#domaines">Éducation</a>
+      <a href="./index.html#domaines">Développement économique</a>
+      <a href="./index.html#programmes">Nos projets</a>
+      <a href="./index.html#impact">Impact</a>
+      <a href="#don" class="ocean-drawer-donate-btn" onclick="openModal('donModal'); return false;">FAITES UN DON MAINTENANT</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- 1. HERO MONUMENTAL CONTACT -->
+    <section class="about-hero" id="top">
+      <div class="about-hero-bg">
+        <img src="./public/images/haiti-cinematic-hero.jpg" alt="Équipe et communauté de PAAD en Haïti">
+        <div class="about-hero-scrim"></div>
+      </div>
+      <div class="wrap about-hero-content">
+        <span class="about-hero-kicker">
+          <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--purple-hover);"></span>
+          Canaux officiels · PAAD Haïti
+        </span>
+        <h1 class="about-hero-title">
+          Parlons de ce que nous pouvons construire ensemble.
+        </h1>
+        <p class="about-hero-lead">
+          Que vous soyez un citoyen engagé, une fondation, une entreprise partenaire ou un membre de la diaspora, notre équipe est à votre écoute pour concrétiser des actions pérennes sur le terrain haïtien.
+        </p>
+
+        <div class="about-facts-strip">
+          <div class="about-fact-item">
+            <span>Délai de réponse</span>
+            <strong>&lt; 48 heures</strong>
+          </div>
+          <div class="about-fact-item">
+            <span>Siège opérationnel</span>
+            <strong>Port-au-Prince</strong>
+          </div>
+          <div class="about-fact-item">
+            <span>Antenne Nord</span>
+            <strong>Cap-Haïtien</strong>
+          </div>
+          <div class="about-fact-item">
+            <span>Écoute partenariats</span>
+            <strong>7j / 7</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. FIL D'ARIANE -->
+    <nav class="about-breadcrumb-bar" aria-label="Fil d'Ariane">
+      <div class="wrap">
+        <ol class="about-breadcrumb-list">
+          <li><a href="./index.html">Accueil</a></li>
+          <li><span>/</span></li>
+          <li><a href="./qui-sommes-nous.html">À propos</a></li>
+          <li><span>/</span></li>
+          <li aria-current="page">Contact &amp; Échanges</li>
+        </ol>
+      </div>
+    </nav>
+
+    <!-- 3. SECTION PRINCIPALE : COORDONNÉES ET FORMULAIRE -->
+    <section class="contact-section" id="formulaire">
+      <div class="wrap contact-grid">
+        
+        <!-- COLONNE GAUCHE : COORDONNÉES -->
+        <div class="contact-info-col">
+          <div class="contact-info-header">
+            <span>Nos coordonnées directes</span>
+            <h2>Écrivez-nous ou rencontrez nos équipes.</h2>
+            <p>Nous privilégions le contact direct et transparent avec nos donateurs, parrains et partenaires institutionnels.</p>
+          </div>
+
+          <div class="contact-card-box">
+            <!-- Siège -->
+            <div class="contact-channel-item">
+              <div class="contact-channel-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div class="contact-channel-text">
+                <span>Siège national</span>
+                <strong>Port-au-Prince, Haïti</strong>
+                <p>Programme d'Actions et d'Aide pour le Développement (PAAD)<br>Zone Métropolitaine, Haïti</p>
+              </div>
+            </div>
+
+            <!-- Email général -->
+            <div class="contact-channel-item">
+              <div class="contact-channel-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              </div>
+              <div class="contact-channel-text">
+                <span>Correspondance générale</span>
+                <strong>contact@paad-haiti.org</strong>
+                <p>Pour toute question sur nos statuts, rapports et événements.</p>
+              </div>
+            </div>
+
+            <!-- Email Partenariats -->
+            <div class="contact-channel-item">
+              <div class="contact-channel-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m11 17 2 2a1 1 0 0 0 1.42 0l6.58-6.59a1 1 0 0 0 0-1.41l-2.58-2.59a1 1 0 0 0-1.42 0L15 10.41"/><path d="m18 13-1.5-1.5"/><path d="M7 10 4.5 7.5a1 1 0 0 1 0-1.42l2.58-2.58a1 1 0 0 1 1.42 0L11 6"/><path d="m6 11 1.5-1.5"/><circle cx="9" cy="15" r="4"/></svg>
+              </div>
+              <div class="contact-channel-text">
+                <span>Mécénat &amp; Fondations</span>
+                <strong>partenariats@paad-haiti.org</strong>
+                <p>Co-financement de cantines scolaires et déploiement de kits solaires.</p>
+              </div>
+            </div>
+
+            <!-- Téléphone & WhatsApp -->
+            <div class="contact-channel-item">
+              <div class="contact-channel-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div class="contact-channel-text">
+                <span>Permanence téléphonique</span>
+                <strong>+509 (Bureau local) / WhatsApp</strong>
+                <p>Du lundi au vendredi : 08h00 - 17h00 (Heure d'Haïti / UTC-5).</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Engagement de réactivité -->
+          <div class="contact-pledge-badge">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+            <div>
+              <strong>Engagement de transparence 48h</strong>
+              <p>Chaque demande est transmise au responsable opérationnel compétent. Vous recevez un accusé et une réponse détaillée.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- COLONNE DROITE : FORMULAIRE INTERACTIF -->
+        <div class="contact-form-col">
+          <h3>Envoyez-nous un message direct</h3>
+          <p class="form-subtitle">Remplissez le formulaire ci-dessous. Nous adapterons notre réponse à la nature de votre projet.</p>
+
+          <div id="contact-success-alert" class="form-alert-success">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <div>
+              <strong>Message bien envoyé !</strong>
+              <div>Merci de votre confiance. Notre équipe vous répondra sous un délai maximum de 48 heures.</div>
+            </div>
+          </div>
+
+          <form id="contact-form" onsubmit="handleContactSubmit(event)">
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="contact-name">Nom complet <span class="req">*</span></label>
+                <input type="text" id="contact-name" name="name" required placeholder="Ex. Jean Baptiste">
+              </div>
+              <div class="form-group">
+                <label for="contact-org">Organisation / Entreprise</label>
+                <input type="text" id="contact-org" name="organization" placeholder="Ex. Fondation Espoir / Particulier">
+              </div>
+            </div>
+
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="contact-email">Adresse e-mail <span class="req">*</span></label>
+                <input type="email" id="contact-email" name="email" required placeholder="nom@exemple.com">
+              </div>
+              <div class="form-group">
+                <label for="contact-phone">Numéro de téléphone</label>
+                <input type="tel" id="contact-phone" name="phone" placeholder="+509 ... ou +33 ...">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-subject">Objet de votre demande <span class="req">*</span></label>
+              <select id="contact-subject" name="subject" required>
+                <option value="" disabled selected>Sélectionnez le sujet principal...</option>
+                <option value="partenariat">🤝 Devenir partenaire institutionnel ou entreprise</option>
+                <option value="bourse">🎓 Parrainer une bourse d'études ou une classe</option>
+                <option value="solaire">⚡ Projet de kits solaires et formation technique</option>
+                <option value="don">❤️ Question sur un don ou un reçu fiscal</option>
+                <option value="benevolat">🙋 Devenir bénévole ou relais de la diaspora</option>
+                <option value="presse">📰 Presse, interview ou médias</option>
+                <option value="autre">💬 Autre demande d'information</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-message">Votre message <span class="req">*</span></label>
+              <textarea id="contact-message" name="message" required placeholder="Précisez votre démarche, vos attentes ou votre proposition de collaboration avec PAAD..."></textarea>
+            </div>
+
+            <div class="form-checkbox-wrap">
+              <input type="checkbox" id="contact-consent" name="consent" required>
+              <label for="contact-consent">
+                J'accepte que les informations saisies soient traitées par PAAD dans le strict cadre de cette prise de contact, conformément à notre politique de confidentialité.
+              </label>
+            </div>
+
+            <div class="form-submit-row">
+              <button type="submit" class="btn-send-message">
+                <span>Envoyer le message</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+              </button>
+              <div class="form-security-note">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                <span>Données protégées · Aucun démarchage</span>
+              </div>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. APERÇU FAQ CONTACT -->
+    <section class="contact-faq-preview">
+      <div class="wrap">
+        <div class="contact-faq-header">
+          <span>Questions fréquentes</span>
+          <h2>Vous cherchez une réponse immédiate ?</h2>
+        </div>
+
+        <div class="contact-faq-grid">
+          <div class="contact-faq-card">
+            <div>
+              <h4>Comment puis-je vérifier l'usage de mes dons ?</h4>
+              <p>PAAD publie des audits semestriels et des fiches d'impact nominatives certifiant l'achat effectif de manuels scolaires et de vivres locaux.</p>
+            </div>
+            <a href="./faq.html#gouvernance">Voir la réponse dans la FAQ <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+          </div>
+
+          <div class="contact-faq-card">
+            <div>
+              <h4>Puis-je parrainer un élève en particulier ?</h4>
+              <p>Nos bourses sont attribuées sur critères sociaux validés par les comités de quartier. Vous recevez un suivi de progression scolaire chaque trimestre.</p>
+            </div>
+            <a href="./faq.html#education">Détails des bourses scolaires <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+          </div>
+
+          <div class="contact-faq-card">
+            <div>
+              <h4>Comment les entreprises s'associent-elles à PAAD ?</h4>
+              <p>Mécénat de compétences, dotations d'équipements solaires ou financement de cantines : nous co-construisons des partenariats RSE sur mesure.</p>
+            </div>
+            <a href="./faq.html#partenariats">Consulter les formats mécénat <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. BANDEAU D'APPEL À L'ACTION : AGIR AVEC NOUS -->
+    <section class="act-section" id="agir" style="background:#ffffff;padding:90px 0;border-bottom:1px solid #ebddea;">
+      <div class="wrap">
+        <div class="act-header" style="text-align:center;max-width:700px;margin:0 auto 50px;">
+          <span class="act-kicker" style="color:var(--purple);font-size:11px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;display:block;margin-bottom:10px;">Votre contribution fait la différence</span>
+          <h2 class="act-title" style="font-family:Manrope,Arial,sans-serif;font-size:clamp(28px,3.4vw,44px);font-weight:800;color:var(--purple-dark);margin:0 0 16px;">Agir aujourd'hui pour bâtir l'avenir d'Haïti</h2>
+          <p class="act-lead" style="font-size:16px;color:#675d6a;line-height:1.65;margin:0;">Chaque euro ou dollar confié à PAAD est transformé en opportunité réelle pour un enfant ou un jeune travailleur.</p>
+        </div>
+
+        <div class="act-grid" style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:24px;">
+          <!-- Carte 1 -->
+          <div class="act-card" style="background:#faf6fb;border:1px solid #ebddea;border-radius:18px;padding:32px 26px;display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+              <div style="width:48px;height:48px;border-radius:12px;background:#f3e3f5;color:var(--purple);display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              </div>
+              <h3 style="font-family:Manrope,Arial,sans-serif;font-size:19px;font-weight:800;color:var(--purple-dark);margin:0 0 10px;">Bourses d'études</h3>
+              <p style="font-size:14px;color:#645867;line-height:1.6;margin:0 0 20px;">Offrez une année complète de scolarité, manuels et uniformes à un enfant défavorisé.</p>
+            </div>
+            <a href="#don" onclick="openModal('donModal'); return false;" style="color:var(--purple);font-weight:800;font-size:14px;text-decoration:none;display:flex;align-items:center;gap:6px;">
+              Financer une bourse <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+
+          <!-- Carte 2 -->
+          <div class="act-card" style="background:#faf6fb;border:1px solid #ebddea;border-radius:18px;padding:32px 26px;display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+              <div style="width:48px;height:48px;border-radius:12px;background:#f3e3f5;color:var(--purple);display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+              </div>
+              <h3 style="font-family:Manrope,Arial,sans-serif;font-size:19px;font-weight:800;color:var(--purple-dark);margin:0 0 10px;">Ateliers solaires</h3>
+              <p style="font-size:14px;color:#645867;line-height:1.6;margin:0 0 20px;">Permettez à un jeune d'acquérir une formation certifiante aux métiers de l'énergie propre.</p>
+            </div>
+            <a href="#don" onclick="openModal('donModal'); return false;" style="color:var(--purple);font-weight:800;font-size:14px;text-decoration:none;display:flex;align-items:center;gap:6px;">
+              Soutenir un atelier <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+
+          <!-- Carte 3 -->
+          <div class="act-card" style="background:#faf6fb;border:1px solid #ebddea;border-radius:18px;padding:32px 26px;display:flex;flex-direction:column;justify-content:space-between;">
+            <div>
+              <div style="width:48px;height:48px;border-radius:12px;background:#f3e3f5;color:var(--purple);display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <h3 style="font-family:Manrope,Arial,sans-serif;font-size:19px;font-weight:800;color:var(--purple-dark);margin:0 0 10px;">Devenir partenaire</h3>
+              <p style="font-size:14px;color:#645867;line-height:1.6;margin:0 0 20px;">Engagez votre organisation dans un partenariat à fort impact social et sociétal.</p>
+            </div>
+            <a href="#formulaire" style="color:var(--purple);font-weight:800;font-size:14px;text-decoration:none;display:flex;align-items:center;gap:6px;">
+              Initier un partenariat <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER COMPLET SANS BOÎTE BLANCHE -->
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <a class="brand brand-light" href="./index.html">
+          <img src="./public/images/paad-emblem-white-trans.png" alt="Logo PAAD" width="38" height="38">
+          <span>PAAD</span>
+        </a>
+        <p>Programme d'Actions et d'Aide pour le Développement. Organisation laïque et indépendante dédiée à l'éducation et à l'autonomie économique en Haïti.</p>
+      </div>
+
+      <div class="footer-links">
+        <span class="footer-heading">Navigation</span>
+        <ul>
+          <li><a href="./qui-sommes-nous.html">À propos de nous</a></li>
+          <li><a href="./etapes-cles.html">Étapes clés</a></li>
+          <li><a href="./faq.html">FAQ</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+          <li><a href="./index.html#domaines">Nos domaines d'action</a></li>
+          <li><a href="./index.html#impact">Rapports d'impact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <span class="footer-heading">Programmes phares</span>
+        <ul>
+          <li><a href="./index.html#domaines">Bourses d'études et scolarisation</a></li>
+          <li><a href="./index.html#domaines">Cantines scolaires locales</a></li>
+          <li><a href="./index.html#domaines">Kits solaires et ateliers techniques</a></li>
+          <li><a href="./index.html#urgence">Urgence et appui communautaire</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <span class="footer-heading">Contact officiel</span>
+        <p><strong>Siège :</strong> Port-au-Prince, Haïti</p>
+        <p><strong>E-mail :</strong> contact@paad-haiti.org</p>
+        <p><strong>Transparence :</strong> Comptes audités et rapports publics annuels.</p>
+        <div style="margin-top:20px;">
+          <a href="#don" class="button button-primary" onclick="openModal('donModal'); return false;" style="font-size:12px;padding:10px 20px;">
+            Faire un don
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap footer-bottom">
+      <p>&copy; 2024-2026 PAAD - Tous droits réservés.</p>
+      <div class="footer-legal">
+        <a href="./qui-sommes-nous.html">Mentions légales</a>
+        <a href="./qui-sommes-nous.html">Politique de confidentialité</a>
+        <a href="./contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODALE DON FARM AFRICA INTERACTIVE -->
+  <div class="modal-backdrop" id="donModal" role="dialog" aria-modal="true" aria-labelledby="farmModalTitle">
+    <div class="modal-content farm-modal-content">
+      <button class="modal-close" aria-label="Fermer la boîte de dialogue" onclick="closeModal('donModal')">&times;</button>
+      
+      <div class="farm-donate-card">
+        <div class="farm-donate-visual">
+          <img src="./public/images/hero-child-education.jpg" alt="Enfants en classe en Haïti" class="farm-visual-img">
+          <div class="farm-visual-overlay"></div>
+          
+          <div class="farm-badge-trust">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>Don 100% Sécurisé &amp; Traçable</span>
+          </div>
+
+          <div class="farm-visual-content">
+            <p class="farm-visual-quote">« Votre don finance directement les bourses scolaires, les repas chauds et les kits solaires pour la jeunesse haïtienne. »</p>
+            <span class="farm-visual-author">PAAD · Transparence &amp; Impact terrain</span>
+          </div>
+        </div>
+
+        <div class="farm-donate-form-side">
+          <div class="farm-form-header">
+            <h3 id="farmModalTitle">Agir pour l'avenir</h3>
+            <p>Choisissez votre mode de soutien et donnez du pouvoir d'agir.</p>
+          </div>
+
+          <div class="farm-frequency-tabs" role="tablist">
+            <div class="farm-freq-tab active" id="tab-once" onclick="setFrequency('once')">Je donne une fois</div>
+            <div class="farm-freq-tab" id="tab-monthly" onclick="setFrequency('monthly')">Tous les mois</div>
+          </div>
+
+          <div class="farm-amounts-grid">
+            <button type="button" class="farm-amount-btn" onclick="selectAmount(25, this)">
+              <span class="farm-amount-val">25 €</span>
+              <span class="farm-amount-desc">Manuels &amp; fournitures</span>
+            </button>
+            <button type="button" class="farm-amount-btn active" onclick="selectAmount(50, this)">
+              <span class="farm-amount-val">50 €</span>
+              <span class="farm-amount-desc">1 mois de cantine</span>
+            </button>
+            <button type="button" class="farm-amount-btn" onclick="selectAmount(100, this)">
+              <span class="farm-amount-val">100 €</span>
+              <span class="farm-amount-desc">Bourse trimestrielle</span>
+            </button>
+          </div>
+
+          <div class="farm-custom-input-wrap">
+            <span>€</span>
+            <input type="number" id="farm-custom-amount" placeholder="Autre montant libre" min="5" oninput="clearAmountButtons()">
+          </div>
+
+          <button type="button" class="farm-submit-btn" onclick="proceedDonation()">
+            <span>Finaliser mon don</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // GESTION DU MENU MOBILE
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+    const iconOpen = document.getElementById('menu-icon-open');
+    const iconClose = document.getElementById('menu-icon-close');
+
+    if (menuBtn && mobileNav) {
+      menuBtn.addEventListener('click', () => {
+        const isOpen = mobileNav.style.display === 'flex';
+        mobileNav.style.display = isOpen ? 'none' : 'flex';
+        menuBtn.setAttribute('aria-expanded', !isOpen);
+        if (iconOpen && iconClose) {
+          iconOpen.style.display = isOpen ? 'block' : 'none';
+          iconClose.style.display = isOpen ? 'none' : 'block';
+        }
+      });
+    }
+
+    // MODALES
+    function openModal(id) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeModal(id) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    window.addEventListener('click', (e) => {
+      if (e.target.classList.contains('modal-backdrop')) {
+        e.target.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+
+    // DON FARM AFRICA
+    let currentAmount = 50;
+    function selectAmount(val, btn) {
+      currentAmount = val;
+      document.querySelectorAll('.farm-amount-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const input = document.getElementById('farm-custom-amount');
+      if (input) input.value = '';
+    }
+
+    function clearAmountButtons() {
+      document.querySelectorAll('.farm-amount-btn').forEach(b => b.classList.remove('active'));
+      const input = document.getElementById('farm-custom-amount');
+      if (input && input.value) {
+        currentAmount = parseFloat(input.value) || 0;
+      }
+    }
+
+    function setFrequency(freq) {
+      document.querySelectorAll('.farm-freq-tab').forEach(t => t.classList.remove('active'));
+      const activeTab = document.getElementById(freq === 'monthly' ? 'tab-monthly' : 'tab-once');
+      if (activeTab) activeTab.classList.add('active');
+    }
+
+    function proceedDonation() {
+      const input = document.getElementById('farm-custom-amount');
+      const amt = (input && input.value) ? input.value : currentAmount;
+      alert("Redirection vers la passerelle sécurisée pour un montant de " + amt + " €.\\nMerci pour votre générosité envers Haïti !");
+      closeModal('donModal');
+    }
+
+    // GESTION DU FORMULAIRE DE CONTACT
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const form = document.getElementById('contact-form');
+      const alertBox = document.getElementById('contact-success-alert');
+      
+      if (alertBox) {
+        alertBox.classList.add('active');
+        alertBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+      
+      form.reset();
+    }
+  </script>
+</body>
+</html>

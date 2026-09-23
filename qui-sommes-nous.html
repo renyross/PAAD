@@ -649,11 +649,9 @@
           </span>
           <div class="ocean-sub-dropdown-menu">
             <a href="./qui-sommes-nous.html" class="ocean-sub-dropdown-item" style="color:var(--purple);font-weight:800;">À propos de nous</a>
-            <a href="#histoire" class="ocean-sub-dropdown-item">Notre histoire</a>
-            <a href="#mission" class="ocean-sub-dropdown-item">Mission &amp; Vision</a>
-            <a href="#valeurs" class="ocean-sub-dropdown-item">Nos valeurs</a>
-            <a href="#equipe" class="ocean-sub-dropdown-item">Gouvernance &amp; Équipe</a>
-            <a href="#contact" class="ocean-sub-dropdown-item" onclick="openModal('contactModal'); return false;">Contact</a>
+            <a href="./etapes-cles.html" class="ocean-sub-dropdown-item">Étapes clés</a>
+            <a href="./faq.html" class="ocean-sub-dropdown-item">FAQ</a>
+            <a href="./contact.html" class="ocean-sub-dropdown-item">Contact</a>
           </div>
         </div>
         <div class="ocean-sub-dropdown">
@@ -677,18 +675,55 @@
 
     <!-- NAVIGATION MOBILE HARMONISÉE -->
     <nav class="ocean-mobile-drawer mobile-nav" id="mobile-nav" aria-label="Navigation mobile" style="display:none;">
-      <a href="./qui-sommes-nous.html" style="color:var(--purple);font-weight:900;">Qui sommes-nous <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
-      <a href="./index.html#domaines">Éducation <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
-      <a href="./index.html#domaines">Développement économique <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
-      <a href="./index.html#programmes">Nos projets <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
-      <a href="./index.html#impact">Impact <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
-      <a href="#contact" onclick="openModal('contactModal', 'Partenariat'); return false;">Devenir partenaire</a>
-      <a href="./index.html#actualites">Presse &amp; Actualités</a>
+      <a href="./qui-sommes-nous.html" style="color:var(--purple);font-weight:900;">À propos de nous <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
+      <a href="./etapes-cles.html">Étapes clés <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
+      <a href="./faq.html">FAQ <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
+      <a href="./contact.html">Contact <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
+      <a href="./index.html#domaines">Éducation</a>
+      <a href="./index.html#domaines">Développement économique</a>
+      <a href="./index.html#programmes">Nos projets</a>
+      <a href="./index.html#impact">Impact</a>
       <a href="#don" class="ocean-drawer-donate-btn" onclick="openModal('donModal'); return false;">FAITES UN DON MAINTENANT</a>
     </nav>
   </header>
 
-  <main id="main">
+  <main id="main" class="about-simple">
+    <section class="about-simple-intro">
+      <div class="wrap about-simple-intro-grid">
+        <div class="about-simple-copy">
+          <span>À propos de PAAD</span>
+          <h1>Une organisation haïtienne engagée dans l’éducation et l’autonomie.</h1>
+          <p>Créé en 2024, le Programme d’Actions et d’Aide pour le Développement est une organisation laïque, indépendante et à but non lucratif basée à Port-au-Prince.</p>
+          <p>PAAD construit ses actions avec les communautés afin que les enfants, les jeunes et les familles puissent apprendre, développer des compétences et bâtir leur propre avenir.</p>
+        </div>
+        <div class="about-simple-image">
+          <img src="./public/images/haiti-cinematic-hero.jpg" alt="Jeunesse et communauté en Haïti">
+          <div class="about-simple-facts"><div><span>Création</span><strong>2024</strong></div><div><span>Siège</span><strong>Port-au-Prince</strong></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-simple-mission">
+      <div class="wrap about-simple-mission-grid">
+        <div class="about-simple-heading"><span>Notre raison d’être</span><h2>Agir avec les communautés, dans la durée.</h2></div>
+        <div class="about-simple-principles">
+          <article><span>01</span><h3>Éducation</h3><p>Faciliter l’accès à l’école, aux ressources pédagogiques et aux compétences utiles.</p></article>
+          <article><span>02</span><h3>Autonomie économique</h3><p>Renforcer l’employabilité, l’entrepreneuriat et les initiatives locales durables.</p></article>
+          <article><span>03</span><h3>Action locale</h3><p>Écouter les besoins, travailler avec les acteurs du territoire et rendre compte des résultats.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-simple-team">
+      <div class="wrap">
+        <div class="about-simple-team-head"><div><span>Organisation</span><h2>Une responsabilité partagée.</h2></div><p>PAAD a été fondé par Renel Rosene, Renald Rosene et Esther Gladelle Toussaint autour d’une conviction commune : les solutions durables se construisent avec les personnes concernées.</p></div>
+        <div class="about-simple-founders"><div><span>01</span><strong>Renel Rosene</strong><small>Cofondateur</small></div><div><span>02</span><strong>Renald Rosene</strong><small>Cofondateur</small></div><div><span>03</span><strong>Esther Gladelle Toussaint</strong><small>Cofondatrice</small></div></div>
+        <div class="about-simple-actions"><a href="./index.html#domaines">Découvrir notre mission <span>→</span></a><a href="./contact.html">Prendre contact <span>→</span></a></div>
+      </div>
+    </section>
+  </main>
+
+  <main id="main-legacy" hidden>
     <!-- 1. HERO MONUMENTAL À PROPOS -->
     <section class="about-hero" id="top">
       <div class="about-hero-bg">
