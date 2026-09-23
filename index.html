@@ -127,24 +127,22 @@
     }
     .contact-panel-logo {
       font-family: Manrope, Arial, sans-serif;
-      font-size: 20px;
-      font-weight: 800;
+      font-size: 24px;
+      font-weight: 900;
       color: #ffffff;
-      letter-spacing: 0.05em;
-      display: flex;
+      letter-spacing: -0.01em;
+      display: inline-flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       margin-bottom: 36px;
     }
-    .contact-panel-logo span {
-      width: 32px;
-      height: 32px;
-      background: rgba(255,255,255,0.15);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 14px;
+    .contact-panel-logo img,
+    .contact-panel-emblem {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+      display: block;
+      background: transparent !important;
     }
     .contact-panel-title {
       font-family: Manrope, Arial, sans-serif;
@@ -1860,9 +1858,7 @@
           <img src="./public/images/haiti-student-classroom.jpg" alt="Écolière dans sa salle de classe en Haïti - Soutenir PAAD" class="farm-donate-img">
           <div class="farm-donate-overlay"></div>
           <div class="farm-donate-brand">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 2v8"/><path d="m4.93 10.93 1.41 1.41"/><path d="M2 18h2"/><path d="M20 18h2"/><path d="m19.07 10.93-1.41 1.41"/><path d="M22 22H2"/><path d="m8 22 4-10 4 10"/>
-            </svg>
+            <img src="./public/images/paad-emblem-white-trans.png" alt="Logo PAAD" class="farm-donate-emblem" width="38" height="38">
             <span>PAAD</span>
           </div>
           <div class="farm-donate-trust-badge" title="Soutien solidaire & transparent">
@@ -1957,7 +1953,8 @@
       <div class="contact-modal-panel">
         <div>
           <div class="contact-panel-logo">
-            <span>P</span> PAAD
+            <img src="./public/images/paad-emblem-white-trans.png" alt="Logo PAAD" class="contact-panel-emblem" width="42" height="42">
+            <span>PAAD</span>
           </div>
           <h3 class="contact-panel-title">Construisons ensemble un avenir durable pour Haïti.</h3>
           <p class="contact-panel-sub">Partagez votre projet, vos idées ou votre souhait de partenariat. Notre équipe vous répond sous 72 h.</p>

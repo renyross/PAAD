@@ -4417,16 +4417,21 @@
   z-index: 5;
   display: flex;
   align-items: center;
-  gap: 9px;
+  gap: 10px;
   color: #ffffff;
   font-family: Manrope, Arial, sans-serif;
   font-weight: 800;
-  font-size: 20px;
-  letter-spacing: 0.12em;
+  font-size: 22px;
+  letter-spacing: -0.01em;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
-.farm-donate-brand svg {
-  stroke: #ffffff;
+.farm-donate-brand img,
+.farm-donate-emblem {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  display: block;
+  background: transparent !important;
 }
 .farm-donate-trust-badge {
   position: absolute;
@@ -4744,7 +4749,7 @@
 .donation-visual>img{object-fit:cover;object-position:center}
 .donation-visual-shade{position:absolute;inset:0;background:linear-gradient(180deg,#32133324 0%,#32133308 46%,#321333c9 100%)}
 .donation-brand{position:absolute;top:42px;left:48px;z-index:2;display:flex;align-items:center;gap:12px;color:#fff;font:800 30px Manrope,Arial,sans-serif}
-.donation-brand img{background:#fff;padding:3px;object-fit:contain}
+.donation-brand img{background:transparent!important;padding:0;object-fit:contain}
 .donation-visual-copy{position:absolute;z-index:2;left:48px;right:48px;bottom:45px;max-width:550px}
 .donation-visual-copy span{font-size:11px;font-weight:800;letter-spacing:.14em}
 .donation-visual-copy p{font:600 clamp(22px,2.2vw,36px)/1.3 Manrope,Arial,sans-serif;margin:13px 0 0}
@@ -5193,7 +5198,7 @@
 .contact-visual>img{object-fit:cover;object-position:center}
 .contact-visual-shade{position:absolute;inset:0;background:linear-gradient(180deg,#32133342 0%,#3213330d 42%,#321333e8 100%)}
 .contact-brand{position:absolute;z-index:2;top:42px;left:48px;display:flex;align-items:center;gap:12px;color:#fff;font:800 30px Manrope,Arial,sans-serif}
-.contact-brand img{background:#fff;padding:3px;object-fit:contain}
+.contact-brand img{background:transparent!important;padding:0;object-fit:contain}
 .contact-visual-content{position:absolute;z-index:2;left:48px;right:48px;bottom:45px;max-width:610px}
 .contact-visual-content h2{max-width:570px;color:#fff;font-size:clamp(28px,3vw,46px);line-height:1.18;margin-bottom:14px}
 .contact-visual-content>p{max-width:520px;color:#f0e7f1;font-size:16px;margin-bottom:28px}
@@ -5222,7 +5227,8 @@
 #contactModal .contact-modal-panel{min-width:0;height:100%;padding:48px;background:linear-gradient(180deg,#32133342,#321333e8),url('/images/haiti-digital-class.jpg') center/cover no-repeat}
 #contactModal .contact-modal-panel::before,#contactModal .contact-modal-panel::after{display:none}
 #contactModal .contact-modal-panel>div,#contactModal .contact-panel-infos{position:relative;z-index:2}
-#contactModal .contact-panel-logo span{border-radius:0;background:#fff;color:var(--purple)}
+#contactModal .contact-panel-logo{display:inline-flex;align-items:center;gap:12px;margin-bottom:36px;color:#fff;font-family:Manrope,Arial,sans-serif;font-size:24px;font-weight:900;letter-spacing:-0.01em}
+#contactModal .contact-panel-logo img,#contactModal .contact-panel-emblem{width:42px;height:42px;padding:0;background:transparent!important;object-fit:contain;display:block}
 #contactModal .contact-panel-title{font-size:clamp(30px,3vw,46px);line-height:1.18;max-width:570px}
 #contactModal .contact-panel-sub{font-size:16px;max-width:520px;color:#f0e7f1}
 #contactModal .contact-panel-dot{border-radius:0;background:var(--lavender)}
@@ -5412,3 +5418,22 @@
 .program-showcase-card:nth-child(4) .program-card-media img{object-position:52% 38%}
 .program-card-media::after{background:linear-gradient(180deg,transparent 62%,#321333a8 100%)}
 @media(max-width:650px){.program-showcase-card{height:650px}.program-card-media{height:300px}}
+
+/* Alliances : manifeste a gauche, ecosysteme institutionnel a droite. */
+#partenaires.section-partners{padding:105px 0;background:#fff!important;text-align:left;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+#partenaires>.wrap{display:grid;grid-template-columns:minmax(300px,.72fr) minmax(0,1.28fr);grid-template-rows:auto auto 1fr auto;column-gap:clamp(60px,8vw,120px);align-items:start}
+#partenaires .ocean-alliances-title{grid-column:1;grid-row:1;margin:0 0 17px;color:var(--purple)!important;font:800 11px Manrope,Arial,sans-serif;letter-spacing:.13em;text-transform:uppercase}
+#partenaires .ocean-alliances-subtitle{grid-column:1;grid-row:2;max-width:520px;margin:0 0 23px;color:var(--purple-dark)!important;font:800 clamp(38px,4vw,56px)/1.1 Manrope,Arial,sans-serif}
+#partenaires .ocean-alliances-desc{grid-column:1;grid-row:3;max-width:520px;margin:0 0 32px;color:#655d69!important;font-size:15.5px;line-height:1.75}
+#partenaires .ocean-alliances-btn{grid-column:1;grid-row:4;width:fit-content;min-height:52px;padding:14px 18px;background:var(--purple)!important;border:1px solid var(--purple);border-radius:0!important;box-shadow:none!important;display:inline-flex;align-items:center;font-size:12px;letter-spacing:.05em}
+#partenaires .ocean-alliances-btn:hover{background:var(--purple-dark)!important;border-color:var(--purple-dark);box-shadow:none!important}
+#partenaires .ocean-alliances-grid{grid-column:2;grid-row:1/5;width:100%;max-width:none;margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;border-top:1px solid #dccccf;border-left:1px solid #dccccf;align-self:stretch}
+#partenaires .ocean-alliance-logo-item{width:100%;max-width:none;min-height:132px;margin:0;padding:25px 24px;justify-content:flex-start;gap:17px;background:#faf8fb;border:0;border-right:1px solid #dccccf;border-bottom:1px solid #dccccf;border-radius:0;box-shadow:none;transition:background .2s,color .2s}
+#partenaires .ocean-alliance-logo-item:hover{background:var(--purple-dark);transform:none}
+#partenaires .ocean-alliance-logo-item svg{width:38px;height:38px;padding:8px;box-sizing:content-box;background:#f0e4f2;color:var(--purple);transition:background .2s,color .2s}
+#partenaires .ocean-alliance-logo-item:hover svg{background:#fff;color:var(--purple-dark)}
+#partenaires .ocean-alliance-logo-item .logo-main{color:var(--purple-dark);font-size:13px;letter-spacing:0;transition:color .2s}
+#partenaires .ocean-alliance-logo-item .logo-tag{margin-top:6px;color:#7f7182;font-size:9px;transition:color .2s}
+#partenaires .ocean-alliance-logo-item:hover .logo-main{color:#fff}#partenaires .ocean-alliance-logo-item:hover .logo-tag{color:#d9c7dc}
+@media(max-width:950px){#partenaires>.wrap{grid-template-columns:1fr;grid-template-rows:auto;row-gap:0}#partenaires .ocean-alliances-title,#partenaires .ocean-alliances-subtitle,#partenaires .ocean-alliances-desc,#partenaires .ocean-alliances-btn,#partenaires .ocean-alliances-grid{grid-column:1;grid-row:auto}#partenaires .ocean-alliances-desc{max-width:700px}#partenaires .ocean-alliances-btn{margin-bottom:48px}}
+@media(max-width:600px){#partenaires.section-partners{padding-block:72px}#partenaires .ocean-alliances-subtitle{font-size:38px}#partenaires .ocean-alliances-grid{grid-template-columns:1fr}#partenaires .ocean-alliance-logo-item{min-height:105px}}

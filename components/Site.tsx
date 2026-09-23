@@ -1644,14 +1644,14 @@ export function Home({ lang, data }: { lang: 'fr' | 'en' | 'es'; data: SiteData 
 export function ContentPage({ lang, slug, data }: { lang: 'fr' | 'en' | 'es'; slug: string; data: SiteData }) {
   const page = pages[slug];
   if (!page) return null;
-  if (page.type === 'donate') return <DonationForm/>;
-  if (page.type === 'contact') return <ContactForm topic={page.kicker}/>;
+  if (page.type === 'donate') return <DonationForm lang={lang}/>;
+  if (page.type === 'contact') return <ContactForm topic={page.kicker} lang={lang}/>;
   return <><section className="page-hero"><div className="wrap"><Eyebrow>{page.kicker}</Eyebrow><h1>{page.title}</h1><p>{page.text}</p></div></section><div className="page-body wrap">
     {page.type !== 'contact' && <PageBody lang={lang} slug={slug} data={data}/>} 
   </div><section className="page-cta"><div className="wrap"><h2>Construisons la suite ensemble.</h2><Link className="button button-light" href={`/${lang}/contact`}>Prendre contact <ArrowRight size={17}/></Link></div></section></>;
 }
 
-function DonationForm() {
+function DonationForm({ lang = 'fr' }: { lang?: string }) {
   const [amount, setAmount] = useState(50);
   const [other, setOther] = useState('');
   const [frequency, setFrequency] = useState<'ponctuel'|'mensuel'>('ponctuel');
@@ -1672,7 +1672,7 @@ function DonationForm() {
       <div className="donation-visual">
         <Image src="/images/haiti-student-classroom.jpg" alt="Écolière dans sa salle de classe en Haïti" fill priority sizes="50vw"/>
         <div className="donation-visual-shade"/>
-        <Link href="/fr" className="donation-brand"><Image src="/images/paad-emblem.webp" alt="" width={48} height={48}/><strong>PAAD</strong></Link>
+        <Link href={`/${lang}`} className="donation-brand"><Image src="/images/paad-emblem-white-trans.png" alt="Logo PAAD" width={44} height={44}/><strong>PAAD</strong></Link>
         <div className="donation-visual-copy"><span>UN DON, UNE POSSIBILITÉ</span><p>Votre soutien accompagne l’éducation, les compétences et l’autonomie économique en Haïti.</p></div>
       </div>
 
@@ -1753,7 +1753,7 @@ function DonationForm() {
   );
 }
 
-function ContactForm({ topic }: { topic: string }) {
+function ContactForm({ topic, lang = 'fr' }: { topic: string; lang?: string }) {
   const [name,setName]=useState('');
   const [email,setEmail]=useState('');
   const [subject,setSubject]=useState(topic || 'Prise de contact');
@@ -1765,7 +1765,7 @@ function ContactForm({ topic }: { topic: string }) {
     <div className="contact-visual">
       <Image src="/images/haiti-digital-class.jpg" alt="Jeunes en apprentissage avec PAAD en Haïti" fill priority sizes="50vw"/>
       <div className="contact-visual-shade"/>
-      <Link href="/fr" className="contact-brand"><Image src="/images/paad-emblem.webp" alt="" width={48} height={48}/><strong>PAAD</strong></Link>
+      <Link href={`/${lang}`} className="contact-brand"><Image src="/images/paad-emblem-white-trans.png" alt="Logo PAAD" width={44} height={44}/><strong>PAAD</strong></Link>
       <div className="contact-visual-content">
         <h2>Construisons ensemble un avenir durable pour Haïti.</h2>
         <p>Partagez votre projet, vos idées ou votre souhait de partenariat.</p>
