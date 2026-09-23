@@ -1,0 +1,41 @@
+export const actions = [
+  { slug: 'education', icon: 'BookOpen', title: 'Éducation', text: 'Améliorer l’accès à l’apprentissage, accompagner les enseignants et relier formation et avenir professionnel.' },
+  { slug: 'developpement-economique', icon: 'BriefcaseBusiness', title: 'Développement économique', text: 'Renforcer l’entrepreneuriat, l’employabilité, les initiatives collectives et l’accès aux marchés.' },
+];
+
+export const pages: Record<string, { title: string; kicker: string; text: string; type?: string }> = {
+  'qui-sommes-nous': { title: 'Éduquer. Créer des opportunités. Renforcer l’autonomie.', kicker: 'Qui sommes-nous', text: 'Créé en 2024, PAAD est une organisation haïtienne à but non lucratif qui agit dans l’éducation et le développement économique aux côtés des communautés.', type: 'about' },
+  'notre-histoire': { title: 'Une conviction partagée depuis 2024.', kicker: 'Notre histoire', text: 'PAAD a été fondé par Renel Rosene, Renald Rosene et Esther Gladelle Toussaint pour agir aux côtés des communautés haïtiennes.', type: 'history' },
+  'mission-vision': { title: 'Renforcer les capacités, ouvrir des perspectives.', kicker: 'Mission & vision', text: 'PAAD travaille pour un Haïti où chacun peut apprendre, développer ses compétences, accéder à des opportunités économiques et contribuer à sa communauté.', type: 'about' },
+  'equipe': { title: 'Une équipe au service de l’action collective.', kicker: 'Notre équipe', text: 'Les membres de PAAD contribuent à la stratégie, à la mise en œuvre des projets et au suivi des actions.', type: 'team' },
+  'gouvernance': { title: 'Une gouvernance collégiale et responsable.', kicker: 'Gouvernance', text: 'Le bureau coordonne l’organisation et prend les décisions stratégiques de façon collective.', type: 'governance' },
+  'valeurs': { title: 'Des valeurs qui orientent chaque décision.', kicker: 'Nos valeurs', text: 'Intégrité, transparence, respect, solidarité, efficacité et responsabilité structurent l’action de PAAD.', type: 'values' },
+  'partenaires': { title: 'Construire des alliances utiles aux territoires.', kicker: 'Nos partenaires', text: 'PAAD collabore avec les communautés, les institutions, les ONG et les partenaires qui partagent son ambition.', type: 'partners' },
+  'nos-actions': { title: 'Deux priorités pour construire l’autonomie.', kicker: 'Nos actions', text: 'L’éducation développe les capacités. Le développement économique aide à les transformer en revenus, en emplois et en initiatives locales.', type: 'actions' },
+  'projets': { title: 'Des projets conçus avec les territoires.', kicker: 'Nos projets', text: 'Les fiches projets seront publiées dès que leurs objectifs, partenaires, lieux et résultats auront été vérifiés.', type: 'projects' },
+  'pays': { title: 'Agir en Haïti, avec les acteurs des territoires.', kicker: 'Où nous agissons', text: 'Depuis Port-au-Prince, PAAD construit ses interventions avec les familles, les enseignants, les jeunes, les femmes, les entrepreneurs et les partenaires locaux.', type: 'countries' },
+  'impact': { title: 'Mesurer ce qui change, partager ce que nous apprenons.', kicker: 'Notre impact', text: 'PAAD publiera ici des indicateurs documentés, leur méthode de calcul et les enseignements tirés de ses actions.', type: 'impact' },
+  'histoires': { title: 'Derrière chaque projet, une histoire.', kicker: 'Histoires', text: 'Les témoignages seront publiés avec le consentement des personnes concernées et dans le respect de leur dignité.', type: 'stories' },
+  'rapports': { title: 'La transparence au cœur de notre action.', kicker: 'Publications', text: 'Retrouvez bientôt les rapports annuels, rapports d’impact, documents financiers et institutionnels validés par PAAD.', type: 'reports' },
+  'actualites': { title: 'La vie de PAAD, au fil des actions.', kicker: 'Actualités', text: 'Les nouvelles du terrain, partenariats et événements seront publiés ici par l’équipe PAAD.', type: 'news' },
+  'communiques': { title: 'Communiqués officiels.', kicker: 'Presse', text: 'Les prises de parole officielles de PAAD seront archivées ici.', type: 'news' },
+  'evenements': { title: 'Rencontres et événements.', kicker: 'Événements', text: 'Les prochains rendez-vous de PAAD seront publiés ici.', type: 'news' },
+  'faire-un-don': { title: 'Soutenir l’éducation et les opportunités économiques.', kicker: 'Faire un don', text: 'Votre contribution peut aider PAAD à développer des actions éducatives et économiques. Le paiement en ligne sera disponible après activation du compte officiel de collecte.', type: 'donate' },
+  'devenir-benevole': { title: 'Engagez vos compétences à nos côtés.', kicker: 'Bénévolat', text: 'Parlez-nous de votre expérience, de vos disponibilités et des causes qui vous mobilisent.', type: 'contact' },
+  'devenir-partenaire': { title: 'Associons nos compétences pour créer des opportunités.', kicker: 'Partenariat', text: 'Établissements éducatifs, collectivités, entreprises, universités, fondations, diaspora et organisations de la société civile : construisons des collaborations utiles et transparentes.', type: 'contact' },
+  'lancer-une-collecte': { title: 'Mobilisez votre communauté pour PAAD.', kicker: 'Lancer une collecte', text: 'Une collecte collective peut soutenir les priorités de PAAD. Prenez contact avec l’équipe avant de lancer une campagne en son nom.', type: 'contact' },
+  'contact': { title: 'Parlons de ce que nous pouvons construire ensemble.', kicker: 'Contact', text: 'Écrivez à l’équipe PAAD au sujet d’un projet, d’un partenariat ou d’une question générale.', type: 'contact' },
+  'faq': { title: 'Vos questions, nos réponses.', kicker: 'FAQ', text: 'Les réponses officielles seront enrichies au fur et à mesure des informations validées par PAAD.', type: 'faq' },
+  'mentions-legales': { title: 'Mentions légales', kicker: 'Informations légales', text: 'Les mentions légales de PAAD seront publiées après confirmation de la structure juridique, de l’hébergement et des coordonnées officielles.', type: 'reports' },
+  'confidentialite': { title: 'Politique de confidentialité', kicker: 'Données personnelles', text: 'La politique détaillée sera publiée avant l’activation des formulaires et outils de suivi.', type: 'reports' },
+  'cookies': { title: 'Gestion des cookies', kicker: 'Vie privée', text: 'Ce site n’active actuellement aucun outil de suivi publicitaire. Une politique détaillée sera ajoutée avant tout nouveau traceur.', type: 'legal' },
+  'conditions-de-don': { title: 'Conditions de don', kicker: 'Faire un don', text: 'Le paiement en ligne sera proposé après validation des conditions et de la plateforme officielle de collecte.', type: 'legal' },
+};
+
+for (const action of actions) pages[`actions/${action.slug}`] = { title: action.title, kicker: 'Nos domaines d’intervention', text: action.text, type: 'action' };
+
+export const translations = {
+  fr: { nav: ['Qui sommes-nous', 'Nos actions', 'Nos projets', 'Où nous agissons', 'Impact', 'Actualités'], partner: 'Devenir partenaire', donate: 'Faire un don', hero: 'Éduquer. Créer des opportunités. Renforcer l’autonomie.', intro: 'En Haïti, PAAD agit avec les communautés pour améliorer l’accès à l’éducation et développer des opportunités économiques durables.', explore: 'Découvrir nos actions', support: 'Soutenir PAAD', label: 'Éducation · Développement économique' },
+  en: { nav: ['About us', 'Our work', 'Projects', 'Where we work', 'Impact', 'News'], partner: 'Become a partner', donate: 'Donate', hero: 'Educate. Create opportunities. Strengthen autonomy.', intro: 'In Haiti, PAAD works with communities to improve access to education and create lasting economic opportunities.', explore: 'Explore our work', support: 'Support PAAD', label: 'Education · Economic development' },
+  es: { nav: ['Quiénes somos', 'Qué hacemos', 'Proyectos', 'Dónde actuamos', 'Impacto', 'Noticias'], partner: 'Ser aliado', donate: 'Donar', hero: 'Educar. Crear oportunidades. Fortalecer la autonomía.', intro: 'En Haití, PAAD trabaja con las comunidades para ampliar el acceso a la educación y crear oportunidades económicas duraderas.', explore: 'Conocer nuestras acciones', support: 'Apoyar a PAAD', label: 'Educación · Desarrollo económico' },
+};

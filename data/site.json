@@ -1,0 +1,22 @@
+{
+  "projects": [],
+  "countries": [
+    {
+      "slug": "haiti",
+      "name": "Haïti",
+      "summary": "Pays d’origine de PAAD et territoire de ses actions en éducation et développement économique.",
+      "body": "PAAD est une organisation haïtienne basée à Port-au-Prince. Ses interventions sont conçues avec les communautés, les familles, les enseignants, les jeunes, les femmes, les entrepreneurs et les partenaires locaux. Chaque projet part des besoins et des ressources présents dans le territoire.",
+      "domains": [
+        "Éducation",
+        "Développement économique"
+      ],
+      "published": true
+    }
+  ],
+  "articles": [],
+  "stories": [],
+  "reports": [],
+  "partners": [],
+  "metrics": [],
+  "campaign": null
+}
