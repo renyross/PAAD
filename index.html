@@ -1631,7 +1631,7 @@
       <div class="wrap">
         <div style="text-align:center; max-width:700px; margin:0 auto 48px;">
           <span class="eyebrow"><span class="eyebrow-line"></span>Mobilisation</span>
-          <h2 style="font-family:Manrope, Arial, sans-serif; font-size:clamp(28px, 3.2vw, 42px); font-weight:800; color:#1e1a22; margin:8px 0 14px;">
+          <h2 style="font-family:Manrope, Arial, sans-serif; font-size:clamp(28px, 3.2vw, 42px); font-weight:800; color:var(--purple-dark); margin:8px 0 14px;">
             Vous pouvez agir avec PAAD
           </h2>
           <p style="font-size:16.5px; color:#554e5b; line-height:1.6; margin:0;">
@@ -1639,7 +1639,7 @@
           </p>
         </div>
 
-        <div class="act-cards-grid">
+        <div class="act-cards-grid" id="act-cards-track">
           <!-- OPTION 1 -->
           <a class="act-card" href="#don" onclick="openModal('donModal'); return false;">
             <div class="act-card-icon">
@@ -1679,6 +1679,14 @@
             <p>Financez un projet ciblé répondant à une urgence ou à une filière locale précise.</p>
             <span class="act-link-label">Explorer les projets →</span>
           </a>
+        </div>
+
+        <!-- Indicateurs de défilement horizontal mobile -->
+        <div class="act-carousel-dots" id="act-dots-container" aria-hidden="true">
+          <span class="act-dot active" onclick="scrollActCard(0)"></span>
+          <span class="act-dot" onclick="scrollActCard(1)"></span>
+          <span class="act-dot" onclick="scrollActCard(2)"></span>
+          <span class="act-dot" onclick="scrollActCard(3)"></span>
         </div>
       </div>
     </section>
@@ -1799,7 +1807,7 @@
         <div class="mockup-social-icons">
           <a href="#" class="mockup-social-btn" aria-label="Facebook">f</a>
           <a href="#" class="mockup-social-btn" aria-label="X / Twitter">𝕏</a>
-          <a href="#" class="mockup-social-btn" aria-label="Instagram">ig</a>
+          <a href="https://www.instagram.com/paad_developpement/" target="_blank" rel="noopener noreferrer" class="mockup-social-btn" aria-label="Instagram PAAD Développement">ig</a>
           <a href="#" class="mockup-social-btn" aria-label="LinkedIn">in</a>
         </div>
       </div>
@@ -2037,6 +2045,25 @@
       if (current) current.textContent = index === 1 ? '02' : '01';
       dot1?.classList.toggle('active', index === 0);
       dot2?.classList.toggle('active', index === 1);
+    }
+
+    function scrollActCard(index) {
+      const track = document.getElementById('act-cards-track');
+      if (!track || !track.children[index]) return;
+      const card = track.children[index];
+      track.scrollTo({ left: card.offsetLeft - track.offsetLeft, behavior: 'smooth' });
+    }
+
+    const actTrack = document.getElementById('act-cards-track');
+    if (actTrack) {
+      actTrack.addEventListener('scroll', () => {
+        const dots = document.querySelectorAll('#act-dots-container .act-dot');
+        if (!dots.length) return;
+        const scrollLeft = actTrack.scrollLeft;
+        const cardWidth = actTrack.firstElementChild ? actTrack.firstElementChild.offsetWidth + 16 : 280;
+        const activeIndex = Math.min(dots.length - 1, Math.max(0, Math.round(scrollLeft / cardWidth)));
+        dots.forEach((d, i) => d.classList.toggle('active', i === activeIndex));
+      }, { passive: true });
     }
 
     // Navigation mobile

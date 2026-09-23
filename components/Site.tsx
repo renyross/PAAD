@@ -451,7 +451,7 @@ export function Footer({ lang }: { lang: 'fr' | 'en' | 'es' }) {
         <div className="mockup-social-icons">
           <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="mockup-social-btn" aria-label="Facebook">f</a>
           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="mockup-social-btn" aria-label="X / Twitter">𝕏</a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="mockup-social-btn" aria-label="Instagram">ig</a>
+          <a href="https://www.instagram.com/paad_developpement/" target="_blank" rel="noopener noreferrer" className="mockup-social-btn" aria-label="Instagram PAAD Développement">ig</a>
           <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="mockup-social-btn" aria-label="LinkedIn">in</a>
         </div>
       </div>
@@ -1457,7 +1457,7 @@ export function Home({ lang, data }: { lang: 'fr' | 'en' | 'es'; data: SiteData 
       <div className="wrap">
         <div style={{ textAlign: 'center', maxWidth: '700px', margin: '0 auto 48px' }}>
           <Eyebrow>Mobilisation</Eyebrow>
-          <h2 style={{ fontFamily: 'Manrope, Arial, sans-serif', fontSize: 'clamp(28px, 3.2vw, 42px)', fontWeight: 800, color: '#1e1a22', margin: '8px 0 14px' }}>
+          <h2 style={{ fontFamily: 'Manrope, Arial, sans-serif', fontSize: 'clamp(28px, 3.2vw, 42px)', fontWeight: 800, color: 'var(--purple-dark)', margin: '8px 0 14px' }}>
             Vous pouvez agir avec PAAD
           </h2>
           <p style={{ fontSize: '16.5px', color: '#554e5b', lineHeight: 1.6, margin: 0 }}>
@@ -1465,7 +1465,7 @@ export function Home({ lang, data }: { lang: 'fr' | 'en' | 'es'; data: SiteData 
           </p>
         </div>
 
-        <div className="act-cards-grid">
+        <div className="act-cards-grid" id="act-cards-track">
           {/* OPTION 1 */}
           <Link className="act-card" href={href('faire-un-don')}>
             <div className="act-card-icon"><Heart size={24}/></div>
@@ -1497,6 +1497,14 @@ export function Home({ lang, data }: { lang: 'fr' | 'en' | 'es'; data: SiteData 
             <p>Financez un projet ciblé répondant à une urgence ou à une filière locale précise.</p>
             <span className="act-link-label">Explorer les projets →</span>
           </Link>
+        </div>
+
+        {/* Indicateurs de défilement horizontal mobile */}
+        <div className="act-carousel-dots" aria-hidden="true">
+          <span className="act-dot active"></span>
+          <span className="act-dot"></span>
+          <span className="act-dot"></span>
+          <span className="act-dot"></span>
         </div>
       </div>
     </section>

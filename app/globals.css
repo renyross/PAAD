@@ -4082,9 +4082,9 @@
   transform: translateY(-2px);
 }
 
-/* 12. Section Agir avec nous */
+/* 12. Section Agir avec nous : Carrousel horizontal en version mobile */
 .section-act {
-  padding-block: 85px;
+  padding-block: 88px;
   background: #ffffff;
 }
 .act-cards-grid {
@@ -4096,7 +4096,7 @@
   background: #faf8fb;
   border: 1px solid #ebddeb;
   border-radius: 20px;
-  padding: 30px 22px;
+  padding: 32px 24px;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -4110,8 +4110,8 @@
   box-shadow: 0 16px 36px rgba(89, 23, 84, 0.12);
 }
 .act-card-icon {
-  width: 52px;
-  height: 52px;
+  width: 54px;
+  height: 54px;
   border-radius: 16px;
   background: #f1e4f3;
   color: var(--purple);
@@ -4126,22 +4126,83 @@
 }
 .act-card h3 {
   font-family: Manrope, Arial, sans-serif;
-  font-size: 18px;
+  font-size: 19px;
   font-weight: 800;
-  color: #1e1a22;
-  margin: 0 0 8px;
+  color: var(--purple-dark);
+  margin: 0 0 10px;
 }
 .act-card p {
-  font-size: 13.5px;
+  font-size: 14px;
   color: #665d6c;
-  line-height: 1.5;
-  margin: 0 0 18px;
+  line-height: 1.55;
+  margin: 0 0 20px;
   flex-grow: 1;
 }
 .act-card span.act-link-label {
   font-size: 13px;
   font-weight: 800;
   color: var(--purple);
+  transition: transform .2s ease;
+}
+.act-card:hover span.act-link-label {
+  transform: translateX(4px);
+}
+.act-carousel-dots {
+  display: none;
+}
+
+@media (max-width: 820px) {
+  .section-act {
+    padding-block: 65px 54px;
+    overflow: hidden;
+  }
+  .section-act .wrap {
+    width: min(100% - 32px, 1320px);
+  }
+  .act-cards-grid {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 16px;
+    padding: 10px 16px 20px !important;
+    margin-inline: -16px;
+    scrollbar-width: none;
+  }
+  .act-cards-grid::-webkit-scrollbar {
+    display: none;
+  }
+  .act-card {
+    flex: 0 0 min(82vw, 290px) !important;
+    width: min(82vw, 290px) !important;
+    min-width: min(82vw, 290px) !important;
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
+    padding: 30px 22px;
+    text-align: center;
+    border-radius: 18px;
+  }
+  .act-carousel-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 14px;
+  }
+  .act-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 9999px;
+    background: #d4bdd8;
+    transition: all 0.25s ease;
+    cursor: pointer;
+  }
+  .act-dot.active {
+    width: 26px;
+    background: var(--purple);
+  }
 }
 
 /* 13. Section Partenaires (Style The Ocean Cleanup) */
@@ -5437,3 +5498,6 @@
 #partenaires .ocean-alliance-logo-item:hover .logo-main{color:#fff}#partenaires .ocean-alliance-logo-item:hover .logo-tag{color:#d9c7dc}
 @media(max-width:950px){#partenaires>.wrap{grid-template-columns:1fr;grid-template-rows:auto;row-gap:0}#partenaires .ocean-alliances-title,#partenaires .ocean-alliances-subtitle,#partenaires .ocean-alliances-desc,#partenaires .ocean-alliances-btn,#partenaires .ocean-alliances-grid{grid-column:1;grid-row:auto}#partenaires .ocean-alliances-desc{max-width:700px}#partenaires .ocean-alliances-btn{margin-bottom:48px}}
 @media(max-width:600px){#partenaires.section-partners{padding-block:72px}#partenaires .ocean-alliances-subtitle{font-size:38px}#partenaires .ocean-alliances-grid{grid-template-columns:1fr}#partenaires .ocean-alliance-logo-item{min-height:105px}}
+
+/* Suppression du trait superieur dans l'introduction terrain. */
+#terrain .spotlight-text-side{border-top:0!important;padding-top:0!important}
