@@ -708,6 +708,15 @@ export function Home({ lang, data }: { lang: 'fr' | 'en' | 'es'; data: SiteData 
     },
   ];
 
+  const allianceTypes = [
+    { label: 'ONG & Associations', tag: 'Alliance solidaire', Icon: UsersRound },
+    { label: 'Entreprises solidaires', tag: 'Mécénat & RSE', Icon: BriefcaseBusiness },
+    { label: 'Universités & Écoles', tag: 'Pôles d’excellence', Icon: BookOpen },
+    { label: 'Réseaux de la diaspora', tag: 'Mobilisation mondiale', Icon: Globe2 },
+    { label: 'Collectivités territoriales', tag: 'Action publique locale', Icon: ShieldCheck },
+    { label: 'Bailleurs & Fondations', tag: 'Financements d’impact', Icon: Sparkles },
+  ];
+
   const activeProg = operationalSpotlightPrograms[activeProgIndex];
 
   const operationalPrograms = [
@@ -1586,6 +1595,15 @@ export function Home({ lang, data }: { lang: 'fr' | 'en' | 'es'; data: SiteData 
               <span className="logo-tag">Financements d'Impact</span>
             </div>
           </div>
+          {allianceTypes.map(({ label, tag, Icon }) => (
+            <div className="ocean-alliance-logo-item" key={`loop-${label}`} aria-hidden="true">
+              <Icon size={34} strokeWidth={2.2}/>
+              <div className="logo-text">
+                <span className="logo-main">{label}</span>
+                <span className="logo-tag">{tag}</span>
+              </div>
+            </div>
+          ))}
         </div>
 
         <p className="ocean-alliances-desc">
