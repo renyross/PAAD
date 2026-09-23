@@ -430,11 +430,21 @@ export function Header({ lang }: { lang: 'fr' | 'en' | 'es' }) {
 export function Footer({ lang }: { lang: 'fr' | 'en' | 'es' }) {
   const href = (path: string) => `/${lang}/${path}`;
   return <footer className="footer" style={{ background: 'var(--purple-dark)', color: '#FAF8FB', borderTop: 'none' }}>
+    <div className="wrap footer-callout">
+      <div>
+        <span>Construire la suite</span>
+        <h2>Agissons aujourd’hui pour ouvrir de nouvelles possibilités en Haïti.</h2>
+      </div>
+      <div className="footer-callout-actions">
+        <Link href={href('faire-un-don')}>Faire un don <Heart size={17}/></Link>
+        <Link href={href('contact')}>Nous contacter <ArrowRight size={17}/></Link>
+      </div>
+    </div>
     <div className="wrap mockup-footer-top">
       <div className="mockup-footer-brand">
-        <Link className="footer-logo" href={`/${lang}`} style={{ color: '#FAF8FB', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
-          <Image src="/images/paad-emblem.webp" alt="" width={38} height={38}/>
-          <span>PAAD</span>
+        <Link className="ocean-logo-badge footer-menu-logo" href={`/${lang}`} aria-label="PAAD, accueil">
+          <Image src="/images/paad-emblem-white-trans.png" alt="Logo PAAD" className="ocean-logo-emblem" width={40} height={40}/>
+          <span className="ocean-logo-text">PAAD</span>
         </Link>
         <p>Programme d’Actions et d’Aide pour le Développement. Agir avec les communautés en Haïti pour un avenir durable.</p>
         <span className="mockup-social-label">Suivez-nous</span>
@@ -637,6 +647,7 @@ export function Home({ lang, data }: { lang: 'fr' | 'en' | 'es'; data: SiteData 
   };
 
   const [activeProgIndex, setActiveProgIndex] = useState(0);
+  const [programWindow, setProgramWindow] = useState(0);
 
   const operationalSpotlightPrograms = [
     {
@@ -918,9 +929,14 @@ export function Home({ lang, data }: { lang: 'fr' | 'en' | 'es'; data: SiteData 
             <h2 className="spotlight-main-title">
               L'énergie d'apprendre, la dignité de construire son avenir.
             </h2>
-            <p className="spotlight-editorial-text">
-              Des millions d&apos;enfants et de jeunes en Haïti font aujourd&apos;hui face à une précarité qui freine leur élan, et l&apos;urgence éducative ne cesse de s&apos;aggraver. Ce manque d&apos;accès à l&apos;école et aux métiers d&apos;avenir a un impact dévastateur sur les familles et l&apos;autonomie des communautés. Sans soutien continu, cette vulnérabilité peut persister pendant des décennies. Des salles de classe aux ateliers techniques solaires et numériques, PAAD déploie des dispositifs concrets au plus près du terrain pour réintégrer les enfants durablement et former la jeunesse aux compétences clés. C&apos;est une mission d&apos;émancipation humaine qui exige une action immédiate et résolue.
-            </p>
+            <div className="terrain-editorial-copy">
+              <p className="terrain-lead">
+                Des millions d&apos;enfants et de jeunes en Haïti font aujourd&apos;hui face à une précarité qui freine leur élan, tandis que l&apos;urgence éducative continue de s&apos;aggraver.
+              </p>
+              <p className="spotlight-editorial-text">
+                Le manque d&apos;accès à l&apos;école et aux métiers d&apos;avenir fragilise les familles et l&apos;autonomie des communautés. Des salles de classe aux ateliers techniques solaires et numériques, PAAD déploie des réponses concrètes pour réintégrer durablement les enfants et transmettre aux jeunes des compétences utiles. Cette mission d&apos;émancipation exige une action immédiate et continue.
+              </p>
+            </div>
 
             <div className="problem-focus" aria-label="Les deux dimensions de la problématique">
               <div><BookOpen size={20}/><span><strong>Éducation</strong>Apprendre et développer des compétences utiles.</span></div>
@@ -1134,136 +1150,46 @@ export function Home({ lang, data }: { lang: 'fr' | 'en' | 'es'; data: SiteData 
     </section>
 
 
-    {/* 5. PROGRAMMES OPÉRATIONNELS (STYLE SPOTLIGHT 4 CASES & CONTRÔLES EXACT STYLE CAPTURE) */}
-    <section className="section-klabu-spotlight" id="programmes">
+    {/* 5. PROGRAMMES OPÉRATIONNELS : TROIS CARTES VISIBLES, UNE EN RESERVE */}
+    <section className="programs-showcase" id="programmes">
       <div className="wrap">
-        <div className="klabu-spotlight-row klabu-spotlight-unified">
-          {/* Colonne Gauche : Titre + 4 Cartes Métadonnées + Contexte + Contrôles du bas */}
-          <div className="spotlight-text-side">
-            <span className="klabu-spotlight-eyebrow">Programmes opérationnels</span>
-            <h2 className="spotlight-main-title">
-              Des réponses concrètes sur le terrain
-            </h2>
-            <p className="spotlight-editorial-text" style={{ marginBottom: '16px' }}>
-              Chaque dispositif apporte des résultats mesurables au plus près des besoins des familles.
-            </p>
-
-            {/* 4 Cartes Métadonnées Dynamiques (Style capture utilisateur) */}
-            <div className="spotlight-dynamic-meta">
-              <div className="spotlight-meta-item">
-                <span className="meta-label">TERRITOIRE</span>
-                <span className="meta-value">{activeProg.territoire}</span>
-              </div>
-              <div className="spotlight-meta-item">
-                <span className="meta-label">DEPUIS</span>
-                <span className="meta-value">{activeProg.depuis}</span>
-              </div>
-              <div className="spotlight-meta-item">
-                <span className="meta-label">BÉNÉFICIAIRE</span>
-                <span className="meta-value">{activeProg.beneficiaire}</span>
-              </div>
-              <div className="spotlight-meta-item">
-                <span className="meta-label">ACTION</span>
-                <span className="meta-value">{activeProg.action}</span>
-              </div>
-            </div>
-
-            <p className="spotlight-context-caption">
-              {activeProg.context}
-            </p>
-
-            {/* Barre de commandes en bas : Navigation fléchée + Bouton Découvrir */}
-            <div className="spotlight-bottom-controls-row">
-              <div className="spotlight-carousel-controls">
-                <button
-                  type="button"
-                  className="spotlight-arrow-btn"
-                  onClick={() => setActiveProgIndex((prev) => (prev - 1 + operationalSpotlightPrograms.length) % operationalSpotlightPrograms.length)}
-                  aria-label="Programme précédent"
-                  title="Programme précédent"
-                >
-                  <ArrowLeft size={18} strokeWidth={2.4} />
-                </button>
-
-                <div className="spotlight-slide-indicator">
-                  <span className="indicator-current">0{activeProgIndex + 1}</span>
-                  <span className="indicator-sep">/</span>
-                  <span className="indicator-total">0{operationalSpotlightPrograms.length}</span>
-                </div>
-
-                <button
-                  type="button"
-                  className="spotlight-arrow-btn"
-                  onClick={() => setActiveProgIndex((prev) => (prev + 1) % operationalSpotlightPrograms.length)}
-                  aria-label="Programme suivant"
-                  title="Programme suivant"
-                >
-                  <ArrowRight size={18} strokeWidth={2.4} />
-                </button>
-
-                <div className="spotlight-dots">
-                  {operationalSpotlightPrograms.map((p, i) => (
-                    <button
-                      key={p.id}
-                      type="button"
-                      className={`spotlight-dot ${i === activeProgIndex ? 'is-active' : ''}`}
-                      onClick={() => setActiveProgIndex(i)}
-                      aria-label={`Aller au programme ${i + 1}`}
-                    />
-                  ))}
-                </div>
-              </div>
-
-              <Link href={href(activeProg.path)} className="program-discover-btn">
-                <span>Découvrir ce programme</span>
-                <ArrowRight size={16} strokeWidth={2.2} />
-              </Link>
-            </div>
+        <div className="programs-showcase-head">
+          <div>
+            <span>Programmes opérationnels</span>
+            <h2>Des réponses concrètes sur le terrain</h2>
           </div>
+          <p>Chaque dispositif apporte des résultats mesurables au plus près des besoins des familles.</p>
+        </div>
 
-          {/* Colonne Droite : Photo du programme avec flèches tactiles, badges et bandeau d'info */}
-          <div className="klabu-spotlight-media spotlight-carousel-media">
-            <div className="klabu-media-frame spotlight-carousel-frame">
-              <Image
-                key={activeProg.id}
-                src={activeProg.image}
-                alt={activeProg.alt}
-                fill
-                sizes="(max-width: 900px) 100vw, 55vw"
-                className="klabu-media-img spotlight-fade-in"
-              />
-
-              {/* Badge sticker de coin */}
-              <div className={`klabu-sticker-badge ${activeProg.stickerClass}`}>
-                <span>{activeProg.stickerText}</span>
-                <strong>{activeProg.stickerSub}</strong>
-              </div>
-
-              {/* Flèches tactiles superposées sur la photo */}
-              <button
-                type="button"
-                className="spotlight-overlay-arrow arrow-prev"
-                onClick={() => setActiveProgIndex((prev) => (prev - 1 + operationalSpotlightPrograms.length) % operationalSpotlightPrograms.length)}
-                aria-label="Programme précédent"
-              >
-                <ArrowLeft size={22} strokeWidth={2.5} />
-              </button>
-              <button
-                type="button"
-                className="spotlight-overlay-arrow arrow-next"
-                onClick={() => setActiveProgIndex((prev) => (prev + 1) % operationalSpotlightPrograms.length)}
-                aria-label="Programme suivant"
-              >
-                <ArrowRight size={22} strokeWidth={2.5} />
-              </button>
-
-              {/* Bandeau d'information sur la photo */}
-              <div className="spotlight-media-caption">
-                <span className="caption-tag">{activeProg.action}</span>
-                <span className="caption-text">{activeProg.alt}</span>
-              </div>
-            </div>
+        <div className="programs-viewport">
+          <div className="programs-cards-track" style={{ transform: `translateX(${programWindow * -25}%)` }}>
+            {operationalSpotlightPrograms.map((program, index) => (
+              <article className="program-showcase-card" key={program.id}>
+                <div className="program-card-media">
+                  <Image src={program.image} alt={program.alt} fill sizes="(max-width: 760px) 84vw, 33vw"/>
+                  <span>{String(index + 1).padStart(2, '0')}</span>
+                  <strong>{program.stickerSub}</strong>
+                </div>
+                <div className="program-card-body">
+                  <span className="program-card-action">{program.action}</span>
+                  <h3>{program.context}</h3>
+                  <dl>
+                    <div><dt>Territoire</dt><dd>{program.territoire}</dd></div>
+                    <div><dt>Depuis</dt><dd>{program.depuis}</dd></div>
+                    <div><dt>Bénéficiaire</dt><dd>{program.beneficiaire}</dd></div>
+                  </dl>
+                  <Link href={href(program.path)}>Découvrir ce programme <ArrowRight size={17}/></Link>
+                </div>
+              </article>
+            ))}
           </div>
+        </div>
+
+        <div className="programs-showcase-nav">
+          <button type="button" onClick={() => setProgramWindow(0)} disabled={programWindow === 0} aria-label="Afficher les premiers programmes"><ArrowLeft size={20}/></button>
+          <span><strong>0{programWindow + 1}</strong> / 02</span>
+          <button type="button" onClick={() => setProgramWindow(1)} disabled={programWindow === 1} aria-label="Afficher le dernier programme"><ArrowRight size={20}/></button>
+          <div><i className={programWindow === 0 ? 'active' : ''}/><i className={programWindow === 1 ? 'active' : ''}/></div>
         </div>
       </div>
     </section>
@@ -1319,34 +1245,34 @@ export function Home({ lang, data }: { lang: 'fr' | 'en' | 'es'; data: SiteData 
     <section className="section-impact-stats" id="impact">
       <div className="wrap">
         <div className="impact-stats-header">
-          <span style={{ fontSize: '13px', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '.1em', color: '#fde68a', display: 'block', marginBottom: '8px' }}>
+          <span className="impact-eyebrow">
             Mesure &amp; Évaluation
           </span>
           <h2>Notre impact en chiffres</h2>
-          <p style={{ fontSize: '17px', color: '#e5d8ec', margin: 0 }}>
+          <p className="impact-intro">
             Des indicateurs concrets suivis et documentés au plus près des réalités de terrain.
           </p>
         </div>
 
         <div className="impact-stats-grid">
           <div className="impact-stat-item">
-            <AnimatedCounter end={1250} suffix="+" />
+            <AnimatedCounter end={1250} suffix="+" duration={1500}/>
             <span className="stat-label">enfants accompagnés vers l’école</span>
           </div>
           <div className="impact-stat-item">
-            <AnimatedCounter end={480} suffix="+" />
+            <AnimatedCounter end={480} suffix="+" duration={1650}/>
             <span className="stat-label">jeunes formés à un métier</span>
           </div>
           <div className="impact-stat-item">
-            <AnimatedCounter end={120} suffix="+" />
+            <AnimatedCounter end={120} suffix="+" duration={1800}/>
             <span className="stat-label">entrepreneurs et micro-activités soutenus</span>
           </div>
           <div className="impact-stat-item">
-            <AnimatedCounter end={18} suffix="" />
+            <AnimatedCounter end={18} suffix="" duration={1950}/>
             <span className="stat-label">projets communautaires réalisés</span>
           </div>
           <div className="impact-stat-item">
-            <AnimatedCounter end={25} suffix="+" />
+            <AnimatedCounter end={25} suffix="+" duration={2100}/>
             <span className="stat-label">partenaires et écoles mobilisés</span>
           </div>
         </div>
@@ -1670,15 +1596,15 @@ export function Home({ lang, data }: { lang: 'fr' | 'en' | 'es'; data: SiteData 
       <div className="wrap">
         <div className="newsletter-inner-box">
           <Eyebrow>Restons connectés</Eyebrow>
-          <h2 style={{ fontFamily: 'Manrope, Arial, sans-serif', fontSize: 'clamp(28px, 3.2vw, 40px)', fontWeight: 800, color: '#1e1a22', margin: '8px 0 12px' }}>
+          <h2 className="newsletter-title">
             S’informer, c’est déjà agir
           </h2>
-          <p style={{ fontSize: '16.5px', color: '#554e5b', lineHeight: 1.6, margin: 0 }}>
+          <p className="newsletter-copy">
             Recevez les actualités de PAAD, les avancées de nos projets et les témoignages du terrain.
           </p>
 
           {newsSent ? (
-            <div style={{ marginTop: '24px', background: '#ffffff', color: 'var(--purple)', padding: '14px 24px', borderRadius: '9999px', display: 'inline-block', fontWeight: 800 }}>
+            <div className="newsletter-success">
               ✓ Merci pour votre inscription !
             </div>
           ) : (
@@ -1702,7 +1628,7 @@ export function Home({ lang, data }: { lang: 'fr' | 'en' | 'es'; data: SiteData 
                 aria-label="Email"
               />
               <button type="submit" className="newsletter-submit-btn">
-                Je m’inscris
+                Je m’inscris <ArrowRight size={18}/>
               </button>
             </form>
           )}
@@ -1719,9 +1645,9 @@ export function ContentPage({ lang, slug, data }: { lang: 'fr' | 'en' | 'es'; sl
   const page = pages[slug];
   if (!page) return null;
   if (page.type === 'donate') return <DonationForm/>;
+  if (page.type === 'contact') return <ContactForm topic={page.kicker}/>;
   return <><section className="page-hero"><div className="wrap"><Eyebrow>{page.kicker}</Eyebrow><h1>{page.title}</h1><p>{page.text}</p></div></section><div className="page-body wrap">
     {page.type !== 'contact' && <PageBody lang={lang} slug={slug} data={data}/>} 
-    {page.type === 'contact' && <ContactForm topic={page.kicker}/>}
   </div><section className="page-cta"><div className="wrap"><h2>Construisons la suite ensemble.</h2><Link className="button button-light" href={`/${lang}/contact`}>Prendre contact <ArrowRight size={17}/></Link></div></section></>;
 }
 
@@ -1828,8 +1754,46 @@ function DonationForm() {
 }
 
 function ContactForm({ topic }: { topic: string }) {
-  const [name,setName]=useState(''); const [email,setEmail]=useState(''); const [message,setMessage]=useState('');
-  const recipient = process.env.NEXT_PUBLIC_CONTACT_EMAIL;
-  const mail = `mailto:${recipient}?subject=${encodeURIComponent(`${topic} - ${name}`)}&body=${encodeURIComponent(`${message}\n\nNom : ${name}\nEmail : ${email}`)}`;
-  return <div className="form-layout"><div><h2>Écrivez-nous</h2><p>{recipient ? 'Votre message s’ouvrira dans votre logiciel de messagerie.' : 'Le formulaire sera activé dès que PAAD aura confirmé son adresse de contact officielle.'}</p>{recipient && <form onSubmit={e=>{e.preventDefault();location.href=mail}}><label className="field-label" htmlFor="name">Votre nom</label><input id="name" required value={name} onChange={e=>setName(e.target.value)}/><label className="field-label" htmlFor="email">Votre email</label><input id="email" type="email" required value={email} onChange={e=>setEmail(e.target.value)}/><label className="field-label" htmlFor="message">Votre message</label><textarea id="message" required rows={6} value={message} onChange={e=>setMessage(e.target.value)}/><button className="button button-primary" type="submit">Préparer le message <ArrowRight size={17}/></button></form>}</div><aside><Globe2 size={30}/><h3>Un projet à imaginer ensemble ?</h3><p>Présentez votre idée, votre territoire et les personnes que vous souhaitez mobiliser.</p></aside></div>;
+  const [name,setName]=useState('');
+  const [email,setEmail]=useState('');
+  const [subject,setSubject]=useState(topic || 'Prise de contact');
+  const [message,setMessage]=useState('');
+  const recipient = process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'contact@paad-haiti.org';
+  const mail = `mailto:${recipient}?subject=${encodeURIComponent(`${subject} - ${name}`)}&body=${encodeURIComponent(`${message}\n\nNom : ${name}\nEmail : ${email}`)}`;
+
+  return <section className="contact-screen">
+    <div className="contact-visual">
+      <Image src="/images/haiti-digital-class.jpg" alt="Jeunes en apprentissage avec PAAD en Haïti" fill priority sizes="50vw"/>
+      <div className="contact-visual-shade"/>
+      <Link href="/fr" className="contact-brand"><Image src="/images/paad-emblem.webp" alt="" width={48} height={48}/><strong>PAAD</strong></Link>
+      <div className="contact-visual-content">
+        <h2>Construisons ensemble un avenir durable pour Haïti.</h2>
+        <p>Partagez votre projet, vos idées ou votre souhait de partenariat.</p>
+        <dl>
+          <div><dt>Siège</dt><dd>Port-au-Prince, Haïti</dd></div>
+          <div><dt>E-mail</dt><dd>{recipient}</dd></div>
+          <div><dt>Réponse</dt><dd>Sous 72 heures ouvrées</dd></div>
+        </dl>
+      </div>
+    </div>
+    <div className="contact-panel" tabIndex={0} aria-label="Formulaire de contact">
+      <div className="contact-form-inner">
+        <span className="contact-kicker">Prendre contact</span>
+        <h1>Écrivez à l’équipe PAAD</h1>
+        <p>Présentez-nous votre demande. Notre équipe vous répondra dans les meilleurs délais.</p>
+        <form onSubmit={e=>{e.preventDefault();location.href=mail}}>
+          <div className="contact-fields two">
+            <label>Votre nom complet<input required value={name} onChange={e=>setName(e.target.value)} placeholder="Ex. Jean Dupont"/></label>
+            <label>Adresse e-mail<input type="email" required value={email} onChange={e=>setEmail(e.target.value)} placeholder="nom@exemple.org"/></label>
+          </div>
+          <div className="contact-fields">
+            <label>Sujet<select required value={subject} onChange={e=>setSubject(e.target.value)}><option>Prise de contact</option><option>Partenariat</option><option>Bénévolat</option><option>Soutien financier / Don</option><option>Presse &amp; Médias</option></select></label>
+            <label>Votre message<textarea required rows={7} value={message} onChange={e=>setMessage(e.target.value)} placeholder="Expliquez votre projet, votre question ou votre proposition..."/></label>
+          </div>
+          <button className="contact-submit" type="submit">Préparer le message <ArrowRight size={18}/></button>
+          <p className="contact-legal">L’envoi ouvre votre logiciel de messagerie. PAAD utilise vos informations uniquement pour répondre à votre demande.</p>
+        </form>
+      </div>
+    </div>
+  </section>;
 }

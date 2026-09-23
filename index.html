@@ -568,6 +568,11 @@
         padding: 28px 22px;
       }
     }
+    /* Le visuel de contact reste valide lorsque index.html est ouvert directement. */
+    #contactModal .contact-modal-panel {
+      background: linear-gradient(180deg, rgba(50,19,51,.26), rgba(50,19,51,.91)), url('./public/images/haiti-digital-class.jpg') center/cover no-repeat;
+    }
+
     /* Palette PAAD du formulaire de don autonome. */
     #donModal .farm-modal-content,
     #donModal .farm-donate-card,
@@ -947,9 +952,14 @@
             <h2 class="spotlight-main-title">
               L'énergie d'apprendre, la dignité de construire son avenir.
             </h2>
-            <p class="spotlight-editorial-text">
-              Des millions d'enfants et de jeunes en Haïti font aujourd'hui face à une précarité qui freine leur élan, et l'urgence éducative ne cesse de s'aggraver. Ce manque d'accès à l'école et aux métiers d'avenir a un impact dévastateur sur les familles et l'autonomie des communautés. Sans soutien continu, cette vulnérabilité peut persister pendant des décennies. Des salles de classe aux ateliers techniques solaires et numériques, PAAD déploie des dispositifs concrets au plus près du terrain pour réintégrer les enfants durablement et former la jeunesse aux compétences clés. C'est une mission d'émancipation humaine qui exige une action immédiate et résolue.
-            </p>
+            <div class="terrain-editorial-copy">
+              <p class="terrain-lead">
+                Des millions d'enfants et de jeunes en Haïti font aujourd'hui face à une précarité qui freine leur élan, tandis que l'urgence éducative continue de s'aggraver.
+              </p>
+              <p class="spotlight-editorial-text">
+                Le manque d'accès à l'école et aux métiers d'avenir fragilise les familles et l'autonomie des communautés. Des salles de classe aux ateliers techniques solaires et numériques, PAAD déploie des réponses concrètes pour réintégrer durablement les enfants et transmettre aux jeunes des compétences utiles. Cette mission d'émancipation exige une action immédiate et continue.
+              </p>
+            </div>
 
             <div class="problem-focus" aria-label="Les deux dimensions de la problématique">
               <div>
@@ -1125,6 +1135,7 @@
             <div class="ocean-duo-scrim"></div>
           </div>
           <div class="ocean-duo-content">
+            <span class="ocean-duo-index">01 · Éducation</span>
             <h3 class="ocean-duo-title">
               <span class="wt-light">DÉVELOPPER</span><br>
               <span class="wt-bold">L'ÉDUCATION</span>
@@ -1133,7 +1144,7 @@
               Bourses scolaires, fournitures, formation continue des instituteurs et cantines scolaires pour garantir un apprentissage digne et durable à chaque enfant en Haïti.
             </p>
             <a href="#programmes" class="ocean-duo-btn">
-              APPRENDRE ENCORE PLUS
+              Découvrir nos actions <span aria-hidden="true">→</span>
             </a>
           </div>
         </div>
@@ -1149,6 +1160,7 @@
             <div class="ocean-duo-scrim"></div>
           </div>
           <div class="ocean-duo-content">
+            <span class="ocean-duo-index">02 · Autonomie</span>
             <h3 class="ocean-duo-title">
               <span class="wt-light">DÉVELOPPEMENT</span><br>
               <span class="wt-bold">ÉCONOMIQUE</span>
@@ -1157,7 +1169,7 @@
               Formations techniques qualifiantes aux métiers d’avenir, soutien à l’entrepreneuriat des jeunes et amorçage d'ateliers pérennes pour bâtir une autonomie locale.
             </p>
             <a href="#programmes" class="ocean-duo-btn">
-              APPRENDRE ENCORE PLUS
+              Découvrir nos actions <span aria-hidden="true">→</span>
             </a>
           </div>
         </div>
@@ -1165,8 +1177,49 @@
     </section>
 
 
-    <!-- 5. PROGRAMMES OPÉRATIONNELS (STYLE SPOTLIGHT 4 CASES & CONTRÔLES EXACT STYLE CAPTURE) -->
-    <section class="section-klabu-spotlight" id="programmes">
+    <!-- 5. PROGRAMMES OPÉRATIONNELS : TROIS CARTES VISIBLES -->
+    <section class="programs-showcase" id="programmes">
+      <div class="wrap">
+        <div class="programs-showcase-head">
+          <div>
+            <span>Programmes opérationnels</span>
+            <h2>Des réponses concrètes sur le terrain</h2>
+          </div>
+          <p>Chaque dispositif apporte des résultats mesurables au plus près des besoins des familles.</p>
+        </div>
+
+        <div class="programs-viewport">
+          <div class="programs-cards-track" id="programs-static-track">
+            <article class="program-showcase-card">
+              <div class="program-card-media"><img src="./public/images/haiti-tech-workshop.jpg" alt="Atelier de formation technique solaire"><span>01</span><strong>Solaire</strong></div>
+              <div class="program-card-body"><span class="program-card-action">PAAD Autonomie Solaire</span><h3>Atelier technique certifiant · Installation d'énergie propre pour écoles et dispensaires</h3><dl><div><dt>Territoire</dt><dd>Cap-Haïtien · Haïti</dd></div><div><dt>Depuis</dt><dd>2024</dd></div><div><dt>Bénéficiaire</dt><dd>Jean-Baptiste &amp; la promotion solaire</dd></div></dl><a href="#domaines">Découvrir ce programme <span>→</span></a></div>
+            </article>
+            <article class="program-showcase-card">
+              <div class="program-card-media"><img src="./public/images/haiti-student-classroom.jpg" alt="Éducation et accompagnement scolaire"><span>02</span><strong>Éducation</strong></div>
+              <div class="program-card-body"><span class="program-card-action">PAAD Éducation &amp; Bourses</span><h3>Scolarisation, cantine scolaire quotidienne et kits pédagogiques complets</h3><dl><div><dt>Territoire</dt><dd>Port-au-Prince · Haïti</dd></div><div><dt>Depuis</dt><dd>2023</dd></div><div><dt>Bénéficiaire</dt><dd>Fabiola et 1 250 écoliers</dd></div></dl><a href="#domaines">Découvrir ce programme <span>→</span></a></div>
+            </article>
+            <article class="program-showcase-card">
+              <div class="program-card-media"><img src="./public/images/haiti-digital-class.jpg" alt="Laboratoire informatique et numérique"><span>03</span><strong>Numérique</strong></div>
+              <div class="program-card-body"><span class="program-card-action">PAAD Digital Lab</span><h3>Initiation informatique, bureautique et compétences numériques pour le travail moderne</h3><dl><div><dt>Territoire</dt><dd>Gonaïves &amp; Ouanaminthe</dd></div><div><dt>Depuis</dt><dd>2024</dd></div><div><dt>Bénéficiaire</dt><dd>480 jeunes apprenants</dd></div></dl><a href="#domaines">Découvrir ce programme <span>→</span></a></div>
+            </article>
+            <article class="program-showcase-card">
+              <div class="program-card-media"><img src="./public/images/workshop-haiti.webp" alt="Entrepreneuriat et autonomie économique"><span>04</span><strong>Économie</strong></div>
+              <div class="program-card-body"><span class="program-card-action">PAAD Entrepreneuriat</span><h3>Micro-financement, mentorat en gestion et autonomie économique des familles</h3><dl><div><dt>Territoire</dt><dd>Jacmel &amp; Région Sud</dd></div><div><dt>Depuis</dt><dd>2023</dd></div><div><dt>Bénéficiaire</dt><dd>120 femmes entrepreneures</dd></div></dl><a href="#domaines">Découvrir ce programme <span>→</span></a></div>
+            </article>
+          </div>
+        </div>
+
+        <div class="programs-showcase-nav">
+          <button id="programs-static-prev" type="button" onclick="setStaticProgramWindow(0)" disabled aria-label="Afficher les premiers programmes">←</button>
+          <span><strong id="programs-static-current">01</strong> / 02</span>
+          <button id="programs-static-next" type="button" onclick="setStaticProgramWindow(1)" aria-label="Afficher le dernier programme">→</button>
+          <div><i id="programs-static-dot-1" class="active"></i><i id="programs-static-dot-2"></i></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ancienne présentation conservée hors affichage pour compatibilité des scripts -->
+    <section class="section-klabu-spotlight" id="programmes-legacy" hidden>
       <div class="wrap">
         <div class="klabu-spotlight-row klabu-spotlight-unified">
           <!-- Colonne Gauche : Titre + 4 Cartes Métadonnées + Contexte + Contrôles du bas -->
@@ -1301,11 +1354,11 @@
     <section class="section-impact-stats" id="impact">
       <div class="wrap">
         <div class="impact-stats-header">
-          <span style="font-size:13px; font-weight:800; text-transform:uppercase; letter-spacing:.1em; color:#fde68a; display:block; margin-bottom:8px;">
+          <span class="impact-eyebrow">
             Mesure &amp; Évaluation
           </span>
           <h2>Notre impact en chiffres</h2>
-          <p style="font-size:17px; color:#e5d8ec; margin:0;">
+          <p class="impact-intro">
             Des indicateurs concrets suivis et documentés au plus près des réalités de terrain.
           </p>
         </div>
@@ -1541,10 +1594,10 @@
       <div class="wrap">
         <div class="newsletter-inner-box">
           <span class="eyebrow"><span class="eyebrow-line"></span>Restons connectés</span>
-          <h2 style="font-family:Manrope, Arial, sans-serif; font-size:clamp(28px, 3.2vw, 40px); font-weight:800; color:#1e1a22; margin:8px 0 12px;">
+          <h2 class="newsletter-title">
             S’informer, c’est déjà agir
           </h2>
-          <p style="font-size:16.5px; color:#554e5b; line-height:1.6; margin:0;">
+          <p class="newsletter-copy">
             Recevez les actualités de PAAD, les avancées de nos projets et les témoignages du terrain.
           </p>
 
@@ -1566,7 +1619,8 @@
               aria-label="Adresse email pour la newsletter"
             >
             <button type="submit" class="newsletter-submit-btn">
-              Je m’inscris
+              <span>Je m’inscris</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </button>
           </form>
         </div>
@@ -1726,11 +1780,21 @@
 
   <!-- 15. FOOTER MULTI-COLONNES DU PARCOURS -->
   <footer class="footer" style="background:var(--purple-dark); color:#FAF8FB; border-top:none;">
+    <div class="wrap footer-callout">
+      <div>
+        <span>Construire la suite</span>
+        <h2>Agissons aujourd’hui pour ouvrir de nouvelles possibilités en Haïti.</h2>
+      </div>
+      <div class="footer-callout-actions">
+        <a href="#don" onclick="openModal('donModal'); return false;">Faire un don <span aria-hidden="true">♡</span></a>
+        <a href="#contact" onclick="openModal('contactModal', 'Contact'); return false;">Nous contacter <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
     <div class="wrap mockup-footer-top">
       <div class="mockup-footer-brand">
-        <a class="footer-logo" href="./index.html" style="color:#FAF8FB; display:inline-flex; align-items:center; gap:8px;">
-          <img src="./public/images/paad-emblem.webp" alt="Logo PAAD" width="38" height="38">
-          <span>PAAD</span>
+        <a class="ocean-logo-badge footer-menu-logo" href="./index.html" aria-label="PAAD, accueil">
+          <img src="./public/images/paad-emblem-white-trans.png" alt="Logo PAAD" class="ocean-logo-emblem" width="40" height="40">
+          <span class="ocean-logo-text">PAAD</span>
         </a>
         <p>Programme d’Actions et d’Aide pour le Développement. Agir avec les communautés en Haïti pour un avenir durable.</p>
         <span class="mockup-social-label">Suivez-nous</span>
@@ -1962,6 +2026,22 @@
 
   <!-- SCRIPTS D'INTERACTION -->
   <script>
+    function setStaticProgramWindow(index) {
+      const track = document.getElementById('programs-static-track');
+      const previous = document.getElementById('programs-static-prev');
+      const next = document.getElementById('programs-static-next');
+      const current = document.getElementById('programs-static-current');
+      const dot1 = document.getElementById('programs-static-dot-1');
+      const dot2 = document.getElementById('programs-static-dot-2');
+      if (!track) return;
+      track.style.transform = index === 1 ? 'translateX(-25%)' : 'translateX(0)';
+      if (previous) previous.disabled = index === 0;
+      if (next) next.disabled = index === 1;
+      if (current) current.textContent = index === 1 ? '02' : '01';
+      dot1?.classList.toggle('active', index === 0);
+      dot2?.classList.toggle('active', index === 1);
+    }
+
     // Navigation mobile
     const menuBtn = document.getElementById('menu-btn');
     const mobileNav = document.getElementById('mobile-nav');
