@@ -2047,6 +2047,17 @@
       dot2?.classList.toggle('active', index === 1);
     }
 
+    (function duplicateAllianceItems() {
+      const track = document.querySelector('#partenaires .ocean-alliances-grid');
+      if (!track || track.dataset.loopReady === 'true') return;
+      Array.from(track.children).forEach((item) => {
+        const clone = item.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        track.appendChild(clone);
+      });
+      track.dataset.loopReady = 'true';
+    })();
+
     function scrollActCard(index) {
       const track = document.getElementById('act-cards-track');
       if (!track || !track.children[index]) return;

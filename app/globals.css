@@ -5506,3 +5506,17 @@
 
 /* Suppression de la barre verticale exterieure de la newsletter. */
 #newsletter.section-newsletter::before{display:none}
+
+/* Alliances en mouvement continu. */
+@keyframes alliance-marquee{from{transform:translateX(0)}to{transform:translateX(calc(-50% - 9px))}}
+#partenaires.section-partners{overflow:hidden;text-align:center}
+#partenaires>.wrap{display:block;width:100%;max-width:none}
+#partenaires .ocean-alliances-title{margin:0 auto 14px;text-align:center}
+#partenaires .ocean-alliances-subtitle{max-width:760px;margin:0 auto 22px;text-align:center}
+#partenaires .ocean-alliances-desc{max-width:780px;margin:0 auto 38px;text-align:center}
+#partenaires .ocean-alliances-grid{display:flex;grid-template-columns:none;width:max-content;max-width:none;margin:0 0 42px;border:0;gap:18px;animation:alliance-marquee 34s linear infinite;will-change:transform}
+#partenaires .ocean-alliances-grid:hover{animation-play-state:paused}
+#partenaires .ocean-alliance-logo-item{flex:0 0 290px;width:290px;min-height:112px;padding:21px;background:#faf8fb;border:1px solid #dccccf;border-radius:0;justify-content:flex-start}
+#partenaires .ocean-alliances-btn{display:flex;width:fit-content;margin:0 auto}
+@media(prefers-reduced-motion:reduce){#partenaires .ocean-alliances-grid{animation:none;transform:none}#partenaires{overflow-x:auto}}
+@media(max-width:600px){#partenaires .ocean-alliance-logo-item{flex-basis:255px;width:255px}#partenaires .ocean-alliances-grid{animation-duration:28s}}
