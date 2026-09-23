@@ -1672,9 +1672,298 @@ export function ContentPage({ lang, slug, data }: { lang: 'fr' | 'en' | 'es'; sl
   if (!page) return null;
   if (page.type === 'donate') return <DonationForm lang={lang}/>;
   if (page.type === 'contact') return <ContactForm topic={page.kicker} lang={lang}/>;
+  if (slug === 'qui-sommes-nous') return <AboutPage lang={lang} data={data}/>;
   return <><section className="page-hero"><div className="wrap"><Eyebrow>{page.kicker}</Eyebrow><h1>{page.title}</h1><p>{page.text}</p></div></section><div className="page-body wrap">
     {page.type !== 'contact' && <PageBody lang={lang} slug={slug} data={data}/>} 
   </div><section className="page-cta"><div className="wrap"><h2>Construisons la suite ensemble.</h2><Link className="button button-light" href={`/${lang}/contact`}>Prendre contact <ArrowRight size={17}/></Link></div></section></>;
+}
+
+export function AboutPage({ lang, data }: { lang: 'fr' | 'en' | 'es'; data: SiteData }) {
+  const href = (path: string) => `/${lang}/${path}`;
+
+  return (
+    <>
+      {/* 1. HERO MONUMENTAL */}
+      <section className="about-hero" id="top">
+        <div className="about-hero-bg">
+          <Image
+            src="/images/haiti-cinematic-hero.jpg"
+            alt="Jeunesse haïtienne et communauté PAAD"
+            fill
+            sizes="100vw"
+            priority
+            style={{ objectFit: 'cover' }}
+          />
+          <div className="about-hero-scrim" />
+        </div>
+        <div className="wrap about-hero-content">
+          <span className="about-hero-kicker">
+            <span style={{ display: 'inline-block', width: 8, height: 8, borderRadius: '50%', background: 'var(--purple-hover)' }} />
+            Organisation non gouvernementale · Haïti
+          </span>
+          <h1 className="about-hero-title">
+            Bâtir l’avenir avec et pour les communautés d’Haïti.
+          </h1>
+          <p className="about-hero-lead">
+            Créé en 2024, le <strong>Programme d’Actions et d’Aide pour le Développement (PAAD)</strong> est une organisation laïque, indépendante et à but non lucratif basée à Port-au-Prince. Notre mission : transformer l’urgence éducative et économique en autonomie pérenne, directement sur le terrain.
+          </p>
+
+          <div className="about-facts-strip">
+            <div className="about-fact-item">
+              <span>Création</span>
+              <strong>2024</strong>
+            </div>
+            <div className="about-fact-item">
+              <span>Présence</span>
+              <strong>100% Terrain</strong>
+            </div>
+            <div className="about-fact-item">
+              <span>Siège social</span>
+              <strong>Port-au-Prince</strong>
+            </div>
+            <div className="about-fact-item">
+              <span>Piliers d’action</span>
+              <strong>Éducation &amp; Autonomie</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2. SECTION HISTOIRE ET FONDATION */}
+      <section className="section-history" id="histoire">
+        <div className="wrap">
+          <div className="klabu-spotlight-row klabu-spotlight-unified">
+            <div className="spotlight-text-side">
+              <span className="klabu-spotlight-eyebrow">Notre histoire</span>
+              <h2 className="spotlight-main-title">
+                Trois fondateurs, une conviction partagée.
+              </h2>
+              <div className="terrain-editorial-copy">
+                <p className="terrain-lead">
+                  Face aux défis majeurs auxquels fait face la société haïtienne, nous avons refusé la résignation et le fatalisme. Le développement pérenne ne s’importe pas de l’extérieur : il grandit avec les talents et l’énergie des Haïtiens eux-mêmes.
+                </p>
+                <p className="spotlight-editorial-text">
+                  En 2024, <strong>Renel Rosene</strong>, <strong>Renald Rosene</strong> et <strong>Esther Gladelle Toussaint</strong> unissent leurs expériences du terrain associatif, de l’éducation et de l’ingénierie pour fonder PAAD. Leur boussole : rompre avec l’assistanat d’urgence sans lendemain pour concevoir des programmes durables qui renforcent directement l’autonomie des enfants, des jeunes et des femmes.
+                </p>
+              </div>
+
+              <div className="problem-focus" aria-label="Nos principes d'action">
+                <div>
+                  <BookOpen size={20} />
+                  <span><strong>Écouter avant d’agir</strong>Chaque projet naît d’un dialogue authentique avec les familles et les écoles.</span>
+                </div>
+                <div>
+                  <UsersRound size={20} />
+                  <span><strong>Co-construire avec le terrain</strong>Nous formons et outillons les acteurs locaux pour pérenniser chaque avancée.</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="klabu-spotlight-media spotlight-carousel-media">
+              <div className="klabu-media-frame spotlight-carousel-frame">
+                <Image
+                  src="/images/haiti-student-classroom.jpg"
+                  alt="Enfants apprenant en Haïti avec les bourses PAAD"
+                  fill
+                  sizes="(max-width: 900px) 100vw, 50vw"
+                  style={{ objectFit: 'cover' }}
+                />
+                <div className="klabu-sticker-badge sticker-amber">
+                  <span>PAAD</span>
+                  <strong>FONDATION</strong>
+                </div>
+                <div className="spotlight-media-caption">
+                  <span className="caption-tag">ANCRAGE LOCAL</span>
+                  <span className="caption-text">Port-au-Prince · L’éducation au centre de chaque décision</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Les Fondateurs */}
+          <div className="founders-grid" id="equipe">
+            <div className="founder-card">
+              <span className="founder-index">01 · Cofondateur</span>
+              <h3 className="founder-name">Renel Rosene</h3>
+              <p className="founder-role">Direction Stratégique &amp; Développement</p>
+              <p className="founder-bio">
+                Engagé de longue date pour l’émancipation des jeunes en Haïti, il pilote les orientations stratégiques, les partenariats institutionnels et l’extension des programmes éducatifs et techniques de PAAD.
+              </p>
+            </div>
+
+            <div className="founder-card">
+              <span className="founder-index">02 · Cofondateur</span>
+              <h3 className="founder-name">Renald Rosene</h3>
+              <p className="founder-role">Opérations &amp; Déploiement Terrain</p>
+              <p className="founder-bio">
+                Au contact quotidien des communautés et des équipes locales, il coordonne la logistique des cantines scolaires, la livraison des fournitures et le bon déroulement des ateliers d’apprentissage.
+              </p>
+            </div>
+
+            <div className="founder-card">
+              <span className="founder-index">03 · Cofondatrice</span>
+              <h3 className="founder-name">Esther Gladelle Toussaint</h3>
+              <p className="founder-role">Programmes Pédagogiques &amp; Bourses</p>
+              <p className="founder-bio">
+                Spécialiste de l’accompagnement éducatif et de la pédagogie, elle veille à la sélection rigoureuse des boursiers, au suivi scolaire personnalisé et au soutien des enseignants partenaires.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. SECTION MISSION & VISION */}
+      <section className="section-ocean-duo-pillars" id="mission">
+        <div className="wrap ocean-duo-header">
+          <span className="ocean-duo-eyebrow">Cap stratégique</span>
+          <h2 className="ocean-duo-heading">Notre Mission &amp; Notre Vision</h2>
+          <p className="ocean-duo-sub">
+            L’éducation ouvre l’esprit et donne des repères. L’autonomie économique convertit ce potentiel en dignité concrète et en liberté pour les familles.
+          </p>
+        </div>
+
+        <div className="ocean-duo-grid">
+          <div className="ocean-duo-panel">
+            <div className="ocean-duo-bg">
+              <Image
+                src="/images/hero-child-education.jpg"
+                alt="Enfant souriant avec son cahier d'école en Haïti"
+                fill
+                sizes="(max-width: 900px) 100vw, 50vw"
+                style={{ objectFit: 'cover' }}
+              />
+              <div className="ocean-duo-scrim" />
+            </div>
+            <div className="ocean-duo-content">
+              <span className="ocean-duo-index">01 · Mission</span>
+              <h3 className="ocean-duo-title">
+                <span className="wt-light">DÉVELOPPER</span><br />
+                <span className="wt-bold">L'ÉDUCATION</span>
+              </h3>
+              <p className="ocean-duo-text">
+                Garantir à chaque enfant en Haïti un parcours d’apprentissage complet, digne et continu : bourses d’études annuelles, manuels scolaires neufs, repas chauds quotidiens et formation certifiée des instituteurs.
+              </p>
+              <Link href={href('actions/education')} className="ocean-duo-btn">
+                Découvrir nos actions éducatives <span aria-hidden="true">→</span>
+              </Link>
+            </div>
+          </div>
+
+          <div className="ocean-duo-panel">
+            <div className="ocean-duo-bg">
+              <Image
+                src="/images/haiti-tech-workshop.jpg"
+                alt="Atelier technique et autonomie économique en Haïti"
+                fill
+                sizes="(max-width: 900px) 100vw, 50vw"
+                style={{ objectFit: 'cover' }}
+              />
+              <div className="ocean-duo-scrim" />
+            </div>
+            <div className="ocean-duo-content">
+              <span className="ocean-duo-index">02 · Vision</span>
+              <h3 className="ocean-duo-title">
+                <span className="wt-light">CONSTRUIRE</span><br />
+                <span className="wt-bold">L'AUTONOMIE</span>
+              </h3>
+              <p className="ocean-duo-text">
+                Bâtir un Haïti autonome où la jeunesse dispose des compétences concrètes pour les métiers d’avenir (énergie solaire, numérique, artisanat qualifié) et où les femmes créent leurs propres micro-entreprises pérennes.
+              </p>
+              <Link href={href('actions/developpement-economique')} className="ocean-duo-btn">
+                Découvrir nos filières d’avenir <span aria-hidden="true">→</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. SECTION VALEURS */}
+      <section className="section-values" id="valeurs">
+        <div className="wrap">
+          <div style={{ textAlign: 'center', maxWidth: 720, margin: '0 auto' }}>
+            <Eyebrow>Nos repères</Eyebrow>
+            <h2 style={{ fontFamily: 'Manrope, Arial, sans-serif', fontSize: 'clamp(28px, 3.4vw, 44px)', fontWeight: 800, color: 'var(--purple-dark)', margin: '8px 0 16px' }}>
+              Des principes inébranlables qui guident nos actes
+            </h2>
+            <p style={{ fontSize: '16.5px', color: '#5c5260', lineHeight: 1.6, margin: 0 }}>
+              Chaque euro collecté, chaque décision opérationnelle et chaque partenariat conclu respecte strictement nos quatre engagements fondamentaux.
+            </p>
+          </div>
+
+          <div className="values-grid">
+            <div className="value-card">
+              <div className="value-icon"><ShieldCheck size={26} /></div>
+              <h3>Intégrité &amp; Transparence</h3>
+              <p>Gestion documentée, traçabilité intégrale des fonds et publication de rapports réguliers vérifiés pour honorer la confiance de nos donateurs et partenaires.</p>
+            </div>
+            <div className="value-card">
+              <div className="value-icon"><Compass size={26} /></div>
+              <h3>Ancrage &amp; Proximité</h3>
+              <p>Aucun programme n’est décrété d’en haut : nous travaillons main dans la main avec les directeurs d’école, les comités de parents et les artisans sur le sol haïtien.</p>
+            </div>
+            <div className="value-card">
+              <div className="value-icon"><TrendingUp size={26} /></div>
+              <h3>Autonomie Durable</h3>
+              <p>Nous concevons des projets qui génèrent de la valeur locale et des revenus pérennes afin d’affranchir durablement les bénéficiaires de l’aide humanitaire d’urgence.</p>
+            </div>
+            <div className="value-card">
+              <div className="value-icon"><Heart size={26} /></div>
+              <h3>Solidarité &amp; Dignité</h3>
+              <p>Une approche rigoureusement laïque et apolitique, au service de tous les enfants sans distinction d’origine, de religion ou de condition sociale.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. CHIFFRES D'IMPACT */}
+      <section className="section-impact-stats" id="impact">
+        <div className="wrap">
+          <div style={{ textAlign: 'center', maxWidth: 700, margin: '0 auto 54px' }}>
+            <span style={{ color: '#d8bedb', fontSize: 12, fontWeight: 800, letterSpacing: '0.12em', textTransform: 'uppercase' }}>Notre engagement vérifié</span>
+            <h2 style={{ fontFamily: 'Manrope, Arial, sans-serif', fontSize: 'clamp(30px, 3.5vw, 46px)', fontWeight: 800, color: '#ffffff', margin: '8px 0 14px' }}>
+              Des résultats concrets sur le terrain
+            </h2>
+            <p style={{ color: '#e2d6e4', fontSize: 16, lineHeight: 1.6, margin: 0 }}>
+              Chaque avancée est mesurée et documentée au plus près des écoles et des ateliers en Haïti.
+            </p>
+          </div>
+
+          <div className="impact-stats-grid">
+            <div className="impact-stat-card">
+              <span className="impact-stat-number">1 250+</span>
+              <span className="impact-stat-label">Enfants scolarisés &amp; soutenus</span>
+              <p className="impact-stat-sub">Bourses scolaires complètes et accès aux cantines quotidiennes.</p>
+            </div>
+            <div className="impact-stat-card">
+              <span className="impact-stat-number">480+</span>
+              <span className="impact-stat-label">Jeunes formés aux métiers utiles</span>
+              <p className="impact-stat-sub">Initiation au numérique, énergie solaire et maintenance technique.</p>
+            </div>
+            <div className="impact-stat-card">
+              <span className="impact-stat-number">100%</span>
+              <span className="impact-stat-label">Allocation directe terrain</span>
+              <p className="impact-stat-sub">Chaque euro de don est investi au bénéfice direct des actions en Haïti.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 6. CALL TO ACTION FINAL */}
+      <section className="page-cta">
+        <div className="wrap">
+          <h2>Agissons aujourd’hui pour ouvrir de nouvelles possibilités en Haïti.</h2>
+          <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap', marginTop: 24 }}>
+            <Link className="button button-primary" href={href('faire-un-don')}>
+              Faire un don <Heart size={17} />
+            </Link>
+            <Link className="button button-light" href={href('contact')}>
+              Prendre contact <ArrowRight size={17} />
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
+  );
 }
 
 function DonationForm({ lang = 'fr' }: { lang?: string }) {
