@@ -5494,6 +5494,27 @@
 @media(max-width:980px){.programs-showcase-head{grid-template-columns:1fr;gap:20px}.programs-showcase-head>p{max-width:650px}.programs-cards-track{width:calc(200% + 18px);grid-template-columns:repeat(4,1fr)}.program-showcase-card{height:600px}.programs-cards-track[style*="-25%"]{transform:translateX(-25%)!important}}
 @media(max-width:650px){#programmes.programs-showcase{padding-block:70px}.programs-showcase-head h2{font-size:36px}.programs-showcase-head>p{padding-left:18px;font-size:15px}.programs-viewport{overflow-x:auto;scroll-snap-type:x mandatory}.programs-cards-track,.programs-cards-track[style]{display:flex;width:max-content;transform:none!important}.program-showcase-card{width:min(84vw,360px);height:600px;scroll-snap-align:start}.programs-showcase-nav{justify-content:flex-start}.programs-showcase-nav>button,.programs-showcase-nav>span,.programs-showcase-nav>div{display:none}}
 
+/* Hero accueil aligné sur la direction visuelle des pages institutionnelles */
+#hero.ocean-style-hero{min-height:min(820px,88vh);display:grid;align-items:end;background:var(--purple-dark)}
+#hero .ocean-hero-scrim{background:linear-gradient(90deg,rgba(35,10,37,.95) 0%,rgba(50,19,51,.76) 50%,rgba(50,19,51,.16) 100%)}
+#hero .ocean-hero-content-wrap{position:relative;z-index:3;width:100%;height:auto;min-height:0;margin:0!important;padding:clamp(160px,18vw,230px) 0 clamp(76px,8vw,108px);display:block;transform:none!important}
+#hero .home-milestone-inner{width:min(100% - 80px,1320px);margin-inline:auto;padding:0;display:block;text-align:left}
+.home-milestone-kicker{display:flex;align-items:center;gap:12px;color:#e7cce9;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.home-milestone-kicker:before{content:"";width:38px;height:2px;background:#c888cf}
+#hero .ocean-hero-title{max-width:980px;margin:22px 0 0;color:#fff;font:800 clamp(40px,5.7vw,74px)/1.04 Manrope,Arial,sans-serif;letter-spacing:0;text-transform:none;text-shadow:none}
+.home-milestone-lead{max-width:730px;margin:24px 0 0;color:rgba(255,255,255,.86);font-size:clamp(17px,1.7vw,21px);line-height:1.62}
+.home-milestone-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.home-milestone-actions a,.home-milestone-actions button{min-height:50px;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:0 22px;border:1px solid #fff;border-radius:0;background:#fff;color:var(--purple-dark);font:800 13px DM Sans,Arial,sans-serif;text-decoration:none;cursor:pointer}
+.home-milestone-actions button,.home-milestone-actions a+a{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
+.home-milestone-actions a:hover,.home-milestone-actions button:hover{background:#c888cf;border-color:#c888cf;color:var(--purple-dark)}
+.home-milestone-summary{display:grid;grid-template-columns:repeat(3,1fr);max-width:980px;margin-top:40px;border:1px solid rgba(255,255,255,.25)}
+.home-milestone-summary>div{padding:19px 23px;border-right:1px solid rgba(255,255,255,.25)}
+.home-milestone-summary>div:last-child{border-right:0}
+.home-milestone-summary span{display:block;color:#dcb7df;font-size:10px;font-weight:800;letter-spacing:.11em;text-transform:uppercase}
+.home-milestone-summary strong{display:block;margin-top:7px;color:#fff;font-size:15px;line-height:1.35}
+#hero .ocean-hero-controls{right:max(24px,calc((100vw - 1180px)/2));bottom:26px;left:auto;transform:none}
+@media(max-width:680px){#hero.ocean-style-hero{min-height:800px}#hero .ocean-hero-bg-image{object-position:62% center}#hero .ocean-hero-scrim{background:linear-gradient(180deg,rgba(35,10,37,.26),rgba(35,10,37,.96) 52%)}#hero .ocean-hero-content-wrap{padding:150px 0 62px}#hero .home-milestone-inner{width:calc(100% - 40px);margin-inline:auto}.home-milestone-summary{grid-template-columns:1fr;margin-top:30px}.home-milestone-summary>div{padding:13px 16px;border-right:0;border-bottom:1px solid rgba(255,255,255,.22)}.home-milestone-summary>div:last-child{border-bottom:0}#hero .ocean-hero-controls{right:20px;bottom:18px}}
+
 /* Le logo du footer partage exactement l'arrière-plan du footer */
 .footer .footer-menu-logo{width:auto;min-width:0;height:auto;margin:0 0 22px;padding:0;background:transparent!important;display:inline-flex;align-items:center;gap:12px;color:#fff}
 .footer .footer-menu-logo:hover{background:transparent!important;opacity:.92}
