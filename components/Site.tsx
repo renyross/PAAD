@@ -896,22 +896,18 @@ export function Home({ lang, data }: { lang: 'fr' | 'en' | 'es'; data: SiteData 
         <div className="ocean-hero-scrim" aria-hidden="true" />
       </div>
 
-      {/* Contenu minimaliste signature The Ocean Cleanup */}
+      {/* Contenu éditorial aligné sur le hero À propos */}
       <div className="ocean-hero-content-wrap">
-        <div className="ocean-hero-inner">
+        <div className="ocean-hero-inner home-milestone-inner">
+          <span className="home-milestone-kicker">PAAD · Haïti</span>
           <h1 className="ocean-hero-title">
             AGIR AUJOURD’HUI.<br />
             BÂTIR L’AVENIR D’HAÏTI.
           </h1>
-
-          <div className="ocean-hero-cta-row">
-            {/* CTA signature Ocean Cleanup : cercle flèche violet PAAD + texte */}
-            <a href="#domaines" className="ocean-circle-cta">
-              <span className="ocean-cta-circle">
-                <ArrowRight size={20} strokeWidth={2.6} />
-              </span>
-              <span className="ocean-circle-label">Agir avec nous</span>
-            </a>
+          <p className="home-milestone-lead">Nous agissons avec les communautés pour faciliter l’accès à l’éducation, développer les compétences et créer des chemins durables vers l’autonomie.</p>
+          <div className="home-milestone-actions">
+            <a href="#programmes">Découvrir nos actions <ArrowRight size={17}/></a>
+            <Link href={href('faire-un-don')}>Soutenir PAAD <ArrowRight size={17}/></Link>
           </div>
         </div>
       </div>
@@ -970,24 +966,6 @@ export function Home({ lang, data }: { lang: 'fr' | 'en' | 'es'; data: SiteData 
                 <span>{activeSlide.stickerText}</span>
                 <strong>{activeSlide.stickerSub}</strong>
               </div>
-
-              {/* Flèches tactiles superposées sur la photo */}
-              <button
-                type="button"
-                className="spotlight-overlay-arrow arrow-prev"
-                onClick={handlePrevSlide}
-                aria-label="Photo précédente"
-              >
-                <ArrowLeft size={22} strokeWidth={2.5} />
-              </button>
-              <button
-                type="button"
-                className="spotlight-overlay-arrow arrow-next"
-                onClick={handleNextSlide}
-                aria-label="Photo suivante"
-              >
-                <ArrowRight size={22} strokeWidth={2.5} />
-              </button>
 
               {/* Bandeau d'information sur la photo */}
               <div className="spotlight-media-caption">

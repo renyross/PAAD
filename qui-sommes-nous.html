@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./app/globals.css">
+  <script src="./public/resource-pages.js" defer></script>
   <style>
     /* Styles spécifiques d'appoint */
     .mega-menu { display: none; }
@@ -346,6 +347,43 @@
       }
     }
 
+    /* Hero aligné sur la page Étapes clés */
+    .about-milestone-hero {
+      min-height: min(780px, 86vh);
+      position: relative;
+      display: grid;
+      align-items: end;
+      overflow: hidden;
+      background: #321333;
+      color: #fff;
+    }
+    .about-milestone-media,
+    .about-milestone-media::after { position:absolute; inset:0; }
+    .about-milestone-media img { width:100%; height:100%; object-fit:cover; object-position:center 42%; }
+    .about-milestone-media::after { content:""; background:linear-gradient(90deg,rgba(35,10,37,.95) 0%,rgba(50,19,51,.76) 50%,rgba(50,19,51,.16) 100%); }
+    .about-milestone-content { position:relative; z-index:1; padding-top:clamp(150px,18vw,230px); padding-bottom:clamp(58px,7vw,92px); }
+    .about-milestone-kicker { display:flex; align-items:center; gap:12px; color:#e7cce9; font-size:12px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; }
+    .about-milestone-kicker::before { content:""; width:38px; height:2px; background:#c888cf; }
+    .about-milestone-hero h1 { max-width:980px; margin:22px 0 0; color:#fff; font:800 clamp(40px,5.8vw,76px)/1.04 Manrope,Arial,sans-serif; letter-spacing:0; text-transform:none; }
+    .about-milestone-lead { max-width:730px; margin:26px 0 0; color:rgba(255,255,255,.86); font-size:clamp(17px,1.7vw,21px); line-height:1.65; }
+    .about-milestone-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:32px; }
+    .about-milestone-actions a { min-height:50px; display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:0 22px; border:1px solid #fff; color:#321333; background:#fff; font-size:13px; font-weight:800; text-decoration:none; }
+    .about-milestone-actions a+a { color:#fff; background:transparent; border-color:rgba(255,255,255,.55); }
+    .about-milestone-actions a:hover { background:#c888cf; border-color:#c888cf; color:#321333; }
+    .about-milestone-summary { display:grid; grid-template-columns:repeat(3,1fr); max-width:980px; margin-top:42px; border:1px solid rgba(255,255,255,.25); }
+    .about-milestone-summary div { padding:20px 24px; border-right:1px solid rgba(255,255,255,.25); }
+    .about-milestone-summary div:last-child { border-right:0; }
+    .about-milestone-summary span { display:block; color:#dcb7df; font-size:10px; font-weight:800; letter-spacing:.11em; text-transform:uppercase; }
+    .about-milestone-summary strong { display:block; margin-top:7px; color:#fff; font-size:15px; line-height:1.35; }
+    @media(max-width:680px){
+      .about-milestone-hero { min-height:760px; }
+      .about-milestone-media img { object-position:62% center; }
+      .about-milestone-media::after { background:linear-gradient(180deg,rgba(35,10,37,.28),rgba(35,10,37,.96) 55%); }
+      .about-milestone-summary { grid-template-columns:1fr; }
+      .about-milestone-summary div { border-right:0; border-bottom:1px solid rgba(255,255,255,.22); padding:15px 18px; }
+      .about-milestone-summary div:last-child { border-bottom:0; }
+    }
+
     /* SECTION FONDATION ET HISTOIRE (STYLE KLABU) */
     .section-history {
       padding: clamp(80px, 10vw, 120px) 0;
@@ -467,7 +505,8 @@
   <a href="#main" class="skip-link">Aller au contenu principal</a>
 
   <!-- HEADER IDENTIQUE À LA PAGE D'ACCUEIL (STYLE THE OCEAN CLEANUP / PAAD) -->
-  <header class="ocean-header site-header">
+  <paad-resource-header></paad-resource-header>
+  <header class="ocean-header site-header" hidden aria-hidden="true" style="display:none!important;">
     <!-- NIVEAU 1 : Barre Blanche Supérieure -->
     <div class="ocean-top-bar">
       <!-- Bloc Logo PAAD avec emblème officiel transparent -->
@@ -688,17 +727,20 @@
   </header>
 
   <main id="main" class="about-simple">
-    <section class="about-simple-intro">
-      <div class="wrap about-simple-intro-grid">
-        <div class="about-simple-copy">
-          <span>À propos de PAAD</span>
-          <h1>Une organisation haïtienne engagée dans l’éducation et l’autonomie.</h1>
-          <p>Créé en 2024, le Programme d’Actions et d’Aide pour le Développement est une organisation laïque, indépendante et à but non lucratif basée à Port-au-Prince.</p>
-          <p>PAAD construit ses actions avec les communautés afin que les enfants, les jeunes et les familles puissent apprendre, développer des compétences et bâtir leur propre avenir.</p>
+    <section class="about-milestone-hero" id="top">
+      <div class="about-milestone-media"><img src="./public/images/haiti-cinematic-hero.jpg" alt="Jeunesse et communauté en Haïti"></div>
+      <div class="wrap about-milestone-content">
+        <span class="about-milestone-kicker">À propos de PAAD</span>
+        <h1>Nous créons les conditions pour apprendre, se former et devenir autonome.</h1>
+        <p class="about-milestone-lead">PAAD est une organisation haïtienne à but non lucratif qui agit autour de deux priorités complémentaires : l’éducation et le développement économique.</p>
+        <div class="about-milestone-actions">
+          <a href="./index.html#programmes">Découvrir nos actions <span>→</span></a>
+          <a href="#don" onclick="openModal('donModal'); return false;">Soutenir PAAD <span>→</span></a>
         </div>
-        <div class="about-simple-image">
-          <img src="./public/images/haiti-cinematic-hero.jpg" alt="Jeunesse et communauté en Haïti">
-          <div class="about-simple-facts"><div><span>Création</span><strong>2024</strong></div><div><span>Siège</span><strong>Port-au-Prince</strong></div></div>
+        <div class="about-milestone-summary" aria-label="Repères sur PAAD">
+          <div><span>Identité</span><strong>Organisation haïtienne</strong></div>
+          <div><span>Nos priorités</span><strong>Éducation &amp; développement économique</strong></div>
+          <div><span>Notre méthode</span><strong>Agir avec les communautés</strong></div>
         </div>
       </div>
     </section>
@@ -1072,8 +1114,14 @@
     </section>
   </main>
 
-  <!-- FOOTER INSTITUTIONNEL PAAD -->
+  <!-- FOOTER COMMUN PAAD -->
   <footer class="footer" style="background:var(--purple-dark); color:#FAF8FB; border-top:none;">
+    <div class="wrap footer-callout"><div><span>Construire la suite</span><h2>Agissons aujourd’hui pour ouvrir de nouvelles possibilités en Haïti.</h2></div><div class="footer-callout-actions"><a href="#don" onclick="openModal('donModal'); return false;">Faire un don <span aria-hidden="true">♡</span></a><a href="./contact.html">Nous contacter <span aria-hidden="true">→</span></a></div></div>
+    <div class="wrap mockup-footer-top"><div class="mockup-footer-brand"><a class="ocean-logo-badge footer-menu-logo" href="./index.html" aria-label="PAAD, accueil"><img src="./public/images/paad-emblem-white-trans.png" alt="Logo PAAD" class="ocean-logo-emblem" width="40" height="40"><span class="ocean-logo-text">PAAD</span></a><p>Programme d’Actions et d’Aide pour le Développement. Agir avec les communautés en Haïti pour un avenir durable.</p><span class="mockup-social-label">Suivez-nous</span><div class="mockup-social-icons"><a href="#" class="mockup-social-btn" aria-label="Facebook">f</a><a href="#" class="mockup-social-btn" aria-label="X / Twitter">𝕏</a><a href="https://www.instagram.com/paad_developpement/" target="_blank" rel="noopener noreferrer" class="mockup-social-btn" aria-label="Instagram PAAD Développement">ig</a><a href="#" class="mockup-social-btn" aria-label="LinkedIn">in</a></div></div><div class="mockup-footer-col"><h4>PAAD</h4><a href="./qui-sommes-nous.html">Qui sommes-nous</a><a href="./qui-sommes-nous.html#equipe">Notre équipe</a><a href="./qui-sommes-nous.html#valeurs">Nos valeurs</a><a href="./index.html#partenaires">Partenaires</a></div><div class="mockup-footer-col"><h4>Nos actions</h4><a href="./index.html#domaines">Éducation</a><a href="./index.html#domaines">Développement économique</a><a href="./index.html#programmes">Nos projets</a><a href="./index.html#impact">Impact</a></div><div class="mockup-footer-col"><h4>Nous soutenir</h4><a href="#don" onclick="openModal('donModal'); return false;">Faire un don</a><a href="./contact.html#formulaire">Devenir bénévole</a><a href="./contact.html#formulaire">Devenir partenaire</a></div><div class="mockup-footer-col"><h4>Ressources</h4><a href="./index.html#actualites">Actualités</a><a href="./index.html#transparence">Rapports</a><a href="./faq.html">FAQ</a><a href="./contact.html">Contact</a></div></div>
+    <div class="wrap mockup-footer-bottom"><span>© 2026 PAAD. Tous droits réservés.</span><div class="mockup-footer-links"><a href="./index.html#mentions">Mentions légales</a><a href="./index.html#confidentialite">Confidentialité</a><a href="./index.html#cookies">Cookies</a><a href="./index.html#conditions">Conditions de don</a></div></div>
+  </footer>
+
+  <footer class="footer" hidden aria-hidden="true" style="display:none!important;">
     <div class="wrap footer-callout">
       <div>
         <span style="color:#d8bedb; font-size:12px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase;">Construire la suite</span>

@@ -21,6 +21,7 @@ export const pages: Record<string, { title: string; kicker: string; text: string
   'rapports': { title: 'La transparence au cœur de notre action.', kicker: 'Publications', text: 'Retrouvez bientôt les rapports annuels, rapports d’impact, documents financiers et institutionnels validés par PAAD.', type: 'reports' },
   'actualites': { title: 'La vie de PAAD, au fil des actions.', kicker: 'Actualités', text: 'Les nouvelles du terrain, partenariats et événements seront publiés ici par l’équipe PAAD.', type: 'news' },
   'communiques': { title: 'Communiqués officiels.', kicker: 'Presse', text: 'Les prises de parole officielles de PAAD seront archivées ici.', type: 'news' },
+  'media': { title: 'Ressources pour les médias.', kicker: 'Espace média', text: 'Retrouvez les informations institutionnelles de PAAD et le contact destiné aux journalistes et professionnels des médias.', type: 'reports' },
   'evenements': { title: 'Rencontres et événements.', kicker: 'Événements', text: 'Les prochains rendez-vous de PAAD seront publiés ici.', type: 'news' },
   'faire-un-don': { title: 'Soutenir l’éducation et les opportunités économiques.', kicker: 'Faire un don', text: 'Votre contribution peut aider PAAD à développer des actions éducatives et économiques. Le paiement en ligne sera disponible après activation du compte officiel de collecte.', type: 'donate' },
   'devenir-benevole': { title: 'Engagez vos compétences à nos côtés.', kicker: 'Bénévolat', text: 'Parlez-nous de votre expérience, de vos disponibilités et des causes qui vous mobilisent.', type: 'contact' },
