@@ -897,7 +897,10 @@ export function Home({ lang, data }: { lang: 'fr' | 'en' | 'es'; data: SiteData 
       </div>
 
       {/* Contenu éditorial aligné sur le hero À propos */}
-      <div className="ocean-hero-content-wrap">
+      <div
+        className="ocean-hero-content-wrap home-hero-left-layout"
+        style={{ width: '100%', maxWidth: 'none', margin: 0 }}
+      >
         <div className="ocean-hero-inner home-milestone-inner">
           <span className="home-milestone-kicker">PAAD · Haïti</span>
           <h1 className="ocean-hero-title">

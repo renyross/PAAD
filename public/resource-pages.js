@@ -34,6 +34,13 @@ class PaadResourceTabs extends HTMLElement {
     this.innerHTML = `<nav class="resource-tabs" aria-label="Sections presse et actualités"><div class="wrap">${items.map(([href,label,key])=>`<a class="${active===key?'active':''}" href="./${href}">${label}</a>`).join('')}</div></nav>`;
   }
 }
+class PaadAboutTabs extends HTMLElement {
+  connectedCallback() {
+    const active = document.body.dataset.aboutPage || '';
+    const items = [['qui-sommes-nous.html','À propos de nous','about'],['etapes-cles.html','Étapes clés','milestones'],['faq.html','FAQ','faq'],['contact.html','Contact','contact']];
+    this.innerHTML = `<nav class="resource-tabs about-page-tabs" aria-label="Pages À propos"><div class="wrap">${items.map(([href,label,key])=>`<a class="${active===key?'active':''}" href="./${href}">${label}</a>`).join('')}</div></nav>`;
+  }
+}
 class PaadResourceFooter extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `<footer class="footer" style="background:var(--purple-dark);color:#FAF8FB;border-top:none"><div class="wrap footer-callout"><div><span>Construire la suite</span><h2>Agissons aujourd’hui pour ouvrir de nouvelles possibilités en Haïti.</h2></div><div class="footer-callout-actions"><a href="./contact.html">Faire un don <span aria-hidden="true">♡</span></a><a href="./contact.html">Nous contacter <span aria-hidden="true">→</span></a></div></div><div class="wrap mockup-footer-top"><div class="mockup-footer-brand"><a class="ocean-logo-badge footer-menu-logo" href="./index.html"><img src="./public/images/paad-emblem-white-trans.png" alt="Logo PAAD" class="ocean-logo-emblem" width="40" height="40"><span class="ocean-logo-text">PAAD</span></a><p>Programme d’Actions et d’Aide pour le Développement. Agir avec les communautés en Haïti pour un avenir durable.</p><span class="mockup-social-label">Suivez-nous</span><div class="mockup-social-icons"><a href="#" class="mockup-social-btn" aria-label="Facebook">f</a><a href="#" class="mockup-social-btn" aria-label="X / Twitter">𝕏</a><a href="https://www.instagram.com/paad_developpement/" target="_blank" rel="noopener noreferrer" class="mockup-social-btn" aria-label="Instagram">ig</a><a href="#" class="mockup-social-btn" aria-label="LinkedIn">in</a></div></div><div class="mockup-footer-col"><h4>PAAD</h4><a href="./qui-sommes-nous.html">Qui sommes-nous</a><a href="./etapes-cles.html">Étapes clés</a><a href="./faq.html">FAQ</a><a href="./contact.html">Contact</a></div><div class="mockup-footer-col"><h4>Nos actions</h4><a href="./index.html#domaines">Éducation</a><a href="./index.html#domaines">Développement économique</a><a href="./index.html#programmes">Nos projets</a><a href="./index.html#impact">Impact</a></div><div class="mockup-footer-col"><h4>Ressources</h4><a href="./actualites.html">Actualités</a><a href="./communiques.html">Communiqués</a><a href="./rapports.html">Rapports</a><a href="./media.html">Espace média</a></div></div><div class="wrap mockup-footer-bottom"><span>© 2026 PAAD. Tous droits réservés.</span><div class="mockup-footer-links"><a href="./contact.html">Mentions légales</a><a href="./contact.html">Confidentialité</a><a href="./contact.html">Contact</a></div></div></footer>`;
@@ -41,4 +48,5 @@ class PaadResourceFooter extends HTMLElement {
 }
 customElements.define('paad-resource-header', PaadResourceHeader);
 customElements.define('paad-resource-tabs', PaadResourceTabs);
+customElements.define('paad-about-tabs', PaadAboutTabs);
 customElements.define('paad-resource-footer', PaadResourceFooter);

@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./app/globals.css">
+  <link rel="stylesheet" href="./app/resource-pages.css">
   <script src="./public/resource-pages.js" defer></script>
   <style>
     .modal-backdrop {
@@ -470,7 +471,7 @@
     }
   </style>
 </head>
-<body>
+<body class="about-resource-page" data-about-page="milestones">
   <a href="#main" class="skip-link">Aller au contenu principal</a>
 
   <!-- HEADER IDENTIQUE À LA CHARTE PAAD -->
@@ -653,6 +654,7 @@
         </div>
       </div>
     </section>
+    <paad-about-tabs></paad-about-tabs>
 
     <!-- 2. FRISE CHRONOLOGIQUE DES JALONS -->
     <section class="timeline-section" id="frise">

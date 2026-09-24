@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./app/globals.css">
+  <link rel="stylesheet" href="./app/resource-pages.css">
   <script src="./public/resource-pages.js" defer></script>
   <style>
     .modal-backdrop {
@@ -639,7 +640,7 @@
     @media(max-width:680px){.contact-page-hero{min-height:720px}.contact-page-hero-media img{object-position:62% center}.contact-page-hero-media::after{background:linear-gradient(180deg,rgba(35,10,37,.3),rgba(35,10,37,.96) 55%)}.contact-page-summary{grid-template-columns:1fr}.contact-page-summary div{border-right:0;border-bottom:1px solid rgba(255,255,255,.22);padding:14px 18px}.contact-page-summary div:last-child{border-bottom:0}}
   </style>
 </head>
-<body>
+<body class="about-resource-page" data-about-page="contact">
   <a href="#main" class="skip-link">Aller au contenu principal</a>
 
   <!-- HEADER IDENTIQUE À LA CHARTE PAAD -->
@@ -811,6 +812,7 @@
         </div>
       </div>
     </section>
+    <paad-about-tabs></paad-about-tabs>
 
     <!-- 2. FIL D'ARIANE -->
     <nav class="about-breadcrumb-bar" aria-label="Fil d'Ariane">

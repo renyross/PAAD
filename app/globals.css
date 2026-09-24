@@ -5497,8 +5497,8 @@
 /* Hero accueil aligné sur la direction visuelle des pages institutionnelles */
 #hero.ocean-style-hero{min-height:min(820px,88vh);display:grid;align-items:end;background:var(--purple-dark)}
 #hero .ocean-hero-scrim{background:linear-gradient(90deg,rgba(35,10,37,.95) 0%,rgba(50,19,51,.76) 50%,rgba(50,19,51,.16) 100%)}
-#hero .ocean-hero-content-wrap{position:relative;z-index:3;width:100%;height:auto;min-height:0;margin:0!important;padding:clamp(160px,18vw,230px) 0 clamp(76px,8vw,108px);display:block;transform:none!important}
-#hero .home-milestone-inner{width:100%;max-width:1320px;margin-left:max(40px, calc((100vw - 1320px) / 2));margin-right:0;padding:0;display:block;text-align:left}
+#hero>.home-hero-left-layout{position:absolute!important;inset:0!important;z-index:3;width:100%!important;max-width:none!important;height:100%!important;margin:0!important;padding:clamp(150px,15vh,190px) clamp(32px,4.2vw,86px) clamp(76px,8vh,105px)!important;display:flex!important;flex-direction:column!important;align-items:flex-start!important;justify-content:flex-end!important;transform:none!important}
+#hero .home-milestone-inner{position:relative!important;left:0!important;right:auto!important;width:min(100%,1320px)!important;max-width:1320px!important;margin:0!important;padding:0!important;display:block!important;text-align:left!important;transform:none!important}
 .home-milestone-kicker{display:flex;align-items:center;gap:12px;color:#e7cce9;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
 .home-milestone-kicker:before{content:"";width:38px;height:2px;background:#c888cf}
 #hero .ocean-hero-title{max-width:980px;margin:22px 0 0;color:#fff;font:800 clamp(40px,5.7vw,74px)/1.04 Manrope,Arial,sans-serif;letter-spacing:0;text-transform:none;text-shadow:none}
@@ -5513,7 +5513,7 @@
 .home-milestone-summary span{display:block;color:#dcb7df;font-size:10px;font-weight:800;letter-spacing:.11em;text-transform:uppercase}
 .home-milestone-summary strong{display:block;margin-top:7px;color:#fff;font-size:15px;line-height:1.35}
 #hero .ocean-hero-controls{right:max(24px,calc((100vw - 1180px)/2));bottom:26px;left:auto;transform:none}
-@media(max-width:680px){#hero.ocean-style-hero{min-height:800px}#hero .ocean-hero-bg-image{object-position:62% center}#hero .ocean-hero-scrim{background:linear-gradient(180deg,rgba(35,10,37,.26),rgba(35,10,37,.96) 52%)}#hero .ocean-hero-content-wrap{padding:150px 0 62px}#hero .home-milestone-inner{width:calc(100% - 40px);margin-left:20px;margin-right:0}.home-milestone-summary{grid-template-columns:1fr;margin-top:30px}.home-milestone-summary>div{padding:13px 16px;border-right:0;border-bottom:1px solid rgba(255,255,255,.22)}.home-milestone-summary>div:last-child{border-bottom:0}#hero .ocean-hero-controls{right:20px;bottom:18px}}
+@media(max-width:680px){#hero.ocean-style-hero{min-height:800px}#hero .ocean-hero-bg-image{object-position:62% center}#hero .ocean-hero-scrim{background:linear-gradient(180deg,rgba(35,10,37,.26),rgba(35,10,37,.96) 52%)}#hero>.home-hero-left-layout{padding:150px 20px 62px!important}#hero .home-milestone-inner{width:100%!important;margin:0!important}.home-milestone-summary{grid-template-columns:1fr;margin-top:30px}.home-milestone-summary>div{padding:13px 16px;border-right:0;border-bottom:1px solid rgba(255,255,255,.22)}.home-milestone-summary>div:last-child{border-bottom:0}#hero .ocean-hero-controls{right:20px;bottom:18px}}
 
 /* Le logo du footer partage exactement l'arrière-plan du footer */
 .footer .footer-menu-logo{width:auto;min-width:0;height:auto;margin:0 0 22px;padding:0;background:transparent!important;display:inline-flex;align-items:center;gap:12px;color:#fff}
