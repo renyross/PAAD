@@ -349,9 +349,6 @@ export function Header({ lang }: { lang: 'fr' | 'en' | 'es' }) {
       {/* NIVEAU 2 : Sous-barre Secondaire Droite (Style The Ocean Cleanup) */}
       <div className="ocean-sub-bar">
         <div className="ocean-sub-nav">
-          <Link href={href('devenir-partenaire')} className="ocean-sub-link">
-            Devenir partenaire
-          </Link>
           <div className="ocean-sub-dropdown">
             <span className="ocean-sub-link ocean-sub-dropdown-trigger">
               À propos <ChevronDown size={12} strokeWidth={2.2} />
