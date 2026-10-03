@@ -603,6 +603,13 @@ export function Home({ lang, data }: { lang: 'fr' | 'en' | 'es'; data: SiteData 
   const [firstNameInput, setFirstNameInput] = useState('');
   const [emailInput, setEmailInput] = useState('');
   const [newsSent, setNewsSent] = useState(false);
+  const newsTrackRef = useRef<HTMLDivElement>(null);
+
+  const scrollNewsTrack = (dir: number) => {
+    if (newsTrackRef.current) {
+      newsTrackRef.current.scrollBy({ left: dir * 344, behavior: 'smooth' });
+    }
+  };
 
   // Les visuels présentent les principaux obstacles auxquels PAAD répond.
   const spotlightSlides = [
@@ -731,36 +738,46 @@ export function Home({ lang, data }: { lang: 'fr' | 'en' | 'es'; data: SiteData 
   const latestNews = [
     {
       id: 'news-1',
-      date: '10 avril',
+      category: 'Éducation',
+      date: '10 avril 2025',
       title: 'PAAD célèbre sa 350e bourse scolaire et l’extension de ses cantines',
+      excerpt: 'Grâce à la mobilisation de nos partenaires, 350 élèves bénéficient désormais d’un soutien éducatif et nutritionnel complet.',
       image: '/images/haiti-student-classroom.jpg',
       path: 'actualites',
     },
     {
       id: 'news-2',
-      date: '9 mars',
+      category: 'Autonomie solaire',
+      date: '9 mars 2025',
       title: 'Des fonds débloqués pour déployer 12 nouvelles micro-centrales solaires',
+      excerpt: 'Un nouveau jalon franchi pour apporter une alimentation énergétique propre aux écoles et centres de santé partenaires.',
       image: '/images/haiti-tech-workshop.jpg',
       path: 'actualites',
     },
     {
       id: 'news-3',
-      date: '17 février',
+      category: 'Formation numérique',
+      date: '17 février 2025',
       title: 'Des programmes de formation au numérique adaptés à la mise à l’échelle',
+      excerpt: 'Lancement du Digital Lab pour doter les jeunes diplômés des compétences techniques requises par le marché de l’emploi.',
       image: '/images/haiti-digital-class.jpg',
       path: 'actualites',
     },
     {
       id: 'news-4',
-      date: '6 février',
+      category: 'Entrepreneuriat',
+      date: '6 février 2025',
       title: 'Comment l’épargne solidaire redéfinit l’autonomie des femmes dans l’Artibonite',
+      excerpt: 'Les groupements d’épargne communautaires permettent à plus de 140 femmes d’amorcer des activités génératrices de revenus pérennes.',
       image: '/images/community-haiti.webp',
       path: 'actualites',
     },
     {
       id: 'news-5',
-      date: '18 janvier',
+      category: 'Transparence & impact',
+      date: '18 janvier 2025',
       title: 'Rapport annuel 2024 : 92 % des ressources directement allouées aux bénéficiaires',
+      excerpt: 'Consultez la synthèse financière de nos actions, nos enseignements de terrain et nos priorités stratégiques pour 2025-2027.',
       image: '/images/haiti-cinematic-hero.jpg',
       path: 'actualites',
     },
@@ -1307,29 +1324,60 @@ export function Home({ lang, data }: { lang: 'fr' | 'en' | 'es'; data: SiteData 
 
 
 
-    {/* Actualités : une une et quatre articles complémentaires. */}
-    <section className="section-ocean-news news-journal" id="actualites" aria-labelledby="news-heading">
-      <div className="wrap">
-        <header className="journal-header">
-          <div><p className="journal-kicker">LES DERNIÈRES NOUVELLES</p><h2 id="news-heading">Au plus près<br />de nos actions.</h2></div>
-          <div className="journal-intro"><p>Retrouvez les dernières avancées de nos actions en Haïti, les reportages de terrain et nos prises de parole.</p><Link href={href('actualites')}>Toutes les actualités <ArrowRight size={18} aria-hidden="true" /></Link></div>
-        </header>
-        <div className="journal-layout">
-          <article className="journal-feature">
-            <Link href={href(latestNews[0].path)} className="journal-story-link">
-              <div className="journal-feature-photo"><Image src={latestNews[0].image} alt="" fill sizes="(max-width: 800px) 100vw, 55vw" /><span className="journal-feature-label">À la une</span></div>
-              <div className="journal-meta"><span>Éducation</span><span>{latestNews[0].date}</span></div>
-              <h3>{latestNews[0].title}</h3>
-              <span className="journal-read">Lire l’actualité <ArrowRight size={19} aria-hidden="true" /></span>
-            </Link>
-          </article>
-          <div className="journal-stories">
-            {latestNews.slice(1).map((news, index) => (
-              <article className="journal-story" key={news.id}>
-                <Link href={href(news.path)} className="journal-story-link">
-                  <div className="journal-story-copy"><div className="journal-meta"><span>{['Énergie', 'Formation', 'Communautés', 'Publication'][index]}</span><span>{news.date}</span></div><h3>{news.title}</h3><span className="journal-read">Lire l’actualité <ArrowRight size={16} aria-hidden="true" /></span></div>
-                  <div className="journal-story-photo"><Image src={news.image} alt="" fill sizes="(max-width: 480px) 88px, 132px" /></div>
+    {/* Actualités : style Blog Carousel avec colonne intro à gauche et cartes horizontales */}
+    <section className="news-blog-section" id="actualites" aria-labelledby="news-heading">
+      <div className="wrap news-blog-container">
+        {/* Colonne gauche : Titre, description, lien et flèches de navigation */}
+        <div className="news-blog-intro">
+          <span className="news-blog-eyebrow">Actualités</span>
+          <h2 id="news-heading" className="news-blog-heading">
+            Nouveaux articles
+          </h2>
+          <p className="news-blog-desc">
+            Explorez nos dernières nouvelles, initiatives de terrain, avancées éducatives et réflexions pour le développement durable en Haïti.
+          </p>
+          <Link href={href('actualites')} className="news-blog-more-link">
+            Voir plus <ArrowRight size={16} aria-hidden="true" />
+          </Link>
+
+          <div className="news-blog-nav-row">
+            <button
+              type="button"
+              className="news-blog-nav-btn"
+              onClick={() => scrollNewsTrack(-1)}
+              aria-label="Articles précédents"
+            >
+              <ArrowLeft size={19} />
+            </button>
+            <button
+              type="button"
+              className="news-blog-nav-btn"
+              onClick={() => scrollNewsTrack(1)}
+              aria-label="Articles suivants"
+            >
+              <ArrowRight size={19} />
+            </button>
+          </div>
+        </div>
+
+        {/* Colonne droite : Rail horizontal de cartes d'articles */}
+        <div className="news-blog-track-wrap">
+          <div className="news-blog-track" ref={newsTrackRef}>
+            {latestNews.map((news) => (
+              <article className="news-blog-card" key={news.id}>
+                <Link href={href(news.path)} className="news-blog-card-img-wrap">
+                  <Image src={news.image} alt={news.title} fill sizes="(max-width: 768px) 80vw, 320px" />
                 </Link>
+                <div className="news-blog-card-body">
+                  <span className="news-blog-card-category">{news.category}</span>
+                  <h3 className="news-blog-card-title">
+                    <Link href={href(news.path)}>{news.title}</Link>
+                  </h3>
+                  <p className="news-blog-card-excerpt">{news.excerpt}</p>
+                  <Link href={href(news.path)} className="news-blog-card-read">
+                    Lire plus <ArrowRight size={14} aria-hidden="true" />
+                  </Link>
+                </div>
               </article>
             ))}
           </div>

@@ -1419,114 +1419,140 @@
 
 
 
-    <!-- 8. LES DERNIÈRES NOUVELLES (STYLE CAROUSEL OCEAN CLEANUP) -->
-    <section class="section-ocean-news" id="actualites">
-      <div class="wrap">
-        <div class="ocean-news-header">
-          <div class="ocean-news-accent-bar" aria-hidden="true"></div>
-          <h2 class="ocean-news-title">
-            LES DERNIÈRES <span>NOUVELLES</span>
+    <!-- 8. NOUVEAUX ARTICLES / DERNIÈRES NOUVELLES (STYLE BLOG CAROUSEL) -->
+    <section class="news-blog-section" id="actualites" aria-labelledby="news-heading">
+      <div class="wrap news-blog-container">
+        <!-- Colonne gauche : Titre, description, lien et flèches de navigation -->
+        <div class="news-blog-intro">
+          <span class="news-blog-eyebrow">Actualités</span>
+          <h2 id="news-heading" class="news-blog-heading">
+            Nouveaux articles
           </h2>
-          <p class="ocean-news-sub">
-            Retrouvez les dernières avancées de nos actions en Haïti, les reportages de terrain et nos prises de parole.
+          <p class="news-blog-desc">
+            Explorez nos dernières nouvelles, initiatives de terrain, avancées éducatives et réflexions pour le développement durable en Haïti.
           </p>
+          <a href="./actualites.html" class="news-blog-more-link">
+            Voir plus <span aria-hidden="true">→</span>
+          </a>
+
+          <div class="news-blog-nav-row">
+            <button
+              type="button"
+              class="news-blog-nav-btn"
+              onclick="scrollNews(-1)"
+              aria-label="Articles précédents"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            </button>
+            <button
+              type="button"
+              class="news-blog-nav-btn"
+              onclick="scrollNews(1)"
+              aria-label="Articles suivants"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+          </div>
         </div>
 
-        <div class="ocean-news-slider-wrapper">
-          <button type="button" class="ocean-news-float-btn float-left" onclick="scrollNews(-1)" aria-label="Actualités précédentes">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m15 18-6-6 6-6"/></svg>
-          </button>
-
-          <div class="ocean-news-track" id="news-track">
+        <!-- Colonne droite : Rail horizontal de cartes d'articles -->
+        <div class="news-blog-track-wrap">
+          <div class="news-blog-track" id="news-blog-track">
             <!-- 1 -->
-            <article class="ocean-news-card">
-              <img src="./public/images/haiti-student-classroom.jpg" alt="Impact scolaire en Haïti" class="ocean-news-card-img">
-              <div class="ocean-news-card-scrim"></div>
-              <div class="ocean-news-card-content">
-                <span class="ocean-news-date">10 avril</span>
-                <h3 class="ocean-news-headline">PAAD célèbre sa 350e bourse scolaire et l’extension de ses cantines</h3>
-                <div class="ocean-news-divider"></div>
-                <a href="#don" class="ocean-news-action" onclick="openModal('donModal'); return false;">
-                  <span class="ocean-news-action-circle">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                  </span>
-                  <span>Lisez la mise à jour</span>
+            <article class="news-blog-card">
+              <a href="./actualites.html" class="news-blog-card-img-wrap">
+                <img src="./public/images/haiti-student-classroom.jpg" alt="Impact scolaire en Haïti" loading="lazy">
+              </a>
+              <div class="news-blog-card-body">
+                <span class="news-blog-card-category">Éducation</span>
+                <h3 class="news-blog-card-title">
+                  <a href="./actualites.html">PAAD célèbre sa 350e bourse scolaire et l’extension de ses cantines</a>
+                </h3>
+                <p class="news-blog-card-excerpt">
+                  Grâce à la mobilisation de nos partenaires, 350 élèves bénéficient désormais d’un soutien éducatif et nutritionnel complet.
+                </p>
+                <a href="./actualites.html" class="news-blog-card-read">
+                  Lire plus <span aria-hidden="true">→</span>
                 </a>
               </div>
             </article>
 
             <!-- 2 -->
-            <article class="ocean-news-card">
-              <img src="./public/images/haiti-tech-workshop.jpg" alt="Atelier solaire à Cap-Haïtien" class="ocean-news-card-img">
-              <div class="ocean-news-card-scrim"></div>
-              <div class="ocean-news-card-content">
-                <span class="ocean-news-date">9 mars</span>
-                <h3 class="ocean-news-headline">Des fonds débloqués pour déployer 12 nouvelles micro-centrales solaires</h3>
-                <div class="ocean-news-divider"></div>
-                <a href="#don" class="ocean-news-action" onclick="openModal('donModal'); return false;">
-                  <span class="ocean-news-action-circle">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                  </span>
-                  <span>Lisez la mise à jour</span>
+            <article class="news-blog-card">
+              <a href="./actualites.html" class="news-blog-card-img-wrap">
+                <img src="./public/images/haiti-tech-workshop.jpg" alt="Atelier solaire à Cap-Haïtien" loading="lazy">
+              </a>
+              <div class="news-blog-card-body">
+                <span class="news-blog-card-category">Autonomie solaire</span>
+                <h3 class="news-blog-card-title">
+                  <a href="./actualites.html">Des fonds débloqués pour déployer 12 nouvelles micro-centrales solaires</a>
+                </h3>
+                <p class="news-blog-card-excerpt">
+                  Un nouveau jalon franchi pour apporter une alimentation énergétique propre aux écoles et centres de santé partenaires.
+                </p>
+                <a href="./actualites.html" class="news-blog-card-read">
+                  Lire plus <span aria-hidden="true">→</span>
                 </a>
               </div>
             </article>
 
             <!-- 3 -->
-            <article class="ocean-news-card">
-              <img src="./public/images/haiti-digital-class.jpg" alt="Laboratoire numérique PAAD" class="ocean-news-card-img">
-              <div class="ocean-news-card-scrim"></div>
-              <div class="ocean-news-card-content">
-                <span class="ocean-news-date">17 février</span>
-                <h3 class="ocean-news-headline">Des programmes de formation au numérique adaptés à la mise à l’échelle</h3>
-                <div class="ocean-news-divider"></div>
-                <a href="#don" class="ocean-news-action" onclick="openModal('donModal'); return false;">
-                  <span class="ocean-news-action-circle">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                  </span>
-                  <span>Lisez la mise à jour</span>
+            <article class="news-blog-card">
+              <a href="./actualites.html" class="news-blog-card-img-wrap">
+                <img src="./public/images/haiti-digital-class.jpg" alt="Laboratoire numérique PAAD" loading="lazy">
+              </a>
+              <div class="news-blog-card-body">
+                <span class="news-blog-card-category">Formation numérique</span>
+                <h3 class="news-blog-card-title">
+                  <a href="./actualites.html">Des programmes de formation au numérique adaptés à la mise à l’échelle</a>
+                </h3>
+                <p class="news-blog-card-excerpt">
+                  Lancement du Digital Lab pour doter les jeunes diplômés des compétences techniques requises par le marché de l’emploi.
+                </p>
+                <a href="./actualites.html" class="news-blog-card-read">
+                  Lire plus <span aria-hidden="true">→</span>
                 </a>
               </div>
             </article>
 
             <!-- 4 -->
-            <article class="ocean-news-card">
-              <img src="./public/images/community-haiti.webp" alt="Autonomie économique féminine" class="ocean-news-card-img">
-              <div class="ocean-news-card-scrim"></div>
-              <div class="ocean-news-card-content">
-                <span class="ocean-news-date">6 février</span>
-                <h3 class="ocean-news-headline">Comment l’épargne solidaire redéfinit l’autonomie des femmes dans l’Artibonite</h3>
-                <div class="ocean-news-divider"></div>
-                <a href="#don" class="ocean-news-action" onclick="openModal('donModal'); return false;">
-                  <span class="ocean-news-action-circle">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                  </span>
-                  <span>Lisez la mise à jour</span>
+            <article class="news-blog-card">
+              <a href="./actualites.html" class="news-blog-card-img-wrap">
+                <img src="./public/images/community-haiti.webp" alt="Autonomie économique féminine" loading="lazy">
+              </a>
+              <div class="news-blog-card-body">
+                <span class="news-blog-card-category">Entrepreneuriat</span>
+                <h3 class="news-blog-card-title">
+                  <a href="./actualites.html">Comment l’épargne solidaire redéfinit l’autonomie des femmes dans l’Artibonite</a>
+                </h3>
+                <p class="news-blog-card-excerpt">
+                  Les groupements d’épargne communautaires permettent à plus de 140 femmes d’amorcer des activités génératrices de revenus pérennes.
+                </p>
+                <a href="./actualites.html" class="news-blog-card-read">
+                  Lire plus <span aria-hidden="true">→</span>
                 </a>
               </div>
             </article>
 
             <!-- 5 -->
-            <article class="ocean-news-card">
-              <img src="./public/images/haiti-cinematic-hero.jpg" alt="Jeunesse et espoir en Haïti" class="ocean-news-card-img">
-              <div class="ocean-news-card-scrim"></div>
-              <div class="ocean-news-card-content">
-                <span class="ocean-news-date">18 janvier</span>
-                <h3 class="ocean-news-headline">Rapport annuel 2024 : 92 % des ressources directement allouées aux bénéficiaires</h3>
-                <div class="ocean-news-divider"></div>
-                <a href="#don" class="ocean-news-action" onclick="openModal('donModal'); return false;">
-                  <span class="ocean-news-action-circle">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                  </span>
-                  <span>Lisez la mise à jour</span>
+            <article class="news-blog-card">
+              <a href="./rapports.html" class="news-blog-card-img-wrap">
+                <img src="./public/images/haiti-cinematic-hero.jpg" alt="Jeunesse et espoir en Haïti" loading="lazy">
+              </a>
+              <div class="news-blog-card-body">
+                <span class="news-blog-card-category">Transparence &amp; impact</span>
+                <h3 class="news-blog-card-title">
+                  <a href="./rapports.html">Rapport annuel 2024 : 92 % des ressources directement allouées aux bénéficiaires</a>
+                </h3>
+                <p class="news-blog-card-excerpt">
+                  Consultez la synthèse financière de nos actions, nos enseignements de terrain et nos priorités stratégiques pour 2025-2027.
+                </p>
+                <a href="./rapports.html" class="news-blog-card-read">
+                  Lire plus <span aria-hidden="true">→</span>
                 </a>
               </div>
             </article>
           </div>
-
-          <button type="button" class="ocean-news-float-btn float-right" onclick="scrollNews(1)" aria-label="Actualités suivantes">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
-          </button>
         </div>
       </div>
     </section>
@@ -2436,11 +2462,11 @@
 
     /* News Track Scrolling */
     function scrollNews(direction) {
-      const track = document.getElementById('news-track');
+      const track = document.getElementById('news-blog-track') || document.getElementById('news-track');
       if (!track) return;
-      const card = track.querySelector('.ocean-news-card');
-      const cardWidth = card ? card.offsetWidth : 300;
-      track.scrollBy({ left: direction * (cardWidth + 22), behavior: 'smooth' });
+      const card = track.querySelector('.news-blog-card') || track.querySelector('.ocean-news-card');
+      const cardWidth = card ? card.offsetWidth + 24 : 344;
+      track.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
     }
 
     /* Impact Numbers Counter Animation */
