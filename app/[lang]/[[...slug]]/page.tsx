@@ -36,6 +36,6 @@ export default async function SitePage({ params }: Props) {
   const item = findRecord(key, data);
   if (key && !pages[key] && !item) notFound();
   const locale = lang as 'fr'|'en'|'es';
-  const schema = { '@context': 'https://schema.org', '@type': 'NGO', name: 'PAAD', alternateName: 'Programme d’Actions et d’Aide pour le Développement', description: 'Organisation haïtienne à but non lucratif engagée dans l’éducation et le développement économique.', email: 'contact@paad-haiti.org', address: { '@type': 'PostalAddress', addressLocality: 'Port-au-Prince', addressCountry: 'HT' } };
+  const schema = { '@context': 'https://schema.org', '@type': 'NGO', name: 'PAAD', alternateName: 'Passerelle d’Actions pour l’Autonomie et le Développement', description: 'Organisation haïtienne à but non lucratif engagée dans l’éducation et le développement économique.', email: 'contact@paad-haiti.org', address: { '@type': 'PostalAddress', addressLocality: 'Port-au-Prince', addressCountry: 'HT' } };
   return <><a className="skip-link" href="#main">Aller au contenu</a><Header lang={locale}/><main id="main">{item ? <RecordPage lang={locale} kind={item.kind} record={item.record}/> : key ? <ContentPage lang={locale} slug={key} data={data}/> : <Home lang={locale} data={data}/>}</main><RevealObserver/><Footer lang={locale}/><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}/></>;
 }

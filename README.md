@@ -1,6 +1,6 @@
 # Site PAAD
 
-Site Next.js du Programme d'Actions et d'Aide pour le Développement.
+Site Next.js de la Passerelle d’Actions pour l’Autonomie et le Développement.
 
 ## Démarrage
 

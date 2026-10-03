@@ -6,3 +6,4 @@ PAAD/
 .DS_Store
 *.tsbuildinfo
 scratch/
+~$*

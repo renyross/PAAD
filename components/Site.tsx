@@ -427,78 +427,119 @@ export function Header({ lang }: { lang: 'fr' | 'en' | 'es' }) {
 }
 
 
+export function ScrollToTop() {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setVisible(window.scrollY > 300);
+    };
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  if (!visible) return null;
+
+  return (
+    <button
+      type="button"
+      onClick={scrollToTop}
+      className="scroll-to-top-btn"
+      aria-label="Remonter en haut de la page"
+      title="Remonter en haut"
+    >
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="m18 15-6-6-6 6"/>
+      </svg>
+    </button>
+  );
+}
+
 export function Footer({ lang }: { lang: 'fr' | 'en' | 'es' }) {
   const href = (path: string) => `/${lang}/${path}`;
-  return <footer className="footer" style={{ background: 'var(--purple-dark)', color: '#FAF8FB', borderTop: 'none' }}>
-    <div className="wrap footer-callout">
-      <div>
-        <span>Construire la suite</span>
-        <h2>Agissons aujourd’hui pour ouvrir de nouvelles possibilités en Haïti.</h2>
-      </div>
-      <div className="footer-callout-actions">
-        <Link href={href('faire-un-don')}>Faire un don <Heart size={17}/></Link>
-        <Link href={href('contact')}>Nous contacter <ArrowRight size={17}/></Link>
-      </div>
-    </div>
-    <div className="wrap mockup-footer-top">
-      <div className="mockup-footer-brand">
-        <Link className="ocean-logo-badge footer-menu-logo" href={`/${lang}`} aria-label="PAAD, accueil">
-          <Image src="/images/paad-emblem-white-trans.png" alt="Logo PAAD" className="ocean-logo-emblem" width={40} height={40}/>
-          <span className="ocean-logo-text">PAAD</span>
-        </Link>
-        <p>Programme d’Actions et d’Aide pour le Développement. Agir avec les communautés en Haïti pour un avenir durable.</p>
-        <span className="mockup-social-label">Suivez-nous</span>
-        <div className="mockup-social-icons">
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="mockup-social-btn" aria-label="Facebook">f</a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="mockup-social-btn" aria-label="X / Twitter">𝕏</a>
-          <a href="https://www.instagram.com/paad_developpement/" target="_blank" rel="noopener noreferrer" className="mockup-social-btn" aria-label="Instagram PAAD Développement">ig</a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="mockup-social-btn" aria-label="LinkedIn">in</a>
+  return <>
+    <footer className="footer" style={{ background: 'var(--purple-dark)', color: '#FAF8FB', borderTop: 'none' }}>
+      <div className="wrap footer-callout">
+        <div>
+          <span>Construire la suite</span>
+          <h2>Agissons aujourd’hui pour ouvrir de nouvelles possibilités en Haïti.</h2>
+        </div>
+        <div className="footer-callout-actions">
+          <Link href={href('faire-un-don')}>Faire un don <Heart size={17}/></Link>
+          <Link href={href('contact')}>Nous contacter <ArrowRight size={17}/></Link>
         </div>
       </div>
-      <div className="mockup-footer-col">
-        <h4>PAAD</h4>
-        <Link href={href('qui-sommes-nous')}>Qui sommes-nous</Link>
-        <Link href={href('equipe')}>Notre équipe</Link>
-        <Link href={href('gouvernance')}>Gouvernance</Link>
-        <Link href={href('partenaires')}>Partenaires</Link>
+      <div className="wrap mockup-footer-top">
+        <div className="mockup-footer-brand">
+          <Link className="ocean-logo-badge footer-menu-logo" href={`/${lang}`} aria-label="PAAD, accueil">
+            <Image src="/images/paad-emblem-white-trans.png" alt="Logo PAAD" className="ocean-logo-emblem" width={40} height={40}/>
+            <span className="ocean-logo-text">PAAD</span>
+          </Link>
+          <p>Passerelle d’Actions pour l’Autonomie et le Développement. Agir avec les communautés en Haïti pour un avenir durable.</p>
+          <span className="mockup-social-label">Suivez-nous</span>
+          <div className="mockup-social-icons">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="mockup-social-btn" aria-label="Facebook">f</a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="mockup-social-btn" aria-label="X / Twitter">𝕏</a>
+            <a href="https://www.instagram.com/paad_developpement/" target="_blank" rel="noopener noreferrer" className="mockup-social-btn" aria-label="Instagram PAAD Développement">ig</a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="mockup-social-btn" aria-label="LinkedIn">in</a>
+          </div>
+        </div>
+        <div className="mockup-footer-col">
+          <h4>PAAD</h4>
+          <Link href={href('qui-sommes-nous')}>Qui sommes-nous</Link>
+          <Link href={href('equipe')}>Notre équipe</Link>
+          <Link href={href('gouvernance')}>Gouvernance</Link>
+          <Link href={href('partenaires')}>Partenaires</Link>
+        </div>
+        <div className="mockup-footer-col">
+          <h4>Nos actions</h4>
+          <Link href={href('actions/education')}>Éducation</Link>
+          <Link href={href('actions/developpement-economique')}>Développement économique</Link>
+          <Link href={href('projets')}>Nos projets</Link>
+          <Link href={href('impact')}>Impact</Link>
+        </div>
+        <div className="mockup-footer-col">
+          <h4>Nous soutenir</h4>
+          <Link href={href('faire-un-don')}>Faire un don</Link>
+          <Link href={href('devenir-benevole')}>Devenir bénévole</Link>
+          <Link href={href('devenir-partenaire')}>Devenir partenaire</Link>
+        </div>
+        <div className="mockup-footer-col">
+          <h4>Ressources</h4>
+          <Link href={href('actualites')}>Actualités</Link>
+          <Link href={href('rapports')}>Rapports</Link>
+          <Link href={href('faq')}>FAQ</Link>
+          <Link href={href('contact')}>Contact</Link>
+        </div>
       </div>
-      <div className="mockup-footer-col">
-        <h4>Nos actions</h4>
-        <Link href={href('actions/education')}>Éducation</Link>
-        <Link href={href('actions/developpement-economique')}>Développement économique</Link>
-        <Link href={href('projets')}>Nos projets</Link>
-        <Link href={href('impact')}>Impact</Link>
+      <div className="wrap footer-wordmark" aria-hidden="true">
+        <svg viewBox="0 0 1000 310" focusable="false">
+          <text x="0" y="280" textLength="1000" lengthAdjust="spacingAndGlyphs">PAAD</text>
+        </svg>
       </div>
-      <div className="mockup-footer-col">
-        <h4>Nous soutenir</h4>
-        <Link href={href('faire-un-don')}>Faire un don</Link>
-        <Link href={href('devenir-benevole')}>Devenir bénévole</Link>
-        <Link href={href('devenir-partenaire')}>Devenir partenaire</Link>
+      <div className="wrap mockup-footer-bottom">
+        <span>© {new Date().getFullYear()} PAAD. Tous droits réservés.</span>
+        <div className="mockup-footer-links">
+          <Link href={href('mentions-legales')}>Mentions légales</Link>
+          <Link href={href('confidentialite')}>Confidentialité</Link>
+          <Link href={href('cookies')}>Cookies</Link>
+          <Link href={href('conditions-de-don')}>Conditions de don</Link>
+        </div>
       </div>
-      <div className="mockup-footer-col">
-        <h4>Ressources</h4>
-        <Link href={href('actualites')}>Actualités</Link>
-        <Link href={href('rapports')}>Rapports</Link>
-        <Link href={href('faq')}>FAQ</Link>
-        <Link href={href('contact')}>Contact</Link>
-      </div>
-    </div>
-    <div className="wrap mockup-footer-bottom">
-      <span>© {new Date().getFullYear()} PAAD. Tous droits réservés.</span>
-      <div className="mockup-footer-links">
-        <Link href={href('mentions-legales')}>Mentions légales</Link>
-        <Link href={href('confidentialite')}>Confidentialité</Link>
-        <Link href={href('cookies')}>Cookies</Link>
-        <Link href={href('conditions-de-don')}>Conditions de don</Link>
-      </div>
-    </div>
-  </footer>;
+    </footer>
+    <ScrollToTop />
+  </>;
 }
 
 function Eyebrow({ children }: { children: React.ReactNode }) { return <span className="eyebrow"><span className="eyebrow-line"/>{children}</span>; }
 
 function AnimatedCounter({ end, suffix = '', duration = 1800 }: { end: number; suffix?: string; duration?: number }) {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(end);
   const ref = useRef<HTMLSpanElement>(null);
   const hasAnimated = useRef(false);
 
@@ -509,18 +550,16 @@ function AnimatedCounter({ end, suffix = '', duration = 1800 }: { end: number; s
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (reduceMotion || !('IntersectionObserver' in window)) {
       hasAnimated.current = true;
-      setCount(end);
       return;
     }
 
     let frame = 0;
-    const target = el.closest('.section-impact-stats') ?? el;
-
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting && !hasAnimated.current) {
           hasAnimated.current = true;
           observer.disconnect();
+          setCount(0);
           let startTime: number | null = null;
 
           const step = (timestamp: number) => {
@@ -539,10 +578,10 @@ function AnimatedCounter({ end, suffix = '', duration = 1800 }: { end: number; s
           frame = window.requestAnimationFrame(step);
         }
       },
-      { threshold: 0.15, rootMargin: '0px 0px -8% 0px' }
+      { threshold: 0.05, rootMargin: '60px 0px 60px 0px' }
     );
 
-    observer.observe(target);
+    observer.observe(el);
     return () => {
       observer.disconnect();
       if (frame) window.cancelAnimationFrame(frame);
@@ -637,76 +676,7 @@ export function Home({ lang, data }: { lang: 'fr' | 'en' | 'es'; data: SiteData 
     setHeroIndex((prev) => (prev + dir + heroSlides.length) % heroSlides.length);
   };
 
-  // Programs Slider
-  const programsTrackRef = useRef<HTMLDivElement>(null);
-  const scrollPrograms = (direction: number) => {
-    if (programsTrackRef.current) {
-      const cardWidth = 340;
-      programsTrackRef.current.scrollBy({ left: direction * (cardWidth + 22), behavior: 'smooth' });
-    }
-  };
 
-  const [activeProgIndex, setActiveProgIndex] = useState(0);
-  const [programWindow, setProgramWindow] = useState(0);
-
-  const operationalSpotlightPrograms = [
-    {
-      id: 'solaire',
-      territoire: 'Cap-Haïtien · Haïti',
-      depuis: '2024',
-      beneficiaire: 'Jean-Baptiste & la promotion solaire',
-      action: 'PAAD Autonomie Solaire',
-      context: "Atelier technique certifiant · Installation d'énergie propre pour écoles et dispensaires",
-      image: '/images/haiti-tech-workshop.jpg',
-      alt: 'Atelier de formation technique solaire au Cap-Haïtien',
-      stickerText: 'PAAD',
-      stickerSub: 'SOLAIRE',
-      stickerClass: 'sticker-amber',
-      path: 'actions/energie-solaire',
-    },
-    {
-      id: 'education',
-      territoire: 'Port-au-Prince · Haïti',
-      depuis: '2023',
-      beneficiaire: 'Fabiola (9 ans) & 1 250 écoliers',
-      action: 'PAAD Éducation & Bourses',
-      context: 'Scolarisation, cantine scolaire quotidienne et kits pédagogiques complets',
-      image: '/images/haiti-student-classroom.jpg',
-      alt: 'Scolarisation et accompagnement des enfants défavorisés',
-      stickerText: 'PAAD',
-      stickerSub: 'ÉDUCATION',
-      stickerClass: 'sticker-amber',
-      path: 'actions/education',
-    },
-    {
-      id: 'numerique',
-      territoire: 'Gonaïves & Ouanaminthe',
-      depuis: '2024',
-      beneficiaire: 'Promotion 480 jeunes développeurs',
-      action: 'PAAD Digital Lab',
-      context: 'Initiation informatique, bureautique et compétences numériques pour le travail moderne',
-      image: '/images/haiti-digital-class.jpg',
-      alt: 'Laboratoire informatique et apprentissage du code',
-      stickerText: 'PAAD',
-      stickerSub: 'NUMÉRIQUE',
-      stickerClass: 'sticker-cyan',
-      path: 'actions/formation-numerique',
-    },
-    {
-      id: 'economie',
-      territoire: 'Jacmel & Région Sud',
-      depuis: '2023',
-      beneficiaire: '120 femmes entrepreneures et artisanes',
-      action: 'PAAD Entrepreneuriat',
-      context: 'Micro-financement sans usure, mentorat en gestion et autonomie économique des mères',
-      image: '/images/workshop-haiti.webp',
-      alt: 'Atelier d’artisanat et développement de micro-entreprises viables',
-      stickerText: 'PAAD',
-      stickerSub: 'ÉCONOMIE',
-      stickerClass: 'sticker-orange',
-      path: 'actions/developpement-economique',
-    },
-  ];
 
   const allianceTypes = [
     { label: 'ONG & Associations', tag: 'Alliance solidaire', Icon: UsersRound },
@@ -717,7 +687,6 @@ export function Home({ lang, data }: { lang: 'fr' | 'en' | 'es'; data: SiteData 
     { label: 'Bailleurs & Fondations', tag: 'Financements d’impact', Icon: Sparkles },
   ];
 
-  const activeProg = operationalSpotlightPrograms[activeProgIndex];
 
   const operationalPrograms = [
     {
@@ -759,18 +728,6 @@ export function Home({ lang, data }: { lang: 'fr' | 'en' | 'es'; data: SiteData 
   ];
 
   // News Slider
-  const newsTrackRef = useRef<HTMLDivElement>(null);
-  const [currentNewsIndex, setCurrentNewsIndex] = useState(0);
-  const scrollNews = (direction: number) => {
-    setCurrentNewsIndex((current) => {
-      const next = (current + direction + 5) % 5;
-      const track = newsTrackRef.current;
-      const card = track?.children[next] as HTMLElement | undefined;
-      if (track && card) track.scrollTo({ left: card.offsetLeft - track.offsetLeft, behavior: 'smooth' });
-      return next;
-    });
-  };
-
   const latestNews = [
     {
       id: 'news-1',
@@ -1075,13 +1032,13 @@ export function Home({ lang, data }: { lang: 'fr' | 'en' | 'es'; data: SiteData 
     <section className="section-ocean-duo-pillars" id="domaines">
       <div className="wrap ocean-duo-header">
         <span className="ocean-duo-eyebrow">Axes stratégiques</span>
-        <h2 className="ocean-duo-heading">Deux piliers indissociables pour agir</h2>
+        <h2 className="ocean-duo-heading">3 axes stratégiques pour agir</h2>
         <p className="ocean-duo-sub">
-          L’éducation libère le potentiel. L’économie locale transforme ce potentiel en autonomie durable.
+          L’éducation libère le potentiel. L’économie locale et le renforcement communautaire transforment ce potentiel en autonomie durable.
         </p>
       </div>
 
-      {/* Grille 50/50 plein écran panoramique */}
+      {/* Grille 3 colonnes panoramique */}
       <div className="ocean-duo-grid">
         {/* PANNEAU 1 : ÉDUCATION */}
         <div className="ocean-duo-panel">
@@ -1090,7 +1047,7 @@ export function Home({ lang, data }: { lang: 'fr' | 'en' | 'es'; data: SiteData 
               src="/images/haiti-student-classroom.jpg"
               alt="Éducation et scolarisation des enfants en Haïti"
               fill
-              sizes="(max-width: 900px) 100vw, 50vw"
+              sizes="(max-width: 900px) 100vw, 33vw"
               className="ocean-duo-img"
             />
             <div className="ocean-duo-scrim" />
@@ -1117,7 +1074,7 @@ export function Home({ lang, data }: { lang: 'fr' | 'en' | 'es'; data: SiteData 
               src="/images/haiti-tech-workshop.jpg"
               alt="Atelier technique et autonomie économique en Haïti"
               fill
-              sizes="(max-width: 900px) 100vw, 50vw"
+              sizes="(max-width: 900px) 100vw, 33vw"
               className="ocean-duo-img"
             />
             <div className="ocean-duo-scrim" />
@@ -1136,53 +1093,38 @@ export function Home({ lang, data }: { lang: 'fr' | 'en' | 'es'; data: SiteData 
             </Link>
           </div>
         </div>
+
+        {/* PANNEAU 3 : DÉVELOPPEMENT COMMUNAUTAIRE */}
+        <div className="ocean-duo-panel">
+          <div className="ocean-duo-bg">
+            <Image
+              src="/images/community-haiti.webp"
+              alt="Développement et autonomie communautaire en Haïti"
+              fill
+              sizes="(max-width: 900px) 100vw, 33vw"
+              className="ocean-duo-img"
+            />
+            <div className="ocean-duo-scrim" />
+          </div>
+          <div className="ocean-duo-content">
+            <span className="ocean-duo-index">03 · Communauté</span>
+            <h3 className="ocean-duo-title">
+              <span className="wt-light">DÉVELOPPEMENT</span><br />
+              <span className="wt-bold">COMMUNAUTAIRE</span>
+            </h3>
+            <p className="ocean-duo-text">
+              Accompagnement d’initiatives de proximité, autonomie énergétique et projets collectifs pour pérenniser l’impact au cœur des territoires haïtiens.
+            </p>
+            <Link href="/#programmes" className="ocean-duo-btn">
+              Découvrir nos actions <ArrowRight size={17}/>
+            </Link>
+          </div>
+        </div>
       </div>
     </section>
 
 
-    {/* 5. PROGRAMMES OPÉRATIONNELS : TROIS CARTES VISIBLES, UNE EN RESERVE */}
-    <section className="programs-showcase" id="programmes">
-      <div className="wrap">
-        <div className="programs-showcase-head">
-          <div>
-            <span>Programmes opérationnels</span>
-            <h2>Des réponses concrètes sur le terrain</h2>
-          </div>
-          <p>Chaque dispositif apporte des résultats mesurables au plus près des besoins des familles.</p>
-        </div>
 
-        <div className="programs-viewport">
-          <div className="programs-cards-track" style={{ transform: `translateX(${programWindow * -25}%)` }}>
-            {operationalSpotlightPrograms.map((program, index) => (
-              <article className="program-showcase-card" key={program.id}>
-                <div className="program-card-media">
-                  <Image src={program.image} alt={program.alt} fill sizes="(max-width: 760px) 84vw, 33vw"/>
-                  <span>{String(index + 1).padStart(2, '0')}</span>
-                  <strong>{program.stickerSub}</strong>
-                </div>
-                <div className="program-card-body">
-                  <span className="program-card-action">{program.action}</span>
-                  <h3>{program.context}</h3>
-                  <dl>
-                    <div><dt>Territoire</dt><dd>{program.territoire}</dd></div>
-                    <div><dt>Depuis</dt><dd>{program.depuis}</dd></div>
-                    <div><dt>Bénéficiaire</dt><dd>{program.beneficiaire}</dd></div>
-                  </dl>
-                  <Link href={href(program.path)}>Découvrir ce programme <ArrowRight size={17}/></Link>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-
-        <div className="programs-showcase-nav">
-          <button type="button" onClick={() => setProgramWindow(0)} disabled={programWindow === 0} aria-label="Afficher les premiers programmes"><ArrowLeft size={20}/></button>
-          <span><strong>0{programWindow + 1}</strong> / 02</span>
-          <button type="button" onClick={() => setProgramWindow(1)} disabled={programWindow === 1} aria-label="Afficher le dernier programme"><ArrowRight size={20}/></button>
-          <div><i className={programWindow === 0 ? 'active' : ''}/><i className={programWindow === 1 ? 'active' : ''}/></div>
-        </div>
-      </div>
-    </section>
 
 
     {/* 5. PROJET PRIORITAIRE : APPLICATION CONCRETE DES PROGRAMMES */}
@@ -1365,140 +1307,35 @@ export function Home({ lang, data }: { lang: 'fr' | 'en' | 'es'; data: SiteData 
 
 
 
-    {/* 8. LES DERNIÈRES NOUVELLES (STYLE CAROUSEL OCEAN CLEANUP) */}
-    <section className="section-ocean-news" id="actualites">
+    {/* Actualités : une une et quatre articles complémentaires. */}
+    <section className="section-ocean-news news-journal" id="actualites" aria-labelledby="news-heading">
       <div className="wrap">
-        <div className="ocean-news-header">
-          <div className="ocean-news-accent-bar" aria-hidden="true" />
-          <h2 className="ocean-news-title">
-            LES DERNIÈRES <span>NOUVELLES</span>
-          </h2>
-          <p className="ocean-news-sub">
-            Retrouvez les dernières avancées de nos actions en Haïti, les reportages de terrain et nos prises de parole.
-          </p>
-        </div>
-
-        <div className="ocean-news-slider-wrapper">
-          <button
-            type="button"
-            className="ocean-news-float-btn float-left"
-            onClick={() => scrollNews(-1)}
-            aria-label="Actualités précédentes"
-          >
-            <ChevronLeft size={22} strokeWidth={2.5} />
-          </button>
-
-          <div className="ocean-news-track" ref={newsTrackRef}>
-            {latestNews.map((news) => (
-              <article key={news.id} className="ocean-news-card">
-                <Image
-                  src={news.image}
-                  alt={news.title}
-                  fill
-                  sizes="(max-width: 580px) 85vw, (max-width: 800px) 50vw, (max-width: 1100px) 33vw, 25vw"
-                  className="ocean-news-card-img"
-                />
-                <div className="ocean-news-card-scrim" />
-                <div className="ocean-news-card-content">
-                  <span className="ocean-news-date">{news.date}</span>
-                  <h3 className="ocean-news-headline">{news.title}</h3>
-                  <div className="ocean-news-divider" />
-                  <Link href={href(news.path)} className="ocean-news-action">
-                    <span className="ocean-news-action-circle">
-                      <ArrowRight size={18} strokeWidth={2.6} />
-                    </span>
-                    <span>Lisez la mise à jour</span>
-                  </Link>
-                </div>
+        <header className="journal-header">
+          <div><p className="journal-kicker">LES DERNIÈRES NOUVELLES</p><h2 id="news-heading">Au plus près<br />de nos actions.</h2></div>
+          <div className="journal-intro"><p>Retrouvez les dernières avancées de nos actions en Haïti, les reportages de terrain et nos prises de parole.</p><Link href={href('actualites')}>Toutes les actualités <ArrowRight size={18} aria-hidden="true" /></Link></div>
+        </header>
+        <div className="journal-layout">
+          <article className="journal-feature">
+            <Link href={href(latestNews[0].path)} className="journal-story-link">
+              <div className="journal-feature-photo"><Image src={latestNews[0].image} alt="" fill sizes="(max-width: 800px) 100vw, 55vw" /><span className="journal-feature-label">À la une</span></div>
+              <div className="journal-meta"><span>Éducation</span><span>{latestNews[0].date}</span></div>
+              <h3>{latestNews[0].title}</h3>
+              <span className="journal-read">Lire l’actualité <ArrowRight size={19} aria-hidden="true" /></span>
+            </Link>
+          </article>
+          <div className="journal-stories">
+            {latestNews.slice(1).map((news, index) => (
+              <article className="journal-story" key={news.id}>
+                <Link href={href(news.path)} className="journal-story-link">
+                  <div className="journal-story-copy"><div className="journal-meta"><span>{['Énergie', 'Formation', 'Communautés', 'Publication'][index]}</span><span>{news.date}</span></div><h3>{news.title}</h3><span className="journal-read">Lire l’actualité <ArrowRight size={16} aria-hidden="true" /></span></div>
+                  <div className="journal-story-photo"><Image src={news.image} alt="" fill sizes="(max-width: 480px) 88px, 132px" /></div>
+                </Link>
               </article>
             ))}
           </div>
-
-          <button
-            type="button"
-            className="ocean-news-float-btn float-right"
-            onClick={() => scrollNews(1)}
-            aria-label="Actualités suivantes"
-          >
-            <ChevronRight size={22} strokeWidth={2.5} />
-          </button>
-        </div>
-        <div className="uniform-carousel-nav news-carousel-nav" aria-label="Navigation des actualités">
-          <button type="button" className="spotlight-arrow-btn" onClick={() => scrollNews(-1)} aria-label="Actualité précédente"><ArrowLeft size={20}/></button>
-          <div className="spotlight-slide-indicator">
-            <span className="indicator-current">0{currentNewsIndex + 1}</span>
-            <span className="indicator-sep">/</span>
-            <span className="indicator-total">0{latestNews.length}</span>
-          </div>
-          <button type="button" className="spotlight-arrow-btn" onClick={() => scrollNews(1)} aria-label="Actualité suivante"><ArrowRight size={20}/></button>
-          <div className="spotlight-dots">
-            {latestNews.map((news, index) => <button key={news.id} type="button" className={`spotlight-dot ${index === currentNewsIndex ? 'is-active' : ''}`} onClick={() => {
-              const direction = index - currentNewsIndex;
-              if (direction) scrollNews(direction);
-            }} aria-label={`Aller à l’actualité ${index + 1}`}/>)}
-          </div>
         </div>
       </div>
     </section>
-
-
-    {/* 10. AGIR AVEC NOUS */}
-    <section className="section-act" id="agir">
-      <div className="wrap">
-        <div style={{ textAlign: 'center', maxWidth: '700px', margin: '0 auto 48px' }}>
-          <Eyebrow>Mobilisation</Eyebrow>
-          <h2 style={{ fontFamily: 'Manrope, Arial, sans-serif', fontSize: 'clamp(28px, 3.2vw, 42px)', fontWeight: 800, color: 'var(--purple-dark)', margin: '8px 0 14px' }}>
-            Vous pouvez agir avec PAAD
-          </h2>
-          <p style={{ fontSize: '16.5px', color: '#554e5b', lineHeight: 1.6, margin: 0 }}>
-            Plusieurs manières de s’engager à nos côtés pour soutenir l’avenir d’Haïti.
-          </p>
-        </div>
-
-        <div className="act-cards-grid" id="act-cards-track">
-          {/* OPTION 1 */}
-          <Link className="act-card" href={href('faire-un-don')}>
-            <div className="act-card-icon"><Heart size={24}/></div>
-            <h3>Faire un don</h3>
-            <p>Soutenez directement nos actions éducatives et l’autonomie des jeunes sur le terrain.</p>
-            <span className="act-link-label">Faire un don →</span>
-          </Link>
-
-          {/* OPTION 2 */}
-          <Link className="act-card" href={href('devenir-benevole')}>
-            <div className="act-card-icon"><UsersRound size={24}/></div>
-            <h3>Devenir bénévole</h3>
-            <p>Engagez vos compétences, votre temps et votre énergie aux côtés de nos équipes.</p>
-            <span className="act-link-label">Rejoindre l’équipe →</span>
-          </Link>
-
-          {/* OPTION 3 */}
-          <Link className="act-card" href={href('devenir-partenaire')}>
-            <div className="act-card-icon"><BriefcaseBusiness size={24}/></div>
-            <h3>Devenir partenaire</h3>
-            <p>Co-construisons des programmes durables avec les entreprises, fondations et institutions.</p>
-            <span className="act-link-label">Devenir partenaire →</span>
-          </Link>
-
-          {/* OPTION 4 */}
-          <Link className="act-card" href={href('projets')}>
-            <div className="act-card-icon"><Compass size={24}/></div>
-            <h3>Soutenir un projet</h3>
-            <p>Financez un projet ciblé répondant à une urgence ou à une filière locale précise.</p>
-            <span className="act-link-label">Explorer les projets →</span>
-          </Link>
-        </div>
-
-        {/* Indicateurs de défilement horizontal mobile */}
-        <div className="act-carousel-dots" aria-hidden="true">
-          <span className="act-dot active"></span>
-          <span className="act-dot"></span>
-          <span className="act-dot"></span>
-          <span className="act-dot"></span>
-        </div>
-      </div>
-    </section>
-
 
     {/* 13. ALLIANCES (STYLE THE OCEAN CLEANUP) */}
     <section className="section-partners" id="partenaires">
@@ -1662,47 +1499,182 @@ export function ContentPage({ lang, slug, data }: { lang: 'fr' | 'en' | 'es'; sl
 export function AboutPage({ lang }: { lang: 'fr' | 'en' | 'es'; data: SiteData }) {
   const href = (path: string) => `/${lang}/${path}`;
 
-  return <main className="about-simple">
-    <section className="about-simple-intro">
-      <div className="wrap about-simple-intro-grid">
-        <div className="about-simple-copy">
-          <span>À propos de PAAD</span>
-          <h1>Une organisation haïtienne engagée dans l’éducation et l’autonomie.</h1>
-          <p>Créé en 2024, le Programme d’Actions et d’Aide pour le Développement est une organisation laïque, indépendante et à but non lucratif basée à Port-au-Prince.</p>
-          <p>PAAD construit ses actions avec les communautés afin que les enfants, les jeunes et les familles puissent apprendre, développer des compétences et bâtir leur propre avenir.</p>
-        </div>
-        <div className="about-simple-image">
-          <Image src="/images/haiti-cinematic-hero.jpg" alt="Jeunesse et communauté en Haïti" fill priority sizes="(max-width: 800px) 100vw, 46vw"/>
-          <div className="about-simple-facts">
-            <div><span>Création</span><strong>2024</strong></div>
-            <div><span>Siège</span><strong>Port-au-Prince</strong></div>
+  const priorities = [
+    ['01', 'Éducation', 'Améliorer l’accès à l’apprentissage, soutenir les écoles et développer les compétences des enfants et des jeunes.'],
+    ['02', 'Développement économique', 'Renforcer la formation professionnelle, l’employabilité, l’entrepreneuriat et les activités génératrices de revenus.'],
+    ['03', 'Développement communautaire', 'Accompagner des initiatives locales qui renforcent durablement les capacités et l’autonomie des communautés.']
+  ];
+
+  return <main className="about-new">
+    <section className="about-new-hero">
+      <Image src="/images/haiti-cinematic-hero.jpg" alt="Jeunes Haïtiens dans leur communauté" fill priority sizes="100vw"/>
+      <div className="about-new-hero-shade"/>
+      <div className="wrap about-new-hero-copy"><span>À propos de PAAD</span><h1>Nous sommes PAAD.</h1><p>Nous agissons pour renforcer l’éducation, créer des opportunités économiques et accompagner durablement les communautés en Haïti.</p><div><Link href="/#programmes">Découvrir nos actions <ArrowRight size={17}/></Link><Link href={href('faire-un-don')}>Nous soutenir <ArrowRight size={17}/></Link></div></div>
+    </section>
+
+    {/* SECTION : LES ORIGINES */}
+    <section className="section-origins" id="origines">
+      <div className="wrap">
+        <div className="origins-grid">
+          <div className="origins-sticky-title">
+            <span className="origins-eyebrow">LES ORIGINES</span>
+            <h2 className="origins-title">
+              Comment nous<br />
+              avons commencé.
+            </h2>
+            <div className="origins-date-block"><span className="origins-year">2020</span><span className="origins-date-label">Le début de notre engagement</span></div>
+          </div>
+
+          <div className="origins-content">
+            <h3 className="origins-subtitle">
+              Une rencontre. Une prise de conscience.<br />
+              Un engagement pour Haïti.
+            </h3>
+            <div className="origins-text">
+              <p>
+                En 2020, au cœur des crises et des réalités quotidiennes vécues par les communautés en Haïti, <strong>Renel ROSENE</strong>, <strong>Renald ROSENE</strong> et <strong>Esther Gladelle TOUSSAINT</strong> ont fait un constat lucide : l’urgence humanitaire ponctuelle, bien qu’indispensable, ne permet pas aux familles de sortir de la précarité si elle ne s’adosse pas à une véritable passerelle vers l’autonomie.
+              </p>
+              <p>
+                Portés par une profonde conviction et la volonté d’offrir aux enfants et aux familles les moyens de construire leur propre avenir avec fierté et dignité, ils ont décidé d’unir leurs compétences de terrain, en éducation, en logistique et en accompagnement communautaire. C’est de cet engagement partagé qu’est née la <strong>Passerelle d’Actions pour l’Autonomie et le Développement (PAAD)</strong>.
+              </p>
+              <p>
+                Dès ses premières actions, PAAD s’est engagée sur deux piliers indissociables : l’accès à une éducation de qualité et pérenne pour les plus jeunes, ainsi que la formation technique, l’accès à l’énergie propre et le soutien économique direct pour les jeunes et les mères de famille.
+              </p>
+              <p>
+                Aujourd’hui, entourée d’écoles partenaires, d’artisans et d’équipes engagées sur place, PAAD poursuit cette mission en bâtissant des projets concrets, mesurables et durables, ancrés au plus près des besoins réels des territoires haïtiens.
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section className="about-simple-mission">
-      <div className="wrap about-simple-mission-grid">
-        <div className="about-simple-heading"><span>Notre raison d’être</span><h2>Agir avec les communautés, dans la durée.</h2></div>
-        <div className="about-simple-principles">
-          <article><span>01</span><h3>Éducation</h3><p>Faciliter l’accès à l’école, aux ressources pédagogiques et aux compétences utiles.</p></article>
-          <article><span>02</span><h3>Autonomie économique</h3><p>Renforcer l’employabilité, l’entrepreneuriat et les initiatives locales durables.</p></article>
-          <article><span>03</span><h3>Action locale</h3><p>Écouter les besoins, travailler avec les acteurs du territoire et rendre compte des résultats.</p></article>
+    {/* SECTION : LES PERSONNES DERRIÈRE LA MISSION */}
+    <section className="section-team-mission" id="equipe">
+      <div className="wrap">
+        <div className="team-mission-head">
+          <div className="team-mission-head-left">
+            <span className="team-mission-eyebrow">LES PERSONNES DERRIÈRE LA MISSION</span>
+            <h2 className="team-mission-title">
+              Une équipe engagée<br />
+              pour Haïti.
+            </h2>
+          </div>
+          <div className="team-mission-head-right">
+            <p className="team-mission-lead">
+              Des parcours complémentaires en développement, éducation, finance et politiques publiques, au service d’une même vision.
+            </p>
+          </div>
+        </div>
+
+        <div className="team-mission-grid">
+          {/* 1. Renel ROSENE */}
+          <article className="team-mission-card">
+            <div className="team-mission-photo-wrap">
+              <Image src="/images/team-renel-rosene-portrait.jpg" alt="Renel ROSENE" fill sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw" style={{ objectFit: 'cover' }} priority />
+            </div>
+            <span className="team-mission-role">COFONDATEUR · DIRECTION STRATÉGIQUE</span>
+            <h3 className="team-mission-name">Renel ROSENE</h3>
+            <details className="team-mission-footer" open><summary className="team-mission-btn"><span>Son parcours</span><span className="team-mission-plus" aria-hidden="true">+</span></summary><div className="team-mission-bio"><p className="team-mission-profession">Profession : Avocat</p>Engagé de longue date pour l'émancipation des jeunes et le développement durable en Haïti, Renel pilote les orientations stratégiques, la gouvernance et l'extension des programmes éducatifs et techniques de PAAD auprès des acteurs locaux et institutionnels.</div></details>
+          </article>
+
+          {/* 2. Renald ROSENE */}
+          <article className="team-mission-card">
+            <div className="team-mission-photo-wrap">
+              <Image src="/images/team-renald-rosene.jpg" alt="Renald ROSENE" fill sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw" style={{ objectFit: 'cover' }} />
+            </div>
+            <span className="team-mission-role">COFONDATEUR · OPÉRATIONS &amp; TERRAIN</span>
+            <h3 className="team-mission-name">Renald ROSENE</h3>
+            <details className="team-mission-footer" open><summary className="team-mission-btn"><span>Son parcours</span><span className="team-mission-plus" aria-hidden="true">+</span></summary><div className="team-mission-bio">Au contact direct des communautés et des équipes locales, Renald coordonne le déploiement opérationnel, la logistique terrain, le soutien aux cantines scolaires et le suivi de proximité des ateliers techniques.</div></details>
+          </article>
+
+          {/* 3. Esther Gladelle TOUSSAINT */}
+          <article className="team-mission-card">
+            <div className="team-mission-photo-wrap">
+              <Image src="/images/team-esther-toussaint.jpg" alt="Esther Gladelle TOUSSAINT" fill sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw" style={{ objectFit: 'cover' }} />
+            </div>
+            <span className="team-mission-role">COFONDATRICE · ÉDUCATION &amp; BOURSES</span>
+            <h3 className="team-mission-name">Esther Gladelle TOUSSAINT</h3>
+            <details className="team-mission-footer" open><summary className="team-mission-btn"><span>Son parcours</span><span className="team-mission-plus" aria-hidden="true">+</span></summary><div className="team-mission-bio"><p className="team-mission-profession">Profession : Psychologue</p>Spécialiste de la transmission pédagogique et de l'accompagnement social, Esther veille à la sélection rigoureuse des élèves boursiers, au suivi individualisé de leur réussite scolaire et à la relation de confiance avec les écoles partenaires.</div></details>
+          </article>
         </div>
       </div>
     </section>
 
-    <section className="about-simple-team">
-      <div className="wrap">
-        <div className="about-simple-team-head"><div><span>Organisation</span><h2>Une responsabilité partagée.</h2></div><p>PAAD a été fondé par Renel Rosene, Renald Rosene et Esther Gladelle Toussaint autour d’une conviction commune : les solutions durables se construisent avec les personnes concernées.</p></div>
-        <div className="about-simple-founders">
-          <div><span>01</span><strong>Renel Rosene</strong><small>Cofondateur</small></div>
-          <div><span>02</span><strong>Renald Rosene</strong><small>Cofondateur</small></div>
-          <div><span>03</span><strong>Esther Gladelle Toussaint</strong><small>Cofondatrice</small></div>
+    {/* SECTION : NOTRE CONVICTION / POURQUOI NOUS AGISSONS */}
+    <section className="section-conviction" id="pourquoi">
+      <div className="wrap conviction-grid">
+        {/* Colonne Gauche : Conviction */}
+        <div className="conviction-content">
+          <span className="conviction-eyebrow">NOTRE CONVICTION</span>
+          <h2 className="conviction-title">Des défis majeurs nécessitent des solutions durables.</h2>
+
+          <div className="conviction-quote">
+            <span className="conviction-quote-tag">Engagement de terrain</span>
+            <blockquote className="conviction-quote-text">
+              « Le potentiel existe. Notre rôle est de contribuer à créer les conditions pour qu’il puisse se développer. »
+            </blockquote>
+          </div>
+
+          <div className="conviction-paragraphs">
+            <p>L’accès limité à une éducation de qualité fragilise les parcours dès l’enfance.</p>
+            <p>Le manque de formation et d’opportunités freine l’accès à l’emploi et à l’autonomie.</p>
+            <p>De nombreuses initiatives locales manquent encore des ressources nécessaires pour durer.</p>
+          </div>
+
+          <div className="conviction-action">
+            <Link href="/#programmes" className="conviction-link">
+              En savoir plus sur nos actions <span className="conviction-arrow">↗</span>
+            </Link>
+          </div>
         </div>
-        <div className="about-simple-actions"><Link href={href('mission-vision')}>Découvrir notre mission <ArrowRight size={17}/></Link><Link href={href('contact')}>Prendre contact <ArrowRight size={17}/></Link></div>
+
+        {/* Colonne Droite : Carte Médias */}
+        <div className="conviction-card-wrap">
+          <div className="conviction-card">
+            <div className="conviction-card-header">
+              <span className="conviction-card-label">DÉCOUVRIR EN IMAGES</span>
+              <span className="conviction-card-badge">
+                <Play size={10} fill="currentColor" />
+                VIDÉO
+              </span>
+            </div>
+
+            <div className="conviction-video-frame">
+              <Image
+                src="/images/haiti-cinematic-hero.jpg"
+                alt="Présentation des actions de terrain de PAAD en Haïti"
+                fill
+                sizes="(max-width: 900px) 100vw, 50vw"
+                className="conviction-video-poster"
+              />
+              <div className="conviction-video-scrim" />
+              <Link href="/media.html" className="conviction-play-btn" aria-label="Découvrir les vidéos PAAD">
+                <Play size={22} fill="currentColor" />
+              </Link>
+              <div className="conviction-video-badge-btm">PAAD · Reportage terrain</div>
+            </div>
+
+            <div className="conviction-video-caption">
+              <Link href="/media.html" className="conviction-caption-link">
+                Voir nos vidéos et galeries de terrain <ArrowUpRight size={14} />
+              </Link>
+            </div>
+
+            <div className="conviction-card-banner">
+              <span className="conviction-banner-tag">PAAD · HAÏTI</span>
+              <h3 className="conviction-banner-title">Une vision commune. Un avenir à construire ensemble.</h3>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
+
+    <section className="about-new-priorities"><div className="wrap"><div className="about-new-heading"><span className="about-new-label">Nos priorités</span><h2>Trois leviers pour agir dans la durée.</h2><p>Une action cohérente, de l’apprentissage à l’autonomie économique et communautaire.</p></div><div className="about-new-priority-grid">{priorities.map(([n,t,d])=><article key={n}><span>{n}</span><h3>{t}</h3><p>{d}</p></article>)}</div></div></section>
+
+    <section className="about-new-vision"><Image src="/images/community-haiti.webp" alt="Communauté réunie en Haïti" fill sizes="100vw"/><div/><div className="wrap"><span>Notre vision</span><h2>Construire des communautés capables de créer elles-mêmes leur avenir.</h2><p>PAAD défend un développement durable fondé sur l’éducation, l’autonomie économique et la participation locale.</p></div></section>
+
+    <section className="about-new-projects"><div className="wrap"><div className="about-new-heading"><span className="about-new-label">Nos projets</span><h2>Des réponses concrètes, pensées pour le terrain.</h2></div><div className="about-new-project-grid"><article><Image src="/images/haiti-student-classroom.jpg" alt="Écolière dans une salle de classe" fill sizes="(max-width: 800px) 100vw, 33vw"/><div><span>Projet prioritaire · 2027</span><h3>École communautaire de Caracol</h3><p>Créer un accès proche et durable à l’éducation pour les enfants de familles déplacées ou éloignées de l’école.</p></div></article><article><Image src="/images/haiti-tech-workshop.jpg" alt="Formation technique en énergie solaire" fill sizes="(max-width: 800px) 100vw, 33vw"/><div><span>Formation professionnelle</span><h3>Autonomie solaire</h3><p>Développer des compétences techniques utiles aux écoles, dispensaires et activités locales.</p></div></article><article><Image src="/images/haiti-digital-class.jpg" alt="Jeunes en formation numérique" fill sizes="(max-width: 800px) 100vw, 33vw"/><div><span>Compétences</span><h3>Digital Lab</h3><p>Renforcer les compétences numériques et l’accès aux outils du travail moderne.</p></div></article></div></div></section>
   </main>;
 }
 
@@ -1733,7 +1705,7 @@ function LegacyAboutPage({ lang, data }: { lang: 'fr' | 'en' | 'es'; data: SiteD
             Bâtir l’avenir avec et pour les communautés d’Haïti.
           </h1>
           <p className="about-hero-lead">
-            Créé en 2024, le <strong>Programme d’Actions et d’Aide pour le Développement (PAAD)</strong> est une organisation laïque, indépendante et à but non lucratif basée à Port-au-Prince. Notre mission : transformer l’urgence éducative et économique en autonomie pérenne, directement sur le terrain.
+            Créée en 2024, la <strong>Passerelle d’Actions pour l’Autonomie et le Développement (PAAD)</strong> est une organisation laïque, indépendante et à but non lucratif basée à Port-au-Prince. Notre mission : transformer l’urgence éducative et économique en autonomie pérenne, directement sur le terrain.
           </p>
 
           <div className="about-facts-strip">
