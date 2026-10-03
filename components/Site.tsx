@@ -9,11 +9,9 @@ import type { SiteData } from '@/lib/site-data';
 import { PageBody } from './PageBody';
 
 const mainNavItems = [
-  { label: 'Qui sommes-nous', path: 'qui-sommes-nous' },
-  { label: 'Éducation', path: 'actions/education' },
-  { label: 'Développement économique', path: 'actions/developpement-economique' },
+  { label: 'Programmes', path: 'nos-actions' },
   { label: 'Nos projets', path: 'projets' },
-  { label: 'Impact', path: 'impact' },
+  { label: 'À propos', path: 'qui-sommes-nous' },
   { label: 'Actualités', path: 'actualites' },
   { label: 'Nous soutenir', path: 'faire-un-don' },
 ];
@@ -35,24 +33,14 @@ export function Header({ lang }: { lang: 'fr' | 'en' | 'es' }) {
 
   const mainNav = [
     {
-      label: 'Éducation',
-      path: 'actions/education',
-      key: 'edu',
+      label: 'Programmes',
+      path: 'nos-actions',
+      key: 'programmes',
       items: [
-        ['Retour à l’école', 'actions/education'],
-        ['Soutien scolaire', 'actions/education'],
+        ['Éducation', 'actions/education'],
+        ['Développement économique', 'actions/developpement-economique'],
         ['Bourses d’études', 'actions/education'],
-        ['Digital lab', 'actions/education'],
-      ],
-    },
-    {
-      label: 'Développement économique',
-      path: 'actions/developpement-economique',
-      key: 'eco',
-      items: [
-        ['Entrepreneuriat local', 'actions/developpement-economique'],
         ['Formations techniques', 'actions/developpement-economique'],
-        ['Micro-projets d’autonomie', 'actions/developpement-economique'],
       ],
     },
     {
@@ -66,13 +54,14 @@ export function Header({ lang }: { lang: 'fr' | 'en' | 'es' }) {
       ],
     },
     {
-      label: 'Impact',
-      path: 'impact',
-      key: 'impact',
+      label: 'À propos',
+      path: 'qui-sommes-nous',
+      key: 'about',
       items: [
-        ['Rapports annuels', 'rapports'],
-        ['Témoignages du terrain', 'actualites'],
-        ['Transparence & Éthique', 'rapports'],
+        ['Qui sommes-nous', 'qui-sommes-nous'],
+        ['Notre équipe', 'equipe'],
+        ['Gouvernance', 'gouvernance'],
+        ['Partenaires', 'partenaires'],
       ],
     },
   ];
@@ -83,6 +72,27 @@ export function Header({ lang }: { lang: 'fr' | 'en' | 'es' }) {
     sideTitle: string;
     sideLinks: [string, string][];
   }> = {
+    programmes: {
+      card1: {
+        title: 'Bourses & Écoles',
+        path: 'actions/education',
+        img: '/images/haiti-student-classroom.jpg',
+        alt: 'Élèves et bourses d’études en Haïti',
+      },
+      card2: {
+        title: 'Formations & Autonomie',
+        path: 'actions/developpement-economique',
+        img: '/images/haiti-tech-workshop.jpg',
+        alt: 'Formations professionnelles et techniques',
+      },
+      sideTitle: 'DOMAINES PRIORITAIRES',
+      sideLinks: [
+        ['Éducation & Bourses', 'actions/education'],
+        ['Digital Lab & Technologies', 'actions/education'],
+        ['Formations techniques', 'actions/developpement-economique'],
+        ['Entrepreneuriat local', 'actions/developpement-economique'],
+      ],
+    },
     about: {
       card1: {
         title: 'Notre mission',
@@ -351,33 +361,11 @@ export function Header({ lang }: { lang: 'fr' | 'en' | 'es' }) {
         <div className="ocean-sub-nav">
           <div className="ocean-sub-dropdown">
             <span className="ocean-sub-link ocean-sub-dropdown-trigger">
-              À propos <ChevronDown size={12} strokeWidth={2.2} />
-            </span>
-            <div className="ocean-sub-dropdown-menu">
-              <Link href={href('qui-sommes-nous')} className="ocean-sub-dropdown-item">
-                À propos de nous
-              </Link>
-              <Link href={href('etapes-cles')} className="ocean-sub-dropdown-item">
-                Étapes clés
-              </Link>
-              <Link href={href('faq')} className="ocean-sub-dropdown-item">
-                FAQ
-              </Link>
-              <Link href={href('contact')} className="ocean-sub-dropdown-item">
-                Contact
-              </Link>
-            </div>
-          </div>
-          <div className="ocean-sub-dropdown">
-            <span className="ocean-sub-link ocean-sub-dropdown-trigger">
               Presse &amp; Actualités <ChevronDown size={12} strokeWidth={2.2} />
             </span>
             <div className="ocean-sub-dropdown-menu">
               <Link href={href('actualites')} className="ocean-sub-dropdown-item">
                 Actualités
-              </Link>
-              <Link href={href('communiques')} className="ocean-sub-dropdown-item">
-                Communiqués de presse
               </Link>
               <Link href={href('rapports')} className="ocean-sub-dropdown-item">
                 Rapports &amp; Publications
@@ -875,8 +863,8 @@ export function Home({ lang, data }: { lang: 'fr' | 'en' | 'es'; data: SiteData 
         <div className="ocean-hero-inner home-milestone-inner">
           <span className="home-milestone-kicker">PAAD · Haïti</span>
           <h1 className="ocean-hero-title">
-            AGIR AUJOURD’HUI.<br />
-            BÂTIR L’AVENIR D’HAÏTI.
+            Agir aujourd’hui.<br />
+            Bâtir l’avenir d’Haïti.
           </h1>
           <p className="home-milestone-lead">Nous agissons avec les communautés pour faciliter l’accès à l’éducation, développer les compétences et créer des chemins durables vers l’autonomie.</p>
           <div className="home-milestone-actions">
