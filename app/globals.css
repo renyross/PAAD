@@ -1928,7 +1928,8 @@
   padding-left: 36px;
 }
 
-/* Bouton CTA Principal Signature "FAITES UN DON MAINTENANT" */
+/* Bouton CTA Principal Signature "FAITES UN DON MAINTENANT" (Barre Supérieure & Sous-Barre) */
+.ocean-top-donate-btn,
 .ocean-sub-donate-btn {
   display: inline-flex;
   align-items: center;
@@ -1936,85 +1937,304 @@
   background: var(--purple);
   color: #ffffff !important;
   font-family: 'Manrope', Arial, sans-serif;
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: 800;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  padding: 12px 24px;
+  padding: 10px 18px;
   text-decoration: none;
-  border-radius: var(--radius-btn);
-  box-shadow: 0 4px 16px rgba(113, 16, 111, 0.35);
+  border-radius: 0 !important;
+  box-shadow: 0 4px 14px rgba(113, 16, 111, 0.35);
   border: 1.5px solid transparent;
   transition: all 0.2s ease;
   white-space: nowrap;
 }
 
+.ocean-top-donate-btn:hover,
 .ocean-sub-donate-btn:hover {
   background: var(--purple-hover);
-  box-shadow: 0 6px 22px rgba(113, 16, 111, 0.45);
+  box-shadow: 0 6px 20px rgba(113, 16, 111, 0.45);
   transform: translateY(-1px);
 }
 
-/* Tiroir Mobile */
+@media (max-width: 640px) {
+  .ocean-top-donate-btn {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   MENU MOBILE ACCORDÉON (STYLE KLABU / VISUEL FOURNI)
+   ========================================================================== */
 .ocean-mobile-drawer {
   display: flex;
   flex-direction: column;
   background: #ffffff;
   border-bottom: 3px solid var(--purple);
-  padding: 20px 24px;
-  gap: 14px;
-  box-shadow: 0 10px 30px rgba(50, 19, 51, 0.15);
+  padding: 16px 16px 24px;
+  gap: 12px;
+  box-shadow: 0 16px 36px rgba(50, 19, 51, 0.16);
+  max-height: calc(100vh - 64px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
-.ocean-mobile-drawer a {
-  font-family: Manrope, Arial, sans-serif;
-  font-size: 15px;
-  font-weight: 800;
-  color: var(--purple-dark);
-  text-transform: uppercase;
-  text-decoration: none;
+/* Accordion Item Container */
+.mobile-acc-item {
+  border: none;
+  background: transparent;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+}
+
+/* Trigger Button: Sans contour */
+.mobile-acc-trigger {
+  width: 100%;
+  display: flex;
   align-items: center;
-  padding: 10px 0;
-  border-bottom: 1px solid #f2e9f4;
-  transition: color 0.2s ease, padding-left 0.2s ease;
+  justify-content: space-between;
+  padding: 14px 8px;
+  background: transparent;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border-radius: 0;
+  cursor: pointer;
+  text-align: left;
+  font-family: 'Manrope', Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 800;
+  color: #1e293b;
+  transition: color 0.2s ease;
 }
 
-.ocean-mobile-drawer a:hover,
-.ocean-mobile-drawer a:active {
+.mobile-acc-trigger:hover {
+  border: none !important;
   color: var(--purple);
-  padding-left: 4px;
 }
 
-.ocean-mobile-drawer a svg {
+/* Quand ouvert : AUCUN contour, couleur d'accent PAAD */
+.mobile-acc-item.is-open .mobile-acc-trigger {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
   color: var(--purple);
-  transition: transform 0.2s ease;
+  background: transparent;
 }
 
-.ocean-mobile-drawer a:hover svg,
-.ocean-mobile-drawer a:active svg {
+.mobile-acc-trigger svg {
+  color: var(--purple-dark);
+  transition: transform 0.25s ease, color 0.2s ease;
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+.mobile-acc-item.is-open .mobile-acc-trigger svg {
+  transform: rotate(180deg);
+  color: var(--purple);
+}
+
+/* Panel Content : Carte Blanche Séparée avec Coins Arrondis et bordure douce PAAD */
+.mobile-acc-panel {
+  display: none !important;
+  margin-top: 6px;
+  background: #ffffff;
+  border: 1px solid #ebdfee;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 18px rgba(50, 19, 51, 0.05);
+}
+
+.mobile-acc-item.is-open > .mobile-acc-panel {
+  display: block !important;
+}
+
+/* Grille 2 cartes photos */
+.mobile-acc-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.mobile-acc-card {
+  position: relative;
+  aspect-ratio: 16 / 11;
+  border-radius: 8px;
+  overflow: hidden;
+  display: block;
+  text-decoration: none;
+  background: var(--purple-dark);
+}
+
+.mobile-acc-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.mobile-acc-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(3, 15, 28, 0.05) 0%, rgba(35, 10, 37, 0.3) 40%, rgba(50, 19, 51, 0.88) 100%);
+  pointer-events: none;
+}
+
+.mobile-acc-card-dock {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  z-index: 2;
+}
+
+.mobile-acc-card-title {
+  font-family: 'Manrope', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.25;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.mobile-acc-circle-btn {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  border-radius: 50%;
+  background: var(--purple);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 3px 10px rgba(113, 16, 111, 0.4);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.mobile-acc-card:hover .mobile-acc-circle-btn {
+  transform: scale(1.08);
+  background: var(--purple-hover);
+}
+
+/* En-tête de section (NOTRE DÉMARCHE) */
+.mobile-acc-section-header {
+  margin-top: 4px;
+  margin-bottom: 6px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #ebdfee;
+}
+
+.mobile-acc-section-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--purple);
+}
+
+/* Liste des liens */
+.mobile-acc-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-acc-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+  font-family: 'Manrope', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--purple-dark);
+  text-decoration: none;
+  border-bottom: 1px solid #f5edf6;
+  transition: color 0.18s ease;
+}
+
+.mobile-acc-link:last-child {
+  border-bottom: none;
+  padding-bottom: 4px;
+}
+
+.mobile-acc-link:hover {
+  color: var(--purple);
+}
+
+.mobile-acc-link svg {
+  color: var(--purple);
+  flex-shrink: 0;
+  transition: transform 0.18s ease;
+}
+
+.mobile-acc-link:hover svg {
   transform: translate(2px, -2px);
+  color: var(--purple-hover);
 }
 
-.ocean-drawer-donate-btn {
-  margin-top: 10px;
+/* Direct standalone link */
+.mobile-drawer-direct-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border: 1.5px solid #ebdfee;
+  border-radius: 4px;
+  font-family: 'Manrope', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--purple-dark);
+  text-decoration: none;
+  background: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.mobile-drawer-direct-link:hover {
+  border-color: var(--purple);
+  color: var(--purple);
+  background: #fbf8fc;
+}
+
+.mobile-drawer-direct-link svg {
+  color: var(--purple);
+}
+
+/* Full Width Donate Button in Drawer */
+.ocean-drawer-donate-btn,
+.mobile-nav a.ocean-drawer-donate-btn,
+.ocean-mobile-drawer a.ocean-drawer-donate-btn {
+  margin-top: 6px;
   background: var(--purple) !important;
   color: #ffffff !important;
+  display: flex !important;
+  align-items: center !important;
   justify-content: center !important;
-  padding: 14px 20px !important;
+  text-align: center !important;
+  padding: 15px 20px !important;
+  font-family: 'Manrope', Arial, sans-serif !important;
   font-size: 14px !important;
   font-weight: 800 !important;
-  border-radius: var(--radius-btn) !important;
-  border-bottom: none !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  border-radius: 0 !important;
   box-shadow: 0 4px 16px rgba(113, 16, 111, 0.35) !important;
   transition: all 0.2s ease !important;
+  border-top: none !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
 }
 
 .ocean-drawer-donate-btn:hover,
 .ocean-drawer-donate-btn:active {
   background: var(--purple-hover) !important;
-  color: #ffffff !important;
   box-shadow: 0 6px 22px rgba(113, 16, 111, 0.45) !important;
   transform: translateY(-1px);
 }
@@ -4820,6 +5040,7 @@
 .ocean-news-action-circle{border-radius:0!important}
 
 /* Straight-edged donation and priority-project surfaces. */
+.ocean-top-donate-btn,
 .ocean-sub-donate-btn,
 .ocean-drawer-donate-btn,
 .ocean-pill-donate,
@@ -5508,13 +5729,73 @@
 .home-milestone-actions a,.home-milestone-actions button{min-height:50px;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:0 22px;border:1px solid #fff;border-radius:0;background:#fff;color:var(--purple-dark);font:800 13px DM Sans,Arial,sans-serif;text-decoration:none;cursor:pointer}
 .home-milestone-actions button,.home-milestone-actions a+a{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
 .home-milestone-actions a:hover,.home-milestone-actions button:hover{background:#c888cf;border-color:#c888cf;color:var(--purple-dark)}
+
+/* Bouton signature Don dans la section Hero */
+.home-milestone-actions .hero-donate-btn,
+.about-milestone-actions .hero-donate-btn,
+.hero-donate-btn {
+  background: var(--purple) !important;
+  background-color: #71106f !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 0 !important;
+  font-family: 'Manrope', Arial, sans-serif !important;
+  font-size: 14.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+  min-height: 52px !important;
+  padding: 0 32px !important;
+  box-shadow: 0 4px 18px rgba(113, 16, 111, 0.45) !important;
+  transition: all 0.2s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+}
+
+.home-milestone-actions .hero-donate-btn:hover,
+.about-milestone-actions .hero-donate-btn:hover,
+.hero-donate-btn:hover {
+  background: var(--purple-hover) !important;
+  background-color: #581056 !important;
+  color: #ffffff !important;
+  box-shadow: 0 6px 24px rgba(113, 16, 111, 0.6) !important;
+  transform: translateY(-2px);
+}
+
+.home-milestone-actions .hero-secondary-btn {
+  background: transparent !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.65) !important;
+  border-radius: 0 !important;
+  font-family: 'Manrope', Arial, sans-serif !important;
+  font-size: 13.5px !important;
+  font-weight: 700 !important;
+  min-height: 52px;
+  padding: 0 24px !important;
+  transition: all 0.2s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.home-milestone-actions .hero-secondary-btn:hover {
+  background: rgba(255, 255, 255, 0.14) !important;
+  border-color: #ffffff !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+}
 .home-milestone-summary{display:grid;grid-template-columns:repeat(3,1fr);max-width:980px;margin-top:40px;border:1px solid rgba(255,255,255,.25)}
 .home-milestone-summary>div{padding:19px 23px;border-right:1px solid rgba(255,255,255,.25)}
 .home-milestone-summary>div:last-child{border-right:0}
 .home-milestone-summary span{display:block;color:#dcb7df;font-size:10px;font-weight:800;letter-spacing:.11em;text-transform:uppercase}
 .home-milestone-summary strong{display:block;margin-top:7px;color:#fff;font-size:15px;line-height:1.35}
 #hero .ocean-hero-controls{right:max(24px,calc((100vw - 1180px)/2));bottom:26px;left:auto;transform:none}
-@media(max-width:680px){#hero.ocean-style-hero{min-height:800px}#hero .ocean-hero-bg-image{object-position:62% center}#hero .ocean-hero-scrim{background:linear-gradient(180deg,rgba(35,10,37,.26),rgba(35,10,37,.96) 52%)}#hero>.home-hero-left-layout{padding:150px 20px 62px!important}#hero .home-milestone-inner{width:100%!important;margin:0!important}.home-milestone-summary{grid-template-columns:1fr;margin-top:30px}.home-milestone-summary>div{padding:13px 16px;border-right:0;border-bottom:1px solid rgba(255,255,255,.22)}.home-milestone-summary>div:last-child{border-bottom:0}#hero .ocean-hero-controls{right:20px;bottom:18px}}
+@media(max-width:680px){#hero.ocean-style-hero{min-height:800px}#hero .ocean-hero-bg-image{object-position:62% center}#hero .ocean-hero-scrim{background:linear-gradient(180deg,rgba(35,10,37,.26),rgba(35,10,37,.96) 52%)}#hero>.home-hero-left-layout{padding:150px 20px 62px!important}#hero .home-milestone-inner{width:100%!important;margin:0!important}.home-milestone-actions{flex-direction:column;width:100%}.home-milestone-actions a,.home-milestone-actions button{width:100%!important;justify-content:center!important;text-align:center!important}.home-milestone-summary{grid-template-columns:1fr;margin-top:30px}.home-milestone-summary>div{padding:13px 16px;border-right:0;border-bottom:1px solid rgba(255,255,255,.22)}.home-milestone-summary>div:last-child{border-bottom:0}#hero .ocean-hero-controls{right:20px;bottom:18px}}
 
 /* Le logo du footer partage exactement l'arrière-plan du footer */
 .footer .footer-menu-logo{width:auto;min-width:0;height:auto;margin:0 0 22px;padding:0;background:transparent!important;display:inline-flex;align-items:center;gap:12px;color:#fff}

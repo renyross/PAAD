@@ -9,11 +9,10 @@ import type { SiteData } from '@/lib/site-data';
 import { PageBody } from './PageBody';
 
 const mainNavItems = [
-  { label: 'Programmes', path: 'nos-actions' },
-  { label: 'Nos projets', path: 'projets' },
   { label: 'À propos', path: 'qui-sommes-nous' },
-  { label: 'Actualités', path: 'actualites' },
-  { label: 'Nous soutenir', path: 'faire-un-don' },
+  { label: 'Programmes', path: 'nos-actions' },
+  { label: 'Devenir partenaire', path: 'contact' },
+  { label: 'Presse & Actualités', path: 'actualites' },
 ];
 
 const iconMap = { BookOpen, HeartPulse, BriefcaseBusiness, UsersRound, Sparkles, Leaf };
@@ -27,11 +26,23 @@ const sections = [
 export function Header({ lang }: { lang: 'fr' | 'en' | 'es' }) {
   const [open, setOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const [openMobileAcc, setOpenMobileAcc] = useState<string | null>('about');
   useEffect(() => { document.documentElement.lang = lang; }, [lang]);
   const t = translations[lang];
   const href = (path: string) => `/${lang}/${path}`;
 
   const mainNav = [
+    {
+      label: 'À propos',
+      path: 'qui-sommes-nous',
+      key: 'about',
+      items: [
+        ['Qui sommes-nous', 'qui-sommes-nous'],
+        ['Notre équipe', 'equipe'],
+        ['Gouvernance', 'gouvernance'],
+        ['Partenaires', 'partenaires'],
+      ],
+    },
     {
       label: 'Programmes',
       path: 'nos-actions',
@@ -44,24 +55,14 @@ export function Header({ lang }: { lang: 'fr' | 'en' | 'es' }) {
       ],
     },
     {
-      label: 'Nos projets',
-      path: 'projets',
-      key: 'projects',
+      label: 'Devenir partenaire',
+      path: 'contact',
+      key: 'partenaire',
       items: [
-        ['Tous nos projets', 'projets'],
-        ['Campagnes prioritaires', 'campagne'],
-        ['Où nous agissons', 'actions'],
-      ],
-    },
-    {
-      label: 'À propos',
-      path: 'qui-sommes-nous',
-      key: 'about',
-      items: [
-        ['Qui sommes-nous', 'qui-sommes-nous'],
-        ['Notre équipe', 'equipe'],
-        ['Gouvernance', 'gouvernance'],
-        ['Partenaires', 'partenaires'],
+        ['Proposer un partenariat', 'contact'],
+        ['Partenaires de terrain', 'partenaires'],
+        ['Devenir bénévole', 'contact'],
+        ['Mécénat d’entreprise', 'contact'],
       ],
     },
   ];
@@ -95,23 +96,21 @@ export function Header({ lang }: { lang: 'fr' | 'en' | 'es' }) {
     },
     about: {
       card1: {
-        title: 'Notre mission',
+        title: 'Faire ensemble',
         path: 'qui-sommes-nous',
         img: '/images/community-haiti.webp',
-        alt: 'Notre mission en Haïti',
+        alt: 'Faire ensemble',
       },
       card2: {
-        title: 'Notre équipe',
-        path: 'equipe',
+        title: 'Nos zones d’action',
+        path: 'qui-sommes-nous',
         img: '/images/workshop-haiti.webp',
-        alt: "L'équipe et actions PAAD",
+        alt: 'Nos zones d’action',
       },
-      sideTitle: 'AUTRE',
+      sideTitle: 'NOTRE DÉMARCHE',
       sideLinks: [
-        ["Tableau de bord d'impact", 'impact'],
-        ['Gouvernance et transparence', 'gouvernance'],
-        ['Impact environnemental et social', 'actions/developpement-economique'],
-        ['Affaires publiques mondiales', 'partenaires'],
+        ['Notre démarche participative', 'qui-sommes-nous'],
+        ['Nos zones d’action', 'qui-sommes-nous'],
       ],
     },
     edu: {
@@ -156,25 +155,25 @@ export function Header({ lang }: { lang: 'fr' | 'en' | 'es' }) {
         ['Énergies renouvelables & solaire', 'actions/developpement-economique'],
       ],
     },
-    projects: {
+    partenaire: {
       card1: {
-        title: 'Programme prioritaire',
-        path: 'campagne',
-        img: '/images/hero-child-education.jpg',
-        alt: 'Campagne prioritaire d’urgence',
+        title: 'Agir ensemble',
+        path: 'contact',
+        img: '/images/workshop-haiti.webp',
+        alt: 'Partenariats et coopération en Haïti',
       },
       card2: {
-        title: 'Où nous agissons',
-        path: 'actions',
-        img: '/images/community.webp',
-        alt: 'Cartographie des interventions PAAD',
+        title: 'Nos partenaires',
+        path: 'partenaires',
+        img: '/images/community-haiti.webp',
+        alt: 'Partenaires et réseaux PAAD',
       },
-      sideTitle: 'ACTIONS SUR LE TERRAIN',
+      sideTitle: 'COOPÉRATION & ALLIANCES',
       sideLinks: [
-        ['Tous nos projets', 'projets'],
-        ['Campagnes prioritaires', 'campagne'],
-        ['Cartographie des actions', 'actions'],
-        ['Nos partenaires de terrain', 'partenaires'],
+        ['Proposer un partenariat', 'contact'],
+        ['Partenaires de terrain', 'partenaires'],
+        ['Devenir bénévole', 'contact'],
+        ['Mécénat d’entreprise', 'contact'],
       ],
     },
     impact: {
@@ -196,6 +195,27 @@ export function Header({ lang }: { lang: 'fr' | 'en' | 'es' }) {
         ['Témoignages du terrain', 'actualites'],
         ['Transparence & Éthique', 'rapports'],
         ['Indicateurs de progrès', 'impact'],
+      ],
+    },
+    actualites: {
+      card1: {
+        title: 'Dernières actualités',
+        path: 'actualites',
+        img: '/images/haiti-cinematic-hero.jpg',
+        alt: 'Actualités et actions de terrain PAAD',
+      },
+      card2: {
+        title: 'Communiqués & Presse',
+        path: 'actualites',
+        img: '/images/community-haiti.webp',
+        alt: 'Espace presse et médias',
+      },
+      sideTitle: 'ACTUALITÉS & MÉDIAS',
+      sideLinks: [
+        ['Toutes les actualités', 'actualites'],
+        ['Communiqués de presse', 'actualites'],
+        ['Rapports & publications', 'rapports'],
+        ['Contact presse', 'contact'],
       ],
     },
   };
@@ -356,48 +376,184 @@ export function Header({ lang }: { lang: 'fr' | 'en' | 'es' }) {
         </div>
       </div>
 
-      {/* NIVEAU 2 : Sous-barre Secondaire Droite (Style The Ocean Cleanup) */}
-      <div className="ocean-sub-bar">
-        <div className="ocean-sub-nav">
-          <div className="ocean-sub-dropdown">
-            <span className="ocean-sub-link ocean-sub-dropdown-trigger">
-              Presse &amp; Actualités <ChevronDown size={12} strokeWidth={2.2} />
-            </span>
-            <div className="ocean-sub-dropdown-menu">
-              <Link href={href('actualites')} className="ocean-sub-dropdown-item">
-                Actualités
-              </Link>
-              <Link href={href('rapports')} className="ocean-sub-dropdown-item">
-                Rapports &amp; Publications
-              </Link>
-              <Link href={href('media')} className="ocean-sub-dropdown-item">
-                Espace média
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        {/* Bouton Rectangulaire Bleu Nuit Signature "FAITES UN DON MAINTENANT" */}
-        <Link href={href('faire-un-don')} className="ocean-sub-donate-btn">
-          FAITES UN DON MAINTENANT
-        </Link>
-      </div>
-
-      {/* Menu Déroulant Mobile */}
+      {/* Menu Déroulant Mobile avec Accordéons, Cartes Visuelles et Liens Fléchés */}
       {open && (
         <nav className="ocean-mobile-drawer" aria-label="Navigation mobile">
-          {mainNav.map((item) => (
-            <Link key={item.path} href={href(item.path)} onClick={() => setOpen(false)}>
-              {item.label}
-              <ArrowUpRight size={16} />
-            </Link>
-          ))}
-          <Link href={href('devenir-partenaire')} onClick={() => setOpen(false)}>
-            Devenir partenaire
-          </Link>
-          <Link href={href('actualites')} onClick={() => setOpen(false)}>
-            Presse &amp; Actualités
-          </Link>
+          {mainNav.map((item) => {
+            const isOpen = openMobileAcc === item.key;
+            const mega = megaMenuData[item.key];
+            const displayLabel = item.key === 'about' ? 'À propos de nous' : item.label;
+
+            return (
+              <div key={item.key} className={`mobile-acc-item ${isOpen ? 'is-open' : ''}`}>
+                <button
+                  type="button"
+                  className="mobile-acc-trigger"
+                  onClick={() => setOpenMobileAcc(isOpen ? null : item.key)}
+                  aria-expanded={isOpen}
+                >
+                  <span>{displayLabel}</span>
+                  <ChevronDown size={18} strokeWidth={2.4} />
+                </button>
+
+                {mega && isOpen && (
+                  <div className="mobile-acc-panel">
+                    {/* Grille de 2 cartes photos avec bouton rond flèche */}
+                    <div className="mobile-acc-cards">
+                      <Link
+                        href={href(mega.card1.path)}
+                        className="mobile-acc-card"
+                        onClick={() => setOpen(false)}
+                      >
+                        <Image
+                          src={mega.card1.img}
+                          alt={mega.card1.alt}
+                          fill
+                          sizes="(max-width: 600px) 50vw, 200px"
+                          className="mobile-acc-card-img"
+                        />
+                        <div className="mobile-acc-card-overlay"></div>
+                        <div className="mobile-acc-card-dock">
+                          <span className="mobile-acc-card-title">{mega.card1.title}</span>
+                          <span className="mobile-acc-circle-btn">
+                            <ArrowRight size={14} strokeWidth={2.8} />
+                          </span>
+                        </div>
+                      </Link>
+
+                      <Link
+                        href={href(mega.card2.path)}
+                        className="mobile-acc-card"
+                        onClick={() => setOpen(false)}
+                      >
+                        <Image
+                          src={mega.card2.img}
+                          alt={mega.card2.alt}
+                          fill
+                          sizes="(max-width: 600px) 50vw, 200px"
+                          className="mobile-acc-card-img"
+                        />
+                        <div className="mobile-acc-card-overlay"></div>
+                        <div className="mobile-acc-card-dock">
+                          <span className="mobile-acc-card-title">{mega.card2.title}</span>
+                          <span className="mobile-acc-circle-btn">
+                            <ArrowRight size={14} strokeWidth={2.8} />
+                          </span>
+                        </div>
+                      </Link>
+                    </div>
+
+                    {/* Titre de section avec séparateur fin */}
+                    <div className="mobile-acc-section-header">
+                      <span className="mobile-acc-section-title">{mega.sideTitle}</span>
+                    </div>
+
+                    {/* Liste des liens avec flèche ↗ */}
+                    <div className="mobile-acc-links">
+                      {mega.sideLinks.map(([subLabel, subPath]) => (
+                        <Link
+                          key={subLabel}
+                          href={href(subPath)}
+                          className="mobile-acc-link"
+                          onClick={() => setOpen(false)}
+                        >
+                          <span>{subLabel}</span>
+                          <ArrowUpRight size={18} strokeWidth={2.4} />
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            );
+          })}
+
+          {/* Accordéon Presse & Actualités dans le même style que les précédents */}
+          {(() => {
+            const isPressOpen = openMobileAcc === 'actualites';
+            const pressMega = megaMenuData.actualites;
+            return (
+              <div className={`mobile-acc-item ${isPressOpen ? 'is-open' : ''}`}>
+                <button
+                  type="button"
+                  className="mobile-acc-trigger"
+                  onClick={() => setOpenMobileAcc(isPressOpen ? null : 'actualites')}
+                  aria-expanded={isPressOpen}
+                >
+                  <span>Presse &amp; Actualités</span>
+                  <ChevronDown size={18} strokeWidth={2.4} />
+                </button>
+
+                {pressMega && isPressOpen && (
+                  <div className="mobile-acc-panel">
+                    <div className="mobile-acc-cards">
+                      <Link
+                        href={href(pressMega.card1.path)}
+                        className="mobile-acc-card"
+                        onClick={() => setOpen(false)}
+                      >
+                        <Image
+                          src={pressMega.card1.img}
+                          alt={pressMega.card1.alt}
+                          fill
+                          sizes="(max-width: 600px) 50vw, 200px"
+                          className="mobile-acc-card-img"
+                        />
+                        <div className="mobile-acc-card-overlay"></div>
+                        <div className="mobile-acc-card-dock">
+                          <span className="mobile-acc-card-title">{pressMega.card1.title}</span>
+                          <span className="mobile-acc-circle-btn">
+                            <ArrowRight size={14} strokeWidth={2.8} />
+                          </span>
+                        </div>
+                      </Link>
+
+                      <Link
+                        href={href(pressMega.card2.path)}
+                        className="mobile-acc-card"
+                        onClick={() => setOpen(false)}
+                      >
+                        <Image
+                          src={pressMega.card2.img}
+                          alt={pressMega.card2.alt}
+                          fill
+                          sizes="(max-width: 600px) 50vw, 200px"
+                          className="mobile-acc-card-img"
+                        />
+                        <div className="mobile-acc-card-overlay"></div>
+                        <div className="mobile-acc-card-dock">
+                          <span className="mobile-acc-card-title">{pressMega.card2.title}</span>
+                          <span className="mobile-acc-circle-btn">
+                            <ArrowRight size={14} strokeWidth={2.8} />
+                          </span>
+                        </div>
+                      </Link>
+                    </div>
+
+                    <div className="mobile-acc-section-header">
+                      <span className="mobile-acc-section-title">{pressMega.sideTitle}</span>
+                    </div>
+
+                    <div className="mobile-acc-links">
+                      {pressMega.sideLinks.map(([subLabel, subPath]) => (
+                        <Link
+                          key={subLabel}
+                          href={href(subPath)}
+                          className="mobile-acc-link"
+                          onClick={() => setOpen(false)}
+                        >
+                          <span>{subLabel}</span>
+                          <ArrowUpRight size={18} strokeWidth={2.4} />
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            );
+          })()}
+
+          {/* Bouton Rectangulaire Signature Don */}
           <Link
             href={href('faire-un-don')}
             className="ocean-drawer-donate-btn"
@@ -868,8 +1024,34 @@ export function Home({ lang, data }: { lang: 'fr' | 'en' | 'es'; data: SiteData 
           </h1>
           <p className="home-milestone-lead">Nous agissons avec les communautés pour faciliter l’accès à l’éducation, développer les compétences et créer des chemins durables vers l’autonomie.</p>
           <div className="home-milestone-actions">
-            <a href="#programmes">Découvrir nos actions <ArrowRight size={17}/></a>
-            <Link href={href('faire-un-don')}>Soutenir PAAD <ArrowRight size={17}/></Link>
+            <Link
+              href={href('faire-un-don')}
+              className="hero-donate-btn"
+              style={{
+                backgroundColor: '#71106f',
+                color: '#ffffff',
+                border: 'none',
+                borderRadius: 0,
+                fontFamily: "'Manrope', Arial, sans-serif",
+                fontSize: '14.5px',
+                fontWeight: 800,
+                letterSpacing: '0.05em',
+                textTransform: 'uppercase',
+                minHeight: '52px',
+                padding: '0 32px',
+                boxShadow: '0 4px 18px rgba(113, 16, 111, 0.45)',
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                textAlign: 'center',
+                textDecoration: 'none',
+              }}
+            >
+              FAITES UN DON MAINTENANT
+            </Link>
+            <a href="#programmes" className="hero-secondary-btn">
+              Découvrir nos actions <ArrowRight size={17}/>
+            </a>
           </div>
         </div>
       </div>
