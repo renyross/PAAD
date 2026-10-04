@@ -1788,7 +1788,7 @@ export function AboutPage({ lang }: { lang: 'fr' | 'en' | 'es'; data: SiteData }
             <div className="team-mission-photo-wrap">
               <Image src="/images/team-renel-rosene-portrait.jpg" alt="Renel ROSENE" fill sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw" style={{ objectFit: 'cover' }} priority />
             </div>
-            <span className="team-mission-role">COFONDATEUR · DIRECTION STRATÉGIQUE</span>
+            <span className="team-mission-role">DIRECTION STRATÉGIQUE</span>
             <h3 className="team-mission-name">Renel ROSENE</h3>
             <details className="team-mission-footer"><summary className="team-mission-btn"><span>Découvrir son parcours</span><span className="team-mission-plus" aria-hidden="true">+</span></summary><div className="team-mission-bio">Titulaire d'un master en droit des affaires et d'un MBA spécialisé en marketing digital, data et intelligence artificielle, Renel allie rigueur juridique et expertise technologique de pointe. Fort d'un parcours solide entre conseil en acquisition numérique, innovation et automatisation, il impulse la vision stratégique de PAAD. Sa maîtrise des leviers digitaux, sa vision prospective et son sens de l'impact mesurable font de lui le moteur idéal pour concevoir des trajectoires durables, structurées et adaptées aux défis d'environnements complexes.</div></details>
           </article>
@@ -1798,7 +1798,7 @@ export function AboutPage({ lang }: { lang: 'fr' | 'en' | 'es'; data: SiteData }
             <div className="team-mission-photo-wrap">
               <Image src="/images/team-renald-rosene.jpg" alt="Renald ROSENE" fill sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw" style={{ objectFit: 'cover' }} />
             </div>
-            <span className="team-mission-role">COFONDATEUR · OPÉRATIONS &amp; TERRAIN</span>
+            <span className="team-mission-role">OPÉRATIONS &amp; TERRAIN</span>
             <h3 className="team-mission-name">Renald ROSENE</h3>
             <details className="team-mission-footer"><summary className="team-mission-btn"><span>Découvrir son parcours</span><span className="team-mission-plus" aria-hidden="true">+</span></summary><div className="team-mission-bio">Photographe et entrepreneur, Renald ancre son action au plus près des réalités concrètes et humaines. Au contact direct des communautés et des équipes locales, il pilote le déploiement opérationnel, la logistique terrain, le soutien aux cantines scolaires et le suivi de proximité des ateliers techniques. Son regard affûté, son sens pratique et son engagement de terrain font de lui un acteur indispensable pour traduire les objectifs de PAAD en résultats tangibles et durables au quotidien.</div></details>
           </article>
@@ -1808,7 +1808,7 @@ export function AboutPage({ lang }: { lang: 'fr' | 'en' | 'es'; data: SiteData }
             <div className="team-mission-photo-wrap">
               <Image src="/images/team-esther-toussaint.jpg" alt="Esther Gladelle TOUSSAINT" fill sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw" style={{ objectFit: 'cover' }} />
             </div>
-            <span className="team-mission-role">COFONDATRICE · ÉDUCATION &amp; BOURSES</span>
+            <span className="team-mission-role">ÉDUCATION &amp; BOURSES</span>
             <h3 className="team-mission-name">Esther Gladelle TOUSSAINT</h3>
             <details className="team-mission-footer"><summary className="team-mission-btn"><span>Découvrir son parcours</span><span className="team-mission-plus" aria-hidden="true">+</span></summary><div className="team-mission-bio">Actuellement étudiante en deuxième année de psychologie et directrice générale d'Atizana Lakay, une entreprise dédiée aux soins cosmétiques, Esther allie sensibilité humaine et fibre entrepreneuriale. Forte de son expérience à la tête d'une structure engagée et de son intérêt profond pour le développement individuel, elle pilote avec engagement le pôle éducatif de PAAD. Sa créativité, son écoute et son leadership pragmatique font d'elle un pilier essentiel pour concevoir des initiatives pédagogiques adaptées et inspirer les générations futures face aux défis du terrain.</div></details>
           </article>
@@ -1888,8 +1888,6 @@ export function AboutPage({ lang }: { lang: 'fr' | 'en' | 'es'; data: SiteData }
     <section className="about-new-priorities"><div className="wrap"><div className="about-new-heading"><span className="about-new-label">Nos priorités</span><h2>Trois leviers pour agir dans la durée.</h2><p>Une action cohérente, de l’apprentissage à l’autonomie économique et communautaire.</p></div><div className="about-new-priority-grid">{priorities.map(([n,t,d])=><article key={n}><span>{n}</span><h3>{t}</h3><p>{d}</p></article>)}</div></div></section>
 
     <section className="about-new-vision"><Image src="/images/community-haiti.webp" alt="Communauté réunie en Haïti" fill sizes="100vw"/><div/><div className="wrap"><span>Notre vision</span><h2>Construire des communautés capables de créer elles-mêmes leur avenir.</h2><p>PAAD défend un développement durable fondé sur l’éducation, l’autonomie économique et la participation locale.</p></div></section>
-
-    <section className="about-new-projects"><div className="wrap"><div className="about-new-heading"><span className="about-new-label">Nos projets</span><h2>Des réponses concrètes, pensées pour le terrain.</h2></div><div className="about-new-project-grid"><article><Image src="/images/haiti-student-classroom.jpg" alt="Écolière dans une salle de classe" fill sizes="(max-width: 800px) 100vw, 33vw"/><div><span>Projet prioritaire · 2027</span><h3>École communautaire de Caracol</h3><p>Créer un accès proche et durable à l’éducation pour les enfants de familles déplacées ou éloignées de l’école.</p></div></article><article><Image src="/images/haiti-tech-workshop.jpg" alt="Formation technique en énergie solaire" fill sizes="(max-width: 800px) 100vw, 33vw"/><div><span>Formation professionnelle</span><h3>Autonomie solaire</h3><p>Développer des compétences techniques utiles aux écoles, dispensaires et activités locales.</p></div></article><article><Image src="/images/haiti-digital-class.jpg" alt="Jeunes en formation numérique" fill sizes="(max-width: 800px) 100vw, 33vw"/><div><span>Compétences</span><h3>Digital Lab</h3><p>Renforcer les compétences numériques et l’accès aux outils du travail moderne.</p></div></article></div></div></section>
   </main>;
 }
 
