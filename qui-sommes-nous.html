@@ -968,6 +968,7 @@
                 <span class="team-mission-plus">+</span>
               </button>
               <div id="bio-renel" class="team-mission-bio" hidden>
+                <p class="team-mission-profession">Profession : Avocat</p>
                 Engagé de longue date pour l'émancipation des jeunes et le développement durable en Haïti, Renel pilote les orientations stratégiques, la gouvernance et l'extension des programmes éducatifs et techniques de PAAD auprès des acteurs locaux et institutionnels.
               </div>
             </div>
@@ -1004,6 +1005,7 @@
                 <span class="team-mission-plus">+</span>
               </button>
               <div id="bio-esther" class="team-mission-bio" hidden>
+                <p class="team-mission-profession">Profession : Psychologue</p>
                 Spécialiste de la transmission pédagogique et de l'accompagnement social, Esther veille à la sélection rigoureuse des élèves boursiers, au suivi individualisé de leur réussite scolaire et à la relation de confiance avec les écoles partenaires.
               </div>
             </div>
@@ -1600,9 +1602,11 @@
       const bio = document.getElementById(id);
       const btn = document.querySelector(`[aria-controls="${id}"]`);
       if (!bio) return;
-      const isHidden = bio.hasAttribute('hidden');
+      const isHidden = bio.hasAttribute('hidden') || bio.style.display === 'none' || !bio.classList.contains('is-open');
       if (isHidden) {
         bio.removeAttribute('hidden');
+        bio.classList.add('is-open');
+        bio.style.display = 'block';
         if (btn) {
           btn.setAttribute('aria-expanded', 'true');
           const plus = btn.querySelector('.team-mission-plus');
@@ -1610,6 +1614,8 @@
         }
       } else {
         bio.setAttribute('hidden', '');
+        bio.classList.remove('is-open');
+        bio.style.display = 'none';
         if (btn) {
           btn.setAttribute('aria-expanded', 'false');
           const plus = btn.querySelector('.team-mission-plus');

@@ -1790,7 +1790,7 @@ export function AboutPage({ lang }: { lang: 'fr' | 'en' | 'es'; data: SiteData }
             </div>
             <span className="team-mission-role">COFONDATEUR · DIRECTION STRATÉGIQUE</span>
             <h3 className="team-mission-name">Renel ROSENE</h3>
-            <details className="team-mission-footer" open><summary className="team-mission-btn"><span>Son parcours</span><span className="team-mission-plus" aria-hidden="true">+</span></summary><div className="team-mission-bio"><p className="team-mission-profession">Profession : Avocat</p>Engagé de longue date pour l'émancipation des jeunes et le développement durable en Haïti, Renel pilote les orientations stratégiques, la gouvernance et l'extension des programmes éducatifs et techniques de PAAD auprès des acteurs locaux et institutionnels.</div></details>
+            <details className="team-mission-footer"><summary className="team-mission-btn"><span>Découvrir son parcours</span><span className="team-mission-plus" aria-hidden="true">+</span></summary><div className="team-mission-bio"><p className="team-mission-profession">Profession : Avocat</p>Engagé de longue date pour l'émancipation des jeunes et le développement durable en Haïti, Renel pilote les orientations stratégiques, la gouvernance et l'extension des programmes éducatifs et techniques de PAAD auprès des acteurs locaux et institutionnels.</div></details>
           </article>
 
           {/* 2. Renald ROSENE */}
@@ -1800,7 +1800,7 @@ export function AboutPage({ lang }: { lang: 'fr' | 'en' | 'es'; data: SiteData }
             </div>
             <span className="team-mission-role">COFONDATEUR · OPÉRATIONS &amp; TERRAIN</span>
             <h3 className="team-mission-name">Renald ROSENE</h3>
-            <details className="team-mission-footer" open><summary className="team-mission-btn"><span>Son parcours</span><span className="team-mission-plus" aria-hidden="true">+</span></summary><div className="team-mission-bio">Au contact direct des communautés et des équipes locales, Renald coordonne le déploiement opérationnel, la logistique terrain, le soutien aux cantines scolaires et le suivi de proximité des ateliers techniques.</div></details>
+            <details className="team-mission-footer"><summary className="team-mission-btn"><span>Découvrir son parcours</span><span className="team-mission-plus" aria-hidden="true">+</span></summary><div className="team-mission-bio">Au contact direct des communautés et des équipes locales, Renald coordonne le déploiement opérationnel, la logistique terrain, le soutien aux cantines scolaires et le suivi de proximité des ateliers techniques.</div></details>
           </article>
 
           {/* 3. Esther Gladelle TOUSSAINT */}
@@ -1810,7 +1810,7 @@ export function AboutPage({ lang }: { lang: 'fr' | 'en' | 'es'; data: SiteData }
             </div>
             <span className="team-mission-role">COFONDATRICE · ÉDUCATION &amp; BOURSES</span>
             <h3 className="team-mission-name">Esther Gladelle TOUSSAINT</h3>
-            <details className="team-mission-footer" open><summary className="team-mission-btn"><span>Son parcours</span><span className="team-mission-plus" aria-hidden="true">+</span></summary><div className="team-mission-bio"><p className="team-mission-profession">Profession : Psychologue</p>Spécialiste de la transmission pédagogique et de l'accompagnement social, Esther veille à la sélection rigoureuse des élèves boursiers, au suivi individualisé de leur réussite scolaire et à la relation de confiance avec les écoles partenaires.</div></details>
+            <details className="team-mission-footer"><summary className="team-mission-btn"><span>Découvrir son parcours</span><span className="team-mission-plus" aria-hidden="true">+</span></summary><div className="team-mission-bio"><p className="team-mission-profession">Profession : Psychologue</p>Spécialiste de la transmission pédagogique et de l'accompagnement social, Esther veille à la sélection rigoureuse des élèves boursiers, au suivi individualisé de leur réussite scolaire et à la relation de confiance avec les écoles partenaires.</div></details>
           </article>
         </div>
       </div>
