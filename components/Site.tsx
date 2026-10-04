@@ -1800,7 +1800,7 @@ export function AboutPage({ lang }: { lang: 'fr' | 'en' | 'es'; data: SiteData }
             </div>
             <span className="team-mission-role">COFONDATEUR · OPÉRATIONS &amp; TERRAIN</span>
             <h3 className="team-mission-name">Renald ROSENE</h3>
-            <details className="team-mission-footer"><summary className="team-mission-btn"><span>Découvrir son parcours</span><span className="team-mission-plus" aria-hidden="true">+</span></summary><div className="team-mission-bio">Au contact direct des communautés et des équipes locales, Renald coordonne le déploiement opérationnel, la logistique terrain, le soutien aux cantines scolaires et le suivi de proximité des ateliers techniques.</div></details>
+            <details className="team-mission-footer"><summary className="team-mission-btn"><span>Découvrir son parcours</span><span className="team-mission-plus" aria-hidden="true">+</span></summary><div className="team-mission-bio">Photographe et entrepreneur, Renald ancre son action au plus près des réalités concrètes et humaines. Au contact direct des communautés et des équipes locales, il pilote le déploiement opérationnel, la logistique terrain, le soutien aux cantines scolaires et le suivi de proximité des ateliers techniques. Son regard affûté, son sens pratique et son engagement de terrain font de lui un acteur indispensable pour traduire les objectifs de PAAD en résultats tangibles et durables au quotidien.</div></details>
           </article>
 
           {/* 3. Esther Gladelle TOUSSAINT */}
@@ -1810,7 +1810,7 @@ export function AboutPage({ lang }: { lang: 'fr' | 'en' | 'es'; data: SiteData }
             </div>
             <span className="team-mission-role">COFONDATRICE · ÉDUCATION &amp; BOURSES</span>
             <h3 className="team-mission-name">Esther Gladelle TOUSSAINT</h3>
-            <details className="team-mission-footer"><summary className="team-mission-btn"><span>Découvrir son parcours</span><span className="team-mission-plus" aria-hidden="true">+</span></summary><div className="team-mission-bio"><p className="team-mission-profession">Profession : Psychologue</p>Spécialiste de la transmission pédagogique et de l'accompagnement social, Esther veille à la sélection rigoureuse des élèves boursiers, au suivi individualisé de leur réussite scolaire et à la relation de confiance avec les écoles partenaires.</div></details>
+            <details className="team-mission-footer"><summary className="team-mission-btn"><span>Découvrir son parcours</span><span className="team-mission-plus" aria-hidden="true">+</span></summary><div className="team-mission-bio">Actuellement étudiante en deuxième année de psychologie et directrice générale d'Atizana Lakay, une entreprise dédiée aux soins cosmétiques, Esther allie sensibilité humaine et fibre entrepreneuriale. Forte de son expérience à la tête d'une structure engagée et de son intérêt profond pour le développement individuel, elle pilote avec engagement le pôle éducatif de PAAD. Sa créativité, son écoute et son leadership pragmatique font d'elle un pilier essentiel pour concevoir des initiatives pédagogiques adaptées et inspirer les générations futures face aux défis du terrain.</div></details>
           </article>
         </div>
       </div>

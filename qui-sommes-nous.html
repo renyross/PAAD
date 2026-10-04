@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./app/globals.css?v=20261004-hero-btn">
+  <link rel="stylesheet" href="./app/globals.css?v=20261004-team-bio">
   <link rel="stylesheet" href="./app/resource-pages.css?v=20260925-about">
   <script src="./public/resource-pages.js" defer></script>
   <style>
@@ -986,7 +986,7 @@
                 <span class="team-mission-plus">+</span>
               </button>
               <div id="bio-renald" class="team-mission-bio" hidden>
-                Au contact direct des communautés et des équipes locales, Renald coordonne le déploiement opérationnel, la logistique terrain, le soutien aux cantines scolaires et le suivi de proximité des ateliers techniques.
+                Photographe et entrepreneur, Renald ancre son action au plus près des réalités concrètes et humaines. Au contact direct des communautés et des équipes locales, il pilote le déploiement opérationnel, la logistique terrain, le soutien aux cantines scolaires et le suivi de proximité des ateliers techniques. Son regard affûté, son sens pratique et son engagement de terrain font de lui un acteur indispensable pour traduire les objectifs de PAAD en résultats tangibles et durables au quotidien.
               </div>
             </div>
           </article>
@@ -1004,8 +1004,7 @@
                 <span class="team-mission-plus">+</span>
               </button>
               <div id="bio-esther" class="team-mission-bio" hidden>
-                <p class="team-mission-profession">Profession : Psychologue</p>
-                Spécialiste de la transmission pédagogique et de l'accompagnement social, Esther veille à la sélection rigoureuse des élèves boursiers, au suivi individualisé de leur réussite scolaire et à la relation de confiance avec les écoles partenaires.
+                Actuellement étudiante en deuxième année de psychologie et directrice générale d'Atizana Lakay, une entreprise dédiée aux soins cosmétiques, Esther allie sensibilité humaine et fibre entrepreneuriale. Forte de son expérience à la tête d'une structure engagée et de son intérêt profond pour le développement individuel, elle pilote avec engagement le pôle éducatif de PAAD. Sa créativité, son écoute et son leadership pragmatique font d'elle un pilier essentiel pour concevoir des initiatives pédagogiques adaptées et inspirer les générations futures face aux défis du terrain.
               </div>
             </div>
           </article>
@@ -1596,6 +1595,8 @@
           }
         });
       });
+    }
+
     // Déplier / replier le parcours des membres
     function toggleBio(id) {
       const bio = document.getElementById(id);
@@ -1605,7 +1606,7 @@
       if (isHidden) {
         bio.removeAttribute('hidden');
         bio.classList.add('is-open');
-        bio.style.display = 'block';
+        bio.style.setProperty('display', 'block', 'important');
         if (btn) {
           btn.setAttribute('aria-expanded', 'true');
           const plus = btn.querySelector('.team-mission-plus');
@@ -1614,7 +1615,7 @@
       } else {
         bio.setAttribute('hidden', '');
         bio.classList.remove('is-open');
-        bio.style.display = 'none';
+        bio.style.setProperty('display', 'none', 'important');
         if (btn) {
           btn.setAttribute('aria-expanded', 'false');
           const plus = btn.querySelector('.team-mission-plus');
@@ -1622,6 +1623,7 @@
         }
       }
     }
+    window.toggleBio = toggleBio;
 
     // Gestion des modales
     function openModal(id, subject) {
