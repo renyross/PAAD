@@ -1790,7 +1790,7 @@ export function AboutPage({ lang }: { lang: 'fr' | 'en' | 'es'; data: SiteData }
             </div>
             <span className="team-mission-role">COFONDATEUR · DIRECTION STRATÉGIQUE</span>
             <h3 className="team-mission-name">Renel ROSENE</h3>
-            <details className="team-mission-footer"><summary className="team-mission-btn"><span>Découvrir son parcours</span><span className="team-mission-plus" aria-hidden="true">+</span></summary><div className="team-mission-bio"><p className="team-mission-profession">Profession : Avocat</p>Engagé de longue date pour l'émancipation des jeunes et le développement durable en Haïti, Renel pilote les orientations stratégiques, la gouvernance et l'extension des programmes éducatifs et techniques de PAAD auprès des acteurs locaux et institutionnels.</div></details>
+            <details className="team-mission-footer"><summary className="team-mission-btn"><span>Découvrir son parcours</span><span className="team-mission-plus" aria-hidden="true">+</span></summary><div className="team-mission-bio">Titulaire d'un master en droit des affaires et d'un MBA spécialisé en marketing digital, data et intelligence artificielle, Renel allie rigueur juridique et expertise technologique de pointe. Fort d'un parcours solide entre conseil en acquisition numérique, innovation et automatisation, il impulse la vision stratégique de PAAD. Sa maîtrise des leviers digitaux, sa vision prospective et son sens de l'impact mesurable font de lui le moteur idéal pour concevoir des trajectoires durables, structurées et adaptées aux défis d'environnements complexes.</div></details>
           </article>
 
           {/* 2. Renald ROSENE */}
