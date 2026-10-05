@@ -1321,6 +1321,16 @@
     }
     window.toggleBio = toggleBio;
 
+    // Navigation carousel équipe
+    function slideTeam(direction) {
+      const track = document.getElementById('teamTrack');
+      if (!track) return;
+      const card = track.querySelector('.team-mission-card');
+      const cardWidth = card ? card.offsetWidth + 24 : 300;
+      track.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
+    }
+    window.slideTeam = slideTeam;
+
     // Gestion des modales
     function openModal(id, subject) {
       const modal = document.getElementById(id);

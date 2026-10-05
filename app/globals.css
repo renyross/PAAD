@@ -6266,15 +6266,8 @@
 
 .team-mission-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 32px 20px;
-}
-
-@media (min-width: 1140px) {
-  .team-mission-grid {
-    grid-template-columns: repeat(5, 1fr);
-    gap: 20px;
-  }
+  grid-template-columns: repeat(4, 1fr);
+  gap: 36px 24px;
 }
 
 .team-mission-card {
@@ -6381,6 +6374,9 @@
     align-items: flex-start;
     gap: 16px;
     margin-bottom: 36px;
+  }
+  .team-mission-head-right {
+    max-width: 100%;
   }
   .team-mission-grid {
     grid-template-columns: repeat(2, 1fr);

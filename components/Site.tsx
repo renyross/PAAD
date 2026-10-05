@@ -1786,55 +1786,55 @@ export function AboutPage({ lang }: { lang: 'fr' | 'en' | 'es'; data: SiteData }
         <div className="team-mission-grid">
           {/* 1. Renel ROSENE */}
           <article className="team-mission-card">
-            <div className="team-mission-photo-wrap">
-              <Image src="/images/team-renel-rosene-portrait.jpg" alt="Renel ROSENE" fill sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw" style={{ objectFit: 'cover' }} priority />
-            </div>
-            <span className="team-mission-role">DIRECTION STRATÉGIQUE</span>
-            <h3 className="team-mission-name">Renel ROSENE</h3>
-            <details className="team-mission-footer"><summary className="team-mission-btn"><span>Découvrir son parcours</span><span className="team-mission-plus" aria-hidden="true">+</span></summary><div className="team-mission-bio">Titulaire d'un master en droit des affaires et d'un MBA spécialisé en marketing digital, data et intelligence artificielle, Renel allie rigueur juridique et expertise technologique de pointe. Fort d'un parcours solide entre conseil en acquisition numérique, innovation et automatisation, il impulse la vision stratégique de PAAD. Sa maîtrise des leviers digitaux, sa vision prospective et son sens de l'impact mesurable font de lui le moteur idéal pour concevoir des trajectoires durables, structurées et adaptées aux défis d'environnements complexes.</div></details>
-          </article>
+              <div className="team-mission-photo-wrap">
+                <Image src="/images/team-renel-rosene-portrait.jpg" alt="Renel ROSENE" fill sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw" style={{ objectFit: 'cover' }} priority />
+              </div>
+              <span className="team-mission-role">DIRECTION STRATÉGIQUE</span>
+              <h3 className="team-mission-name">Renel ROSENE</h3>
+              <details className="team-mission-footer"><summary className="team-mission-btn"><span>Découvrir son parcours</span><span className="team-mission-plus" aria-hidden="true">+</span></summary><div className="team-mission-bio">Titulaire d'un master en droit des affaires et d'un MBA spécialisé en marketing digital, data et intelligence artificielle, Renel allie rigueur juridique et expertise technologique de pointe. Fort d'un parcours solide entre conseil en acquisition numérique, innovation et automatisation, il impulse la vision stratégique de PAAD. Sa maîtrise des leviers digitaux, sa vision prospective et son sens de l'impact mesurable font de lui le moteur idéal pour concevoir des trajectoires durables, structurées et adaptées aux défis d'environnements complexes.</div></details>
+            </article>
 
-          {/* 2. Renald ROSENE */}
-          <article className="team-mission-card">
-            <div className="team-mission-photo-wrap">
-              <Image src="/images/team-renald-rosene.jpg" alt="Renald ROSENE" fill sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw" style={{ objectFit: 'cover' }} />
-            </div>
-            <span className="team-mission-role">OPÉRATIONS &amp; TERRAIN</span>
-            <h3 className="team-mission-name">Renald ROSENE</h3>
-            <details className="team-mission-footer"><summary className="team-mission-btn"><span>Découvrir son parcours</span><span className="team-mission-plus" aria-hidden="true">+</span></summary><div className="team-mission-bio">Photographe et entrepreneur, Renald ancre son action au plus près des réalités concrètes et humaines. Au contact direct des communautés et des équipes locales, il pilote le déploiement opérationnel, la logistique terrain, le soutien aux cantines scolaires et le suivi de proximité des ateliers techniques. Son regard affûté, son sens pratique et son engagement de terrain font de lui un acteur indispensable pour traduire les objectifs de PAAD en résultats tangibles et durables au quotidien.</div></details>
-          </article>
+            {/* 2. Renald ROSENE */}
+            <article className="team-mission-card">
+              <div className="team-mission-photo-wrap">
+                <Image src="/images/team-renald-rosene.jpg" alt="Renald ROSENE" fill sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw" style={{ objectFit: 'cover' }} />
+              </div>
+              <span className="team-mission-role">OPÉRATIONS &amp; TERRAIN</span>
+              <h3 className="team-mission-name">Renald ROSENE</h3>
+              <details className="team-mission-footer"><summary className="team-mission-btn"><span>Découvrir son parcours</span><span className="team-mission-plus" aria-hidden="true">+</span></summary><div className="team-mission-bio">Photographe et entrepreneur, Renald ancre son action au plus près des réalités concrètes et humaines. Au contact direct des communautés et des équipes locales, il pilote le déploiement opérationnel, la logistique terrain, le soutien aux cantines scolaires et le suivi de proximité des ateliers techniques. Son regard affûté, son sens pratique et son engagement de terrain font de lui un acteur indispensable pour traduire les objectifs de PAAD en résultats tangibles et durables au quotidien.</div></details>
+            </article>
 
-          {/* 3. Esther Gladelle TOUSSAINT */}
-          <article className="team-mission-card">
-            <div className="team-mission-photo-wrap">
-              <Image src="/images/team-esther-toussaint.jpg" alt="Esther Gladelle TOUSSAINT" fill sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw" style={{ objectFit: 'cover' }} />
-            </div>
-            <span className="team-mission-role">ÉDUCATION &amp; BOURSES</span>
-            <h3 className="team-mission-name">Esther Gladelle TOUSSAINT</h3>
-            <details className="team-mission-footer"><summary className="team-mission-btn"><span>Découvrir son parcours</span><span className="team-mission-plus" aria-hidden="true">+</span></summary><div className="team-mission-bio">Actuellement étudiante en deuxième année de psychologie et directrice générale d'Atizana Lakay, une entreprise dédiée aux soins cosmétiques, Esther allie sensibilité humaine et fibre entrepreneuriale. Forte de son expérience à la tête d'une structure engagée et de son intérêt profond pour le développement individuel, elle pilote avec engagement le pôle éducatif de PAAD. Sa créativité, son écoute et son leadership pragmatique font d'elle un pilier essentiel pour concevoir des initiatives pédagogiques adaptées et inspirer les générations futures face aux défis du terrain.</div></details>
-          </article>
+            {/* 3. Esther Gladelle TOUSSAINT */}
+            <article className="team-mission-card">
+              <div className="team-mission-photo-wrap">
+                <Image src="/images/team-esther-toussaint.jpg" alt="Esther Gladelle TOUSSAINT" fill sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw" style={{ objectFit: 'cover' }} />
+              </div>
+              <span className="team-mission-role">ÉDUCATION &amp; BOURSES</span>
+              <h3 className="team-mission-name">Esther Gladelle TOUSSAINT</h3>
+              <details className="team-mission-footer"><summary className="team-mission-btn"><span>Découvrir son parcours</span><span className="team-mission-plus" aria-hidden="true">+</span></summary><div className="team-mission-bio">Actuellement étudiante en deuxième année de psychologie et directrice générale d'Atizana Lakay, une entreprise dédiée aux soins cosmétiques, Esther allie sensibilité humaine et fibre entrepreneuriale. Forte de son expérience à la tête d'une structure engagée et de son intérêt profond pour le développement individuel, elle pilote avec engagement le pôle éducatif de PAAD. Sa créativité, son écoute et son leadership pragmatique font d'elle un pilier essentiel pour concevoir des initiatives pédagogiques adaptées et inspirer les générations futures face aux défis du terrain.</div></details>
+            </article>
 
-          {/* 4. Bonté GARCONVIL */}
-          <article className="team-mission-card">
-            <div className="team-mission-photo-wrap">
-              <Image src="/images/team-bonte-garcon.jpg" alt="Bonté GARCONVIL" fill sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 25vw" style={{ objectFit: 'cover', objectPosition: 'center top' }} />
-            </div>
-            <span className="team-mission-role">CONSULTANT EN STRATÉGIE &amp; DÉVELOPPEMENT</span>
-            <h3 className="team-mission-name">Bonté GARCONVIL</h3>
-            <details className="team-mission-footer"><summary className="team-mission-btn"><span>Découvrir son parcours</span><span className="team-mission-plus" aria-hidden="true">+</span></summary><div className="team-mission-bio">Ingénieur agronome de formation, spécialisé en gestion des ressources naturelles, en développement rural et en renforcement de capacités, Bonté Garconvil intervient chez PAAD en tant que consultant en stratégie et développement.<br /><br />Fort d’une riche expérience de terrain et de direction au sein de grandes structures humanitaires et de développement (notamment en tant qu&apos;ancien Directeur de projets au Comité PROTOS Haïti et Manager à la Caritas du Cap-Haïtien), il met son expertise au service de la planification stratégique, de la sécurité et de la souveraineté alimentaires, ainsi que de la résilience communautaire en Haïti.<br /><br />Sa vision prospective et sa fine connaissance des terroirs permettent de concevoir des projets durables, directement générateurs d’autonomie pour les familles locales.</div></details>
-          </article>
+            {/* 4. Bonté GARCONVIL */}
+            <article className="team-mission-card">
+              <div className="team-mission-photo-wrap">
+                <Image src="/images/team-bonte-garcon.jpg" alt="Bonté GARCONVIL" fill sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 25vw" style={{ objectFit: 'cover', objectPosition: 'center top' }} />
+              </div>
+              <span className="team-mission-role">CONSULTANT EN STRATÉGIE &amp; DÉVELOPPEMENT</span>
+              <h3 className="team-mission-name">Bonté GARCONVIL</h3>
+              <details className="team-mission-footer"><summary className="team-mission-btn"><span>Découvrir son parcours</span><span className="team-mission-plus" aria-hidden="true">+</span></summary><div className="team-mission-bio">Ingénieur agronome de formation, spécialisé en gestion des ressources naturelles, en développement rural et en renforcement de capacités, Bonté Garconvil intervient chez PAAD en tant que consultant en stratégie et développement.<br /><br />Fort d’une riche expérience de terrain et de direction au sein de grandes structures humanitaires et de développement (notamment en tant qu&apos;ancien Directeur de projets au Comité PROTOS Haïti et Manager à la Caritas du Cap-Haïtien), il met son expertise au service de la planification stratégique, de la sécurité et de la souveraineté alimentaires, ainsi que de la résilience communautaire en Haïti.<br /><br />Sa vision prospective et sa fine connaissance des terroirs permettent de concevoir des projets durables, directement générateurs d’autonomie pour les familles locales.</div></details>
+            </article>
 
-          {/* 5. Louveline RUBES */}
-          <article className="team-mission-card">
-            <div className="team-mission-photo-wrap">
-              <Image src="/images/team-louveline-rubes.jpg" alt="Louveline RUBES" fill sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 25vw" style={{ objectFit: 'cover', objectPosition: 'center top' }} />
-            </div>
-            <span className="team-mission-role">RESPONSABLE IMPACT SOCIAL &amp; PROTECTION</span>
-            <h3 className="team-mission-name">Louveline RUBES</h3>
-            <details className="team-mission-footer"><summary className="team-mission-btn"><span>Découvrir son parcours</span><span className="team-mission-plus" aria-hidden="true">+</span></summary><div className="team-mission-bio">Sociologue et juriste spécialisée en droit international humanitaire, Louveline Rubes intervient chez PAAD en tant que Responsable de l&apos;Impact Social et de la Protection. Cette double expertise rare lui permet d&apos;opérer à la jonction exacte entre l&apos;analyse des dynamiques sociétales et la défense rigoureuse des populations vulnérables.<br /><br />Dans le cadre de ses fonctions, elle déploie une approche systémique pour maximiser l&apos;efficacité et garantir la conformité des interventions de l&apos;ONG. Elle s&apos;assure que chaque projet de développement ou d&apos;urgence soit non seulement profondément ancré dans les réalités socioculturelles locales, mais également sécurisé par les cadres légaux internationaux relatifs à la protection des droits humains.<br /><br />Alliant rigueur analytique et pragmatisme opérationnel, Louveline pilote les stratégies d&apos;inclusion et de sauvegarde (safeguarding). Elle place l’équité et la justice sociale au centre de son engagement, concevant des cadres d&apos;intervention durables qui renforcent la résilience des communautés tout en veillant au respect inaliénable de leurs droits fondamentaux.</div></details>
-          </article>
+            {/* 5. Louveline RUBES */}
+            <article className="team-mission-card">
+              <div className="team-mission-photo-wrap">
+                <Image src="/images/team-louveline-rubes.jpg" alt="Louveline RUBES" fill sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 25vw" style={{ objectFit: 'cover', objectPosition: 'center top' }} />
+              </div>
+              <span className="team-mission-role">RESPONSABLE IMPACT SOCIAL &amp; PROTECTION</span>
+              <h3 className="team-mission-name">Louveline RUBES</h3>
+              <details className="team-mission-footer"><summary className="team-mission-btn"><span>Découvrir son parcours</span><span className="team-mission-plus" aria-hidden="true">+</span></summary><div className="team-mission-bio">Sociologue et juriste spécialisée en droit international humanitaire, Louveline Rubes intervient chez PAAD en tant que Responsable de l&apos;Impact Social et de la Protection. Cette double expertise rare lui permet d&apos;opérer à la jonction exacte entre l&apos;analyse des dynamiques sociétales et la défense rigoureuse des populations vulnérables.<br /><br />Dans le cadre de ses fonctions, elle déploie une approche systémique pour maximiser l&apos;efficacité et garantir la conformité des interventions de l&apos;ONG. Elle s&apos;assure que chaque projet de développement ou d&apos;urgence soit non seulement profondément ancré dans les réalités socioculturelles locales, mais également sécurisé par les cadres légaux internationaux relatifs à la protection des droits humains.<br /><br />Alliant rigueur analytique et pragmatisme opérationnel, Louveline pilote les stratégies d&apos;inclusion et de sauvegarde (safeguarding). Elle place l’équité et la justice sociale au centre de son engagement, concevant des cadres d&apos;intervention durables qui renforcent la résilience des communautés tout en veillant au respect inaliénable de leurs droits fondamentaux.</div></details>
+            </article>
+          </div>
         </div>
-      </div>
     </section>
 
     {/* SECTION : NOTRE CONVICTION / POURQUOI NOUS AGISSONS */}
