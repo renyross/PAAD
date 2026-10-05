@@ -1,5 +1,5 @@
 .resource-page{background:#fbf8fc;color:var(--purple-dark)}
-.resource-page .ocean-header{position:absolute;top:0;left:0;right:0;z-index:30}
+.resource-page .ocean-header{position:sticky;top:0;left:0;right:0;z-index:95}
 .resource-nav{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:28px}
 .resource-brand{display:flex;align-items:center;gap:11px;color:#fff;text-decoration:none;font:800 20px Manrope,Arial,sans-serif}
 .resource-brand img{width:38px;height:38px;object-fit:contain}

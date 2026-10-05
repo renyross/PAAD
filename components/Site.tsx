@@ -1823,6 +1823,16 @@ export function AboutPage({ lang }: { lang: 'fr' | 'en' | 'es'; data: SiteData }
             <h3 className="team-mission-name">Bonté GARCONVIL</h3>
             <details className="team-mission-footer"><summary className="team-mission-btn"><span>Découvrir son parcours</span><span className="team-mission-plus" aria-hidden="true">+</span></summary><div className="team-mission-bio">Ingénieur agronome de formation, spécialisé en gestion des ressources naturelles, en développement rural et en renforcement de capacités, Bonté Garconvil intervient chez PAAD en tant que consultant en stratégie et développement.<br /><br />Fort d’une riche expérience de terrain et de direction au sein de grandes structures humanitaires et de développement (notamment en tant qu&apos;ancien Directeur de projets au Comité PROTOS Haïti et Manager à la Caritas du Cap-Haïtien), il met son expertise au service de la planification stratégique, de la sécurité et de la souveraineté alimentaires, ainsi que de la résilience communautaire en Haïti.<br /><br />Sa vision prospective et sa fine connaissance des terroirs permettent de concevoir des projets durables, directement générateurs d’autonomie pour les familles locales.</div></details>
           </article>
+
+          {/* 5. Louveline RUBES */}
+          <article className="team-mission-card">
+            <div className="team-mission-photo-wrap">
+              <Image src="/images/team-louveline-rubes.jpg" alt="Louveline RUBES" fill sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 25vw" style={{ objectFit: 'cover', objectPosition: 'center top' }} />
+            </div>
+            <span className="team-mission-role">RESPONSABLE IMPACT SOCIAL &amp; PROTECTION</span>
+            <h3 className="team-mission-name">Louveline RUBES</h3>
+            <details className="team-mission-footer"><summary className="team-mission-btn"><span>Découvrir son parcours</span><span className="team-mission-plus" aria-hidden="true">+</span></summary><div className="team-mission-bio">Sociologue et juriste spécialisée en droit international humanitaire, Louveline Rubes intervient chez PAAD en tant que Responsable de l&apos;Impact Social et de la Protection. Cette double expertise rare lui permet d&apos;opérer à la jonction exacte entre l&apos;analyse des dynamiques sociétales et la défense rigoureuse des populations vulnérables.<br /><br />Dans le cadre de ses fonctions, elle déploie une approche systémique pour maximiser l&apos;efficacité et garantir la conformité des interventions de l&apos;ONG. Elle s&apos;assure que chaque projet de développement ou d&apos;urgence soit non seulement profondément ancré dans les réalités socioculturelles locales, mais également sécurisé par les cadres légaux internationaux relatifs à la protection des droits humains.<br /><br />Alliant rigueur analytique et pragmatisme opérationnel, Louveline pilote les stratégies d&apos;inclusion et de sauvegarde (safeguarding). Elle place l’équité et la justice sociale au centre de son engagement, concevant des cadres d&apos;intervention durables qui renforcent la résilience des communautés tout en veillant au respect inaliénable de leurs droits fondamentaux.</div></details>
+          </article>
         </div>
       </div>
     </section>
