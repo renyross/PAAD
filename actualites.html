@@ -1,2 +1,309 @@
-<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Actualités | PAAD</title><meta name="description" content="Suivez les actualités, projets et initiatives de PAAD en Haïti."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="./app/globals.css"><link rel="stylesheet" href="./app/resource-pages.css"><script src="./public/resource-pages.js" defer></script></head>
-<body class="resource-page" data-page="actualites"><a class="skip-link" href="#main">Aller au contenu</a><paad-resource-header></paad-resource-header><main id="main"><section class="resource-hero"><div class="resource-hero-media"><img src="./public/images/haiti-student-classroom.jpg" alt="Élèves dans une salle de classe en Haïti"></div><div class="wrap resource-hero-content"><span class="resource-kicker">Actualités</span><h1>Suivre les actions de PAAD.</h1><p>Projets, partenariats, rencontres et nouvelles du terrain : cette page rassemble les informations publiées par l’équipe PAAD.</p></div></section><paad-resource-tabs></paad-resource-tabs><section class="resource-main"><div class="wrap"><div class="resource-intro"><div><span>Le journal de PAAD</span><h2>Des nouvelles vérifiées, au rythme des projets.</h2></div><div class="resource-intro-copy"><p>Nous publierons ici les avancées importantes après validation des informations, des images et des autorisations nécessaires.</p><p>Aucune actualité officielle n’est disponible pour le moment.</p></div></div><div class="resource-grid"><article class="resource-card"><span>Terrain</span><h3>Avancées des projets</h3><p>Suivi des étapes de préparation et de mise en œuvre des actions.</p></article><article class="resource-card"><span>Partenariats</span><h3>Nouvelles collaborations</h3><p>Présentation des alliances confirmées et de leur contribution aux projets.</p></article><article class="resource-card"><span>Vie de PAAD</span><h3>Rencontres et événements</h3><p>Informations sur les prochains rendez-vous et temps forts de l’organisation.</p></article></div><div class="resource-notice"><div><strong>Recevoir les prochaines actualités</strong><p>Contactez l’équipe pour être informé des futures publications.</p></div><a href="./contact.html">Nous contacter →</a></div></div></section></main><paad-resource-footer></paad-resource-footer></body></html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog et actualités | PAAD · Passerelle d’Actions pour l’Autonomie et le Développement</title>
+  <meta name="description" content="Les reportages de terrain, les avancées de nos programmes et les récits de nos communautés en Haïti.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./app/globals.css">
+  <link rel="stylesheet" href="./app/resource-pages.css">
+  <script src="./public/resource-pages.js" defer></script>
+</head>
+<body class="blog-editorial-page" data-page="actualites">
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <!-- EN-TÊTE DE NAVIGATION PAAD -->
+  <paad-resource-header></paad-resource-header>
+
+  <main id="main">
+    <!-- 1. EN-TÊTE ÉDITORIAL DU BLOG -->
+    <header class="blog-hero-section">
+      <div class="blog-hero-wrap">
+        <span class="blog-hero-kicker">PAAD EN RÉCITS</span>
+        <h1 class="blog-hero-title">Blog et actualités.</h1>
+        <p class="blog-hero-lead">
+          Les reportages de terrain, les avancées de nos programmes et les récits de nos communautés.
+        </p>
+        <a href="./media.html" class="blog-hero-link">
+          <span>Découvrir l'album photo</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- 2. SECTION : À LA UNE -->
+    <section class="blog-featured-section" aria-labelledby="featured-heading">
+      <div class="blog-featured-wrap">
+        <span id="featured-heading" class="blog-eyebrow-label">À LA UNE</span>
+        <article class="blog-featured-card">
+          <div class="blog-featured-media">
+            <img src="./public/images/community-haiti.webp" alt="Graduation de la cohorte d'autonomie et rassemblement communautaire PAAD en Haïti" loading="eager">
+          </div>
+          <div class="blog-featured-content">
+            <span class="blog-card-category">ÉDUCATION &amp; FORMATION</span>
+            <h2 class="blog-featured-heading">Graduation de la cohorte CLM : autonomie et dignité</h2>
+            <p class="blog-featured-excerpt">
+              Célébration officielle marquant la fin de formation et l’autonomie économique durable des femmes et des familles accompagnées dans le cadre du programme Chimen lavi miyò.
+            </p>
+            <div class="blog-card-footer">
+              <span class="blog-card-date">10 avril 2026</span>
+              <a href="#recit-featured" class="blog-card-action" onclick="openStoryModal('Graduation de la cohorte CLM', 'ÉDUCATION & FORMATION', '10 avril 2026', './public/images/community-haiti.webp', 'Cette cérémonie de graduation a réuni les familles, les tuteurs et les partenaires locaux pour célébrer un jalon déterminant : l’accès à une autonomie économique concrète et mesurable. Au terme de 18 mois de formation intensive, de soutien matériel et de suivi personnalisé, les participantes ont créé leurs propres activités génératrices de revenus et sécurisé l’accès à l’alimentation et à l’école pour leurs enfants.'); return false;">
+                <span>Lire l'article</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 3. SECTION : TOUS LES RÉCITS -->
+    <section class="blog-stories-section" aria-labelledby="stories-heading">
+      <div class="blog-stories-wrap">
+        <div class="blog-stories-header">
+          <h2 id="stories-heading">Tous les récits</h2>
+          <span class="blog-stories-count">06 articles</span>
+        </div>
+
+        <div class="blog-stories-grid">
+          <!-- Article 1 -->
+          <article class="blog-story-card">
+            <div class="blog-story-media">
+              <img src="./public/images/haiti-tech-workshop.jpg" alt="Atelier pratique d'hygiène et santé à Limonade" loading="lazy">
+            </div>
+            <div class="blog-story-body">
+              <span class="blog-card-category">SANTÉ &amp; HYGIÈNE</span>
+              <h3 class="blog-story-title">Atelier pratique d’hygiène à Limonade</h3>
+              <p class="blog-story-text">
+                Apprentissage pratique de la fabrication de produits sanitaires pour renforcer la prévention dans les familles.
+              </p>
+              <div class="blog-card-footer">
+                <span class="blog-card-date">9 mars 2026</span>
+                <a href="#recit-1" class="blog-card-action" onclick="openStoryModal('Atelier pratique d’hygiène à Limonade', 'SANTÉ & HYGIÈNE', '9 mars 2026', './public/images/haiti-tech-workshop.jpg', 'Organisé en lien direct avec les agents de santé communautaires, cet atelier a permis de former 45 mères de famille aux protocoles essentiels d’hygiène, de potabilisation de l’eau et de fabrication artisanale de savon. Une réponse concrète pour réduire les risques sanitaires de façon autonome et pérenne.'); return false;">
+                  <span>Lire l'article</span>
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 2 -->
+          <article class="blog-story-card">
+            <div class="blog-story-media">
+              <img src="./public/images/workshop-haiti.webp" alt="Commerce de proximité et micro-entrepreneuriat" loading="lazy">
+            </div>
+            <div class="blog-story-body">
+              <span class="blog-card-category">DÉVELOPPEMENT ÉCONOMIQUE</span>
+              <h3 class="blog-story-title">Chimen lavi miyò : le commerce de Jacques Julienne</h3>
+              <p class="blog-story-text">
+                Grâce au micro-financement et à l’appui de PAAD, Jacques Julienne développe son commerce de proximité.
+              </p>
+              <div class="blog-card-footer">
+                <span class="blog-card-date">17 février 2026</span>
+                <a href="#recit-2" class="blog-card-action" onclick="openStoryModal('Chimen lavi miyò : le commerce de Jacques Julienne', 'DÉVELOPPEMENT ÉCONOMIQUE', '17 février 2026', './public/images/workshop-haiti.webp', 'Partie d’un étal modeste, Jacques Julienne a bénéficié d’un fonds d’amorçage et de sessions de gestion financière dispensées par PAAD. Aujourd’hui, son commerce permet de subvenir aux besoins de ses quatre enfants, tout en approvisionnant son quartier en produits de première nécessité à des tarifs justes.'); return false;">
+                  <span>Lire l'article</span>
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 3 -->
+          <article class="blog-story-card">
+            <div class="blog-story-media">
+              <img src="./public/images/haiti-cinematic-hero.jpg" alt="Présence et écoute sur le terrain par les équipes PAAD" loading="lazy">
+            </div>
+            <div class="blog-story-body">
+              <span class="blog-card-category">NOTRE APPROCHE DE TERRAIN</span>
+              <h3 class="blog-story-title">Présence et écoute sur le terrain</h3>
+              <p class="blog-story-text">
+                L’équipe de terrain assure un dialogue permanent et un encadrement personnalisé auprès des communautés.
+              </p>
+              <div class="blog-card-footer">
+                <span class="blog-card-date">6 février 2026</span>
+                <a href="#recit-3" class="blog-card-action" onclick="openStoryModal('Présence et écoute sur le terrain', 'NOTRE APPROCHE DE TERRAIN', '6 février 2026', './public/images/haiti-cinematic-hero.jpg', 'Aucun programme ne peut réussir sans une immersion continue. Nos équipes parcourent chaque semaine les sections communales pour écouter les besoins exprimés par les comités de quartier, ajuster la logistique et vérifier l’impact réel de chaque initiative.'); return false;">
+                  <span>Lire l'article</span>
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 4 -->
+          <article class="blog-story-card">
+            <div class="blog-story-media">
+              <img src="./public/images/community.webp" alt="Rassemblement communautaire et concertation locale" loading="lazy">
+            </div>
+            <div class="blog-story-body">
+              <span class="blog-card-category">AUTONOMIE COLLECTIVE</span>
+              <h3 class="blog-story-title">La force du rassemblement communautaire</h3>
+              <p class="blog-story-text">
+                Les réunions régulières créent un espace d'entraide, de prise de décision collective et de solidarité durable.
+              </p>
+              <div class="blog-card-footer">
+                <span class="blog-card-date">28 janvier 2026</span>
+                <a href="#recit-4" class="blog-card-action" onclick="openStoryModal('La force du rassemblement communautaire', 'AUTONOMIE COLLECTIVE', '28 janvier 2026', './public/images/community.webp', 'Réunis sous le préau de l’école communale, les représentants de parents, d’agriculteurs et d’artisans débattent des priorités du trimestre. Cette gouvernance locale partagée est le socle de toute l’approche de PAAD pour un développement auto-porté.'); return false;">
+                  <span>Lire l'article</span>
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 5 -->
+          <article class="blog-story-card">
+            <div class="blog-story-media">
+              <img src="./public/images/haiti-student-classroom.jpg" alt="Ketia, élève studieuse soutenue par les bourses PAAD" loading="lazy">
+            </div>
+            <div class="blog-story-body">
+              <span class="blog-card-category">PARRAINAGE SCOLAIRE</span>
+              <h3 class="blog-story-title">Ketia : grandir par l’éducation</h3>
+              <p class="blog-story-text">
+                Élève studieuse à l'école partenaire, Ketia poursuit son apprentissage avec enthousiasme grâce au soutien continu de son parrainage.
+              </p>
+              <div class="blog-card-footer">
+                <span class="blog-card-date">14 janvier 2026</span>
+                <a href="#recit-5" class="blog-card-action" onclick="openStoryModal('Ketia : grandir par l’éducation', 'PARRAINAGE SCOLAIRE', '14 janvier 2026', './public/images/haiti-student-classroom.jpg', 'Ketia, 11 ans, a pu réintégrer les bancs de l’école après un an d’interruption. Grâce au programme de bourses et à la cantine scolaire quotidienne assurée par PAAD, elle excelle en mathématiques et rêve de devenir enseignante.'); return false;">
+                  <span>Lire l'article</span>
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 6 -->
+          <article class="blog-story-card">
+            <div class="blog-story-media">
+              <img src="./public/images/haiti-digital-class.jpg" alt="Lidisa en atelier de formation technique" loading="lazy">
+            </div>
+            <div class="blog-story-body">
+              <span class="blog-card-category">PARRAINAGE SCOLAIRE</span>
+              <h3 class="blog-story-title">Lidisa : un parcours d’avenir</h3>
+              <p class="blog-story-text">
+                Le parrainage offre la sécurité d’un suivi scolaire régulier et permet à Lidisa d’envisager son avenir avec confiance.
+              </p>
+              <div class="blog-card-footer">
+                <span class="blog-card-date">5 janvier 2026</span>
+                <a href="#recit-6" class="blog-card-action" onclick="openStoryModal('Lidisa : un parcours d’avenir', 'PARRAINAGE SCOLAIRE', '5 janvier 2026', './public/images/haiti-digital-class.jpg', 'En combinant encadrement pédagogique et soutien nutritionnel, PAAD accompagne Lidisa dans sa scolarité secondaire. Sa détermination inspire toute sa classe et démontre combien l’investissement dans la jeunesse transforme des destins.'); return false;">
+                  <span>Lire l'article</span>
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- BANNIÈRE NEWSLETTER DE TERRAIN -->
+        <aside class="blog-newsletter-banner" aria-label="Inscription aux récits de terrain">
+          <div>
+            <h3>Restez informés de nos avancées sur le terrain</h3>
+            <p>Recevez les prochains récits, comptes-rendus de missions et étapes de nos programmes en Haïti.</p>
+          </div>
+          <form class="blog-newsletter-form" onsubmit="alert('Merci pour votre intérêt ! Vous recevrez prochainement nos récits.'); this.reset(); return false;">
+            <input type="email" required placeholder="Votre adresse email" class="blog-newsletter-input" aria-label="Votre adresse email">
+            <button type="submit" class="blog-newsletter-btn">S'inscrire</button>
+          </form>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <!-- PIED DE PAGE PAAD -->
+  <paad-resource-footer></paad-resource-footer>
+
+  <!-- MODALE LECTURE ARTICLE -->
+  <div class="modal-backdrop" id="storyModal" role="dialog" aria-modal="true" aria-labelledby="storyModalTitle" style="display:none;">
+    <div class="modal-content" style="max-width:680px;border-radius:0;border:1px solid #ebdfee;padding:0;overflow:hidden;">
+      <div style="position:relative;width:100%;height:260px;background:#230a25;">
+        <img id="storyModalImg" src="./public/images/community-haiti.webp" alt="Photo de l'article" style="width:100%;height:100%;object-fit:cover;">
+        <button type="button" class="modal-close" onclick="closeModal('storyModal');" aria-label="Fermer" style="position:absolute;top:16px;right:16px;background:rgba(35,10,37,0.7);color:#fff;border:none;border-radius:50%;width:38px;height:38px;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;">×</button>
+      </div>
+      <div style="padding:32px 36px 40px;">
+        <span id="storyModalCategory" style="color:#1e7e4e;font-size:11.5px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;display:block;margin-bottom:10px;">ÉDUCATION &amp; FORMATION</span>
+        <h2 id="storyModalTitle" style="font-family:'Manrope',Arial,sans-serif;font-size:24px;font-weight:800;color:#230a25;line-height:1.25;margin:0 0 10px;">Titre de l'article</h2>
+        <span id="storyModalDate" style="font-size:13px;color:#887d8e;display:block;margin-bottom:20px;font-weight:600;">10 avril 2026</span>
+        <p id="storyModalText" style="font-size:15.5px;line-height:1.7;color:#554e5b;margin:0 0 28px;">Contenu de l'article...</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid #ebdfee;padding-top:20px;">
+          <a href="#don" onclick="closeModal('storyModal'); openModal('donModal'); return false;" class="hero-donate-btn" style="background:#71106f;color:#fff;padding:12px 24px;font-weight:800;font-size:13px;text-transform:uppercase;text-decoration:none;border-radius:0;">Soutenir cette action</a>
+          <button type="button" onclick="closeModal('storyModal');" style="background:transparent;border:1px solid #d1b8d6;border-radius:0;padding:12px 20px;font-weight:700;color:#230a25;cursor:pointer;">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODALE DE DON -->
+  <div class="modal-backdrop" id="donModal" role="dialog" aria-modal="true" aria-labelledby="donModalTitle" style="display:none;">
+    <div class="modal-content" style="max-width:540px;border-radius:0;border:1px solid #ebdfee;padding:40px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;">
+        <h2 id="donModalTitle" style="font-family:'Manrope',Arial,sans-serif;font-size:26px;font-weight:800;color:#230a25;margin:0;">Faire un don à PAAD</h2>
+        <button type="button" class="modal-close" onclick="closeModal('donModal');" aria-label="Fermer" style="background:transparent;border:none;font-size:26px;cursor:pointer;color:#554e5b;">×</button>
+      </div>
+      <p style="color:#554e5b;font-size:15px;line-height:1.6;margin-bottom:24px;">
+        Votre générosité finance directement les cantines scolaires, les bourses d'études et le micro-financement des activités locales en Haïti.
+      </p>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px;">
+        <button type="button" style="padding:14px;border:2px solid #71106f;background:#fbf7fc;font-weight:800;color:#71106f;border-radius:0;cursor:pointer;">25 €</button>
+        <button type="button" style="padding:14px;border:1px solid #ebdfee;background:#fff;font-weight:800;color:#230a25;border-radius:0;cursor:pointer;">50 €</button>
+        <button type="button" style="padding:14px;border:1px solid #ebdfee;background:#fff;font-weight:800;color:#230a25;border-radius:0;cursor:pointer;">100 €</button>
+      </div>
+      <a href="./contact.html" style="display:block;text-align:center;background:#71106f;color:#fff;padding:16px;font-weight:800;font-size:14px;text-transform:uppercase;letter-spacing:0.04em;text-decoration:none;border-radius:0;margin-bottom:12px;">Continuer mon don</a>
+      <p style="text-align:center;font-size:12px;color:#887d8e;margin:0;">Paiement sécurisé · 100% dédié aux projets de terrain</p>
+    </div>
+  </div>
+
+  <!-- BOUTON RETOUR EN HAUT -->
+  <button type="button" id="scrollToTopBtn" class="scroll-to-top-btn" aria-label="Remonter en haut de la page" style="display:none;">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m18 15-6-6-6 6"/>
+    </svg>
+  </button>
+
+  <script>
+    function openModal(id) {
+      const modal = document.getElementById(id);
+      if (modal) {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeModal(id) {
+      const modal = document.getElementById(id);
+      if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    }
+
+    function openStoryModal(title, category, date, img, text) {
+      document.getElementById('storyModalTitle').textContent = title;
+      document.getElementById('storyModalCategory').textContent = category;
+      document.getElementById('storyModalDate').textContent = date;
+      document.getElementById('storyModalImg').src = img;
+      document.getElementById('storyModalText').textContent = text;
+      openModal('storyModal');
+    }
+
+    // Gestion du bouton retour en haut
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+    if (scrollToTopBtn) {
+      window.addEventListener('scroll', () => {
+        scrollToTopBtn.style.display = window.scrollY > 300 ? 'flex' : 'none';
+      }, { passive: true });
+      scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+    // Fermer les modales au clic en dehors
+    window.addEventListener('click', (e) => {
+      if (e.target.classList.contains('modal-backdrop')) {
+        closeModal(e.target.id);
+      }
+    });
+  </script>
+</body>
+</html>

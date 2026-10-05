@@ -653,6 +653,7 @@ export function Footer({ lang }: { lang: 'fr' | 'en' | 'es' }) {
         <div className="mockup-footer-col">
           <h4>Ressources</h4>
           <Link href={href('actualites')}>Actualités</Link>
+          <Link href="/media.html">Espace média</Link>
           <Link href={href('rapports')}>Rapports</Link>
           <Link href={href('faq')}>FAQ</Link>
           <Link href={href('contact')}>Contact</Link>
@@ -752,13 +753,13 @@ export function Home({ lang, data }: { lang: 'fr' | 'en' | 'es'; data: SiteData 
     }
   };
 
-  // Les visuels présentent les principaux obstacles auxquels PAAD répond.
+  // Les visuels présentent les principaux axes d'intervention de PAAD.
   const spotlightSlides = [
     {
       id: 'acces-ecole',
       image: '/images/haiti-student-classroom.jpg',
-      alt: "L’accès et le maintien à l’école restent fragiles pour de nombreux enfants",
-      stickerText: 'ENJEU',
+      alt: "Accès et maintien scolaire pour chaque enfant",
+      stickerText: 'PAAD',
       stickerSub: 'ÉCOLE',
       stickerClass: 'sticker-amber',
       action: 'Accès à l’éducation',
@@ -766,8 +767,8 @@ export function Home({ lang, data }: { lang: 'fr' | 'en' | 'es'; data: SiteData 
     {
       id: 'formation-metier',
       image: '/images/haiti-tech-workshop.jpg',
-      alt: 'Les formations qualifiantes demeurent difficiles d’accès pour une partie de la jeunesse',
-      stickerText: 'ENJEU',
+      alt: 'Formation technique et filière solaire certifiante',
+      stickerText: 'PAAD',
       stickerSub: 'MÉTIER',
       stickerClass: 'sticker-orange',
       action: 'Formation et employabilité',
@@ -775,8 +776,8 @@ export function Home({ lang, data }: { lang: 'fr' | 'en' | 'es'; data: SiteData 
     {
       id: 'fracture-numerique',
       image: '/images/haiti-digital-class.jpg',
-      alt: 'Le manque d’équipements et de compétences numériques limite l’accès aux opportunités',
-      stickerText: 'ENJEU',
+      alt: 'Inclusion numérique et compétences d’avenir',
+      stickerText: 'PAAD',
       stickerSub: 'NUMÉRIQUE',
       stickerClass: 'sticker-cyan',
       action: 'Compétences numériques',
@@ -784,8 +785,8 @@ export function Home({ lang, data }: { lang: 'fr' | 'en' | 'es'; data: SiteData 
     {
       id: 'autonomie-economique',
       image: '/images/community-haiti.webp',
-      alt: 'La précarité freine la création d’activités et l’autonomie économique des communautés',
-      stickerText: 'ENJEU',
+      alt: 'Micro-initiatives économiques et dignité locale',
+      stickerText: 'PAAD',
       stickerSub: 'AUTONOMIE',
       stickerClass: 'sticker-amber',
       action: 'Développement économique',
@@ -929,41 +930,41 @@ export function Home({ lang, data }: { lang: 'fr' | 'en' | 'es'; data: SiteData 
       id: 'fabiola',
       image: '/images/haiti-student-classroom.jpg',
       alt: "Fabiola en classe d'école primaire en Haïti",
-      quote: "Avec l'accompagnement de PAAD dans notre école, un grand changement s'est opéré dans ma vie et celle de ma famille. J'ai pu recevoir mes manuels, un uniforme neuf et deux repas chauds chaque jour en classe. J'adore le calcul et la lecture. Avant, j'avais peur de devoir quitter l'école faute de moyens, mais aujourd'hui je me sens protégée et je rêve de devenir médecin pour soigner les gens de mon quartier.",
+      quote: "Grâce à l'accompagnement de PAAD, j'ai reçu mes manuels, un uniforme neuf et des repas chaque jour. Je me sens protégée et je rêve de devenir médecin pour soigner les gens de mon quartier.",
       name: "Fabiola, 9 ans",
-      role: "Boursière du programme d’accès et maintien scolaire · Port-au-Prince",
+      role: "Boursière scolaire · Port-au-Prince",
     },
     {
       id: 'jean-baptiste',
       image: '/images/haiti-tech-workshop.jpg',
       alt: "Jean-Baptiste en atelier de formation solaire",
-      quote: "La formation technique en énergie solaire dispensée par PAAD m’a donné des compétences professionnelles rares et valorisées. Aujourd’hui, j’interviens sur des installations autonomes et des chantiers d'électrification dans tout le département du Nord. J'ai même pu ouvrir mon propre atelier et je forme à mon tour deux jeunes apprentis de ma communauté.",
+      quote: "La formation en énergie solaire de PAAD m’a donné un métier d'avenir valorisé. Aujourd’hui, j'installe des équipements autonomes et je forme à mon tour deux apprentis.",
       name: "Jean-Baptiste Louissaint, 28 ans",
-      role: "Artisan électricien certifié · Filière Énergie Solaire PAAD, Cap-Haïtien",
+      role: "Artisan électricien certifié · Cap-Haïtien",
     },
     {
       id: 'mireille-esther',
       image: '/images/haiti-digital-class.jpg',
       alt: "Apprenantes en bureautique et technologies numériques",
-      quote: "L'ouverture du Digital Lab a été une formidable opportunité pour nous. Nous y avons appris la bureautique avancée, les bases du développement web et le travail collaboratif en ligne. Ce programme nous a sorties de l'isolement en nous donnant des compétences concrètes et la confiance indispensable pour décrocher nos premiers contrats.",
+      quote: "L'ouverture du Digital Lab a été un tournant décisif. Nous y avons acquis des compétences pratiques solides et la confiance pour décrocher nos premiers contrats.",
       name: "Mireille (21 ans) & Esther (19 ans)",
-      role: "Diplômées du laboratoire de compétences numériques · Delmas",
+      role: "Diplômées Digital Lab · Delmas",
     },
     {
       id: 'communaute',
       image: '/images/community-haiti.webp',
       alt: "Femmes d'une coopérative solidaire en Haïti",
-      quote: "Grâce au fonds d'amorçage solidaire et au tutorat de gestion apporté par PAAD, notre groupement de femmes a pu structurer une micro-activité de transformation agroalimentaire locale. Nous ne subissons plus la précarité au jour le jour : nous générons des revenus stables qui garantissent la scolarité de nos enfants et la dignité de notre village.",
+      quote: "Avec le fonds d'amorçage solidaire, notre coopérative génère des revenus pérennes garantissant l'école de nos enfants et l'autonomie de notre village.",
       name: "Marie-Rose Pierre, 39 ans",
-      role: "Responsable de coopérative communautaire · Artibonite",
+      role: "Responsable de coopérative · Artibonite",
     },
     {
       id: 'nadege',
       image: '/images/haiti-mother-child-donate.jpg',
       alt: "Mère et son enfant soutenus par le programme d'aide",
-      quote: "Quand les temps sont devenus particulièrement difficiles, le programme d'aide nutritionnelle et d'accompagnement familial de PAAD a été une véritable bouée de sauvetage. Savoir que mon fils grandit en bonne santé et qu'il aura une place assurée à la maternelle me redonne l'espoir et la force d'avancer.",
+      quote: "Le soutien nutritionnel et familial de PAAD a transformé notre quotidien. Savoir mon fils en bonne santé me redonne la force d'avancer sereinement.",
       name: "Nadège & son fils Peterson (5 ans)",
-      role: "Famille accompagnée par le pôle d'aide d'urgence et nutrition · Cité Soleil",
+      role: "Famille accompagnée · Cité Soleil",
     },
   ];
 
@@ -1080,10 +1081,10 @@ export function Home({ lang, data }: { lang: 'fr' | 'en' | 'es'; data: SiteData 
             </h2>
             <div className="terrain-editorial-copy">
               <p className="terrain-lead">
-                Des millions d&apos;enfants et de jeunes en Haïti font aujourd&apos;hui face à une précarité qui freine leur élan, tandis que l&apos;urgence éducative continue de s&apos;aggraver.
+                Agir là où l’urgence est la plus forte pour redonner à chaque enfant et chaque jeune le pouvoir d'apprendre et de bâtir son autonomie.
               </p>
               <p className="spotlight-editorial-text">
-                Le manque d&apos;accès à l&apos;école et aux métiers d&apos;avenir fragilise les familles et l&apos;autonomie des communautés. Des salles de classe aux ateliers techniques solaires et numériques, PAAD déploie des réponses concrètes pour réintégrer durablement les enfants et transmettre aux jeunes des compétences utiles. Cette mission d&apos;émancipation exige une action immédiate et continue.
+                Des salles de classe aux ateliers techniques solaires et numériques, PAAD déploie des réponses concrètes et durables sur le terrain en Haïti.
               </p>
             </div>
 
@@ -1812,6 +1813,16 @@ export function AboutPage({ lang }: { lang: 'fr' | 'en' | 'es'; data: SiteData }
             <h3 className="team-mission-name">Esther Gladelle TOUSSAINT</h3>
             <details className="team-mission-footer"><summary className="team-mission-btn"><span>Découvrir son parcours</span><span className="team-mission-plus" aria-hidden="true">+</span></summary><div className="team-mission-bio">Actuellement étudiante en deuxième année de psychologie et directrice générale d'Atizana Lakay, une entreprise dédiée aux soins cosmétiques, Esther allie sensibilité humaine et fibre entrepreneuriale. Forte de son expérience à la tête d'une structure engagée et de son intérêt profond pour le développement individuel, elle pilote avec engagement le pôle éducatif de PAAD. Sa créativité, son écoute et son leadership pragmatique font d'elle un pilier essentiel pour concevoir des initiatives pédagogiques adaptées et inspirer les générations futures face aux défis du terrain.</div></details>
           </article>
+
+          {/* 4. Bonté GARCONVIL */}
+          <article className="team-mission-card">
+            <div className="team-mission-photo-wrap">
+              <Image src="/images/team-bonte-garcon.jpg" alt="Bonté GARCONVIL" fill sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 25vw" style={{ objectFit: 'cover', objectPosition: 'center top' }} />
+            </div>
+            <span className="team-mission-role">CONSULTANT EN STRATÉGIE &amp; DÉVELOPPEMENT</span>
+            <h3 className="team-mission-name">Bonté GARCONVIL</h3>
+            <details className="team-mission-footer"><summary className="team-mission-btn"><span>Découvrir son parcours</span><span className="team-mission-plus" aria-hidden="true">+</span></summary><div className="team-mission-bio">Ingénieur agronome de formation, spécialisé en gestion des ressources naturelles, en développement rural et en renforcement de capacités, Bonté Garconvil intervient chez PAAD en tant que consultant en stratégie et développement.<br /><br />Fort d’une riche expérience de terrain et de direction au sein de grandes structures humanitaires et de développement (notamment en tant qu&apos;ancien Directeur de projets au Comité PROTOS Haïti et Manager à la Caritas du Cap-Haïtien), il met son expertise au service de la planification stratégique, de la sécurité et de la souveraineté alimentaires, ainsi que de la résilience communautaire en Haïti.<br /><br />Sa vision prospective et sa fine connaissance des terroirs permettent de concevoir des projets durables, directement générateurs d’autonomie pour les familles locales.</div></details>
+          </article>
         </div>
       </div>
     </section>
@@ -1885,9 +1896,11 @@ export function AboutPage({ lang }: { lang: 'fr' | 'en' | 'es'; data: SiteData }
       </div>
     </section>
 
-    <section className="about-new-priorities"><div className="wrap"><div className="about-new-heading"><span className="about-new-label">Nos priorités</span><h2>Trois leviers pour agir dans la durée.</h2><p>Une action cohérente, de l’apprentissage à l’autonomie économique et communautaire.</p></div><div className="about-new-priority-grid">{priorities.map(([n,t,d])=><article key={n}><span>{n}</span><h3>{t}</h3><p>{d}</p></article>)}</div></div></section>
+    {/* SECTION : NOTRE VISION */}
+    <section className="about-new-vision"><Image src="/images/community-haiti.webp" alt="Communauté réunie en Haïti" fill sizes="100vw"/><div/><div className="wrap"><span>Notre vision</span><h2>Construire des communautés capables de créer elles-mêmes leur avenir.</h2><p>PAAD défend un développement durable fondé sur l’éducation, l’autonomie économique et la participation locale.</p><div className="about-vision-actions"><Link href="#don" className="about-vision-btn-primary">Faire un don</Link><Link href={href('contact')} className="about-vision-btn-secondary">Devenir partenaire</Link></div></div></section>
 
-    <section className="about-new-vision"><Image src="/images/community-haiti.webp" alt="Communauté réunie en Haïti" fill sizes="100vw"/><div/><div className="wrap"><span>Notre vision</span><h2>Construire des communautés capables de créer elles-mêmes leur avenir.</h2><p>PAAD défend un développement durable fondé sur l’éducation, l’autonomie économique et la participation locale.</p></div></section>
+    {/* SECTION : NOS PRIORITÉS */}
+    <section className="about-new-priorities"><div className="wrap"><div className="about-new-heading"><span className="about-new-label">Nos priorités</span><h2>Trois leviers pour agir dans la durée.</h2><p>Une action cohérente, de l’apprentissage à l’autonomie économique et communautaire.</p></div><div className="about-new-priority-grid">{priorities.map(([n,t,d])=><article key={n}><span>{n}</span><h3>{t}</h3><p>{d}</p></article>)}</div></div></section>
   </main>;
 }
 

@@ -1,32 +1,504 @@
 <!DOCTYPE html>
-<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Médiathèque | PAAD</title><meta name="description" content="Photos, vidéos, identité visuelle, publications et ressources média officielles de PAAD."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="./app/globals.css"><link rel="stylesheet" href="./app/resource-pages.css"><script src="./public/resource-pages.js" defer></script></head>
-<body class="resource-page" data-page="media"><a class="skip-link" href="#main">Aller au contenu</a><paad-resource-header></paad-resource-header><main id="main">
-<section class="resource-hero"><div class="resource-hero-media"><img src="./public/images/haiti-digital-class.jpg" alt="Jeunes en formation numérique en Haïti"></div><div class="wrap resource-hero-content"><span class="resource-kicker">Médiathèque PAAD</span><h1>Des ressources pour raconter nos actions avec justesse.</h1><p>Explorez les photographies, vidéos, documents et éléments d’identité visuelle disponibles pour présenter PAAD et ses projets.</p></div></section>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Espace média & Galeries photo | PAAD · Passerelle d’Actions pour l’Autonomie et le Développement</title>
+  <meta name="description" content="Les reportages photographiques, vidéos immersives et ressources visuelles officielles de PAAD en Haïti.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./app/globals.css">
+  <link rel="stylesheet" href="./app/resource-pages.css">
+  <script src="./public/resource-pages.js" defer></script>
+</head>
+<body class="blog-editorial-page" data-page="media">
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <!-- EN-TÊTE DE NAVIGATION PAAD -->
+  <paad-resource-header></paad-resource-header>
+
+  <main id="main">
+    <!-- 1. EN-TÊTE ÉDITORIAL DE L'ESPACE MÉDIA -->
+    <header class="blog-hero-section">
+      <div class="blog-hero-wrap">
+        <span class="blog-hero-kicker">PAAD EN IMAGES</span>
+        <h1 class="blog-hero-title">Espace média et galeries.</h1>
+        <p class="blog-hero-lead">
+          Les reportages photographiques, les vidéos immersives et les archives visuelles de nos actions de terrain en Haïti.
+        </p>
+        <a href="./actualites.html" class="blog-hero-link">
+          <span>Lire nos récits et actualités</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- 2. SECTION : À LA UNE -->
+    <section class="blog-featured-section" aria-labelledby="featured-media-heading">
+      <div class="blog-featured-wrap">
+        <span id="featured-media-heading" class="blog-eyebrow-label">À LA UNE · REPORTAGE IMMERSIF</span>
+        <article class="blog-featured-card">
+          <div class="blog-featured-media">
+            <img src="./public/images/haiti-cinematic-hero.jpg" alt="Reportage de terrain sur les communautés en Haïti" loading="eager">
+          </div>
+          <div class="blog-featured-content">
+            <span class="blog-card-category">IMMERSION &amp; TERRAIN</span>
+            <h2 class="blog-featured-heading">Au cœur des communautés : bâtir l'autonomie pas à pas</h2>
+            <p class="blog-featured-excerpt">
+              Une série documentaire et photographique exclusive capturant les étapes clés de nos programmes : bourses scolaires, cantines, ateliers techniques et essor des micro-entreprises locales.
+            </p>
+            <div class="blog-card-footer">
+              <span class="blog-card-date">Haïti · Série photographique</span>
+              <a href="#galerie-featured" class="blog-card-action" onclick="openMediaModal('Au cœur des communautés : bâtir l\'autonomie pas à pas', 'IMMERSION & TERRAIN', 'Haïti · Série photographique', './public/images/haiti-cinematic-hero.jpg', 'À travers le regard de nos photographes et équipes locales, cette série témoigne de la vitalité, du courage et de la dignité des familles haïtiennes. Chaque cliché reflète notre engagement commun pour un développement durable et respectueux.'); return false;">
+                <span>Explorer la galerie</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 3. SECTION : ESPACE MÉDIA AVEC FILTRES, PHOTOS ET VIDÉOS -->
+    <section class="blog-stories-section" aria-labelledby="media-heading">
+      <div class="blog-stories-wrap">
+        
+        <!-- BARRE DE FILTRES DYNAMIQUES -->
+        <div class="media-filter-bar" role="toolbar" aria-label="Filtrer les médias">
+          <button type="button" class="media-filter-pill is-active" data-filter="all" onclick="filterMedia('all', this)">
+            Tous les médias
+          </button>
+          <button type="button" class="media-filter-pill" data-filter="photo" onclick="filterMedia('photo', this)">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="margin-right:7px;"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+            Photographies
+          </button>
+          <button type="button" class="media-filter-pill" data-filter="video" onclick="filterMedia('video', this)">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="margin-right:7px;"><polygon points="6 4 20 12 6 20 6 4" fill="currentColor"/></svg>
+            Vidéothèque
+          </button>
+          <button type="button" class="media-filter-pill" data-filter="education" onclick="filterMedia('education', this)">
+            Éducation &amp; Jeunesse
+          </button>
+          <button type="button" class="media-filter-pill" data-filter="technique" onclick="filterMedia('technique', this)">
+            Autonomie &amp; Solaire
+          </button>
+          <button type="button" class="media-filter-pill" data-filter="communaute" onclick="filterMedia('communaute', this)">
+            Communautés locales
+          </button>
+        </div>
+
+        <!-- 3.A SOUS-SECTION : REPORTAGES PHOTOGRAPHIQUES -->
+        <div id="photos-group" class="media-group">
+          <div class="blog-stories-header">
+            <div>
+              <span class="blog-eyebrow-label" style="margin-bottom:6px;">GALERIES PHOTO</span>
+              <h2 id="photos-heading">Reportages photographiques</h2>
+            </div>
+            <span class="blog-stories-count" id="photos-count">04 séries</span>
+          </div>
+
+          <div class="blog-stories-grid">
+            <!-- Photo 1 -->
+            <article class="blog-story-card media-item" data-type="photo" data-category="education">
+              <div class="blog-story-media">
+                <img src="./public/images/haiti-student-classroom.jpg" alt="L'apprentissage en action : nos classes partenaires" loading="lazy">
+              </div>
+              <div class="blog-story-body">
+                <span class="blog-card-category">ÉDUCATION &amp; JEUNESSE</span>
+                <h3 class="blog-story-title">L'apprentissage en action : nos classes partenaires</h3>
+                <p class="blog-story-text">
+                  Immersion au sein des écoles soutenues par PAAD : visages des élèves et suivi quotidien.
+                </p>
+                <div class="blog-card-footer">
+                  <span class="blog-card-date">12 photographies</span>
+                  <a href="#galerie-1" class="blog-card-action" onclick="openMediaModal('L\'apprentissage en action : nos classes partenaires', 'ÉDUCATION & JEUNESSE', 'Port-au-Prince · Bourses & Écoles', './public/images/haiti-student-classroom.jpg', 'L\'accès à des conditions d\'étude saines est le premier levier de l\'autonomie. Ces photographies documentent l\'enthousiasme des écoliers et la rigueur du corps professoral au sein des établissements partenaires de PAAD.'); return false;">
+                    <span>Voir la galerie</span>
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Photo 2 -->
+            <article class="blog-story-card media-item" data-type="photo" data-category="technique">
+              <div class="blog-story-media">
+                <img src="./public/images/haiti-tech-workshop.jpg" alt="Ateliers solaires et savoir-faire pratique" loading="lazy">
+              </div>
+              <div class="blog-story-body">
+                <span class="blog-card-category">FORMATION TECHNIQUE</span>
+                <h3 class="blog-story-title">Ateliers solaires et savoir-faire pratique</h3>
+                <p class="blog-story-text">
+                  Modules pratiques d'apprentissage aux énergies solaires et à l'autonomie technique.
+                </p>
+                <div class="blog-card-footer">
+                  <span class="blog-card-date">8 photographies</span>
+                  <a href="#galerie-2" class="blog-card-action" onclick="openMediaModal('Ateliers solaires et savoir-faire pratique', 'FORMATION TECHNIQUE', 'Ateliers pratiques · Énergie propre', './public/images/haiti-tech-workshop.jpg', 'Former les jeunes aux métiers techniques de demain : installation de panneaux photovoltaïques, maintenance d\'équipements et sécurité électrique.'); return false;">
+                    <span>Voir la galerie</span>
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Photo 3 -->
+            <article class="blog-story-card media-item" data-type="photo" data-category="communaute">
+              <div class="blog-story-media">
+                <img src="./public/images/community-haiti.webp" alt="Rassemblements et concertation locale" loading="lazy">
+              </div>
+              <div class="blog-story-body">
+                <span class="blog-card-category">COMMUNAUTÉS &amp; SOLIDARITÉ</span>
+                <h3 class="blog-story-title">Rassemblements et concertation locale</h3>
+                <p class="blog-story-text">
+                  Moments d'écoute et de gouvernance partagée au cœur des villages haïtiens.
+                </p>
+                <div class="blog-card-footer">
+                  <span class="blog-card-date">15 photographies</span>
+                  <a href="#galerie-3" class="blog-card-action" onclick="openMediaModal('Rassemblements et concertation locale', 'COMMUNAUTÉS & SOLIDARITÉ', 'Vie communautaire · Concertation', './public/images/community-haiti.webp', 'Les réunions villageoises et communales permettent de définir les priorités de chaque projet en concertation directe avec les habitants.'); return false;">
+                    <span>Voir la galerie</span>
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Photo 4 -->
+            <article class="blog-story-card media-item" data-type="photo" data-category="communaute">
+              <div class="blog-story-media">
+                <img src="./public/images/workshop-haiti.webp" alt="Micro-initiatives économiques et dignité" loading="lazy">
+              </div>
+              <div class="blog-story-body">
+                <span class="blog-card-category">DÉVELOPPEMENT LOCAL</span>
+                <h3 class="blog-story-title">Micro-initiatives économiques et dignité</h3>
+                <p class="blog-story-text">
+                  Témoignages en images des artisanes et entrepreneurs locaux soutenus par PAAD.
+                </p>
+                <div class="blog-card-footer">
+                  <span class="blog-card-date">10 photographies</span>
+                  <a href="#galerie-4" class="blog-card-action" onclick="openMediaModal('Micro-initiatives économiques et dignité', 'DÉVELOPPEMENT LOCAL', 'Entrepreneuriat · Commerce', './public/images/workshop-haiti.webp', 'Du petit commerce de denrées à l\'artisanat local, chaque initiative économique génère des revenus pérennes et renforce le tissu social.'); return false;">
+                    <span>Voir la galerie</span>
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- 3.B SOUS-SECTION : VIDÉOTHÈQUE & RÉCITS DOCUMENTAIRES -->
+        <div id="videos-group" class="media-group media-section-divider">
+          <div class="blog-stories-header">
+            <div>
+              <span class="blog-eyebrow-label" style="margin-bottom:6px;">DOCUMENTS FILMÉS</span>
+              <h2 id="videos-heading">Vidéothèque &amp; Récits documentaires</h2>
+            </div>
+            <span class="blog-stories-count" id="videos-count">03 documentaires</span>
+          </div>
+
+          <div class="blog-stories-grid">
+            <!-- Vidéo 1 -->
+            <article class="blog-story-card media-item" data-type="video" data-category="communaute">
+              <div class="blog-story-media" style="cursor:pointer;" onclick="openVideoModal('Bâtir l\'autonomie : au cœur des communautés', 'DOCUMENTAIRE OFFICIEL', '05:20', './public/images/haiti-cinematic-hero.jpg', 'Suivez les équipes de terrain et découvrez l\'impact réel de nos actions à travers le regard de nos coordinateurs et des familles locales.');">
+                <img src="./public/images/haiti-cinematic-hero.jpg" alt="Vidéo : Bâtir l'autonomie" loading="lazy">
+                <div class="video-play-overlay">
+                  <div class="video-play-btn" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg>
+                  </div>
+                </div>
+                <div class="video-duration-badge">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg>
+                  <span>05:20</span>
+                </div>
+              </div>
+              <div class="blog-story-body">
+                <span class="blog-card-category" style="color:#71106f;">DOCUMENTAIRE VIDÉO</span>
+                <h3 class="blog-story-title">Bâtir l'autonomie : au cœur des communautés</h3>
+                <p class="blog-story-text">
+                  Suivez les équipes de terrain et découvrez l'impact direct de nos programmes sur les familles.
+                </p>
+                <div class="blog-card-footer">
+                  <span class="blog-card-date">Haïti · Durée 05:20</span>
+                  <a href="#video-1" class="blog-card-action" onclick="openVideoModal('Bâtir l\'autonomie : au cœur des communautés', 'DOCUMENTAIRE OFFICIEL', '05:20', './public/images/haiti-cinematic-hero.jpg', 'Suivez les équipes de terrain et découvrez l\'impact réel de nos actions à travers le regard de nos coordinateurs et des familles locales.'); return false;">
+                    <span>Visionner la vidéo</span>
+                    <span aria-hidden="true">▶</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Vidéo 2 -->
+            <article class="blog-story-card media-item" data-type="video" data-category="education">
+              <div class="blog-story-media" style="cursor:pointer;" onclick="openVideoModal('Parole aux boursiers : grandir avec l\'école', 'TÉMOIGNAGES TERRAIN', '03:40', './public/images/hero-child-education.jpg', 'Portraits croisés d\'écoliers, d\'enseignants et de parents sur la renaissance de l\'envie d\'apprendre et la stabilité offerte par les cantines scolaires.');">
+                <img src="./public/images/hero-child-education.jpg" alt="Vidéo : Parole aux boursiers" loading="lazy">
+                <div class="video-play-overlay">
+                  <div class="video-play-btn" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg>
+                  </div>
+                </div>
+                <div class="video-duration-badge">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg>
+                  <span>03:40</span>
+                </div>
+              </div>
+              <div class="blog-story-body">
+                <span class="blog-card-category" style="color:#71106f;">TÉMOIGNAGES &amp; ÉDUCATION</span>
+                <h3 class="blog-story-title">Parole aux boursiers : grandir avec l'école</h3>
+                <p class="blog-story-text">
+                  Portraits croisés d'écoliers et d'enseignants sur la renaissance de l'envie d'apprendre.
+                </p>
+                <div class="blog-card-footer">
+                  <span class="blog-card-date">Port-au-Prince · Durée 03:40</span>
+                  <a href="#video-2" class="blog-card-action" onclick="openVideoModal('Parole aux boursiers : grandir avec l\'école', 'TÉMOIGNAGES TERRAIN', '03:40', './public/images/hero-child-education.jpg', 'Portraits croisés d\'écoliers, d\'enseignants et de parents sur la renaissance de l\'envie d\'apprendre et la stabilité offerte par les cantines scolaires.'); return false;">
+                    <span>Visionner la vidéo</span>
+                    <span aria-hidden="true">▶</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Vidéo 3 -->
+            <article class="blog-story-card media-item" data-type="video" data-category="technique">
+              <div class="blog-story-media" style="cursor:pointer;" onclick="openVideoModal('L\'énergie du changement : former la relève technique', 'REPORTAGE MÉTIER', '04:15', './public/images/haiti-digital-class.jpg', 'Plongée dans nos ateliers d\'installation photovoltaïque et d\'initiation informatique formant les techniciens de demain au Cap-Haïtien.');">
+                <img src="./public/images/haiti-digital-class.jpg" alt="Vidéo : L'énergie du changement" loading="lazy">
+                <div class="video-play-overlay">
+                  <div class="video-play-btn" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg>
+                  </div>
+                </div>
+                <div class="video-duration-badge">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg>
+                  <span>04:15</span>
+                </div>
+              </div>
+              <div class="blog-story-body">
+                <span class="blog-card-category" style="color:#71106f;">REPORTAGE TECHNIQUE</span>
+                <h3 class="blog-story-title">L'énergie du changement : la filière solaire</h3>
+                <p class="blog-story-text">
+                  Immersion dans nos ateliers d'installation solaire formant les techniciens de demain.
+                </p>
+                <div class="blog-card-footer">
+                  <span class="blog-card-date">Cap-Haïtien · Durée 04:15</span>
+                  <a href="#video-3" class="blog-card-action" onclick="openVideoModal('L\'énergie du changement : former la relève technique', 'REPORTAGE MÉTIER', '04:15', './public/images/haiti-digital-class.jpg', 'Plongée dans nos ateliers d\'installation photovoltaïque et d\'initiation informatique formant les techniciens de demain au Cap-Haïtien.'); return false;">
+                    <span>Visionner la vidéo</span>
+                    <span aria-hidden="true">▶</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
 
 
-<section class="media-section" id="conditions"><div class="wrap"><div class="media-section-head"><div><span>01 · Conditions d’utilisation</span><h2>Respecter les personnes et le contexte.</h2></div><p>Les ressources sont destinées à une présentation fidèle de PAAD. Toute utilisation commerciale, modification trompeuse ou diffusion portant atteinte à la dignité des personnes représentées exige un accord préalable.</p></div><div class="media-conditions"><article><strong>Crédit obligatoire</strong><p>Mentionnez « © PAAD » et, lorsqu’il est fourni, le nom du photographe.</p></article><article><strong>Contexte préservé</strong><p>Le recadrage raisonnable est possible, mais le sens de l’image ne doit pas être altéré.</p></article><article><strong>Autorisation préalable</strong><p>Contactez PAAD pour les campagnes, publications imprimées ou usages commerciaux.</p></article></div></div></section>
+        <!-- BANNIÈRE NEWSLETTER DE TERRAIN -->
+        <aside class="blog-newsletter-banner" aria-label="Inscription aux récits de terrain">
+          <div>
+            <h3>Recevoir les prochaines photographies et vidéos</h3>
+            <p>Inscrivez-vous pour être informé des nouvelles publications visuelles et reportages en Haïti.</p>
+          </div>
+          <form class="blog-newsletter-form" onsubmit="alert('Merci pour votre intérêt ! Vous recevrez nos futures publications visuelles.'); this.reset(); return false;">
+            <input type="email" required placeholder="Votre adresse email" class="blog-newsletter-input" aria-label="Votre adresse email">
+            <button type="submit" class="blog-newsletter-btn">S'inscrire</button>
+          </form>
+        </aside>
+      </div>
+    </section>
+  </main>
 
-<section class="media-section alt" id="une"><div class="wrap"><div class="media-section-head"><div><span>02–03 · Filtres &amp; à la une</span><h2>Explorer la médiathèque.</h2></div><p>Affichez les ressources selon leur format ou le contexte dans lequel elles ont été produites.</p></div><div class="media-filters" role="group" aria-label="Filtrer les médias"><button class="media-filter active" data-filter="all">Tout</button><button class="media-filter" data-filter="photo">Photos</button><button class="media-filter" data-filter="video">Vidéos</button><button class="media-filter" data-filter="projet">Projets</button><button class="media-filter" data-filter="evenement">Événements</button></div><div class="media-gallery" id="media-gallery">
-<article class="media-tile" data-tags="photo projet"><figure><img src="./public/images/haiti-student-classroom.jpg" alt="Écolière dans une classe en Haïti"></figure><div class="media-tile-body"><span>Photo · Éducation</span><h3>Apprendre dans un environnement accessible</h3><p>Visuel illustrant la priorité éducative de PAAD.</p></div></article>
-<article class="media-tile" data-tags="photo projet"><figure><img src="./public/images/haiti-tech-workshop.jpg" alt="Jeune en formation technique solaire"></figure><div class="media-tile-body"><span>Photo · Compétences</span><h3>Formation technique et autonomie</h3><p>Développement des compétences professionnelles.</p></div></article>
-<article class="media-tile" data-tags="photo projet"><figure><img src="./public/images/haiti-digital-class.jpg" alt="Apprenants dans une salle informatique"></figure><div class="media-tile-body"><span>Photo · Numérique</span><h3>Développer les compétences numériques</h3><p>Accès aux outils du travail moderne.</p></div></article>
-<article class="media-tile" data-tags="photo evenement"><figure><img src="./public/images/community-haiti.webp" alt="Communauté réunie en Haïti"></figure><div class="media-tile-body"><span>Photo · Communauté</span><h3>Agir avec les communautés</h3><p>Écoute, dialogue et construction collective.</p></div></article>
-<article class="media-tile" data-tags="video"><figure><img src="./public/images/haiti-cinematic-hero.jpg" alt="Jeunesse en Haïti"></figure><div class="media-tile-body"><span>Vidéo · Prochainement</span><h3>Portraits et récits du terrain</h3><p>Aucune vidéo officielle n’est encore disponible.</p></div></article>
-</div></div></section>
+  <!-- PIED DE PAGE PAAD -->
+  <paad-resource-footer></paad-resource-footer>
 
-<section class="media-section" id="thematiques"><div class="wrap"><div class="media-section-head"><div><span>04 · Galeries par thématique</span><h2>Deux priorités, plusieurs regards.</h2></div><p>Des sélections autour de l’éducation, des compétences, de l’autonomie économique et de la vie communautaire.</p></div><div class="media-gallery"><article class="media-tile"><figure><img src="./public/images/hero-child-education.jpg" alt="Enfant et éducation"></figure><div class="media-tile-body"><span>Éducation</span><h3>Accès à l’école</h3><p>Enfants, apprentissages et environnements scolaires.</p></div></article><article class="media-tile"><figure><img src="./public/images/workshop-haiti.webp" alt="Atelier et autonomie économique"></figure><div class="media-tile-body"><span>Économie locale</span><h3>Entreprendre et créer</h3><p>Compétences, ateliers et initiatives économiques.</p></div></article><article class="media-tile"><figure><img src="./public/images/community.webp" alt="Communauté en Haïti"></figure><div class="media-tile-body"><span>Communautés</span><h3>Construire ensemble</h3><p>Participation locale et dynamiques collectives.</p></div></article></div></div></section>
+  <!-- MODALE LECTURE / LIGHTBOX PHOTO -->
+  <div class="modal-backdrop" id="mediaModal" role="dialog" aria-modal="true" aria-labelledby="mediaModalTitle" style="display:none;">
+    <div class="modal-content" style="max-width:720px;border-radius:0;border:1px solid #ebdfee;padding:0;overflow:hidden;">
+      <div style="position:relative;width:100%;height:320px;background:#230a25;">
+        <img id="mediaModalImg" src="./public/images/haiti-cinematic-hero.jpg" alt="Aperçu média" style="width:100%;height:100%;object-fit:cover;">
+        <button type="button" class="modal-close" onclick="closeModal('mediaModal');" aria-label="Fermer" style="position:absolute;top:16px;right:16px;background:rgba(35,10,37,0.75);color:#fff;border:none;border-radius:50%;width:38px;height:38px;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;">×</button>
+      </div>
+      <div style="padding:32px 36px 40px;">
+        <span id="mediaModalCategory" style="color:#1e7e4e;font-size:11.5px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;display:block;margin-bottom:10px;">IMMERSION &amp; TERRAIN</span>
+        <h2 id="mediaModalTitle" style="font-family:'Manrope',Arial,sans-serif;font-size:24px;font-weight:800;color:#230a25;line-height:1.25;margin:0 0 10px;">Titre de la galerie</h2>
+        <span id="mediaModalDate" style="font-size:13px;color:#887d8e;display:block;margin-bottom:20px;font-weight:600;">Haïti · Galerie officielle</span>
+        <p id="mediaModalText" style="font-size:15.5px;line-height:1.7;color:#554e5b;margin:0 0 28px;">Descriptif de la galerie...</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid #ebdfee;padding-top:20px;">
+          <a href="#don" onclick="closeModal('mediaModal'); openModal('donModal'); return false;" class="hero-donate-btn" style="background:#71106f;color:#fff;padding:12px 24px;font-weight:800;font-size:13px;text-transform:uppercase;text-decoration:none;border-radius:0;">Soutenir PAAD</a>
+          <button type="button" onclick="closeModal('mediaModal');" style="background:transparent;border:1px solid #d1b8d6;border-radius:0;padding:12px 20px;font-weight:700;color:#230a25;cursor:pointer;">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<section class="media-section alt" id="projets"><div class="wrap"><div class="media-section-head"><div><span>05 · Galeries par projet</span><h2>Suivre chaque projet dans le temps.</h2></div><p>Les galeries seront enrichies au fur et à mesure de la validation des projets, des images et des autorisations de diffusion.</p></div><div class="media-empty"><strong>Galeries en préparation</strong>Le projet prioritaire d’école prévu pour septembre 2027 disposera de sa galerie lorsque le site et le calendrier auront été validés.</div></div></section>
+  <!-- MODALE LECTURE VIDÉOTHÈQUE -->
+  <div class="modal-backdrop" id="videoModal" role="dialog" aria-modal="true" aria-labelledby="videoModalTitle" style="display:none;">
+    <div class="modal-content" style="max-width:760px;border-radius:0;border:1px solid #ebdfee;padding:0;overflow:hidden;">
+      <div style="position:relative;width:100%;height:360px;background:#130415;display:flex;align-items:center;justify-content:center;">
+        <img id="videoModalPoster" src="./public/images/haiti-cinematic-hero.jpg" alt="Aperçu vidéo" style="width:100%;height:100%;object-fit:cover;opacity:0.65;">
+        <div style="position:absolute;inset:0;background:radial-gradient(circle, rgba(19,4,21,0.2) 0%, rgba(19,4,21,0.85) 100%);"></div>
+        
+        <!-- Bouton Play central animé -->
+        <button type="button" onclick="alert('Lecture du documentaire vidéo PAAD.');" aria-label="Lancer la vidéo" style="position:absolute;width:68px;height:68px;border-radius:50%;background:#ffffff;border:none;color:#71106f;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 8px 28px rgba(0,0,0,0.4);transition:transform 0.2s;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg>
+        </button>
 
-<section class="media-section" id="terrain"><div class="wrap"><div class="media-feature"><img src="./public/images/haiti-cinematic-hero.jpg" alt="Jeunesse et communauté en Haïti"><div class="media-feature-copy"><span>06 · PAAD sur le terrain</span><h3>Montrer les réalités sans réduire les personnes à leurs difficultés.</h3><p>PAAD privilégie des images dignes, contextualisées et utiles à la compréhension des enjeux. Les photographies de mineurs ou de bénéficiaires sont diffusées avec une attention particulière à leur protection.</p></div></div></div></section>
+        <!-- Barre de lecture mockup -->
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:14px 20px;background:linear-gradient(transparent, rgba(0,0,0,0.85));display:flex;align-items:center;gap:14px;color:#ffffff;font-size:12px;font-weight:700;">
+          <span style="color:#ffffff;">00:00</span>
+          <div style="flex:1;height:4px;background:rgba(255,255,255,0.3);position:relative;">
+            <div style="width:32%;height:100%;background:#71106f;"></div>
+          </div>
+          <span id="videoModalDuration" style="color:#e7cce9;">05:20</span>
+          <span style="background:rgba(255,255,255,0.2);padding:2px 6px;font-size:10px;font-weight:800;letter-spacing:0.05em;">HD</span>
+        </div>
 
-<section class="media-section alt" id="videos"><div class="wrap"><div class="media-section-head"><div><span>07 · Vidéothèque</span><h2>Récits, entretiens et projets en images.</h2></div><p>Les vidéos officielles seront intégrées après validation éditoriale et vérification des droits de diffusion.</p></div><div class="media-empty"><strong>Aucune vidéo publiée pour le moment</strong>La vidéothèque accueillera les présentations de projets, témoignages consentis et prises de parole institutionnelles.</div></div></section>
+        <button type="button" class="modal-close" onclick="closeModal('videoModal');" aria-label="Fermer" style="position:absolute;top:16px;right:16px;background:rgba(35,10,37,0.85);color:#fff;border:none;border-radius:50%;width:38px;height:38px;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;">×</button>
+      </div>
+      <div style="padding:32px 36px 40px;">
+        <span id="videoModalCategory" style="color:#71106f;font-size:11.5px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;display:block;margin-bottom:10px;">DOCUMENTAIRE OFFICIEL</span>
+        <h2 id="videoModalTitle" style="font-family:'Manrope',Arial,sans-serif;font-size:24px;font-weight:800;color:#230a25;line-height:1.25;margin:0 0 10px;">Titre de la vidéo</h2>
+        <p id="videoModalText" style="font-size:15.5px;line-height:1.7;color:#554e5b;margin:0 0 28px;">Descriptif du documentaire...</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid #ebdfee;padding-top:20px;">
+          <a href="#don" onclick="closeModal('videoModal'); openModal('donModal'); return false;" class="hero-donate-btn" style="background:#71106f;color:#fff;padding:12px 24px;font-weight:800;font-size:13px;text-transform:uppercase;text-decoration:none;border-radius:0;">Soutenir ce projet</a>
+          <button type="button" onclick="closeModal('videoModal');" style="background:transparent;border:1px solid #d1b8d6;border-radius:0;padding:12px 20px;font-weight:700;color:#230a25;cursor:pointer;">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<section class="media-section" id="identite"><div class="wrap"><div class="media-section-head"><div><span>08 · Identité visuelle et logos</span><h2>Les fichiers officiels de PAAD.</h2></div><p>Utilisez la version adaptée au fond choisi, sans déformer, recolorer ou modifier les proportions du logo.</p></div><div class="media-downloads"><a class="media-download" href="./public/images/paad-emblem-purple.png" download><strong>Logo violet · PNG</strong><span>↓</span></a><a class="media-download" href="./public/images/paad-emblem-white-trans.png" download><strong>Logo blanc · PNG</strong><span>↓</span></a><a class="media-download" href="./public/images/paad-emblem.webp" download><strong>Logo web · WEBP</strong><span>↓</span></a></div></div></section>
+  <!-- MODALE DE DON -->
+  <div class="modal-backdrop" id="donModal" role="dialog" aria-modal="true" aria-labelledby="donModalTitle" style="display:none;">
+    <div class="modal-content" style="max-width:540px;border-radius:0;border:1px solid #ebdfee;padding:40px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;">
+        <h2 id="donModalTitle" style="font-family:'Manrope',Arial,sans-serif;font-size:26px;font-weight:800;color:#230a25;margin:0;">Faire un don à PAAD</h2>
+        <button type="button" class="modal-close" onclick="closeModal('donModal');" aria-label="Fermer" style="background:transparent;border:none;font-size:26px;cursor:pointer;color:#554e5b;">×</button>
+      </div>
+      <p style="color:#554e5b;font-size:15px;line-height:1.6;margin-bottom:24px;">
+        Votre générosité finance directement les cantines scolaires, les bourses d'études et le micro-financement des activités locales en Haïti.
+      </p>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px;">
+        <button type="button" style="padding:14px;border:2px solid #71106f;background:#fbf7fc;font-weight:800;color:#71106f;border-radius:0;cursor:pointer;">25 €</button>
+        <button type="button" style="padding:14px;border:1px solid #ebdfee;background:#fff;font-weight:800;color:#230a25;border-radius:0;cursor:pointer;">50 €</button>
+        <button type="button" style="padding:14px;border:1px solid #ebdfee;background:#fff;font-weight:800;color:#230a25;border-radius:0;cursor:pointer;">100 €</button>
+      </div>
+      <a href="./contact.html" style="display:block;text-align:center;background:#71106f;color:#fff;padding:16px;font-weight:800;font-size:14px;text-transform:uppercase;letter-spacing:0.04em;text-decoration:none;border-radius:0;margin-bottom:12px;">Continuer mon don</a>
+      <p style="text-align:center;font-size:12px;color:#887d8e;margin:0;">Paiement sécurisé · 100% dédié aux projets de terrain</p>
+    </div>
+  </div>
 
-<section class="media-section alt" id="publications"><div class="wrap"><div class="media-section-head"><div><span>09 · Publications et ressources</span><h2>Documents institutionnels et rapports.</h2></div><p>Consultez la bibliothèque des publications validées par l’organisation.</p></div><div class="resource-notice"><div><strong>Bibliothèque de publications</strong><p>Les rapports apparaîtront dès qu’ils seront officiellement disponibles.</p></div><a href="./rapports.html">Voir les publications →</a></div></div></section>
+  <!-- BOUTON RETOUR EN HAUT -->
+  <button type="button" id="scrollToTopBtn" class="scroll-to-top-btn" aria-label="Remonter en haut de la page" style="display:none;">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m18 15-6-6-6 6"/>
+    </svg>
+  </button>
 
-<section class="media-section" id="presse"><div class="wrap"><div class="media-section-head"><div><span>10 · PAAD dans les médias</span><h2>Revue de presse.</h2></div><p>Les articles, entretiens et reportages consacrés à PAAD seront référencés après vérification de leur source et de leur date.</p></div><div class="media-empty"><strong>Aucune retombée presse référencée</strong>Cet espace ne présentera que des contenus effectivement publiés par des médias identifiés.</div></div></section>
+  <script>
+    function openModal(id) {
+      const modal = document.getElementById(id);
+      if (modal) {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      }
+    }
 
-<section class="media-section alt" id="contact-presse"><div class="wrap"><div class="media-press-contact"><div><h2>Contact presse</h2><p>Indiquez votre média, votre sujet, le format souhaité et votre échéance dans le formulaire.</p></div><a href="./contact.html#formulaire">Envoyer une demande →</a></div></div></section>
-</main><paad-resource-footer></paad-resource-footer><script>const filters=[...document.querySelectorAll('.media-filter')],tiles=[...document.querySelectorAll('#media-gallery .media-tile')];filters.forEach(button=>button.addEventListener('click',()=>{filters.forEach(item=>item.classList.toggle('active',item===button));const filter=button.dataset.filter;tiles.forEach(tile=>{tile.hidden=filter!=='all'&&!tile.dataset.tags.split(' ').includes(filter)})}));</script></body></html>
+    function closeModal(id) {
+      const modal = document.getElementById(id);
+      if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    }
+
+    function openMediaModal(title, category, date, img, text) {
+      document.getElementById('mediaModalTitle').textContent = title;
+      document.getElementById('mediaModalCategory').textContent = category;
+      document.getElementById('mediaModalDate').textContent = date;
+      document.getElementById('mediaModalImg').src = img;
+      document.getElementById('mediaModalText').textContent = text;
+      openModal('mediaModal');
+    }
+
+    function openVideoModal(title, category, duration, poster, text) {
+      document.getElementById('videoModalTitle').textContent = title;
+      document.getElementById('videoModalCategory').textContent = category;
+      document.getElementById('videoModalDuration').textContent = duration;
+      document.getElementById('videoModalPoster').src = poster;
+      document.getElementById('videoModalText').textContent = text;
+      openModal('videoModal');
+    }
+
+    // GESTION DU FILTRAGE DES MÉDIAS (PHOTOS / VIDÉOS / THÉMATIQUES)
+    function filterMedia(filter, btn) {
+      // 1. Bouton actif
+      document.querySelectorAll('.media-filter-pill').forEach(el => el.classList.remove('is-active'));
+      if (btn) btn.classList.add('is-active');
+
+      const items = document.querySelectorAll('.media-item');
+      let visiblePhotos = 0;
+      let visibleVideos = 0;
+
+      items.forEach(item => {
+        const type = item.getAttribute('data-type');
+        const category = item.getAttribute('data-category');
+
+        let match = false;
+        if (filter === 'all') {
+          match = true;
+        } else if (filter === 'photo') {
+          match = (type === 'photo');
+        } else if (filter === 'video') {
+          match = (type === 'video');
+        } else {
+          // Filtre thématique (education, technique, communaute)
+          match = (category === filter);
+        }
+
+        if (match) {
+          item.classList.remove('is-hidden');
+          if (type === 'photo') visiblePhotos++;
+          if (type === 'video') visibleVideos++;
+        } else {
+          item.classList.add('is-hidden');
+        }
+      });
+
+      // 2. Gestion de l'affichage des groupes de sections
+      const photosGroup = document.getElementById('photos-group');
+      const videosGroup = document.getElementById('videos-group');
+      const photosCount = document.getElementById('photos-count');
+      const videosCount = document.getElementById('videos-count');
+
+      if (photosGroup) {
+        photosGroup.style.display = (visiblePhotos > 0) ? 'block' : 'none';
+      }
+      if (videosGroup) {
+        videosGroup.style.display = (visibleVideos > 0) ? 'block' : 'none';
+      }
+
+      if (photosCount) {
+        photosCount.textContent = `0${visiblePhotos} série${visiblePhotos > 1 ? 's' : ''}`;
+      }
+      if (videosCount) {
+        videosCount.textContent = `0${visibleVideos} documentaire${visibleVideos > 1 ? 's' : ''}`;
+      }
+    }
+
+    // Gestion du bouton retour en haut
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+    if (scrollToTopBtn) {
+      window.addEventListener('scroll', () => {
+        scrollToTopBtn.style.display = window.scrollY > 300 ? 'flex' : 'none';
+      }, { passive: true });
+      scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+    // Fermer les modales au clic en dehors
+    window.addEventListener('click', (e) => {
+      if (e.target.classList.contains('modal-backdrop')) {
+        closeModal(e.target.id);
+      }
+    });
+  </script>
+</body>
+</html>
+
