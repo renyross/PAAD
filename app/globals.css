@@ -5761,9 +5761,10 @@
 /* Bouton signature Don dans la section Hero */
 .home-milestone-actions .hero-donate-btn,
 .about-milestone-actions .hero-donate-btn,
-.hero-donate-btn {
-  background: var(--purple) !important;
-  background-color: #71106f !important;
+.hero-donate-btn,
+.hero-donate-btn-green {
+  background: #08773e !important;
+  background-color: #08773e !important;
   color: #ffffff !important;
   border: none !important;
   border-radius: 0 !important;
@@ -5774,7 +5775,7 @@
   text-transform: uppercase !important;
   min-height: 52px !important;
   padding: 0 32px !important;
-  box-shadow: 0 4px 18px rgba(113, 16, 111, 0.45) !important;
+  box-shadow: 0 4px 18px rgba(8, 119, 62, 0.45) !important;
   transition: all 0.2s ease !important;
   display: inline-flex !important;
   align-items: center !important;
@@ -5786,12 +5787,94 @@
 
 .home-milestone-actions .hero-donate-btn:hover,
 .about-milestone-actions .hero-donate-btn:hover,
-.hero-donate-btn:hover {
-  background: var(--purple-hover) !important;
-  background-color: #581056 !important;
+.hero-donate-btn:hover,
+.hero-donate-btn-green:hover {
+  background: #066132 !important;
+  background-color: #066132 !important;
   color: #ffffff !important;
-  box-shadow: 0 6px 24px rgba(113, 16, 111, 0.6) !important;
+  box-shadow: 0 6px 24px rgba(8, 119, 62, 0.65) !important;
   transform: translateY(-2px);
+}
+
+/* Boutons secondaires Hero : BLOG ET ACTUALITÉS & ÉCRIVEZ-NOUS */
+.hero-action-group {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 14px !important;
+  margin-top: 30px !important;
+}
+
+.hero-dropdown-wrapper {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+.hero-link-btn {
+  background: transparent !important;
+  color: #ffffff !important;
+  border: none !important;
+  font-family: 'Manrope', Arial, sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  padding: 12px 14px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  white-space: nowrap !important;
+  min-height: 52px !important;
+}
+
+.hero-link-btn:hover {
+  color: #a7f3d0 !important;
+  background: rgba(255, 255, 255, 0.12) !important;
+}
+
+.hero-dropdown-panel {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 250px;
+  background: #ffffff;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.28);
+  border-top: 3px solid #08773e;
+  padding: 8px 0;
+  z-index: 120;
+}
+
+.hero-dropdown-wrapper:hover .hero-dropdown-panel,
+.hero-dropdown-wrapper:focus-within .hero-dropdown-panel {
+  display: block;
+}
+
+.hero-dropdown-panel a {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  padding: 11px 20px !important;
+  color: #1a1a1a !important;
+  font-family: 'DM Sans', Arial, sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  border: none !important;
+  background: transparent !important;
+  text-align: left !important;
+  min-height: auto !important;
+  transition: all 0.15s ease !important;
+}
+
+.hero-dropdown-panel a:hover {
+  background: #f0fdf4 !important;
+  color: #08773e !important;
+  padding-left: 24px !important;
 }
 
 .home-milestone-actions .hero-secondary-btn {
@@ -7178,4 +7261,232 @@ details.team-mission-footer:not([open]) > .team-mission-bio { display: none; }
  #newsletter .newsletter-title { max-width:540px; }
  #newsletter .newsletter-form-row { margin-top:32px; gap:18px; }
  #newsletter .newsletter-success { margin-top:24px; }
+}
+
+/* =========================================================
+   SECTION CONVICTION : QU'EST-CE QUE PAAD ? (STYLE FOURNI)
+   ========================================================= */
+.section-conviction {
+  padding: 100px 0;
+  background: #ffffff !important;
+  color: #1f2937;
+  position: relative;
+  border-bottom: 1px solid #eef0f3;
+}
+
+.conviction-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.08fr;
+  column-gap: clamp(48px, 6vw, 90px);
+  row-gap: 40px;
+  align-items: center;
+}
+
+.conviction-text-col {
+  max-width: 540px;
+}
+
+.conviction-kicker {
+  display: inline-block;
+  color: #08773e;
+  font-family: 'Manrope', Arial, sans-serif;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.conviction-title {
+  color: #232a50;
+  font-family: 'Manrope', Arial, sans-serif;
+  font-size: clamp(38px, 4.4vw, 56px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0 0 28px;
+}
+
+.conviction-title-green {
+  color: #08773e;
+}
+
+.conviction-quote-badge {
+  border-left: 3.5px solid #e67e22;
+  padding-left: 18px;
+  margin: 0 0 28px;
+}
+
+.conviction-quote-label {
+  display: block;
+  color: #71717a;
+  font-family: 'DM Sans', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.conviction-quote-text {
+  color: #18181b;
+  font-family: 'Manrope', Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.conviction-desc {
+  color: #4b5563;
+  font-family: 'DM Sans', Arial, sans-serif;
+  font-size: 15.5px;
+  line-height: 1.72;
+  margin: 0 0 16px;
+}
+
+.conviction-desc strong,
+.conviction-highlight {
+  color: #08773e;
+  font-weight: 700;
+}
+
+.conviction-more-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #232a50;
+  font-family: 'Manrope', Arial, sans-serif;
+  font-size: 14.5px;
+  font-weight: 800;
+  text-decoration: none;
+  border-bottom: 2px solid #232a50;
+  padding-bottom: 3px;
+  margin-top: 14px;
+  transition: all 0.2s ease;
+}
+
+.conviction-more-link:hover {
+  color: #08773e;
+  border-color: #08773e;
+  transform: translateX(3px);
+}
+
+/* CARTE MÉDIA DROITE */
+.conviction-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06);
+  position: relative;
+}
+
+.conviction-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.conviction-card-kicker {
+  color: #6b7280;
+  font-family: 'Manrope', Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.conviction-card-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #08773e;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  font-family: 'Manrope', Arial, sans-serif;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.conviction-video-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000000;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+}
+
+.conviction-video-frame iframe,
+.conviction-video-frame video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.conviction-yt-sublink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #08773e;
+  font-family: 'DM Sans', Arial, sans-serif;
+  font-size: 13.5px;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 12px;
+  transition: color 0.15s ease;
+}
+
+.conviction-yt-sublink:hover {
+  color: #066132;
+  text-decoration: underline;
+}
+
+.conviction-card-footer-banner {
+  background: #0f3822;
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-top: 18px;
+  color: #ffffff;
+}
+
+.conviction-card-footer-tag {
+  display: block;
+  color: #86efac;
+  font-family: 'Manrope', Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.conviction-card-footer-title {
+  color: #ffffff;
+  font-family: 'Manrope', Arial, sans-serif;
+  font-size: 17.5px;
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .section-conviction {
+    padding: 70px 0;
+  }
+  .conviction-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .conviction-text-col {
+    max-width: 100%;
+  }
 }

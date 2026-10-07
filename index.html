@@ -11,9 +11,10 @@
   <link rel="stylesheet" href="./app/globals.css?v=20261004-hero-btn">
   <style>
     /* Styles spécifiques d'appoint pour la prévisualisation autonome */
-    .hero-donate-btn {
-      background: var(--purple, #71106f) !important;
-      background-color: #71106f !important;
+    .hero-donate-btn,
+    .hero-donate-btn-green {
+      background: #08773e !important;
+      background-color: #08773e !important;
       color: #ffffff !important;
       border: none !important;
       border-radius: 0 !important;
@@ -24,7 +25,7 @@
       text-transform: uppercase !important;
       min-height: 52px !important;
       padding: 0 32px !important;
-      box-shadow: 0 4px 18px rgba(113, 16, 111, 0.45) !important;
+      box-shadow: 0 4px 18px rgba(8, 119, 62, 0.45) !important;
       display: inline-flex !important;
       align-items: center !important;
       justify-content: center !important;
@@ -33,11 +34,84 @@
       cursor: pointer !important;
       transition: all 0.2s ease !important;
     }
-    .hero-donate-btn:hover {
-      background: var(--purple-hover, #581056) !important;
-      background-color: #581056 !important;
-      box-shadow: 0 6px 24px rgba(113, 16, 111, 0.6) !important;
+    .hero-donate-btn:hover,
+    .hero-donate-btn-green:hover {
+      background: #066132 !important;
+      background-color: #066132 !important;
+      box-shadow: 0 6px 24px rgba(8, 119, 62, 0.65) !important;
       transform: translateY(-2px);
+    }
+    .hero-action-group {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      align-items: center !important;
+      gap: 14px !important;
+      margin-top: 30px !important;
+    }
+    .hero-dropdown-wrapper {
+      position: relative !important;
+      display: inline-flex !important;
+      align-items: center !important;
+    }
+    .hero-link-btn {
+      background: transparent !important;
+      color: #ffffff !important;
+      border: none !important;
+      font-family: 'Manrope', Arial, sans-serif !important;
+      font-size: 14px !important;
+      font-weight: 800 !important;
+      letter-spacing: 0.05em !important;
+      text-transform: uppercase !important;
+      text-decoration: none !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 6px !important;
+      padding: 12px 14px !important;
+      cursor: pointer !important;
+      transition: all 0.2s ease !important;
+      white-space: nowrap !important;
+      min-height: 52px !important;
+    }
+    .hero-link-btn:hover {
+      color: #a7f3d0 !important;
+      background: rgba(255, 255, 255, 0.12) !important;
+    }
+    .hero-dropdown-panel {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 250px;
+      background: #ffffff;
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.28);
+      border-top: 3px solid #08773e;
+      padding: 8px 0;
+      z-index: 120;
+    }
+    .hero-dropdown-wrapper:hover .hero-dropdown-panel,
+    .hero-dropdown-wrapper:focus-within .hero-dropdown-panel {
+      display: block;
+    }
+    .hero-dropdown-panel a {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: flex-start !important;
+      padding: 11px 20px !important;
+      color: #1a1a1a !important;
+      font-family: 'DM Sans', Arial, sans-serif !important;
+      font-size: 14px !important;
+      font-weight: 600 !important;
+      text-decoration: none !important;
+      border: none !important;
+      background: transparent !important;
+      text-align: left !important;
+      min-height: auto !important;
+      transition: all 0.15s ease !important;
+    }
+    .hero-dropdown-panel a:hover {
+      background: #f0fdf4 !important;
+      color: #08773e !important;
+      padding-left: 24px !important;
     }
     .mega-menu { display: none; }
     .mega-menu.active { display: block; }
@@ -1068,10 +1142,31 @@
             Bâtir l’avenir d’Haïti.
           </h1>
           <p class="home-milestone-lead">Nous agissons avec les communautés pour faciliter l’accès à l’éducation, développer les compétences et créer des chemins durables vers l’autonomie.</p>
-          <div class="home-milestone-actions">
-            <button type="button" class="hero-donate-btn" onclick="openModal('donModal')" style="background:#71106f !important;background-color:#71106f !important;color:#ffffff !important;border:none !important;border-radius:0 !important;font-weight:800 !important;text-transform:uppercase !important;padding:0 32px !important;min-height:52px !important;box-shadow:0 4px 18px rgba(113,16,111,0.45) !important;display:inline-flex !important;align-items:center !important;justify-content:center !important;text-align:center !important;cursor:pointer !important;">
+          <div class="home-milestone-actions hero-action-group">
+            <!-- BLOG ET ACTUALITÉS avec menu déroulant -->
+            <div class="hero-dropdown-wrapper">
+              <a href="./actualites.html" class="hero-link-btn" aria-haspopup="true">
+                <span>BLOG ET ACTUALITÉS</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m6 9 6 6 6-6"/></svg>
+              </a>
+              <div class="hero-dropdown-panel" role="menu">
+                <a href="./actualites.html" role="menuitem">Toutes les actualités</a>
+                <a href="./media.html" role="menuitem">Espace média &amp; galeries</a>
+                <a href="./rapports.html" role="menuitem">Rapports &amp; publications</a>
+              </div>
+            </div>
+
+            <!-- ÉCRIVEZ-NOUS -->
+            <a href="./contact.html" class="hero-link-btn">
+              <span>ÉCRIVEZ-NOUS</span>
+            </a>
+
+            <!-- FAITES UN DON MAINTENANT (Bouton Vert #08773e) -->
+            <button type="button" class="hero-donate-btn hero-donate-btn-green" onclick="openModal('donModal')">
               FAITES UN DON MAINTENANT
             </button>
+
+            <!-- DÉCOUVRIR NOS ACTIONS -->
             <a href="#programmes" class="hero-secondary-btn">
               Découvrir nos actions <span>→</span>
             </a>
@@ -1091,6 +1186,71 @@
       </div>
     </section>
 
+    <!-- 2.3 SECTION NOTRE CONVICTION : QU'EST-CE QUE PAAD ? (STYLE DEMANDÉ) -->
+    <section class="section-conviction" id="conviction">
+      <div class="wrap">
+        <div class="conviction-grid">
+          <!-- Colonne Gauche : Texte de Conviction -->
+          <div class="conviction-text-col">
+            <span class="conviction-kicker">Notre conviction</span>
+            <h2 class="conviction-title">
+              Qu’est-ce que<br>
+              <span class="conviction-title-green">PAAD ?</span>
+            </h2>
+
+            <div class="conviction-quote-badge">
+              <span class="conviction-quote-label">PAAD signifie</span>
+              <p class="conviction-quote-text">« Passerelle d’Actions pour l’Autonomie et le Développement ».</p>
+            </div>
+
+            <p class="conviction-desc">
+              PAAD a été fondée pour reconstruire et renforcer l’autonomie des communautés en Haïti de manière durable, d’une façon qui apporte <strong class="conviction-highlight">espoir, fierté et dignité</strong> aux Haïtiens touchés par l’organisation.
+            </p>
+
+            <p class="conviction-desc">
+              Nos équipes de terrain haïtiennes et nos partenaires collaborent pour améliorer concrètement les conditions de vie de la population locale. Notre vision à long terme est de donner aux Haïtiens les moyens de bâtir leur propre avenir.
+            </p>
+
+            <a href="./qui-sommes-nous.html" class="conviction-more-link">
+              <span>En savoir plus sur PAAD</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+            </a>
+          </div>
+
+          <!-- Colonne Droite : Carte Médias avec Vidéo Embed et Bannière Verte -->
+          <div class="conviction-card">
+            <div class="conviction-card-header">
+              <span class="conviction-card-kicker">Découvrir en images</span>
+              <span class="conviction-card-badge">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                VIDÉO
+              </span>
+            </div>
+
+            <!-- Lecteur Vidéo YouTube Intégré -->
+            <div class="conviction-video-frame">
+              <iframe 
+                src="https://www.youtube-nocookie.com/embed/ScMzIvxBSi4?rel=0" 
+                title="Présentation vidéo PAAD en Haïti" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen
+              ></iframe>
+            </div>
+
+            <a href="https://www.youtube.com" target="_blank" rel="noopener" class="conviction-yt-sublink">
+              <span>Voir la vidéo sur YouTube</span>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+            </a>
+
+            <!-- Bannière Inférieure Vert Forêt Signature -->
+            <div class="conviction-card-footer-banner">
+              <span class="conviction-card-footer-tag">PAAD · HAÏTI</span>
+              <h3 class="conviction-card-footer-title">Une vision commune. Un avenir à construire ensemble.</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- 2.5 SPOTLIGHT TERRAIN AVEC CARROUSEL INTERACTIF (SANS FOND SUR LE TEXTE + FLÈCHES) -->
     <section class="section-klabu-spotlight" id="terrain">

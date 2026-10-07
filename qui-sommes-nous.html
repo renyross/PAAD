@@ -14,9 +14,10 @@
   <style>
     /* Styles spécifiques d'appoint */
     .about-milestone-actions .hero-donate-btn,
-    .hero-donate-btn {
-      background: var(--purple, #71106f) !important;
-      background-color: #71106f !important;
+    .hero-donate-btn,
+    .hero-donate-btn-green {
+      background: #08773e !important;
+      background-color: #08773e !important;
       color: #ffffff !important;
       border: none !important;
       border-radius: 0 !important;
@@ -27,7 +28,7 @@
       text-transform: uppercase !important;
       min-height: 52px !important;
       padding: 0 32px !important;
-      box-shadow: 0 4px 18px rgba(113, 16, 111, 0.45) !important;
+      box-shadow: 0 4px 18px rgba(8, 119, 62, 0.45) !important;
       display: inline-flex !important;
       align-items: center !important;
       justify-content: center !important;
@@ -37,11 +38,84 @@
       transition: all 0.2s ease !important;
     }
     .about-milestone-actions .hero-donate-btn:hover,
-    .hero-donate-btn:hover {
-      background: var(--purple-hover, #581056) !important;
-      background-color: #581056 !important;
-      box-shadow: 0 6px 24px rgba(113, 16, 111, 0.6) !important;
+    .hero-donate-btn:hover,
+    .hero-donate-btn-green:hover {
+      background: #066132 !important;
+      background-color: #066132 !important;
+      box-shadow: 0 6px 24px rgba(8, 119, 62, 0.65) !important;
       transform: translateY(-2px);
+    }
+    .hero-action-group {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      align-items: center !important;
+      gap: 14px !important;
+      margin-top: 30px !important;
+    }
+    .hero-dropdown-wrapper {
+      position: relative !important;
+      display: inline-flex !important;
+      align-items: center !important;
+    }
+    .hero-link-btn {
+      background: transparent !important;
+      color: #ffffff !important;
+      border: none !important;
+      font-family: 'Manrope', Arial, sans-serif !important;
+      font-size: 14px !important;
+      font-weight: 800 !important;
+      letter-spacing: 0.05em !important;
+      text-transform: uppercase !important;
+      text-decoration: none !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 6px !important;
+      padding: 12px 14px !important;
+      cursor: pointer !important;
+      transition: all 0.2s ease !important;
+      white-space: nowrap !important;
+      min-height: 52px !important;
+    }
+    .hero-link-btn:hover {
+      color: #a7f3d0 !important;
+      background: rgba(255, 255, 255, 0.12) !important;
+    }
+    .hero-dropdown-panel {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 250px;
+      background: #ffffff;
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.28);
+      border-top: 3px solid #08773e;
+      padding: 8px 0;
+      z-index: 120;
+    }
+    .hero-dropdown-wrapper:hover .hero-dropdown-panel,
+    .hero-dropdown-wrapper:focus-within .hero-dropdown-panel {
+      display: block;
+    }
+    .hero-dropdown-panel a {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: flex-start !important;
+      padding: 11px 20px !important;
+      color: #1a1a1a !important;
+      font-family: 'DM Sans', Arial, sans-serif !important;
+      font-size: 14px !important;
+      font-weight: 600 !important;
+      text-decoration: none !important;
+      border: none !important;
+      background: transparent !important;
+      text-align: left !important;
+      min-height: auto !important;
+      transition: all 0.15s ease !important;
+    }
+    .hero-dropdown-panel a:hover {
+      background: #f0fdf4 !important;
+      color: #08773e !important;
+      padding-left: 24px !important;
     }
     .mega-menu { display: none; }
     .mega-menu.active { display: block; }
@@ -535,8 +609,391 @@
 <body class="about-resource-page" data-about-page="about">
   <a href="#main" class="skip-link">Aller au contenu principal</a>
 
-  <!-- HEADER IDENTIQUE À LA PAGE D'ACCUEIL (STYLE THE OCEAN CLEANUP / PAAD) -->
-  <paad-resource-header></paad-resource-header>
+  <!-- HEADER (STYLE THE OCEAN CLEANUP) -->
+  <header class="ocean-header site-header">
+    <!-- NIVEAU 1 : Barre Blanche Supérieure -->
+    <div class="ocean-top-bar">
+      <!-- Bloc Logo Cyan Gauche -->
+      <a class="ocean-logo-badge" href="./index.html" aria-label="PAAD, accueil">
+        <img src="./public/images/paad-emblem.webp" alt="Logo PAAD" class="ocean-logo-emblem" width="36" height="36">
+        <span class="ocean-logo-text">PAAD</span>
+      </a>
+
+      <!-- Navigation Principale Majeure -->
+      <nav class="ocean-nav-strip" aria-label="Navigation principale">
+        <!-- À PROPOS -->
+        <div class="ocean-nav-item has-mega">
+          <a href="./qui-sommes-nous.html" class="ocean-nav-anchor">
+            <span>À propos</span>
+            <svg class="ocean-caret-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m6 9 6 6 6-6"/></svg>
+          </a>
+          <div class="ocean-mega-dropdown">
+            <div class="wrap ocean-mega-inner">
+              <a href="./qui-sommes-nous.html" class="ocean-mega-card">
+                <img src="./public/images/community-haiti.webp" alt="Notre mission en Haïti" class="ocean-mega-card-img">
+                <div class="ocean-mega-card-overlay"></div>
+                <div class="ocean-mega-card-dock">
+                  <span class="ocean-mega-circle-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </span>
+                  <span class="ocean-mega-card-title">Notre mission</span>
+                </div>
+              </a>
+              <a href="./qui-sommes-nous.html#equipe" class="ocean-mega-card">
+                <img src="./public/images/haiti-cinematic-hero.jpg" alt="Notre équipe et communauté" class="ocean-mega-card-img">
+                <div class="ocean-mega-card-overlay"></div>
+                <div class="ocean-mega-card-dock">
+                  <span class="ocean-mega-circle-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </span>
+                  <span class="ocean-mega-card-title">Notre équipe</span>
+                </div>
+              </a>
+              <div class="ocean-mega-col-side">
+                <div class="ocean-mega-side-header">
+                  <span class="ocean-mega-side-title">DÉCOUVRIR PAAD</span>
+                </div>
+                <div class="ocean-mega-side-links">
+                  <a href="./qui-sommes-nous.html" class="ocean-mega-side-link">Qui sommes-nous</a>
+                  <a href="./qui-sommes-nous.html#origines" class="ocean-mega-side-link">Nos origines &amp; histoire</a>
+                  <a href="./qui-sommes-nous.html#valeurs" class="ocean-mega-side-link">Nos valeurs</a>
+                  <a href="./faq.html" class="ocean-mega-side-link">Foire aux questions (FAQ)</a>
+                  <a href="./contact.html" class="ocean-mega-side-link">Nous contacter</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROGRAMMES -->
+        <div class="ocean-nav-item has-mega">
+          <a href="./index.html#domaines" class="ocean-nav-anchor">
+            <span>Programmes</span>
+            <svg class="ocean-caret-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m6 9 6 6 6-6"/></svg>
+          </a>
+          <div class="ocean-mega-dropdown">
+            <div class="wrap ocean-mega-inner">
+              <a href="./index.html#domaines" class="ocean-mega-card">
+                <img src="./public/images/haiti-student-classroom.jpg" alt="Bourses & Écoles en Haïti" class="ocean-mega-card-img">
+                <div class="ocean-mega-card-overlay"></div>
+                <div class="ocean-mega-card-dock">
+                  <span class="ocean-mega-circle-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </span>
+                  <span class="ocean-mega-card-title">Bourses &amp; Écoles</span>
+                </div>
+              </a>
+              <a href="./index.html#domaines" class="ocean-mega-card">
+                <img src="./public/images/haiti-tech-workshop.jpg" alt="Formations professionnelles en Haïti" class="ocean-mega-card-img">
+                <div class="ocean-mega-card-overlay"></div>
+                <div class="ocean-mega-card-dock">
+                  <span class="ocean-mega-circle-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </span>
+                  <span class="ocean-mega-card-title">Formations &amp; Autonomie</span>
+                </div>
+              </a>
+              <div class="ocean-mega-col-side">
+                <div class="ocean-mega-side-header">
+                  <span class="ocean-mega-side-title">DOMAINES PRIORITAIRES</span>
+                </div>
+                <div class="ocean-mega-side-links">
+                  <a href="./index.html#domaines" class="ocean-mega-side-link">Éducation &amp; Bourses d’excellence</a>
+                  <a href="./index.html#domaines" class="ocean-mega-side-link">Digital Lab &amp; Technologies</a>
+                  <a href="./index.html#domaines" class="ocean-mega-side-link">Formations professionnelles certifiantes</a>
+                  <a href="./index.html#domaines" class="ocean-mega-side-link">Entrepreneuriat local &amp; Artisanat</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DEVENIR PARTENAIRE -->
+        <div class="ocean-nav-item has-mega">
+          <a href="./contact.html" class="ocean-nav-anchor">
+            <span>Devenir partenaire</span>
+            <svg class="ocean-caret-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m6 9 6 6 6-6"/></svg>
+          </a>
+          <div class="ocean-mega-dropdown">
+            <div class="wrap ocean-mega-inner">
+              <a href="./contact.html" class="ocean-mega-card">
+                <img src="./public/images/workshop-haiti.webp" alt="Partenariats et coopération en Haïti" class="ocean-mega-card-img">
+                <div class="ocean-mega-card-overlay"></div>
+                <div class="ocean-mega-card-dock">
+                  <span class="ocean-mega-circle-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </span>
+                  <span class="ocean-mega-card-title">Agir ensemble</span>
+                </div>
+              </a>
+              <a href="./qui-sommes-nous.html#valeurs" class="ocean-mega-card">
+                <img src="./public/images/community-haiti.webp" alt="Nos partenaires et réseaux" class="ocean-mega-card-img">
+                <div class="ocean-mega-card-overlay"></div>
+                <div class="ocean-mega-card-dock">
+                  <span class="ocean-mega-circle-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </span>
+                  <span class="ocean-mega-card-title">Nos partenaires</span>
+                </div>
+              </a>
+              <div class="ocean-mega-col-side">
+                <div class="ocean-mega-side-header">
+                  <span class="ocean-mega-side-title">COOPÉRATION &amp; ALLIANCES</span>
+                </div>
+                <div class="ocean-mega-side-links">
+                  <a href="./contact.html" class="ocean-mega-side-link">Proposer un partenariat</a>
+                  <a href="./qui-sommes-nous.html#valeurs" class="ocean-mega-side-link">Partenaires de terrain</a>
+                  <a href="./contact.html#formulaire" class="ocean-mega-side-link">Devenir bénévole</a>
+                  <a href="./contact.html" class="ocean-mega-side-link">Mécénat d’entreprise</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Actions Droite : Recherche & Langue -->
+      <div class="ocean-top-actions">
+        <button type="button" class="ocean-top-search-btn" aria-label="Rechercher" onclick="handleSearch()">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        </button>
+
+        <div class="ocean-lang-select">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+          <select aria-label="Langue" id="lang-select">
+            <option value="fr" selected>FR</option>
+            <option value="en">EN</option>
+            <option value="es">ES</option>
+          </select>
+        </div>
+
+        <button class="ocean-mobile-burger" id="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false">
+          <svg id="menu-icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+          <svg id="menu-icon-close" style="display:none;" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- NAVIGATION MOBILE AVEC ACCORDÉONS, CARTES ET LIENS FLÉCHÉS -->
+    <nav class="ocean-mobile-drawer mobile-nav" id="mobile-nav" aria-label="Navigation mobile" style="display:none;">
+      <!-- 1. ACCORDÉON : NOTRE APPROCHE -->
+      <div class="mobile-acc-item is-open" data-acc="about">
+        <button type="button" class="mobile-acc-trigger" onclick="toggleMobileAcc(this)">
+          <span>À propos de nous</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="mobile-acc-panel">
+          <div class="mobile-acc-cards">
+            <a href="./qui-sommes-nous.html" class="mobile-acc-card">
+              <img src="./public/images/community-haiti.webp" alt="Faire ensemble" class="mobile-acc-card-img">
+              <div class="mobile-acc-card-overlay"></div>
+              <div class="mobile-acc-card-dock">
+                <span class="mobile-acc-card-title">Faire ensemble</span>
+                <span class="mobile-acc-circle-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </span>
+              </div>
+            </a>
+            <a href="./qui-sommes-nous.html#valeurs" class="mobile-acc-card">
+              <img src="./public/images/workshop-haiti.webp" alt="Nos zones d’action" class="mobile-acc-card-img">
+              <div class="mobile-acc-card-overlay"></div>
+              <div class="mobile-acc-card-dock">
+                <span class="mobile-acc-card-title">Nos zones d’action</span>
+                <span class="mobile-acc-circle-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </span>
+              </div>
+            </a>
+          </div>
+
+          <div class="mobile-acc-section-header">
+            <span class="mobile-acc-section-title">NOTRE DÉMARCHE</span>
+          </div>
+
+          <div class="mobile-acc-links">
+            <a href="./qui-sommes-nous.html" class="mobile-acc-link">
+              <span>Notre démarche participative</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+            <a href="./qui-sommes-nous.html#valeurs" class="mobile-acc-link">
+              <span>Nos zones d’action</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. ACCORDÉON : PROGRAMMES -->
+      <div class="mobile-acc-item" data-acc="programmes">
+        <button type="button" class="mobile-acc-trigger" onclick="toggleMobileAcc(this)">
+          <span>Programmes</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="mobile-acc-panel">
+          <div class="mobile-acc-cards">
+            <a href="./index.html#domaines" class="mobile-acc-card">
+              <img src="./public/images/haiti-student-classroom.jpg" alt="Bourses & Écoles" class="mobile-acc-card-img">
+              <div class="mobile-acc-card-overlay"></div>
+              <div class="mobile-acc-card-dock">
+                <span class="mobile-acc-card-title">Bourses &amp; Écoles</span>
+                <span class="mobile-acc-circle-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </span>
+              </div>
+            </a>
+            <a href="./index.html#domaines" class="mobile-acc-card">
+              <img src="./public/images/haiti-tech-workshop.jpg" alt="Formations techniques" class="mobile-acc-card-img">
+              <div class="mobile-acc-card-overlay"></div>
+              <div class="mobile-acc-card-dock">
+                <span class="mobile-acc-card-title">Formations &amp; Autonomie</span>
+                <span class="mobile-acc-circle-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </span>
+              </div>
+            </a>
+          </div>
+
+          <div class="mobile-acc-section-header">
+            <span class="mobile-acc-section-title">DOMAINES D'INTERVENTION</span>
+          </div>
+
+          <div class="mobile-acc-links">
+            <a href="./index.html#domaines" class="mobile-acc-link">
+              <span>Éducation &amp; Bourses d’excellence</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+            <a href="./index.html#domaines" class="mobile-acc-link">
+              <span>Digital Lab &amp; Technologies</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+            <a href="./index.html#domaines" class="mobile-acc-link">
+              <span>Formations professionnelles certifiantes</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+            <a href="./index.html#domaines" class="mobile-acc-link">
+              <span>Entrepreneuriat local &amp; Artisanat</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. ACCORDÉON : DEVENIR PARTENAIRE -->
+      <div class="mobile-acc-item" data-acc="partenaire">
+        <button type="button" class="mobile-acc-trigger" onclick="toggleMobileAcc(this)">
+          <span>Devenir partenaire</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="mobile-acc-panel">
+          <div class="mobile-acc-cards">
+            <a href="./contact.html" class="mobile-acc-card">
+              <img src="./public/images/workshop-haiti.webp" alt="Agir ensemble" class="mobile-acc-card-img">
+              <div class="mobile-acc-card-overlay"></div>
+              <div class="mobile-acc-card-dock">
+                <span class="mobile-acc-card-title">Agir ensemble</span>
+                <span class="mobile-acc-circle-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </span>
+              </div>
+            </a>
+            <a href="./qui-sommes-nous.html#valeurs" class="mobile-acc-card">
+              <img src="./public/images/community-haiti.webp" alt="Nos partenaires" class="mobile-acc-card-img">
+              <div class="mobile-acc-card-overlay"></div>
+              <div class="mobile-acc-card-dock">
+                <span class="mobile-acc-card-title">Nos partenaires</span>
+                <span class="mobile-acc-circle-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </span>
+              </div>
+            </a>
+          </div>
+
+          <div class="mobile-acc-section-header">
+            <span class="mobile-acc-section-title">COOPÉRATION &amp; ALLIANCES</span>
+          </div>
+
+          <div class="mobile-acc-links">
+            <a href="./contact.html" class="mobile-acc-link">
+              <span>Proposer un partenariat</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+            <a href="./qui-sommes-nous.html#valeurs" class="mobile-acc-link">
+              <span>Partenaires de terrain</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+            <a href="./contact.html#formulaire" class="mobile-acc-link">
+              <span>Devenir bénévole</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+            <a href="./contact.html" class="mobile-acc-link">
+              <span>Mécénat d’entreprise</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. ACCORDÉON : PRESSE & ACTUALITÉS -->
+      <div class="mobile-acc-item" data-acc="actualites">
+        <button type="button" class="mobile-acc-trigger" onclick="toggleMobileAcc(this)">
+          <span>Presse &amp; Actualités</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="mobile-acc-panel">
+          <div class="mobile-acc-cards">
+            <a href="./actualites.html" class="mobile-acc-card">
+              <img src="./public/images/haiti-cinematic-hero.jpg" alt="Dernières actualités" class="mobile-acc-card-img">
+              <div class="mobile-acc-card-overlay"></div>
+              <div class="mobile-acc-card-dock">
+                <span class="mobile-acc-card-title">Dernières actualités</span>
+                <span class="mobile-acc-circle-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </span>
+              </div>
+            </a>
+            <a href="./actualites.html" class="mobile-acc-card">
+              <img src="./public/images/community-haiti.webp" alt="Communiqués & Presse" class="mobile-acc-card-img">
+              <div class="mobile-acc-card-overlay"></div>
+              <div class="mobile-acc-card-dock">
+                <span class="mobile-acc-card-title">Communiqués &amp; Presse</span>
+                <span class="mobile-acc-circle-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </span>
+              </div>
+            </a>
+          </div>
+
+          <div class="mobile-acc-section-header">
+            <span class="mobile-acc-section-title">ACTUALITÉS &amp; MÉDIAS</span>
+          </div>
+
+          <div class="mobile-acc-links">
+            <a href="./actualites.html" class="mobile-acc-link">
+              <span>Toutes les actualités</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+            <a href="./actualites.html" class="mobile-acc-link">
+              <span>Communiqués de presse</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+            <a href="./actualites.html" class="mobile-acc-link">
+              <span>Rapports &amp; publications</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+            <a href="./contact.html" class="mobile-acc-link">
+              <span>Contact presse</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bouton Rectangulaire Signature FAITES UN DON MAINTENANT -->
+      <a href="#don" class="ocean-drawer-donate-btn" onclick="openModal('donModal'); return false;">
+        FAITES UN DON MAINTENANT
+      </a>
+    </nav>
+  </header>
 
   <main id="main" class="about-new">
     <section class="about-milestone-hero" id="top">
@@ -545,10 +1002,31 @@
         <span class="about-milestone-kicker">À propos de PAAD</span>
         <h1>Nous sommes PAAD.</h1>
         <p class="about-milestone-lead">Nous agissons pour renforcer l’éducation, créer des opportunités économiques et accompagner durablement les communautés en Haïti.</p>
-        <div class="about-milestone-actions">
-          <a href="#don" class="hero-donate-btn" onclick="openModal('donModal'); return false;" style="background:#71106f !important;background-color:#71106f !important;color:#ffffff !important;border:none !important;border-radius:0 !important;font-weight:800 !important;text-transform:uppercase !important;padding:0 32px !important;min-height:52px !important;box-shadow:0 4px 18px rgba(113,16,111,0.45) !important;display:inline-flex !important;align-items:center !important;justify-content:center !important;text-align:center !important;cursor:pointer !important;text-decoration:none !important;">
+        <div class="about-milestone-actions hero-action-group">
+          <!-- BLOG ET ACTUALITÉS avec menu déroulant -->
+          <div class="hero-dropdown-wrapper">
+            <a href="./actualites.html" class="hero-link-btn" aria-haspopup="true">
+              <span>BLOG ET ACTUALITÉS</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m6 9 6 6 6-6"/></svg>
+            </a>
+            <div class="hero-dropdown-panel" role="menu">
+              <a href="./actualites.html" role="menuitem">Toutes les actualités</a>
+              <a href="./media.html" role="menuitem">Espace média &amp; galeries</a>
+              <a href="./rapports.html" role="menuitem">Rapports &amp; publications</a>
+            </div>
+          </div>
+
+          <!-- ÉCRIVEZ-NOUS -->
+          <a href="./contact.html" class="hero-link-btn">
+            <span>ÉCRIVEZ-NOUS</span>
+          </a>
+
+          <!-- FAITES UN DON MAINTENANT (Bouton Vert #08773e) -->
+          <a href="#don" class="hero-donate-btn hero-donate-btn-green" onclick="openModal('donModal'); return false;">
             FAITES UN DON MAINTENANT
           </a>
+
+          <!-- DÉCOUVRIR NOS ACTIONS -->
           <a href="./index.html#programmes" class="hero-secondary-btn" style="background:transparent !important;color:#fff !important;border:1px solid rgba(255,255,255,0.65) !important;padding:0 24px !important;min-height:52px !important;display:inline-flex !important;align-items:center !important;justify-content:center !important;text-decoration:none !important;">
             Découvrir nos actions <span>→</span>
           </a>
@@ -576,7 +1054,7 @@
             </h3>
             <div class="origins-text">
               <p>
-                En 2020, au cœur des crises et des réalités quotidiennes vécues par les communautés en Haïti, <strong>Renel ROSENE</strong>, <strong>Renald ROSENE</strong> et <strong>Esther Gladelle TOUSSAINT</strong> ont fait un constat lucide : l’urgence humanitaire ponctuelle, bien qu’indispensable, ne permet pas aux familles de sortir de la précarité si elle ne s'adosse pas à une véritable passerelle vers l'autonomie.
+                En 2020, au cœur des crises et des réalités quotidiennes vécues par les communautés en Haïti, <strong>Renel ROSENE</strong>, <strong>Renald ROSENE</strong> et <strong>Gladelle Esther TOUSSAINT</strong> ont fait un constat lucide : l’urgence humanitaire ponctuelle, bien qu’indispensable, ne permet pas aux familles de sortir de la précarité si elle ne s'adosse pas à une véritable passerelle vers l'autonomie.
               </p>
               <p>
                 Portés par une profonde conviction et la volonté d’offrir aux enfants et aux familles les moyens de construire leur propre avenir avec fierté et dignité, ils ont décidé d’unir leurs compétences de terrain, en éducation, en logistique et en accompagnement communautaire. C’est de cet engagement partagé qu’est née la <strong>Passerelle d’Actions pour l’Autonomie et le Développement (PAAD)</strong>.
@@ -648,20 +1126,20 @@
             </div>
           </article>
 
-          <!-- 3. Esther Gladelle TOUSSAINT -->
+          <!-- 3. Gladelle Esther TOUSSAINT -->
           <article class="team-mission-card">
             <div class="team-mission-photo-wrap">
-              <img src="./public/images/team-esther-toussaint.jpg" alt="Esther Gladelle TOUSSAINT" width="248" height="310" loading="lazy">
+              <img src="./public/images/team-esther-toussaint.jpg" alt="Gladelle Esther TOUSSAINT" width="248" height="310" loading="lazy">
             </div>
             <span class="team-mission-role">ÉDUCATION &amp; BOURSES</span>
-            <h3 class="team-mission-name">Esther Gladelle TOUSSAINT</h3>
+            <h3 class="team-mission-name">Gladelle Esther TOUSSAINT</h3>
             <div class="team-mission-footer">
               <button type="button" class="team-mission-btn" onclick="toggleBio('bio-esther');" aria-expanded="false" aria-controls="bio-esther">
                 <span>Découvrir son parcours</span>
                 <span class="team-mission-plus">+</span>
               </button>
               <div id="bio-esther" class="team-mission-bio" hidden>
-                Actuellement étudiante en deuxième année de psychologie et directrice générale d'Atizana Lakay, une entreprise dédiée aux soins cosmétiques, Esther allie sensibilité humaine et fibre entrepreneuriale. Forte de son expérience à la tête d'une structure engagée et de son intérêt profond pour le développement individuel, elle pilote avec engagement le pôle éducatif de PAAD. Sa créativité, son écoute et son leadership pragmatique font d'elle un pilier essentiel pour concevoir des initiatives pédagogiques adaptées et inspirer les générations futures face aux défis du terrain.
+                Actuellement étudiante en deuxième année de psychologie et directrice générale d'Atizana Lakay, une entreprise dédiée aux soins cosmétiques, Gladelle allie sensibilité humaine et fibre entrepreneuriale. Forte de son expérience à la tête d'une structure engagée et de son intérêt profond pour le développement individuel, elle pilote avec engagement le pôle éducatif de PAAD. Sa créativité, son écoute et son leadership pragmatique font d'elle un pilier essentiel pour concevoir des initiatives pédagogiques adaptées et inspirer les générations futures face aux défis du terrain.
               </div>
             </div>
           </article>
@@ -831,7 +1309,7 @@
                 Face aux défis majeurs auxquels fait face la société haïtienne, nous avons refusé la résignation et le fatalisme. Le développement pérenne ne s'importe pas de l'extérieur : il grandit avec les talents et l'énergie des Haïtiens eux-mêmes.
               </p>
               <p class="spotlight-editorial-text">
-                En 2024, <strong>Renel Rosene</strong>, <strong>Renald Rosene</strong> et <strong>Esther Gladelle Toussaint</strong> unissent leurs expériences du terrain associatif, de l'éducation et de l'ingénierie pour fonder PAAD. Leur boussole : rompre avec l'assistanat d'urgence sans lendemain pour concevoir des programmes durables qui renforcent directement l'autonomie des enfants, des jeunes et des femmes.
+                En 2024, <strong>Renel Rosene</strong>, <strong>Renald Rosene</strong> et <strong>Gladelle Esther Toussaint</strong> unissent leurs expériences du terrain associatif, de l'éducation et de l'ingénierie pour fonder PAAD. Leur boussole : rompre avec l'assistanat d'urgence sans lendemain pour concevoir des programmes durables qui renforcent directement l'autonomie des enfants, des jeunes et des femmes.
               </p>
             </div>
 
@@ -890,7 +1368,7 @@
 
           <div class="founder-card">
             <span class="founder-index">03 · Cofondatrice</span>
-            <h3 class="founder-name">Esther Gladelle Toussaint</h3>
+            <h3 class="founder-name">Gladelle Esther Toussaint</h3>
             <p class="founder-role">Programmes Pédagogiques &amp; Bourses</p>
             <p class="founder-bio">
               Spécialiste de l'accompagnement éducatif et de la pédagogie, elle veille à la sélection rigoureuse des boursiers, au suivi scolaire personnalisé et au soutien des enseignants partenaires.
@@ -1260,6 +1738,14 @@
       }
       if (!wasOpen) {
         item.classList.add('is-open');
+      }
+    };
+
+    window.handleSearch = function() {
+      const q = prompt('Rechercher sur PAAD :');
+      if (q) {
+        alert('Résultats pour "' + q + '" : vous pouvez consulter nos actions et notre équipe.');
+        location.href = './index.html#domaines';
       }
     };
 

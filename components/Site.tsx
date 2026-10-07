@@ -1024,12 +1024,31 @@ export function Home({ lang, data }: { lang: 'fr' | 'en' | 'es'; data: SiteData 
             Bâtir l’avenir d’Haïti.
           </h1>
           <p className="home-milestone-lead">Nous agissons avec les communautés pour faciliter l’accès à l’éducation, développer les compétences et créer des chemins durables vers l’autonomie.</p>
-          <div className="home-milestone-actions">
+          <div className="home-milestone-actions hero-action-group">
+            {/* BLOG ET ACTUALITÉS avec menu déroulant */}
+            <div className="hero-dropdown-wrapper">
+              <Link href={href('actualites')} className="hero-link-btn">
+                <span>BLOG ET ACTUALITÉS</span>
+                <ChevronDown size={12} strokeWidth={2.6} />
+              </Link>
+              <div className="hero-dropdown-panel" role="menu">
+                <Link href={href('actualites')} role="menuitem">Toutes les actualités</Link>
+                <Link href={href('media')} role="menuitem">Espace média &amp; galeries</Link>
+                <Link href={href('rapports')} role="menuitem">Rapports &amp; publications</Link>
+              </div>
+            </div>
+
+            {/* ÉCRIVEZ-NOUS */}
+            <Link href={href('contact')} className="hero-link-btn">
+              <span>ÉCRIVEZ-NOUS</span>
+            </Link>
+
+            {/* FAITES UN DON MAINTENANT (Bouton Vert #08773e) */}
             <Link
               href={href('faire-un-don')}
-              className="hero-donate-btn"
+              className="hero-donate-btn hero-donate-btn-green"
               style={{
-                backgroundColor: '#71106f',
+                backgroundColor: '#08773e',
                 color: '#ffffff',
                 border: 'none',
                 borderRadius: 0,
@@ -1040,7 +1059,7 @@ export function Home({ lang, data }: { lang: 'fr' | 'en' | 'es'; data: SiteData 
                 textTransform: 'uppercase',
                 minHeight: '52px',
                 padding: '0 32px',
-                boxShadow: '0 4px 18px rgba(113, 16, 111, 0.45)',
+                boxShadow: '0 4px 18px rgba(8, 119, 62, 0.45)',
                 display: 'inline-flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -1050,6 +1069,8 @@ export function Home({ lang, data }: { lang: 'fr' | 'en' | 'es'; data: SiteData 
             >
               FAITES UN DON MAINTENANT
             </Link>
+
+            {/* DÉCOUVRIR NOS ACTIONS */}
             <a href="#programmes" className="hero-secondary-btn">
               Découvrir nos actions <ArrowRight size={17}/>
             </a>
@@ -1067,6 +1088,71 @@ export function Home({ lang, data }: { lang: 'fr' | 'en' | 'es'; data: SiteData 
       </div>
     </section>
 
+    {/* 2.3 SECTION NOTRE CONVICTION : QU'EST-CE QUE PAAD ? (STYLE DEMANDÉ) */}
+    <section className="section-conviction" id="conviction">
+      <div className="wrap">
+        <div className="conviction-grid">
+          {/* Colonne Gauche : Texte de Conviction */}
+          <div className="conviction-text-col">
+            <span className="conviction-kicker">Notre conviction</span>
+            <h2 className="conviction-title">
+              Qu’est-ce que<br />
+              <span className="conviction-title-green">PAAD ?</span>
+            </h2>
+
+            <div className="conviction-quote-badge">
+              <span className="conviction-quote-label">PAAD signifie</span>
+              <p className="conviction-quote-text">« Passerelle d’Actions pour l’Autonomie et le Développement ».</p>
+            </div>
+
+            <p className="conviction-desc">
+              PAAD a été fondée pour reconstruire et renforcer l’autonomie des communautés en Haïti de manière durable, d’une façon qui apporte <strong className="conviction-highlight">espoir, fierté et dignité</strong> aux Haïtiens touchés par l’organisation.
+            </p>
+
+            <p className="conviction-desc">
+              Nos équipes de terrain haïtiennes et nos partenaires collaborent pour améliorer concrètement les conditions de vie de la population locale. Notre vision à long terme est de donner aux Haïtiens les moyens de bâtir leur propre avenir.
+            </p>
+
+            <Link href={href('qui-sommes-nous')} className="conviction-more-link">
+              <span>En savoir plus sur PAAD</span>
+              <ArrowUpRight size={15} strokeWidth={2.5} />
+            </Link>
+          </div>
+
+          {/* Colonne Droite : Carte Médias avec Vidéo Embed et Bannière Verte */}
+          <div className="conviction-card">
+            <div className="conviction-card-header">
+              <span className="conviction-card-kicker">Découvrir en images</span>
+              <span className="conviction-card-badge">
+                <Play size={10} fill="currentColor" />
+                VIDÉO
+              </span>
+            </div>
+
+            {/* Lecteur Vidéo YouTube Intégré */}
+            <div className="conviction-video-frame">
+              <iframe 
+                src="https://www.youtube-nocookie.com/embed/ScMzIvxBSi4?rel=0" 
+                title="Présentation vidéo PAAD en Haïti" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowFullScreen
+              />
+            </div>
+
+            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" className="conviction-yt-sublink">
+              <span>Voir la vidéo sur YouTube</span>
+              <ArrowUpRight size={13} strokeWidth={2.5} />
+            </a>
+
+            {/* Bannière Inférieure Vert Forêt Signature */}
+            <div className="conviction-card-footer-banner">
+              <span className="conviction-card-footer-tag">PAAD · HAÏTI</span>
+              <h3 className="conviction-card-footer-title">Une vision commune. Un avenir à construire ensemble.</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     {/* 2.5 SPOTLIGHT TERRAIN AVEC CARROUSEL INTERACTIF (SANS FOND SUR LE TEXTE + FLÈCHES) */}
     {/* 2.5 SECTION TERRAIN : SUR LE TERRAIN EN HAÏTI AVEC BOUTON EN HAUT À DROITE DU CARROUSEL */}
@@ -1748,7 +1834,7 @@ export function AboutPage({ lang }: { lang: 'fr' | 'en' | 'es'; data: SiteData }
             </h3>
             <div className="origins-text">
               <p>
-                En 2020, au cœur des crises et des réalités quotidiennes vécues par les communautés en Haïti, <strong>Renel ROSENE</strong>, <strong>Renald ROSENE</strong> et <strong>Esther Gladelle TOUSSAINT</strong> ont fait un constat lucide : l’urgence humanitaire ponctuelle, bien qu’indispensable, ne permet pas aux familles de sortir de la précarité si elle ne s’adosse pas à une véritable passerelle vers l’autonomie.
+                En 2020, au cœur des crises et des réalités quotidiennes vécues par les communautés en Haïti, <strong>Renel ROSENE</strong>, <strong>Renald ROSENE</strong> et <strong>Gladelle Esther TOUSSAINT</strong> ont fait un constat lucide : l’urgence humanitaire ponctuelle, bien qu’indispensable, ne permet pas aux familles de sortir de la précarité si elle ne s’adosse pas à une véritable passerelle vers l’autonomie.
               </p>
               <p>
                 Portés par une profonde conviction et la volonté d’offrir aux enfants et aux familles les moyens de construire leur propre avenir avec fierté et dignité, ils ont décidé d’unir leurs compétences de terrain, en éducation, en logistique et en accompagnement communautaire. C’est de cet engagement partagé qu’est née la <strong>Passerelle d’Actions pour l’Autonomie et le Développement (PAAD)</strong>.
@@ -1804,14 +1890,14 @@ export function AboutPage({ lang }: { lang: 'fr' | 'en' | 'es'; data: SiteData }
               <details className="team-mission-footer"><summary className="team-mission-btn"><span>Découvrir son parcours</span><span className="team-mission-plus" aria-hidden="true">+</span></summary><div className="team-mission-bio">Photographe et entrepreneur, Renald ancre son action au plus près des réalités concrètes et humaines. Au contact direct des communautés et des équipes locales, il pilote le déploiement opérationnel, la logistique terrain, le soutien aux cantines scolaires et le suivi de proximité des ateliers techniques. Son regard affûté, son sens pratique et son engagement de terrain font de lui un acteur indispensable pour traduire les objectifs de PAAD en résultats tangibles et durables au quotidien.</div></details>
             </article>
 
-            {/* 3. Esther Gladelle TOUSSAINT */}
+            {/* 3. Gladelle Esther TOUSSAINT */}
             <article className="team-mission-card">
               <div className="team-mission-photo-wrap">
-                <Image src="/images/team-esther-toussaint.jpg" alt="Esther Gladelle TOUSSAINT" fill sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw" style={{ objectFit: 'cover' }} />
+                <Image src="/images/team-esther-toussaint.jpg" alt="Gladelle Esther TOUSSAINT" fill sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw" style={{ objectFit: 'cover' }} />
               </div>
               <span className="team-mission-role">ÉDUCATION &amp; BOURSES</span>
-              <h3 className="team-mission-name">Esther Gladelle TOUSSAINT</h3>
-              <details className="team-mission-footer"><summary className="team-mission-btn"><span>Découvrir son parcours</span><span className="team-mission-plus" aria-hidden="true">+</span></summary><div className="team-mission-bio">Actuellement étudiante en deuxième année de psychologie et directrice générale d'Atizana Lakay, une entreprise dédiée aux soins cosmétiques, Esther allie sensibilité humaine et fibre entrepreneuriale. Forte de son expérience à la tête d'une structure engagée et de son intérêt profond pour le développement individuel, elle pilote avec engagement le pôle éducatif de PAAD. Sa créativité, son écoute et son leadership pragmatique font d'elle un pilier essentiel pour concevoir des initiatives pédagogiques adaptées et inspirer les générations futures face aux défis du terrain.</div></details>
+              <h3 className="team-mission-name">Gladelle Esther TOUSSAINT</h3>
+              <details className="team-mission-footer"><summary className="team-mission-btn"><span>Découvrir son parcours</span><span className="team-mission-plus" aria-hidden="true">+</span></summary><div className="team-mission-bio">Actuellement étudiante en deuxième année de psychologie et directrice générale d'Atizana Lakay, une entreprise dédiée aux soins cosmétiques, Gladelle allie sensibilité humaine et fibre entrepreneuriale. Forte de son expérience à la tête d'une structure engagée et de son intérêt profond pour le développement individuel, elle pilote avec engagement le pôle éducatif de PAAD. Sa créativité, son écoute et son leadership pragmatique font d'elle un pilier essentiel pour concevoir des initiatives pédagogiques adaptées et inspirer les générations futures face aux défis du terrain.</div></details>
             </article>
 
             {/* 4. Bonté GARCONVIL */}
@@ -1979,7 +2065,7 @@ function LegacyAboutPage({ lang, data }: { lang: 'fr' | 'en' | 'es'; data: SiteD
                   Face aux défis majeurs auxquels fait face la société haïtienne, nous avons refusé la résignation et le fatalisme. Le développement pérenne ne s’importe pas de l’extérieur : il grandit avec les talents et l’énergie des Haïtiens eux-mêmes.
                 </p>
                 <p className="spotlight-editorial-text">
-                  En 2024, <strong>Renel Rosene</strong>, <strong>Renald Rosene</strong> et <strong>Esther Gladelle Toussaint</strong> unissent leurs expériences du terrain associatif, de l’éducation et de l’ingénierie pour fonder PAAD. Leur boussole : rompre avec l’assistanat d’urgence sans lendemain pour concevoir des programmes durables qui renforcent directement l’autonomie des enfants, des jeunes et des femmes.
+                  En 2024, <strong>Renel Rosene</strong>, <strong>Renald Rosene</strong> et <strong>Gladelle Esther Toussaint</strong> unissent leurs expériences du terrain associatif, de l’éducation et de l’ingénierie pour fonder PAAD. Leur boussole : rompre avec l’assistanat d’urgence sans lendemain pour concevoir des programmes durables qui renforcent directement l’autonomie des enfants, des jeunes et des femmes.
                 </p>
               </div>
 
@@ -2038,7 +2124,7 @@ function LegacyAboutPage({ lang, data }: { lang: 'fr' | 'en' | 'es'; data: SiteD
 
             <div className="founder-card">
               <span className="founder-index">03 · Cofondatrice</span>
-              <h3 className="founder-name">Esther Gladelle Toussaint</h3>
+              <h3 className="founder-name">Gladelle Esther Toussaint</h3>
               <p className="founder-role">Programmes Pédagogiques &amp; Bourses</p>
               <p className="founder-bio">
                 Spécialiste de l’accompagnement éducatif et de la pédagogie, elle veille à la sélection rigoureuse des boursiers, au suivi scolaire personnalisé et au soutien des enseignants partenaires.
