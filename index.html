@@ -41,6 +41,20 @@
       box-shadow: 0 6px 24px rgba(8, 119, 62, 0.65) !important;
       transform: translateY(-2px);
     }
+    /* Géométrie droite stricte pour carrousels, boutons, indicateurs et bannières */
+    .spotlight-dot,
+    .spotlight-dot.is-active,
+    .spotlight-arrow-btn,
+    .ocean-hero-dot,
+    .ocean-hero-dot.active,
+    .paad-testimonial-dot,
+    .paad-testimonial-dot.active,
+    .conviction-card,
+    .conviction-card-badge,
+    .conviction-card-footer-banner,
+    .conviction-video-frame {
+      border-radius: 0 !important;
+    }
     .hero-action-group {
       display: flex !important;
       flex-wrap: wrap !important;
@@ -1871,6 +1885,215 @@
         </div>
       </div>
     </section>
+
+    <!-- 11.5 SECTION FAIRE UN DON · SOUTENIR NOTRE MISSION (STYLE DEMANDÉ) -->
+    <section class="section-home-donation" id="don">
+      <div class="wrap">
+        <div class="donation-home-grid">
+          <!-- Colonne Gauche : Éditorial & Engagement -->
+          <div class="donation-editorial-col">
+            <span class="donation-kicker">SOUTENIR PAAD</span>
+            <h2 class="donation-editorial-title">
+              Faire un don.<br>
+              <span class="donation-title-highlight">Soutenir notre mission.</span>
+            </h2>
+
+            <div class="donation-quote-accent">
+              <p class="donation-quote-line1">Chaque don est un acte de confiance et de solidarité.</p>
+              <h3 class="donation-quote-line2">Faire grandir l’autonomie des communautés en Haïti.</h3>
+            </div>
+
+            <p class="donation-editorial-text">
+              Votre soutien accompagne notre engagement pour l’éducation, le développement économique et la promotion des compétences d'avenir dans les communautés en Haïti.
+            </p>
+
+            <div class="donation-editorial-actions">
+              <a href="#donModal" class="donation-link-underlined" onclick="openModal('donModal'); return false;">
+                <span>Ouvrir la page de don</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+              </a>
+
+              <a href="./contact.html" class="donation-contact-btn">
+                <span>Nous contacter</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Colonne Droite : Formulaire interactif de don -->
+          <div class="donation-card-box">
+            <span class="donation-card-kicker">VOTRE GÉNÉROSITÉ, VOTRE CHOIX</span>
+            <h3 class="donation-card-title">Je fais un don</h3>
+            <p class="donation-card-subtitle">
+              Choisissez votre soutien et votre moyen de paiement. Chaque geste compte.
+            </p>
+
+            <!-- 01 · Votre rythme -->
+            <span class="donation-step-label">01 · Votre rythme</span>
+            <div class="donation-freq-toggle" role="group" aria-label="Fréquence du don">
+              <button type="button" class="donation-freq-pill active" id="widget-freq-once" onclick="setHomeDonFreq('once')">Don ponctuel</button>
+              <button type="button" class="donation-freq-pill" id="widget-freq-reg" onclick="setHomeDonFreq('regular')">Don régulier</button>
+            </div>
+
+            <!-- La cause qui vous tient à cœur -->
+            <div class="donation-field-group">
+              <label class="donation-field-label" for="widget-cause-select">La cause qui vous tient à cœur</label>
+              <select id="widget-cause-select" class="donation-select-field">
+                <option value="general">Fonds général (priorités sur le terrain)</option>
+                <option value="education">Bourses scolaires &amp; Écoles partenaires</option>
+                <option value="tech">Digital Lab &amp; Formation technique</option>
+                <option value="economy">Entrepreneuriat &amp; Autonomie des femmes</option>
+              </select>
+            </div>
+
+            <!-- 02 · Votre montant -->
+            <span class="donation-step-label">02 · Votre montant</span>
+            <div class="donation-amounts-row" role="group" aria-label="Montants prédéfinis">
+              <button type="button" class="donation-amt-choice" onclick="setHomeDonAmt(50, this)">50 $</button>
+              <button type="button" class="donation-amt-choice active" onclick="setHomeDonAmt(100, this)">100 $</button>
+              <button type="button" class="donation-amt-choice" onclick="setHomeDonAmt(250, this)">250 $</button>
+            </div>
+
+            <div class="donation-custom-group">
+              <div class="donation-currency-prefix">
+                <span>$</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+              </div>
+              <input type="number" id="widget-custom-amount" class="donation-custom-input" placeholder="Autre montant" min="1" oninput="setHomeCustomAmt(this.value)">
+            </div>
+
+            <!-- Processeur de paiement -->
+            <div class="donation-field-group">
+              <label class="donation-field-label" for="widget-processor-select">PROCESSEUR DE PAIEMENT :</label>
+              <select id="widget-processor-select" class="donation-select-field" onchange="setHomeDonMethod(this.value)">
+                <option value="zeffy">Zeffy (100 % gratuit · 0 % de frais)</option>
+                <option value="paypal">PayPal (Paiement sécurisé)</option>
+                <option value="card">Carte bancaire / Virement direct</option>
+              </select>
+            </div>
+
+            <!-- 03 · Votre moyen de paiement -->
+            <span class="donation-step-label">03 · Votre moyen de paiement</span>
+            <div class="donation-methods-grid">
+              <button type="button" class="donation-method-card active" id="method-zeffy" onclick="setHomeDonMethod('zeffy')">
+                <span class="donation-method-brand" style="color:#08773e;">zeffy</span>
+                <span class="donation-method-tag">0 % frais</span>
+              </button>
+              <button type="button" class="donation-method-card" id="method-paypal" onclick="setHomeDonMethod('paypal')">
+                <span class="donation-method-brand" style="color:#003087;">PayPal</span>
+                <span class="donation-method-tag" style="color:#64748b;">Sécurisé</span>
+              </button>
+              <button type="button" class="donation-method-card" id="method-card" onclick="setHomeDonMethod('card')">
+                <span class="donation-method-brand" style="color:#1e293b;">Carte</span>
+                <span class="donation-method-tag" style="color:#64748b;">CB / Virement</span>
+              </button>
+            </div>
+
+            <!-- Bouton CTA -->
+            <button type="button" id="widget-submit-cta" class="donation-cta-submit" onclick="submitHomeDonation()">
+              <span id="widget-cta-label">JE FAIS UN DON 100 $</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </button>
+
+            <!-- Note rassurante avec icône coeur -->
+            <div class="donation-disclaimer-note">
+              <svg class="donation-heart-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+              <span>Vous serez redirigé vers la plateforme de don. Confirmez-y le montant, la fréquence et l’affectation avant de payer.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. ALLIANCES (STYLE THE OCEAN CLEANUP) -->
+    <section class="section-partners" id="partenaires">
+      <div class="wrap">
+        <h2 class="ocean-alliances-title">
+          Alliances
+        </h2>
+        <p class="ocean-alliances-subtitle">
+          Ils avancent avec nous
+        </p>
+
+        <div class="ocean-alliances-grid">
+          <!-- 1. ONG & Associations -->
+          <div class="ocean-alliance-logo-item">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+            <div class="logo-text">
+              <span class="logo-main">ONG &amp; ASSOCIATIONS</span>
+              <span class="logo-tag">Alliance Solidaire</span>
+            </div>
+          </div>
+
+          <!-- 2. Entreprises solidaires -->
+          <div class="ocean-alliance-logo-item">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" strokeLinecap="round" strokeLinejoin="round">
+              <rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+            </svg>
+            <div class="logo-text">
+              <span class="logo-main">ENTREPRISES SOLIDAIRES</span>
+              <span class="logo-tag">Mécénat &amp; RSE</span>
+            </div>
+          </div>
+
+          <!-- 3. Universités & Écoles -->
+          <div class="ocean-alliance-logo-item">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/>
+            </svg>
+            <div class="logo-text">
+              <span class="logo-main">UNIVERSITÉS &amp; ÉCOLES</span>
+              <span class="logo-tag">Pôles d'Excellence</span>
+            </div>
+          </div>
+
+          <!-- 4. Réseaux de la Diaspora -->
+          <div class="ocean-alliance-logo-item">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/>
+            </svg>
+            <div class="logo-text">
+              <span class="logo-main">RÉSEAUX DE LA DIASPORA</span>
+              <span class="logo-tag">Mobilisation Mondiale</span>
+            </div>
+          </div>
+
+          <!-- 5. Collectivités territoriales -->
+          <div class="ocean-alliance-logo-item">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/>
+            </svg>
+            <div class="logo-text">
+              <span class="logo-main">COLLECTIVITÉS TERRITORIALES</span>
+              <span class="logo-tag">Action Publique Locale</span>
+            </div>
+          </div>
+
+          <!-- 6. Bailleurs & Fondations -->
+          <div class="ocean-alliance-logo-item">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/>
+            </svg>
+            <div class="logo-text">
+              <span class="logo-main">BAILLEURS &amp; FONDATIONS</span>
+              <span class="logo-tag">Financements d'Impact</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="ocean-alliances-desc">
+          ONG, entreprises, universités, associations, collectivités et réseaux de la diaspora : nous sommes honorés de compter sur des partenaires engagés pour soutenir durablement les communautés en Haïti.
+        </p>
+
+        <a href="#contact" onclick="openModal('contactModal', 'Partenariat'); return false;" class="ocean-alliances-btn">
+          VOIR TOUS NOS PARTENAIRES
+        </a>
+      </div>
+    </section>
+
+    <!-- 13. NEWSLETTER : RESTER ENGAGÉ -->
     <section class="section-newsletter" id="newsletter">
       <div class="wrap">
         <div class="newsletter-inner-box">
@@ -1905,98 +2128,6 @@
             </button>
           </form>
         </div>
-      </div>
-    </section>
-
-
-
-
-
-    <!-- 13. ALLIANCES (STYLE THE OCEAN CLEANUP) -->
-    <section class="section-partners" id="partenaires">
-      <div class="wrap">
-        <h2 class="ocean-alliances-title">
-          Alliances
-        </h2>
-        <p class="ocean-alliances-subtitle">
-          Ils avancent avec nous
-        </p>
-
-        <div class="ocean-alliances-grid">
-          <!-- 1. ONG & Associations -->
-          <div class="ocean-alliance-logo-item">
-            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-            </svg>
-            <div class="logo-text">
-              <span class="logo-main">ONG &amp; ASSOCIATIONS</span>
-              <span class="logo-tag">Alliance Solidaire</span>
-            </div>
-          </div>
-
-          <!-- 2. Entreprises solidaires -->
-          <div class="ocean-alliance-logo-item">
-            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
-            </svg>
-            <div class="logo-text">
-              <span class="logo-main">ENTREPRISES SOLIDAIRES</span>
-              <span class="logo-tag">Mécénat &amp; RSE</span>
-            </div>
-          </div>
-
-          <!-- 3. Universités & Écoles -->
-          <div class="ocean-alliance-logo-item">
-            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/>
-            </svg>
-            <div class="logo-text">
-              <span class="logo-main">UNIVERSITÉS &amp; ÉCOLES</span>
-              <span class="logo-tag">Pôles d'Excellence</span>
-            </div>
-          </div>
-
-          <!-- 4. Réseaux de la Diaspora -->
-          <div class="ocean-alliance-logo-item">
-            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/>
-            </svg>
-            <div class="logo-text">
-              <span class="logo-main">RÉSEAUX DE LA DIASPORA</span>
-              <span class="logo-tag">Mobilisation Mondiale</span>
-            </div>
-          </div>
-
-          <!-- 5. Collectivités territoriales -->
-          <div class="ocean-alliance-logo-item">
-            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/>
-            </svg>
-            <div class="logo-text">
-              <span class="logo-main">COLLECTIVITÉS TERRITORIALES</span>
-              <span class="logo-tag">Action Publique Locale</span>
-            </div>
-          </div>
-
-          <!-- 6. Bailleurs & Fondations -->
-          <div class="ocean-alliance-logo-item">
-            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/>
-            </svg>
-            <div class="logo-text">
-              <span class="logo-main">BAILLEURS &amp; FONDATIONS</span>
-              <span class="logo-tag">Financements d'Impact</span>
-            </div>
-          </div>
-        </div>
-
-        <p class="ocean-alliances-desc">
-          ONG, entreprises, universités, associations, collectivités et réseaux de la diaspora : nous sommes honorés de compter sur des partenaires engagés pour soutenir durablement les communautés en Haïti.
-        </p>
-
-        <a href="#contact" onclick="openModal('contactModal', 'Partenariat'); return false;" class="ocean-alliances-btn">
-          VOIR TOUS NOS PARTENAIRES
-        </a>
       </div>
     </section>
 
@@ -2864,6 +2995,75 @@
       scrollToTopBtn.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
+    /* Widget de Don Interactif sur la Page d'Accueil */
+    let homeDonationAmt = 100;
+    let homeDonationFreq = 'once';
+    let homeDonationMethod = 'zeffy';
+
+    function updateHomeDonCta() {
+      const ctaLabel = document.getElementById('widget-cta-label');
+      if (ctaLabel) {
+        ctaLabel.textContent = `JE FAIS UN DON ${homeDonationAmt} $`;
+      }
+    }
+
+    function setHomeDonFreq(freq) {
+      homeDonationFreq = freq;
+      const bOnce = document.getElementById('widget-freq-once');
+      const bReg = document.getElementById('widget-freq-reg');
+      if (bOnce && bReg) {
+        bOnce.classList.toggle('active', freq === 'once');
+        bReg.classList.toggle('active', freq === 'regular');
+      }
+    }
+
+    function setHomeDonAmt(amt, btn) {
+      homeDonationAmt = amt;
+      document.querySelectorAll('.donation-amt-choice').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      const customInput = document.getElementById('widget-custom-amount');
+      if (customInput) customInput.value = '';
+      updateHomeDonCta();
+    }
+
+    function setHomeCustomAmt(val) {
+      const num = parseInt(val, 10);
+      if (!isNaN(num) && num > 0) {
+        homeDonationAmt = num;
+        document.querySelectorAll('.donation-amt-choice').forEach(b => b.classList.remove('active'));
+      } else {
+        homeDonationAmt = 100;
+      }
+      updateHomeDonCta();
+    }
+
+    function setHomeDonMethod(method) {
+      homeDonationMethod = method;
+      ['zeffy', 'paypal', 'card'].forEach(m => {
+        const el = document.getElementById('method-' + m);
+        if (el) el.classList.toggle('active', m === method);
+      });
+      const proc = document.getElementById('widget-processor-select');
+      if (proc) proc.value = method;
+    }
+
+    function submitHomeDonation() {
+      openModal('donModal');
+      const modalAmtBtns = document.querySelectorAll('#donModal .farm-amt-btn');
+      let matched = false;
+      modalAmtBtns.forEach(btn => {
+        if (btn.textContent.includes(homeDonationAmt.toString())) {
+          btn.click();
+          matched = true;
+        }
+      });
+      if (!matched) {
+        const customField = document.getElementById('custom-amount');
+        if (customField) {
+          customField.value = homeDonationAmt;
+          if (typeof clearActiveAmt === 'function') clearActiveAmt(homeDonationAmt);
+        }
+      }
     }
   </script>
 </body>

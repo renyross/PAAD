@@ -989,6 +989,13 @@ export function Home({ lang, data }: { lang: 'fr' | 'en' | 'es'; data: SiteData 
     }
   };
 
+  const [homeDonFreq, setHomeDonFreq] = useState<'once' | 'regular'>('once');
+  const [homeDonAmt, setHomeDonAmt] = useState<number>(100);
+  const [homeCustomAmt, setHomeCustomAmt] = useState<string>('');
+  const [homeDonCause, setHomeDonCause] = useState<string>('general');
+  const [homeDonProcessor, setHomeDonProcessor] = useState<string>('zeffy');
+  const [homeDonMethod, setHomeDonMethod] = useState<'zeffy' | 'paypal' | 'card'>('zeffy');
+
   return <>
     {/* 2. HERO PRINCIPAL AVEC DÉFILEMENT D'IMAGES (ESTHÉTIQUE THE OCEAN CLEANUP / PAAD) */}
     <section className="ocean-style-hero" id="hero">
@@ -1639,7 +1646,194 @@ export function Home({ lang, data }: { lang: 'fr' | 'en' | 'es'; data: SiteData 
       </div>
     </section>
 
-    {/* 13. ALLIANCES (STYLE THE OCEAN CLEANUP) */}
+    {/* 11.5 SECTION FAIRE UN DON · SOUTENIR NOTRE MISSION (STYLE DEMANDÉ) */}
+    <section className="section-home-donation" id="don">
+      <div className="wrap">
+        <div className="donation-home-grid">
+          {/* Colonne Gauche : Éditorial & Engagement */}
+          <div className="donation-editorial-col">
+            <span className="donation-kicker">SOUTENIR PAAD</span>
+            <h2 className="donation-editorial-title">
+              Faire un don.<br />
+              <span className="donation-title-highlight">Soutenir notre mission.</span>
+            </h2>
+
+            <div className="donation-quote-accent">
+              <p className="donation-quote-line1">Chaque don est un acte de confiance et de solidarité.</p>
+              <h3 className="donation-quote-line2">Faire grandir l’autonomie des communautés en Haïti.</h3>
+            </div>
+
+            <p className="donation-editorial-text">
+              Votre soutien accompagne notre engagement pour l’éducation, le développement économique et la promotion des compétences d'avenir dans les communautés en Haïti.
+            </p>
+
+            <div className="donation-editorial-actions">
+              <Link href={href('faire-un-don')} className="donation-link-underlined">
+                <span>Ouvrir la page de don</span>
+                <ArrowUpRight size={15} strokeWidth={2.6} />
+              </Link>
+
+              <Link href={href('contact')} className="donation-contact-btn">
+                <span>Nous contacter</span>
+                <ArrowRight size={15} strokeWidth={2.4} />
+              </Link>
+            </div>
+          </div>
+
+          {/* Colonne Droite : Formulaire interactif de don */}
+          <div className="donation-card-box">
+            <span className="donation-card-kicker">VOTRE GÉNÉROSITÉ, VOTRE CHOIX</span>
+            <h3 className="donation-card-title">Je fais un don</h3>
+            <p className="donation-card-subtitle">
+              Choisissez votre soutien et votre moyen de paiement. Chaque geste compte.
+            </p>
+
+            {/* 01 · Votre rythme */}
+            <span className="donation-step-label">01 · Votre rythme</span>
+            <div className="donation-freq-toggle" role="group" aria-label="Fréquence du don">
+              <button
+                type="button"
+                className={`donation-freq-pill ${homeDonFreq === 'once' ? 'active' : ''}`}
+                onClick={() => setHomeDonFreq('once')}
+              >
+                Don ponctuel
+              </button>
+              <button
+                type="button"
+                className={`donation-freq-pill ${homeDonFreq === 'regular' ? 'active' : ''}`}
+                onClick={() => setHomeDonFreq('regular')}
+              >
+                Don régulier
+              </button>
+            </div>
+
+            {/* La cause qui vous tient à cœur */}
+            <div className="donation-field-group">
+              <label className="donation-field-label" htmlFor="site-widget-cause">La cause qui vous tient à cœur</label>
+              <select
+                id="site-widget-cause"
+                className="donation-select-field"
+                value={homeDonCause}
+                onChange={(e) => setHomeDonCause(e.target.value)}
+              >
+                <option value="general">Fonds général (priorités sur le terrain)</option>
+                <option value="education">Bourses scolaires &amp; Écoles partenaires</option>
+                <option value="tech">Digital Lab &amp; Formation technique</option>
+                <option value="economy">Entrepreneuriat &amp; Autonomie des femmes</option>
+              </select>
+            </div>
+
+            {/* 02 · Votre montant */}
+            <span className="donation-step-label">02 · Votre montant</span>
+            <div className="donation-amounts-row" role="group" aria-label="Montants prédéfinis">
+              {[50, 100, 250].map((amt) => (
+                <button
+                  key={amt}
+                  type="button"
+                  className={`donation-amt-choice ${!homeCustomAmt && homeDonAmt === amt ? 'active' : ''}`}
+                  onClick={() => {
+                    setHomeDonAmt(amt);
+                    setHomeCustomAmt('');
+                  }}
+                >
+                  {amt} $
+                </button>
+              ))}
+            </div>
+
+            <div className="donation-custom-group">
+              <div className="donation-currency-prefix">
+                <span>$</span>
+                <ChevronDown size={12} strokeWidth={2.5} />
+              </div>
+              <input
+                type="number"
+                className="donation-custom-input"
+                placeholder="Autre montant"
+                min="1"
+                value={homeCustomAmt}
+                onChange={(e) => setHomeCustomAmt(e.target.value)}
+              />
+            </div>
+
+            {/* Processeur de paiement */}
+            <div className="donation-field-group">
+              <label className="donation-field-label" htmlFor="site-widget-processor">PROCESSEUR DE PAIEMENT :</label>
+              <select
+                id="site-widget-processor"
+                className="donation-select-field"
+                value={homeDonProcessor}
+                onChange={(e) => {
+                  setHomeDonProcessor(e.target.value);
+                  if (e.target.value === 'zeffy' || e.target.value === 'paypal' || e.target.value === 'card') {
+                    setHomeDonMethod(e.target.value as 'zeffy' | 'paypal' | 'card');
+                  }
+                }}
+              >
+                <option value="zeffy">Zeffy (100 % gratuit · 0 % de frais)</option>
+                <option value="paypal">PayPal (Paiement sécurisé)</option>
+                <option value="card">Carte bancaire / Virement direct</option>
+              </select>
+            </div>
+
+            {/* 03 · Votre moyen de paiement */}
+            <span className="donation-step-label">03 · Votre moyen de paiement</span>
+            <div className="donation-methods-grid">
+              <button
+                type="button"
+                className={`donation-method-card ${homeDonMethod === 'zeffy' ? 'active' : ''}`}
+                onClick={() => {
+                  setHomeDonMethod('zeffy');
+                  setHomeDonProcessor('zeffy');
+                }}
+              >
+                <span className="donation-method-brand" style={{ color: '#08773e' }}>zeffy</span>
+                <span className="donation-method-tag">0 % frais</span>
+              </button>
+              <button
+                type="button"
+                className={`donation-method-card ${homeDonMethod === 'paypal' ? 'active' : ''}`}
+                onClick={() => {
+                  setHomeDonMethod('paypal');
+                  setHomeDonProcessor('paypal');
+                }}
+              >
+                <span className="donation-method-brand" style={{ color: '#003087' }}>PayPal</span>
+                <span className="donation-method-tag" style={{ color: '#64748b' }}>Sécurisé</span>
+              </button>
+              <button
+                type="button"
+                className={`donation-method-card ${homeDonMethod === 'card' ? 'active' : ''}`}
+                onClick={() => {
+                  setHomeDonMethod('card');
+                  setHomeDonProcessor('card');
+                }}
+              >
+                <span className="donation-method-brand" style={{ color: '#1e293b' }}>Carte</span>
+                <span className="donation-method-tag" style={{ color: '#64748b' }}>CB / Virement</span>
+              </button>
+            </div>
+
+            {/* Bouton CTA */}
+            <Link
+              href={href('faire-un-don')}
+              className="donation-cta-submit"
+            >
+              <span>JE FAIS UN DON {homeCustomAmt && parseInt(homeCustomAmt, 10) > 0 ? homeCustomAmt : homeDonAmt} $</span>
+              <ArrowRight size={18} strokeWidth={2.6} />
+            </Link>
+
+            {/* Note rassurante avec icône coeur */}
+            <div className="donation-disclaimer-note">
+              <Heart size={16} strokeWidth={2.2} className="donation-heart-icon" />
+              <span>Vous serez redirigé vers la plateforme de don. Confirmez-y le montant, la fréquence et l’affectation avant de payer.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* 12. ALLIANCES (STYLE THE OCEAN CLEANUP) */}
     <section className="section-partners" id="partenaires">
       <div className="wrap">
         <h2 className="ocean-alliances-title">
@@ -1736,8 +1930,7 @@ export function Home({ lang, data }: { lang: 'fr' | 'en' | 'es'; data: SiteData 
       </div>
     </section>
 
-
-    {/* 12. NEWSLETTER : RESTER ENGAGE APRES AVOIR DECOUVERT LES ACTIONS */}
+    {/* 13. NEWSLETTER : RESTER ENGAGE APRES AVOIR DECOUVERT LES ACTIONS */}
     <section className="section-newsletter" id="newsletter">
       <div className="wrap">
         <div className="newsletter-inner-box">

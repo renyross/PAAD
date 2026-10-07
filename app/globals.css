@@ -1207,7 +1207,7 @@
 .ocean-hero-dot {
   width: 28px;
   height: 4px;
-  border-radius: 2px;
+  border-radius: 0 !important;
   background: rgba(255, 255, 255, 0.35);
   border: none;
   cursor: pointer;
@@ -1216,6 +1216,7 @@
 }
 .ocean-hero-dot.active {
   width: 44px;
+  border-radius: 0 !important;
   background: var(--purple);
 }
 /* Cacher les boutons fléchés du hero */
@@ -2405,7 +2406,7 @@
 .spotlight-arrow-btn {
   width: 44px;
   height: 44px;
-  border-radius: 50%;
+  border-radius: 0 !important;
   border: 1.5px solid #e8dfe9;
   background: #ffffff;
   color: var(--purple-dark);
@@ -2461,9 +2462,9 @@
 }
 
 .spotlight-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 0 !important;
   background: #d4ccd6;
   border: none;
   cursor: pointer;
@@ -2473,8 +2474,9 @@
 
 .spotlight-dot.is-active {
   background: var(--purple);
-  width: 24px;
-  border-radius: 999px;
+  width: 22px;
+  height: 8px;
+  border-radius: 0 !important;
 }
 
 /* 4 Cartes Métadonnées Dynamiques (Style capture utilisateur) */
@@ -4136,7 +4138,7 @@
 .paad-testimonial-dot {
   width: 9px;
   height: 9px;
-  border-radius: 999px;
+  border-radius: 0 !important;
   background: #D9C9DD;
   border: none;
   cursor: pointer;
@@ -4146,6 +4148,7 @@
 
 .paad-testimonial-dot.active {
   width: 28px;
+  border-radius: 0 !important;
   background: var(--purple);
 }
 
@@ -5064,6 +5067,8 @@
 .team-mission-photo-wrap,
 .team-mission-photo-wrap img,
 .conviction-card,
+.conviction-card-badge,
+.conviction-card-footer-banner,
 .news-blog-nav-btn,
 .conviction-video-frame{border-radius:0!important}
 
@@ -7374,7 +7379,7 @@ details.team-mission-footer:not([open]) > .team-mission-bio { display: none; }
 .conviction-card {
   background: #ffffff;
   border: 1px solid #e5e7eb;
-  border-radius: 20px;
+  border-radius: 0 !important;
   padding: 24px;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06);
   position: relative;
@@ -7409,7 +7414,7 @@ details.team-mission-footer:not([open]) > .team-mission-bio { display: none; }
   letter-spacing: 0.08em;
   text-transform: uppercase;
   padding: 4px 10px;
-  border-radius: 999px;
+  border-radius: 0 !important;
 }
 
 .conviction-video-frame {
@@ -7417,7 +7422,7 @@ details.team-mission-footer:not([open]) > .team-mission-bio { display: none; }
   width: 100%;
   aspect-ratio: 16 / 9;
   background: #000000;
-  border-radius: 12px;
+  border-radius: 0 !important;
   overflow: hidden;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
 }
@@ -7452,7 +7457,7 @@ details.team-mission-footer:not([open]) > .team-mission-bio { display: none; }
 
 .conviction-card-footer-banner {
   background: #0f3822;
-  border-radius: 12px;
+  border-radius: 0 !important;
   padding: 20px 24px;
   margin-top: 18px;
   color: #ffffff;
@@ -7490,3 +7495,426 @@ details.team-mission-footer:not([open]) > .team-mission-bio { display: none; }
     max-width: 100%;
   }
 }
+
+/* ==========================================================================
+   SECTION FAIRE UN DON · SOUTENIR NOTRE MISSION (STYLE CAPTURE UTILISATEUR)
+   ========================================================================== */
+.section-home-donation {
+  padding: 100px 0;
+  background: #f8fafc;
+  position: relative;
+  border-top: 1px solid #e2e8f0;
+}
+
+.donation-home-grid {
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.donation-editorial-col {
+  max-width: 580px;
+}
+
+.donation-kicker {
+  display: block;
+  font-family: 'Manrope', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #08773e;
+  margin-bottom: 18px;
+}
+
+.donation-editorial-title {
+  font-family: 'Manrope', Arial, sans-serif;
+  font-size: clamp(34px, 4.2vw, 54px);
+  font-weight: 800;
+  line-height: 1.14;
+  letter-spacing: -0.025em;
+  color: #1e293b;
+  margin: 0 0 24px;
+}
+
+.donation-title-highlight {
+  color: #08773e;
+  display: block;
+}
+
+.donation-quote-accent {
+  border-left: 3.5px solid #e67e22;
+  padding-left: 18px;
+  margin: 0 0 26px;
+}
+
+.donation-quote-line1 {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #4b5563;
+  margin: 0 0 6px;
+}
+
+.donation-quote-line2 {
+  font-family: 'Manrope', Arial, sans-serif;
+  font-size: 17.5px;
+  font-weight: 800;
+  line-height: 1.4;
+  color: #111827;
+  margin: 0;
+}
+
+.donation-editorial-text {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  color: #4b5563;
+  margin: 0 0 34px;
+}
+
+.donation-editorial-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.donation-link-underlined {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Manrope', Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #08773e;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color 0.2s ease;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.donation-link-underlined:hover {
+  color: #055029;
+}
+
+.donation-contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 9999px;
+  padding: 10px 22px;
+  font-family: 'Manrope', Arial, sans-serif;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #1f2937;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.donation-contact-btn:hover {
+  border-color: #9ca3af;
+  background: #f9fafb;
+  transform: translateX(2px);
+}
+
+/* Carte droite formulaire */
+.donation-card-box {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  padding: 34px 30px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.05), 0 2px 8px rgba(0, 0, 0, 0.02);
+  width: 100%;
+  max-width: 500px;
+  margin-left: auto;
+}
+
+.donation-card-kicker {
+  font-family: 'Manrope', Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #08773e;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.donation-card-title {
+  font-family: 'Manrope', Arial, sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  color: #1e293b;
+  margin: 0 0 6px;
+}
+
+.donation-card-subtitle {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 13.5px;
+  color: #64748b;
+  line-height: 1.45;
+  margin: 0 0 20px;
+}
+
+.donation-step-label {
+  font-family: 'Manrope', Arial, sans-serif;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #64748b;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.donation-freq-toggle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #f1f5f9;
+  padding: 4px;
+  border-radius: 10px;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+.donation-freq-pill {
+  border: none;
+  background: transparent;
+  padding: 10px;
+  border-radius: 8px;
+  font-family: 'Manrope', Arial, sans-serif;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.donation-freq-pill.active {
+  background: #ffffff;
+  color: #08773e;
+  font-weight: 800;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.07);
+}
+
+.donation-field-group {
+  margin-bottom: 16px;
+}
+
+.donation-field-label {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #475569;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.donation-select-field {
+  width: 100%;
+  height: 44px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 0 14px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #1e293b;
+  background: #ffffff;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.donation-select-field:focus {
+  border-color: #08773e;
+}
+
+.donation-amounts-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.donation-amt-choice {
+  height: 44px;
+  border: 1.5px solid #e2e8f0;
+  background: #ffffff;
+  border-radius: 10px;
+  font-family: 'Manrope', Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1e293b;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.donation-amt-choice:hover {
+  border-color: #cbd5e1;
+}
+
+.donation-amt-choice.active {
+  border-color: #08773e;
+  color: #08773e;
+  background: #f0fdf4;
+}
+
+.donation-custom-group {
+  display: flex;
+  align-items: center;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background: #ffffff;
+  overflow: hidden;
+  margin-bottom: 16px;
+  transition: border-color 0.2s ease;
+}
+
+.donation-custom-group:focus-within {
+  border-color: #08773e;
+}
+
+.donation-currency-prefix {
+  padding: 0 12px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748b;
+  border-right: 1px solid #e2e8f0;
+  background: #f8fafc;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.donation-custom-input {
+  flex: 1;
+  height: 42px;
+  border: none;
+  padding: 0 12px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 13.5px;
+  color: #1e293b;
+  outline: none;
+}
+
+.donation-methods-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.donation-method-card {
+  border: 1.5px solid #e2e8f0;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 9px 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 52px;
+}
+
+.donation-method-card:hover {
+  border-color: #cbd5e1;
+}
+
+.donation-method-card.active {
+  border-color: #08773e;
+  background: #f0fdf4;
+}
+
+.donation-method-brand {
+  font-family: 'Manrope', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  color: #1e293b;
+}
+
+.donation-method-tag {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 10.5px;
+  font-weight: 600;
+  color: #08773e;
+}
+
+.donation-cta-submit {
+  width: 100%;
+  height: 52px;
+  background: #e67e22;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Manrope', Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(230, 126, 34, 0.35);
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.donation-cta-submit:hover {
+  background: #d35400;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(230, 126, 34, 0.45);
+}
+
+.donation-disclaimer-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 14px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 11.5px;
+  line-height: 1.45;
+  color: #64748b;
+}
+
+.donation-heart-icon {
+  color: #e67e22;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+@media (max-width: 960px) {
+  .section-home-donation {
+    padding: 70px 0;
+  }
+  .donation-home-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .donation-editorial-col {
+    max-width: 100%;
+  }
+  .donation-card-box {
+    max-width: 100%;
+    margin: 0;
+  }
+}
+
