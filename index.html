@@ -13,8 +13,8 @@
     /* Styles spécifiques d'appoint pour la prévisualisation autonome */
     .hero-donate-btn,
     .hero-donate-btn-green {
-      background: #08773e !important;
-      background-color: #08773e !important;
+      background: var(--purple, #71106f) !important;
+      background-color: var(--purple, #71106f) !important;
       color: #ffffff !important;
       border: none !important;
       border-radius: 0 !important;
@@ -25,7 +25,7 @@
       text-transform: uppercase !important;
       min-height: 52px !important;
       padding: 0 32px !important;
-      box-shadow: 0 4px 18px rgba(8, 119, 62, 0.45) !important;
+      box-shadow: 0 4px 18px rgba(113, 16, 111, 0.45) !important;
       display: inline-flex !important;
       align-items: center !important;
       justify-content: center !important;
@@ -36,9 +36,9 @@
     }
     .hero-donate-btn:hover,
     .hero-donate-btn-green:hover {
-      background: #066132 !important;
-      background-color: #066132 !important;
-      box-shadow: 0 6px 24px rgba(8, 119, 62, 0.65) !important;
+      background: var(--purple-hover, #581056) !important;
+      background-color: var(--purple-hover, #581056) !important;
+      box-shadow: 0 6px 24px rgba(113, 16, 111, 0.65) !important;
       transform: translateY(-2px);
     }
     /* Géométrie droite stricte pour carrousels, boutons, indicateurs et bannières */
@@ -54,6 +54,46 @@
     .conviction-card-footer-banner,
     .conviction-video-frame {
       border-radius: 0 !important;
+    }
+    .hero-top-right-bar {
+      position: absolute !important;
+      top: 32px !important;
+      right: clamp(24px, 4vw, 64px) !important;
+      z-index: 30 !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 14px !important;
+    }
+    @media (max-width: 900px) {
+      .hero-top-right-bar {
+        top: 20px !important;
+        right: 16px !important;
+        gap: 8px !important;
+        flex-wrap: wrap !important;
+        justify-content: flex-end !important;
+      }
+      .hero-top-right-bar .hero-link-btn {
+        font-size: 12px !important;
+        padding: 8px 10px !important;
+        min-height: 42px !important;
+      }
+      .hero-top-right-bar .hero-donate-btn,
+      .hero-top-right-bar .hero-donate-btn-green {
+        font-size: 12.5px !important;
+        padding: 0 18px !important;
+        min-height: 42px !important;
+      }
+    }
+    @media (max-width: 600px) {
+      .hero-top-right-bar {
+        position: relative !important;
+        top: auto !important;
+        right: auto !important;
+        width: 100% !important;
+        justify-content: flex-start !important;
+        padding: 24px 20px 0 !important;
+        margin-bottom: -50px !important;
+      }
     }
     .hero-action-group {
       display: flex !important;
@@ -87,8 +127,8 @@
       min-height: 52px !important;
     }
     .hero-link-btn:hover {
-      color: #a7f3d0 !important;
-      background: rgba(255, 255, 255, 0.12) !important;
+      color: #f3dcf7 !important;
+      background: rgba(255, 255, 255, 0.15) !important;
     }
     .hero-dropdown-panel {
       display: none;
@@ -97,8 +137,8 @@
       left: 0;
       min-width: 250px;
       background: #ffffff;
-      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.28);
-      border-top: 3px solid #08773e;
+      box-shadow: 0 14px 35px rgba(50, 19, 51, 0.22);
+      border-top: 3px solid var(--purple, #71106f);
       padding: 8px 0;
       z-index: 120;
     }
@@ -123,8 +163,8 @@
       transition: all 0.15s ease !important;
     }
     .hero-dropdown-panel a:hover {
-      background: #f0fdf4 !important;
-      color: #08773e !important;
+      background: #f7f0f8 !important;
+      color: var(--purple, #71106f) !important;
       padding-left: 24px !important;
     }
     .mega-menu { display: none; }
@@ -723,19 +763,7 @@
     #donModal .modal-close { color: var(--purple-dark); border-color: #e0d3e2; }
     #donModal .modal-close:hover { background: var(--purple); color: #fff; }
 
-    /* Ordre editorial de la page d'accueil : comprendre, constater, agir. */
-    #main { display: flex; flex-direction: column; }
-    #hero { order: 1; }
-    #terrain { order: 2; }
-    #domaines { order: 3; }
-    #programmes { order: 4; }
-    #urgence { order: 5; }
-    #impact { order: 6; }
-    #histoires { order: 7; }
-    #actualites { order: 8; }
-    #agir { order: 9; }
-    #partenaires { order: 10; }
-    #newsletter { order: 11; }
+
   </style>
 </head>
 <body>
@@ -842,20 +870,20 @@
 
         <!-- DEVENIR PARTENAIRE -->
         <div class="ocean-nav-item has-mega">
-          <a href="./contact.html" class="ocean-nav-anchor">
+          <a href="./devenir-partenaire.html" class="ocean-nav-anchor">
             <span>Devenir partenaire</span>
             <svg class="ocean-caret-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m6 9 6 6 6-6"/></svg>
           </a>
           <div class="ocean-mega-dropdown">
             <div class="wrap ocean-mega-inner">
-              <a href="./contact.html" class="ocean-mega-card">
+              <a href="./devenir-partenaire.html" class="ocean-mega-card">
                 <img src="./public/images/workshop-haiti.webp" alt="Partenariats et coopération en Haïti" class="ocean-mega-card-img">
                 <div class="ocean-mega-card-overlay"></div>
                 <div class="ocean-mega-card-dock">
                   <span class="ocean-mega-circle-btn">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                   </span>
-                  <span class="ocean-mega-card-title">Agir ensemble</span>
+                  <span class="ocean-mega-card-title">Bailleurs & Partenaires</span>
                 </div>
               </a>
               <a href="./qui-sommes-nous.html#valeurs" class="ocean-mega-card">
@@ -1018,11 +1046,11 @@
         </button>
         <div class="mobile-acc-panel">
           <div class="mobile-acc-cards">
-            <a href="./contact.html" class="mobile-acc-card">
+            <a href="./devenir-partenaire.html" class="mobile-acc-card">
               <img src="./public/images/workshop-haiti.webp" alt="Agir ensemble" class="mobile-acc-card-img">
               <div class="mobile-acc-card-overlay"></div>
               <div class="mobile-acc-card-dock">
-                <span class="mobile-acc-card-title">Agir ensemble</span>
+                <span class="mobile-acc-card-title">Bailleurs & Partenaires</span>
                 <span class="mobile-acc-circle-btn">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                 </span>
@@ -1147,6 +1175,32 @@
         <div class="ocean-hero-scrim" aria-hidden="true"></div>
       </div>
 
+      <!-- Boutons d'action en haut à droite de la section Hero -->
+      <div class="hero-top-right-bar">
+        <!-- BLOG ET ACTUALITÉS avec menu déroulant -->
+        <div class="hero-dropdown-wrapper">
+          <a href="./actualites.html" class="hero-link-btn" aria-haspopup="true">
+            <span>BLOG ET ACTUALITÉS</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m6 9 6 6 6-6"/></svg>
+          </a>
+          <div class="hero-dropdown-panel" role="menu">
+            <a href="./actualites.html" role="menuitem">Toutes les actualités</a>
+            <a href="./media.html" role="menuitem">Espace média &amp; galeries</a>
+            <a href="./rapports.html" role="menuitem">Rapports &amp; publications</a>
+          </div>
+        </div>
+
+        <!-- ÉCRIVEZ-NOUS -->
+        <a href="./contact.html" class="hero-link-btn">
+          <span>ÉCRIVEZ-NOUS</span>
+        </a>
+
+        <!-- FAITES UN DON MAINTENANT (Bouton Signature Violet #71106f) -->
+        <button type="button" class="hero-donate-btn" onclick="openModal('donModal')">
+          FAITES UN DON MAINTENANT
+        </button>
+      </div>
+
       <!-- Contenu éditorial aligné sur le hero À propos -->
       <div class="ocean-hero-content-wrap home-hero-left-layout" style="width:100%;max-width:none;margin:0;">
         <div class="ocean-hero-inner home-milestone-inner">
@@ -1156,30 +1210,7 @@
             Bâtir l’avenir d’Haïti.
           </h1>
           <p class="home-milestone-lead">Nous agissons avec les communautés pour faciliter l’accès à l’éducation, développer les compétences et créer des chemins durables vers l’autonomie.</p>
-          <div class="home-milestone-actions hero-action-group">
-            <!-- BLOG ET ACTUALITÉS avec menu déroulant -->
-            <div class="hero-dropdown-wrapper">
-              <a href="./actualites.html" class="hero-link-btn" aria-haspopup="true">
-                <span>BLOG ET ACTUALITÉS</span>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m6 9 6 6 6-6"/></svg>
-              </a>
-              <div class="hero-dropdown-panel" role="menu">
-                <a href="./actualites.html" role="menuitem">Toutes les actualités</a>
-                <a href="./media.html" role="menuitem">Espace média &amp; galeries</a>
-                <a href="./rapports.html" role="menuitem">Rapports &amp; publications</a>
-              </div>
-            </div>
-
-            <!-- ÉCRIVEZ-NOUS -->
-            <a href="./contact.html" class="hero-link-btn">
-              <span>ÉCRIVEZ-NOUS</span>
-            </a>
-
-            <!-- FAITES UN DON MAINTENANT (Bouton Vert #08773e) -->
-            <button type="button" class="hero-donate-btn hero-donate-btn-green" onclick="openModal('donModal')">
-              FAITES UN DON MAINTENANT
-            </button>
-
+          <div class="home-milestone-actions">
             <!-- DÉCOUVRIR NOS ACTIONS -->
             <a href="#programmes" class="hero-secondary-btn">
               Découvrir nos actions <span>→</span>
@@ -1206,10 +1237,10 @@
         <div class="conviction-grid">
           <!-- Colonne Gauche : Texte de Conviction -->
           <div class="conviction-text-col">
-            <span class="conviction-kicker">Notre conviction</span>
+            <span class="eyebrow"><span class="eyebrow-line"></span>Notre conviction</span>
             <h2 class="conviction-title">
               Qu’est-ce que<br>
-              <span class="conviction-title-green">PAAD ?</span>
+              <span class="conviction-title-accent">PAAD ?</span>
             </h2>
 
             <div class="conviction-quote-badge">
@@ -1892,7 +1923,7 @@
         <div class="donation-home-grid">
           <!-- Colonne Gauche : Éditorial & Engagement -->
           <div class="donation-editorial-col">
-            <span class="donation-kicker">SOUTENIR PAAD</span>
+            <span class="eyebrow"><span class="eyebrow-line"></span>SOUTENIR PAAD</span>
             <h2 class="donation-editorial-title">
               Faire un don.<br>
               <span class="donation-title-highlight">Soutenir notre mission.</span>
@@ -2183,7 +2214,7 @@
         <h4>Nous soutenir</h4>
         <a href="#don" onclick="openModal('donModal'); return false;">Faire un don</a>
         <a href="#contact" onclick="openModal('contactModal', 'Bénévolat'); return false;">Devenir bénévole</a>
-        <a href="#contact" onclick="openModal('contactModal', 'Partenariat'); return false;">Devenir partenaire</a>
+        <a href="./devenir-partenaire.html">Devenir partenaire</a>
       </div>
 
       <div class="mockup-footer-col">
@@ -2199,8 +2230,9 @@
     <div class="wrap mockup-footer-bottom">
       <span>© 2026 PAAD. Tous droits réservés.</span>
       <div class="mockup-footer-links">
+        <a href="./conditions-utilisation.html">Conditions d’utilisation</a>
+        <a href="./politique-de-confidentialite.html">Confidentialité</a>
         <a href="#mentions">Mentions légales</a>
-        <a href="#confidentialite">Confidentialité</a>
         <a href="#cookies">Cookies</a>
         <a href="#conditions">Conditions de don</a>
       </div>

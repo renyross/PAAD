@@ -667,6 +667,7 @@ export function Footer({ lang }: { lang: 'fr' | 'en' | 'es' }) {
       <div className="wrap mockup-footer-bottom">
         <span>© {new Date().getFullYear()} PAAD. Tous droits réservés.</span>
         <div className="mockup-footer-links">
+          <Link href={href('conditions-utilisation')}>Conditions d’utilisation</Link>
           <Link href={href('mentions-legales')}>Mentions légales</Link>
           <Link href={href('confidentialite')}>Confidentialité</Link>
           <Link href={href('cookies')}>Cookies</Link>
@@ -1019,6 +1020,35 @@ export function Home({ lang, data }: { lang: 'fr' | 'en' | 'es'; data: SiteData 
         <div className="ocean-hero-scrim" aria-hidden="true" />
       </div>
 
+      {/* Boutons d'action en haut à droite de la section Hero */}
+      <div className="hero-top-right-bar">
+        {/* BLOG ET ACTUALITÉS avec menu déroulant */}
+        <div className="hero-dropdown-wrapper">
+          <Link href={href('actualites')} className="hero-link-btn">
+            <span>BLOG ET ACTUALITÉS</span>
+            <ChevronDown size={12} strokeWidth={2.6} />
+          </Link>
+          <div className="hero-dropdown-panel" role="menu">
+            <Link href={href('actualites')} role="menuitem">Toutes les actualités</Link>
+            <Link href={href('media')} role="menuitem">Espace média &amp; galeries</Link>
+            <Link href={href('rapports')} role="menuitem">Rapports &amp; publications</Link>
+          </div>
+        </div>
+
+        {/* ÉCRIVEZ-NOUS */}
+        <Link href={href('contact')} className="hero-link-btn">
+          <span>ÉCRIVEZ-NOUS</span>
+        </Link>
+
+        {/* FAITES UN DON MAINTENANT (Bouton Signature Violet #71106f) */}
+        <Link
+          href={href('faire-un-don')}
+          className="hero-donate-btn"
+        >
+          FAITES UN DON MAINTENANT
+        </Link>
+      </div>
+
       {/* Contenu éditorial aligné sur le hero À propos */}
       <div
         className="ocean-hero-content-wrap home-hero-left-layout"
@@ -1031,52 +1061,7 @@ export function Home({ lang, data }: { lang: 'fr' | 'en' | 'es'; data: SiteData 
             Bâtir l’avenir d’Haïti.
           </h1>
           <p className="home-milestone-lead">Nous agissons avec les communautés pour faciliter l’accès à l’éducation, développer les compétences et créer des chemins durables vers l’autonomie.</p>
-          <div className="home-milestone-actions hero-action-group">
-            {/* BLOG ET ACTUALITÉS avec menu déroulant */}
-            <div className="hero-dropdown-wrapper">
-              <Link href={href('actualites')} className="hero-link-btn">
-                <span>BLOG ET ACTUALITÉS</span>
-                <ChevronDown size={12} strokeWidth={2.6} />
-              </Link>
-              <div className="hero-dropdown-panel" role="menu">
-                <Link href={href('actualites')} role="menuitem">Toutes les actualités</Link>
-                <Link href={href('media')} role="menuitem">Espace média &amp; galeries</Link>
-                <Link href={href('rapports')} role="menuitem">Rapports &amp; publications</Link>
-              </div>
-            </div>
-
-            {/* ÉCRIVEZ-NOUS */}
-            <Link href={href('contact')} className="hero-link-btn">
-              <span>ÉCRIVEZ-NOUS</span>
-            </Link>
-
-            {/* FAITES UN DON MAINTENANT (Bouton Vert #08773e) */}
-            <Link
-              href={href('faire-un-don')}
-              className="hero-donate-btn hero-donate-btn-green"
-              style={{
-                backgroundColor: '#08773e',
-                color: '#ffffff',
-                border: 'none',
-                borderRadius: 0,
-                fontFamily: "'Manrope', Arial, sans-serif",
-                fontSize: '14.5px',
-                fontWeight: 800,
-                letterSpacing: '0.05em',
-                textTransform: 'uppercase',
-                minHeight: '52px',
-                padding: '0 32px',
-                boxShadow: '0 4px 18px rgba(8, 119, 62, 0.45)',
-                display: 'inline-flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                textAlign: 'center',
-                textDecoration: 'none',
-              }}
-            >
-              FAITES UN DON MAINTENANT
-            </Link>
-
+          <div className="home-milestone-actions">
             {/* DÉCOUVRIR NOS ACTIONS */}
             <a href="#programmes" className="hero-secondary-btn">
               Découvrir nos actions <ArrowRight size={17}/>
@@ -1101,10 +1086,10 @@ export function Home({ lang, data }: { lang: 'fr' | 'en' | 'es'; data: SiteData 
         <div className="conviction-grid">
           {/* Colonne Gauche : Texte de Conviction */}
           <div className="conviction-text-col">
-            <span className="conviction-kicker">Notre conviction</span>
+            <Eyebrow>Notre conviction</Eyebrow>
             <h2 className="conviction-title">
               Qu’est-ce que<br />
-              <span className="conviction-title-green">PAAD ?</span>
+              <span className="conviction-title-accent">PAAD ?</span>
             </h2>
 
             <div className="conviction-quote-badge">
@@ -1652,7 +1637,7 @@ export function Home({ lang, data }: { lang: 'fr' | 'en' | 'es'; data: SiteData 
         <div className="donation-home-grid">
           {/* Colonne Gauche : Éditorial & Engagement */}
           <div className="donation-editorial-col">
-            <span className="donation-kicker">SOUTENIR PAAD</span>
+            <Eyebrow>SOUTENIR PAAD</Eyebrow>
             <h2 className="donation-editorial-title">
               Faire un don.<br />
               <span className="donation-title-highlight">Soutenir notre mission.</span>

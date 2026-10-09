@@ -1,0 +1,2426 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Politique de confidentialité | PAAD · Haïti</title>
+  <meta name="description" content="Politique de confidentialité de PAAD – Passerelle d’Actions pour l’Autonomie et le Développement. Transparence sur la collecte, l’usage, la sécurisation, la protection des mineurs et l’exercice de vos droits.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./app/globals.css">
+  <link rel="stylesheet" href="./app/resource-pages.css">
+  <script src="./public/resource-pages.js" defer></script>
+  <style>
+    /* ========================================================
+       STYLES DÉDIÉS : POLITIQUE DE CONFIDENTIALITÉ (PAAD)
+       Charte officielle : Violet (#71106F, #321333),
+       Blanc (#FFFFFF), Perle (#FAF8FB), Émeraude (#08773E)
+       ======================================================== */
+    :root {
+      --legal-border: #e8dfea;
+      --legal-card-bg: #ffffff;
+      --legal-pill-bg: #f2e8f4;
+      --legal-pill-text: #71106f;
+      --legal-accent-border: #71106f;
+    }
+
+    body.privacy-page {
+      background: #faf8fb;
+      color: #230a25;
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    /* 1. HERO MONUMENTAL */
+    .privacy-hero {
+      position: relative;
+      min-height: min(680px, 80vh);
+      display: grid;
+      align-items: end;
+      overflow: hidden;
+      background: var(--purple-dark, #321333);
+      color: #ffffff;
+    }
+    .privacy-hero-media,
+    .privacy-hero-media::after {
+      position: absolute;
+      inset: 0;
+    }
+    .privacy-hero-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 42%;
+      opacity: 0.44;
+    }
+    .privacy-hero-media::after {
+      content: "";
+      background: linear-gradient(180deg, rgba(35, 10, 37, 0.42) 0%, rgba(35, 10, 37, 0.82) 48%, rgba(35, 10, 37, 0.98) 100%);
+    }
+    .privacy-hero-content {
+      position: relative;
+      z-index: 2;
+      padding-top: clamp(140px, 16vw, 210px);
+      padding-bottom: clamp(54px, 7vw, 84px);
+    }
+    .privacy-kicker-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      color: #f3dcf7;
+      font-size: 11.5px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      margin-bottom: 20px;
+    }
+    .privacy-kicker-dot {
+      width: 8px;
+      height: 8px;
+      background: #c888cf;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .privacy-hero h1 {
+      font-family: 'Manrope', Arial, sans-serif;
+      font-weight: 800;
+      font-size: clamp(38px, 5.2vw, 68px);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      max-width: 980px;
+      margin: 0 0 16px;
+    }
+    .privacy-hero-subtitle {
+      font-family: 'Manrope', Arial, sans-serif;
+      font-size: clamp(18px, 2vw, 23px);
+      font-weight: 700;
+      color: #ecd7ef;
+      margin: 0 0 24px;
+    }
+    .privacy-hero-meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
+    }
+    .privacy-meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .privacy-meta-item svg {
+      color: #dfb2e4;
+      flex-shrink: 0;
+    }
+    .privacy-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .privacy-action-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 22px;
+      font-family: 'Manrope', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all 0.2s ease;
+    }
+    .privacy-action-btn.primary {
+      background: var(--purple, #71106f);
+      color: #ffffff;
+    }
+    .privacy-action-btn.primary:hover {
+      background: var(--purple-hover, #581056);
+      transform: translateY(-2px);
+    }
+    .privacy-action-btn.outline {
+      background: rgba(255, 255, 255, 0.08);
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.35);
+    }
+    .privacy-action-btn.outline:hover {
+      background: #ffffff;
+      color: var(--purple-dark, #321333);
+      transform: translateY(-2px);
+    }
+
+    /* 2. BARRE D'OUTILS ET RECHERCHE */
+    .privacy-toolbar-band {
+      background: #ffffff;
+      border-bottom: 1px solid var(--legal-border);
+      position: sticky;
+      top: 64px;
+      z-index: 40;
+      box-shadow: 0 4px 16px rgba(50, 19, 51, 0.04);
+    }
+    .privacy-toolbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 14px 0;
+      flex-wrap: wrap;
+    }
+    .privacy-search-box {
+      position: relative;
+      flex: 1;
+      max-width: 480px;
+      min-width: 240px;
+    }
+    .privacy-search-box svg {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--purple, #71106f);
+      pointer-events: none;
+    }
+    .privacy-search-input {
+      width: 100%;
+      padding: 11px 16px 11px 40px;
+      background: #faf8fb;
+      border: 1px solid #d9cadb;
+      font-family: inherit;
+      font-size: 14px;
+      color: var(--purple-dark, #321333);
+      outline: none;
+      transition: all 0.2s;
+    }
+    .privacy-search-input:focus {
+      border-color: var(--purple, #71106f);
+      background: #ffffff;
+      box-shadow: 0 0 0 3px rgba(113, 16, 111, 0.12);
+    }
+    .privacy-toolbar-stats {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #635768;
+    }
+    .privacy-btn-pill {
+      background: transparent;
+      border: 1px solid #d9cadb;
+      padding: 7px 14px;
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--purple-dark, #321333);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.2s;
+    }
+    .privacy-btn-pill:hover {
+      background: #f2e8f4;
+      border-color: var(--purple, #71106f);
+    }
+
+    /* 3. DISPOSITION PRINCIPALE (SOMMAIRE + ARTICLES) */
+    .privacy-main-section {
+      padding: clamp(48px, 6vw, 84px) 0 100px;
+    }
+    .privacy-grid-layout {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: clamp(36px, 4vw, 64px);
+      align-items: start;
+    }
+
+    /* 4. COLONNE SOMMAIRE FLOTTANT (SIDEBAR) */
+    .privacy-sidebar {
+      position: sticky;
+      top: 136px;
+      max-height: calc(100vh - 160px);
+      overflow-y: auto;
+      background: #ffffff;
+      border: 1px solid var(--legal-border);
+      padding: 24px;
+      scrollbar-width: thin;
+      scrollbar-color: #d7c5da transparent;
+    }
+    .privacy-sidebar-title {
+      font-family: 'Manrope', Arial, sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--purple-dark, #321333);
+      margin: 0 0 6px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .privacy-sidebar-desc {
+      font-size: 12px;
+      color: #7a6e7f;
+      margin: 0 0 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--legal-border);
+    }
+    .privacy-toc-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .privacy-toc-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 10px;
+      text-decoration: none;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #554a59;
+      border-left: 2px solid transparent;
+      transition: all 0.15s ease;
+      line-height: 1.35;
+    }
+    .privacy-toc-num {
+      font-family: 'Manrope', Arial, sans-serif;
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--purple, #71106f);
+      background: var(--legal-pill-bg);
+      padding: 2px 6px;
+      min-width: 26px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    .privacy-toc-link:hover {
+      background: #faf4fc;
+      color: var(--purple, #71106f);
+      border-left-color: var(--purple, #71106f);
+    }
+    .privacy-toc-link.is-active {
+      background: #f2e8f4;
+      color: var(--purple-dark, #321333);
+      font-weight: 800;
+      border-left-color: var(--purple, #71106f);
+    }
+
+    /* 5. CARTES DES SECTIONS */
+    .privacy-articles-container {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      min-width: 0;
+    }
+    .privacy-preamble-card {
+      background: linear-gradient(135deg, #ffffff 0%, #faf5fc 100%);
+      border: 1px solid var(--legal-border);
+      border-left: 4px solid var(--purple, #71106f);
+      padding: 32px 36px;
+      margin-bottom: 8px;
+    }
+    .privacy-preamble-card h2 {
+      font-family: 'Manrope', Arial, sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--purple-dark, #321333);
+      margin: 0 0 12px;
+    }
+    .privacy-preamble-card p {
+      font-size: 15.5px;
+      line-height: 1.7;
+      color: #524756;
+      margin: 0;
+    }
+
+    .privacy-article-card {
+      background: var(--legal-card-bg);
+      border: 1px solid var(--legal-border);
+      padding: clamp(28px, 4vw, 42px);
+      position: relative;
+      scroll-margin-top: 140px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .privacy-article-card:hover {
+      border-color: #d1b8d6;
+      box-shadow: 0 10px 30px rgba(50, 19, 51, 0.04);
+    }
+    .privacy-article-card.highlight-target {
+      border-color: var(--purple, #71106f);
+      box-shadow: 0 0 0 2px var(--purple, #71106f), 0 14px 40px rgba(113, 16, 111, 0.12);
+    }
+    .privacy-article-card[hidden] {
+      display: none !important;
+    }
+
+    .privacy-article-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      padding-bottom: 18px;
+      margin-bottom: 22px;
+      border-bottom: 1px solid #f0e6f2;
+    }
+    .privacy-article-header-left {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .privacy-article-badge-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .privacy-badge-pill {
+      font-family: 'Manrope', Arial, sans-serif;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--purple, #71106f);
+      background: var(--legal-pill-bg);
+      padding: 4px 10px;
+    }
+    .privacy-tag-sub {
+      font-size: 11.5px;
+      color: #7b6f80;
+      font-weight: 600;
+    }
+    .privacy-article-title {
+      font-family: 'Manrope', Arial, sans-serif;
+      font-size: clamp(22px, 2.6vw, 29px);
+      font-weight: 800;
+      color: var(--purple-dark, #321333);
+      margin: 4px 0 0;
+      line-height: 1.2;
+    }
+    .privacy-copy-link-btn {
+      background: transparent;
+      border: 1px solid #e0d0e3;
+      padding: 6px 10px;
+      color: #6a5e6e;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      flex-shrink: 0;
+      transition: all 0.2s;
+    }
+    .privacy-copy-link-btn:hover {
+      background: var(--purple, #71106f);
+      color: #ffffff;
+      border-color: var(--purple, #71106f);
+    }
+
+    .privacy-article-body {
+      font-size: 15.5px;
+      line-height: 1.75;
+      color: #433947;
+    }
+    .privacy-article-body p {
+      margin: 0 0 16px;
+    }
+    .privacy-article-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Listes personnalisées */
+    .privacy-checklist {
+      list-style: none;
+      padding: 0;
+      margin: 16px 0 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .privacy-checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 4px 0;
+    }
+    .privacy-checklist-icon {
+      width: 20px;
+      height: 20px;
+      background: #f2e8f4;
+      color: var(--purple, #71106f);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+    .privacy-checklist-icon svg {
+      width: 12px;
+      height: 12px;
+    }
+    .privacy-checklist-text {
+      flex: 1;
+      line-height: 1.6;
+    }
+
+    /* Encadrés d'alerte / focus juridique */
+    .privacy-callout-box {
+      background: #fcf9fd;
+      border: 1px solid #ebdfee;
+      border-left: 3px solid var(--purple, #71106f);
+      padding: 18px 22px;
+      margin: 20px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .privacy-callout-box.green {
+      background: #f4fbf7;
+      border-color: #d1eadb;
+      border-left-color: #08773e;
+    }
+    .privacy-callout-box.green .privacy-callout-icon {
+      color: #08773e;
+    }
+    .privacy-callout-box.warning {
+      background: #fffcf4;
+      border-color: #faeec7;
+      border-left-color: #b45309;
+    }
+    .privacy-callout-box.warning .privacy-callout-icon {
+      color: #b45309;
+    }
+    .privacy-callout-icon {
+      color: var(--purple, #71106f);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .privacy-callout-body {
+      font-size: 14px;
+      line-height: 1.65;
+      color: #514455;
+    }
+    .privacy-callout-body strong {
+      display: block;
+      color: var(--purple-dark, #321333);
+      margin-bottom: 4px;
+      font-size: 14.5px;
+    }
+
+    /* Grille de domaines PAAD & Données */
+    .privacy-chips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 12px;
+      margin: 20px 0;
+    }
+    .privacy-chip-item {
+      background: #faf4fc;
+      border: 1px solid #ebdcee;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--purple-dark, #321333);
+    }
+    .privacy-chip-item svg {
+      color: var(--purple, #71106f);
+      flex-shrink: 0;
+    }
+
+    /* Grille des droits (Section 17) */
+    .privacy-rights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+      margin: 24px 0;
+    }
+    .privacy-right-card {
+      background: #ffffff;
+      border: 1px solid #e8dfea;
+      border-top: 3px solid var(--purple, #71106f);
+      padding: 22px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .privacy-right-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(50, 19, 51, 0.06);
+    }
+    .privacy-right-card h4 {
+      font-family: 'Manrope', Arial, sans-serif;
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--purple-dark, #321333);
+      margin: 0 0 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .privacy-right-card p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #615564;
+      margin: 0;
+    }
+
+    /* Encadré contact officiel (Section 2 & 21) */
+    .privacy-contact-card {
+      background: linear-gradient(135deg, var(--purple-dark, #321333) 0%, #4a154d 100%);
+      color: #ffffff;
+      padding: clamp(30px, 4vw, 44px);
+      margin-top: 16px;
+    }
+    .privacy-contact-card h3 {
+      font-family: 'Manrope', Arial, sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      color: #ffffff;
+      margin: 0 0 8px;
+    }
+    .privacy-contact-card p {
+      color: #ecd7ef;
+      font-size: 15px;
+      margin: 0 0 24px;
+    }
+    .privacy-contact-details {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
+    }
+    .privacy-contact-item span {
+      display: block;
+      color: #dfb2e4;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 6px;
+    }
+    .privacy-contact-item strong {
+      font-size: 16px;
+      color: #ffffff;
+      font-family: 'Manrope', Arial, sans-serif;
+    }
+    .privacy-contact-item a {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+    .privacy-contact-item a:hover {
+      color: #f7e6f9;
+    }
+
+    /* 6. BANNIÈRE DE CONCLUSION / ENGAGEMENT */
+    .privacy-footer-callout {
+      background: #f2e8f4;
+      border-top: 1px solid var(--legal-border);
+      padding: clamp(54px, 7vw, 84px) 0;
+    }
+    .privacy-callout-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .privacy-callout-grid h2 {
+      font-family: 'Manrope', Arial, sans-serif;
+      font-size: clamp(28px, 3.5vw, 42px);
+      font-weight: 800;
+      color: var(--purple-dark, #321333);
+      line-height: 1.15;
+      margin: 0 0 14px;
+    }
+    .privacy-callout-grid p {
+      font-size: 16px;
+      color: #554a59;
+      margin: 0;
+      line-height: 1.65;
+    }
+    .privacy-callout-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    /* 7. MODALE DON */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(20, 5, 22, 0.82);
+      backdrop-filter: blur(6px);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .modal-backdrop.active { display: flex; }
+    .modal-content.farm-modal-content {
+      max-width: 960px;
+      padding: 0;
+      overflow: hidden;
+      background: #fbf9f4;
+      position: relative;
+      border: 1px solid rgba(113, 16, 111, 0.15);
+      box-shadow: 0 30px 70px rgba(15, 30, 20, 0.4);
+    }
+    .modal-close {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+      color: #554e5b;
+      font-size: 24px;
+      z-index: 10;
+    }
+    .modal-close:hover { color: var(--purple, #71106f); }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .privacy-grid-layout {
+        grid-template-columns: 260px 1fr;
+        gap: 28px;
+      }
+    }
+    @media (max-width: 860px) {
+      .privacy-grid-layout {
+        grid-template-columns: 1fr;
+      }
+      .privacy-sidebar {
+        display: none;
+      }
+      .privacy-callout-grid {
+        grid-template-columns: 1fr;
+      }
+      .privacy-toolbar-inner {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .privacy-search-box {
+        max-width: none;
+      }
+    }
+    @media (max-width: 600px) {
+      .privacy-hero {
+        min-height: 600px;
+      }
+      .privacy-article-card {
+        padding: 22px 18px;
+      }
+      .privacy-article-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .privacy-copy-link-btn {
+        align-self: flex-start;
+      }
+      .privacy-chips-grid {
+        grid-template-columns: 1fr;
+      }
+      .privacy-rights-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* MODE IMPRESSION */
+    @media print {
+      .ocean-header,
+      .privacy-toolbar-band,
+      .privacy-sidebar,
+      .privacy-hero-actions,
+      .privacy-footer-callout,
+      .footer,
+      .scroll-to-top-btn,
+      .privacy-copy-link-btn {
+        display: none !important;
+      }
+      body.privacy-page {
+        background: #ffffff !important;
+        color: #000000 !important;
+      }
+      .privacy-hero {
+        min-height: auto !important;
+        background: none !important;
+        color: #000000 !important;
+        padding: 20px 0 !important;
+      }
+      .privacy-hero h1,
+      .privacy-hero-subtitle,
+      .privacy-article-title {
+        color: #000000 !important;
+      }
+      .privacy-article-card {
+        border: 1px solid #ccc !important;
+        page-break-inside: avoid;
+        margin-bottom: 20px;
+        box-shadow: none !important;
+      }
+      .privacy-main-section {
+        padding: 0 !important;
+      }
+      .privacy-grid-layout {
+        display: block !important;
+      }
+    }
+  </style>
+</head>
+<body class="privacy-page" data-page="confidentialite">
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <!-- HEADER (STYLE THE OCEAN CLEANUP / PAAD) -->
+  <header class="ocean-header site-header">
+    <!-- NIVEAU 1 : Barre Blanche Supérieure -->
+    <div class="ocean-top-bar">
+      <!-- Bloc Logo Cyan Gauche -->
+      <a class="ocean-logo-badge" href="./index.html" aria-label="PAAD, accueil">
+        <img src="./public/images/paad-emblem.webp" alt="Logo PAAD" class="ocean-logo-emblem" width="36" height="36">
+        <span class="ocean-logo-text">PAAD</span>
+      </a>
+
+      <!-- Navigation Principale Majeure -->
+      <nav class="ocean-nav-strip" aria-label="Navigation principale">
+        <!-- À PROPOS -->
+        <div class="ocean-nav-item has-mega">
+          <a href="./qui-sommes-nous.html" class="ocean-nav-anchor">
+            <span>À propos</span>
+            <svg class="ocean-caret-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m6 9 6 6 6-6"/></svg>
+          </a>
+          <div class="ocean-mega-dropdown">
+            <div class="wrap ocean-mega-inner">
+              <a href="./qui-sommes-nous.html" class="ocean-mega-card">
+                <img src="./public/images/community-haiti.webp" alt="Notre mission en Haïti" class="ocean-mega-card-img">
+                <div class="ocean-mega-card-overlay"></div>
+                <div class="ocean-mega-card-dock">
+                  <span class="ocean-mega-circle-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </span>
+                  <span class="ocean-mega-card-title">Notre mission</span>
+                </div>
+              </a>
+              <a href="./qui-sommes-nous.html#equipe" class="ocean-mega-card">
+                <img src="./public/images/haiti-cinematic-hero.jpg" alt="Notre équipe et communauté" class="ocean-mega-card-img">
+                <div class="ocean-mega-card-overlay"></div>
+                <div class="ocean-mega-card-dock">
+                  <span class="ocean-mega-circle-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </span>
+                  <span class="ocean-mega-card-title">Notre équipe</span>
+                </div>
+              </a>
+              <div class="ocean-mega-col-side">
+                <div class="ocean-mega-side-header">
+                  <span class="ocean-mega-side-title">DÉCOUVRIR PAAD</span>
+                </div>
+                <div class="ocean-mega-side-links">
+                  <a href="./qui-sommes-nous.html" class="ocean-mega-side-link">Qui sommes-nous</a>
+                  <a href="./qui-sommes-nous.html#origines" class="ocean-mega-side-link">Nos origines &amp; histoire</a>
+                  <a href="./qui-sommes-nous.html#valeurs" class="ocean-mega-side-link">Nos valeurs</a>
+                  <a href="./faq.html" class="ocean-mega-side-link">Foire aux questions (FAQ)</a>
+                  <a href="./contact.html" class="ocean-mega-side-link">Nous contacter</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROGRAMMES -->
+        <div class="ocean-nav-item has-mega">
+          <a href="./index.html#domaines" class="ocean-nav-anchor">
+            <span>Programmes</span>
+            <svg class="ocean-caret-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m6 9 6 6 6-6"/></svg>
+          </a>
+          <div class="ocean-mega-dropdown">
+            <div class="wrap ocean-mega-inner">
+              <a href="./index.html#domaines" class="ocean-mega-card">
+                <img src="./public/images/haiti-student-classroom.jpg" alt="Bourses & Écoles en Haïti" class="ocean-mega-card-img">
+                <div class="ocean-mega-card-overlay"></div>
+                <div class="ocean-mega-card-dock">
+                  <span class="ocean-mega-circle-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </span>
+                  <span class="ocean-mega-card-title">Bourses &amp; Écoles</span>
+                </div>
+              </a>
+              <a href="./index.html#domaines" class="ocean-mega-card">
+                <img src="./public/images/haiti-tech-workshop.jpg" alt="Formations professionnelles en Haïti" class="ocean-mega-card-img">
+                <div class="ocean-mega-card-overlay"></div>
+                <div class="ocean-mega-card-dock">
+                  <span class="ocean-mega-circle-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </span>
+                  <span class="ocean-mega-card-title">Formations &amp; Autonomie</span>
+                </div>
+              </a>
+              <div class="ocean-mega-col-side">
+                <div class="ocean-mega-side-header">
+                  <span class="ocean-mega-side-title">DOMAINES PRIORITAIRES</span>
+                </div>
+                <div class="ocean-mega-side-links">
+                  <a href="./index.html#domaines" class="ocean-mega-side-link">Éducation &amp; Bourses d’excellence</a>
+                  <a href="./index.html#domaines" class="ocean-mega-side-link">Digital Lab &amp; Technologies</a>
+                  <a href="./index.html#domaines" class="ocean-mega-side-link">Formations professionnelles certifiantes</a>
+                  <a href="./index.html#domaines" class="ocean-mega-side-link">Entrepreneuriat local &amp; Artisanat</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DEVENIR PARTENAIRE -->
+        <div class="ocean-nav-item has-mega">
+          <a href="./devenir-partenaire.html" class="ocean-nav-anchor">
+            <span>Devenir partenaire</span>
+            <svg class="ocean-caret-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m6 9 6 6 6-6"/></svg>
+          </a>
+          <div class="ocean-mega-dropdown">
+            <div class="wrap ocean-mega-inner">
+              <a href="./devenir-partenaire.html" class="ocean-mega-card">
+                <img src="./public/images/workshop-haiti.webp" alt="Partenariats institutionnels" class="ocean-mega-card-img">
+                <div class="ocean-mega-card-overlay"></div>
+                <div class="ocean-mega-card-dock">
+                  <span class="ocean-mega-circle-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </span>
+                  <span class="ocean-mega-card-title">Bailleurs & Partenaires</span>
+                </div>
+              </a>
+              <a href="./qui-sommes-nous.html#valeurs" class="ocean-mega-card">
+                <img src="./public/images/community-haiti.webp" alt="Nos partenaires de terrain" class="ocean-mega-card-img">
+                <div class="ocean-mega-card-overlay"></div>
+                <div class="ocean-mega-card-dock">
+                  <span class="ocean-mega-circle-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </span>
+                  <span class="ocean-mega-card-title">Nos partenaires</span>
+                </div>
+              </a>
+              <div class="ocean-mega-col-side">
+                <div class="ocean-mega-side-header">
+                  <span class="ocean-mega-side-title">COOPÉRATION &amp; ALLIANCES</span>
+                </div>
+                <div class="ocean-mega-side-links">
+                  <a href="./contact.html" class="ocean-mega-side-link">Proposer un partenariat</a>
+                  <a href="./qui-sommes-nous.html#valeurs" class="ocean-mega-side-link">Partenaires de terrain</a>
+                  <a href="./contact.html#formulaire" class="ocean-mega-side-link">Devenir bénévole</a>
+                  <a href="./contact.html" class="ocean-mega-side-link">Mécénat d’entreprise</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Utilitaires Droite (Recherche, Langue, Menu Burger) -->
+      <div class="ocean-top-right">
+        <button class="ocean-top-search-btn" aria-label="Recherche sur le site" onclick="handleSearch()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        </button>
+
+        <div class="ocean-lang-switch">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20M2 12h20"/></svg>
+          <select aria-label="Choisir la langue">
+            <option value="fr" selected>FR</option>
+            <option value="en">EN</option>
+            <option value="es">ES</option>
+          </select>
+        </div>
+
+        <button class="ocean-mobile-burger" id="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false">
+          <svg id="menu-icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+          <svg id="menu-icon-close" style="display:none;" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- NAVIGATION MOBILE AVEC ACCORDÉONS, CARTES ET LIENS FLÉCHÉS -->
+    <nav class="ocean-mobile-drawer mobile-nav" id="mobile-nav" aria-label="Navigation mobile" style="display:none;">
+      <!-- 1. ACCORDÉON : NOTRE APPROCHE -->
+      <div class="mobile-acc-item is-open" data-acc="about">
+        <button type="button" class="mobile-acc-trigger" onclick="toggleMobileAcc(this)">
+          <span>À propos de nous</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="mobile-acc-panel">
+          <div class="mobile-acc-cards">
+            <a href="./qui-sommes-nous.html" class="mobile-acc-card">
+              <img src="./public/images/community-haiti.webp" alt="Notre mission" class="mobile-acc-card-img">
+              <div class="mobile-acc-card-overlay"></div>
+              <div class="mobile-acc-card-dock">
+                <span class="mobile-acc-card-title">Notre mission</span>
+                <span class="mobile-acc-circle-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </span>
+              </div>
+            </a>
+            <a href="./qui-sommes-nous.html#equipe" class="mobile-acc-card">
+              <img src="./public/images/haiti-cinematic-hero.jpg" alt="Notre équipe" class="mobile-acc-card-img">
+              <div class="mobile-acc-card-overlay"></div>
+              <div class="mobile-acc-card-dock">
+                <span class="mobile-acc-card-title">Notre équipe</span>
+                <span class="mobile-acc-circle-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </span>
+              </div>
+            </a>
+          </div>
+
+          <div class="mobile-acc-section-header">
+            <span class="mobile-acc-section-title">NOTRE DÉMARCHE</span>
+          </div>
+
+          <div class="mobile-acc-links">
+            <a href="./qui-sommes-nous.html" class="mobile-acc-link">
+              <span>Qui sommes-nous</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+            <a href="./qui-sommes-nous.html#origines" class="mobile-acc-link">
+              <span>Nos origines &amp; histoire</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+            <a href="./qui-sommes-nous.html#valeurs" class="mobile-acc-link">
+              <span>Nos valeurs</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+            <a href="./faq.html" class="mobile-acc-link">
+              <span>Foire aux questions (FAQ)</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+            <a href="./contact.html" class="mobile-acc-link">
+              <span>Nous contacter</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. ACCORDÉON : PROGRAMMES -->
+      <div class="mobile-acc-item" data-acc="programmes">
+        <button type="button" class="mobile-acc-trigger" onclick="toggleMobileAcc(this)">
+          <span>Programmes</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="mobile-acc-panel">
+          <div class="mobile-acc-cards">
+            <a href="./index.html#domaines" class="mobile-acc-card">
+              <img src="./public/images/haiti-student-classroom.jpg" alt="Bourses & Écoles" class="mobile-acc-card-img">
+              <div class="mobile-acc-card-overlay"></div>
+              <div class="mobile-acc-card-dock">
+                <span class="mobile-acc-card-title">Bourses &amp; Écoles</span>
+                <span class="mobile-acc-circle-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </span>
+              </div>
+            </a>
+            <a href="./index.html#domaines" class="mobile-acc-card">
+              <img src="./public/images/haiti-tech-workshop.jpg" alt="Formations techniques" class="mobile-acc-card-img">
+              <div class="mobile-acc-card-overlay"></div>
+              <div class="mobile-acc-card-dock">
+                <span class="mobile-acc-card-title">Formations &amp; Autonomie</span>
+                <span class="mobile-acc-circle-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </span>
+              </div>
+            </a>
+          </div>
+
+          <div class="mobile-acc-section-header">
+            <span class="mobile-acc-section-title">DOMAINES D'INTERVENTION</span>
+          </div>
+
+          <div class="mobile-acc-links">
+            <a href="./index.html#domaines" class="mobile-acc-link">
+              <span>Éducation &amp; Bourses d’excellence</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+            <a href="./index.html#domaines" class="mobile-acc-link">
+              <span>Digital Lab &amp; Technologies</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+            <a href="./index.html#domaines" class="mobile-acc-link">
+              <span>Formations professionnelles certifiantes</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+            <a href="./index.html#domaines" class="mobile-acc-link">
+              <span>Entrepreneuriat local &amp; Artisanat</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. ACCORDÉON : DEVENIR PARTENAIRE -->
+      <div class="mobile-acc-item" data-acc="partenaire">
+        <button type="button" class="mobile-acc-trigger" onclick="toggleMobileAcc(this)">
+          <span>Devenir partenaire</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="mobile-acc-panel">
+          <div class="mobile-acc-cards">
+            <a href="./devenir-partenaire.html" class="mobile-acc-card">
+              <img src="./public/images/workshop-haiti.webp" alt="Agir ensemble" class="mobile-acc-card-img">
+              <div class="mobile-acc-card-overlay"></div>
+              <div class="mobile-acc-card-dock">
+                <span class="mobile-acc-card-title">Bailleurs & Partenaires</span>
+                <span class="mobile-acc-circle-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </span>
+              </div>
+            </a>
+            <a href="./qui-sommes-nous.html#valeurs" class="mobile-acc-card">
+              <img src="./public/images/community-haiti.webp" alt="Nos partenaires" class="mobile-acc-card-img">
+              <div class="mobile-acc-card-overlay"></div>
+              <div class="mobile-acc-card-dock">
+                <span class="mobile-acc-card-title">Nos partenaires</span>
+                <span class="mobile-acc-circle-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </span>
+              </div>
+            </a>
+          </div>
+
+          <div class="mobile-acc-section-header">
+            <span class="mobile-acc-section-title">COOPÉRATION &amp; ALLIANCES</span>
+          </div>
+
+          <div class="mobile-acc-links">
+            <a href="./contact.html" class="mobile-acc-link">
+              <span>Proposer un partenariat</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+            <a href="./qui-sommes-nous.html#valeurs" class="mobile-acc-link">
+              <span>Partenaires de terrain</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+            <a href="./contact.html#formulaire" class="mobile-acc-link">
+              <span>Devenir bénévole</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+            <a href="./contact.html" class="mobile-acc-link">
+              <span>Mécénat d’entreprise</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. ACCORDÉON : PRESSE & ACTUALITÉS -->
+      <div class="mobile-acc-item" data-acc="actualites">
+        <button type="button" class="mobile-acc-trigger" onclick="toggleMobileAcc(this)">
+          <span>Presse &amp; Actualités</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="mobile-acc-panel">
+          <div class="mobile-acc-cards">
+            <a href="./actualites.html" class="mobile-acc-card">
+              <img src="./public/images/haiti-cinematic-hero.jpg" alt="Dernières actualités" class="mobile-acc-card-img">
+              <div class="mobile-acc-card-overlay"></div>
+              <div class="mobile-acc-card-dock">
+                <span class="mobile-acc-card-title">Dernières actualités</span>
+                <span class="mobile-acc-circle-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </span>
+              </div>
+            </a>
+            <a href="./actualites.html" class="mobile-acc-card">
+              <img src="./public/images/community-haiti.webp" alt="Communiqués & Presse" class="mobile-acc-card-img">
+              <div class="mobile-acc-card-overlay"></div>
+              <div class="mobile-acc-card-dock">
+                <span class="mobile-acc-card-title">Communiqués &amp; Presse</span>
+                <span class="mobile-acc-circle-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </span>
+              </div>
+            </a>
+          </div>
+
+          <div class="mobile-acc-section-header">
+            <span class="mobile-acc-section-title">ACTUALITÉS &amp; MÉDIAS</span>
+          </div>
+
+          <div class="mobile-acc-links">
+            <a href="./actualites.html" class="mobile-acc-link">
+              <span>Toutes les actualités</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+            <a href="./actualites.html" class="mobile-acc-link">
+              <span>Communiqués de presse</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+            <a href="./actualites.html" class="mobile-acc-link">
+              <span>Rapports &amp; publications</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+            <a href="./contact.html" class="mobile-acc-link">
+              <span>Contact presse</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bouton Rectangulaire Signature FAITES UN DON MAINTENANT -->
+      <a href="#don" class="ocean-drawer-donate-btn" onclick="openModal('donModal'); return false;">
+        FAITES UN DON MAINTENANT
+      </a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- 1. HERO MONUMENTAL -->
+    <section class="privacy-hero" id="top">
+      <div class="privacy-hero-media">
+        <img src="./public/images/community-haiti.webp" alt="PAAD Haïti - Protection et respect des données communautaires">
+      </div>
+      <div class="wrap privacy-hero-content">
+        <div class="privacy-kicker-badge">
+          <span class="privacy-kicker-dot"></span>
+          Transparence &amp; Protection de la vie privée
+        </div>
+        <h1>Politique de confidentialité</h1>
+        <p class="privacy-hero-subtitle">PAAD – Passerelle d’Actions pour l’Autonomie et le Développement</p>
+
+        <div class="privacy-hero-meta-row">
+          <div class="privacy-meta-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>Données protégées et non vendues</span>
+          </div>
+          <div class="privacy-meta-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20M2 12h20"/></svg>
+            <span>Juridiction : République d’Haïti</span>
+          </div>
+          <div class="privacy-meta-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+            <span>Dernière mise à jour : 7 octobre 2026</span>
+          </div>
+          <div class="privacy-meta-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/></svg>
+            <span>21 sections complètes</span>
+          </div>
+        </div>
+
+        <div class="privacy-hero-actions">
+          <a href="#section-1" class="privacy-action-btn primary">
+            <span>Lire la politique</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m6 9 6 6 6-6"/></svg>
+          </a>
+          <button type="button" class="privacy-action-btn outline" onclick="window.print()">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect width="12" height="8" x="6" y="14"/></svg>
+            <span>Imprimer / PDF</span>
+          </button>
+          <a href="#section-18" class="privacy-action-btn outline">
+            <span>Exercer mes droits</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. BARRE D'OUTILS ET RECHERCHE INTERACTIVE -->
+    <div class="privacy-toolbar-band">
+      <div class="wrap privacy-toolbar-inner">
+        <div class="privacy-search-box">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <input type="text" id="privacySearchInput" class="privacy-search-input" placeholder="Rechercher (ex: dons, enfants, cookies, droits, sécurité, transfert)..." aria-label="Rechercher dans la politique de confidentialité">
+        </div>
+        <div class="privacy-toolbar-stats">
+          <span id="privacyCountBadge">21 sections applicables</span>
+          <button type="button" class="privacy-btn-pill" id="resetPrivacySearchBtn" style="display:none;" onclick="resetPrivacySearch()">
+            ✕ Réinitialiser
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. SECTION PRINCIPALE (SOMMAIRE + 21 SECTIONS) -->
+    <section class="privacy-main-section">
+      <div class="wrap privacy-grid-layout">
+        
+        <!-- SOMMAIRE LATÉRAL (STICKY SIDEBAR) -->
+        <aside class="privacy-sidebar" aria-label="Sommaire de la politique de confidentialité">
+          <div class="privacy-sidebar-title">
+            <span>Sommaire</span>
+            <span style="font-size:12px;color:var(--purple);font-weight:800;">21 Sec.</span>
+          </div>
+          <p class="privacy-sidebar-desc">Accédez directement à une section :</p>
+
+          <nav>
+            <ul class="privacy-toc-list" id="privacyTocList">
+              <li><a href="#section-1" class="privacy-toc-link"><span class="privacy-toc-num">01</span><span>Introduction</span></a></li>
+              <li><a href="#section-2" class="privacy-toc-link"><span class="privacy-toc-num">02</span><span>Qui sommes-nous ?</span></a></li>
+              <li><a href="#section-3" class="privacy-toc-link"><span class="privacy-toc-num">03</span><span>Données collectées</span></a></li>
+              <li><a href="#section-4" class="privacy-toc-link"><span class="privacy-toc-num">04</span><span>Bénéficiaires &amp; programmes</span></a></li>
+              <li><a href="#section-5" class="privacy-toc-link"><span class="privacy-toc-num">05</span><span>Données techniques</span></a></li>
+              <li><a href="#section-6" class="privacy-toc-link"><span class="privacy-toc-num">06</span><span>Modes de collecte</span></a></li>
+              <li><a href="#section-7" class="privacy-toc-link"><span class="privacy-toc-num">07</span><span>Finalités des usages</span></a></li>
+              <li><a href="#section-8" class="privacy-toc-link"><span class="privacy-toc-num">08</span><span>Bases de traitement</span></a></li>
+              <li><a href="#section-9" class="privacy-toc-link"><span class="privacy-toc-num">09</span><span>Newsletter &amp; messages</span></a></li>
+              <li><a href="#section-10" class="privacy-toc-link"><span class="privacy-toc-num">10</span><span>Cookies &amp; traceurs</span></a></li>
+              <li><a href="#section-11" class="privacy-toc-link"><span class="privacy-toc-num">11</span><span>Partage des données</span></a></li>
+              <li><a href="#section-12" class="privacy-toc-link"><span class="privacy-toc-num">12</span><span>Transferts internationaux</span></a></li>
+              <li><a href="#section-13" class="privacy-toc-link"><span class="privacy-toc-num">13</span><span>Sécurité des données</span></a></li>
+              <li><a href="#section-14" class="privacy-toc-link"><span class="privacy-toc-num">14</span><span>Protection des enfants</span></a></li>
+              <li><a href="#section-15" class="privacy-toc-link"><span class="privacy-toc-num">15</span><span>Médias &amp; témoignages</span></a></li>
+              <li><a href="#section-16" class="privacy-toc-link"><span class="privacy-toc-num">16</span><span>Durée de conservation</span></a></li>
+              <li><a href="#section-17" class="privacy-toc-link"><span class="privacy-toc-num">17</span><span>Vos droits garantis</span></a></li>
+              <li><a href="#section-18" class="privacy-toc-link"><span class="privacy-toc-num">18</span><span>Exercice de vos droits</span></a></li>
+              <li><a href="#section-19" class="privacy-toc-link"><span class="privacy-toc-num">19</span><span>Liens vers des tiers</span></a></li>
+              <li><a href="#section-20" class="privacy-toc-link"><span class="privacy-toc-num">20</span><span>Modifications</span></a></li>
+              <li><a href="#section-21" class="privacy-toc-link"><span class="privacy-toc-num">21</span><span>Contact officiel</span></a></li>
+            </ul>
+          </nav>
+        </aside>
+
+        <!-- CORPS DU TEXTE : LES 21 SECTIONS -->
+        <div class="privacy-articles-container" id="privacyArticlesContainer">
+          
+          <!-- Préambule d'accueil -->
+          <div class="privacy-preamble-card">
+            <h2>Notre engagement envers votre vie privée</h2>
+            <p>
+              À la <strong>Passerelle d’Actions pour l’Autonomie et le Développement (PAAD)</strong>, nous considérons la confiance de nos donateurs, de nos bénévoles, des jeunes accompagnés et des familles haïtiennes comme notre bien le plus précieux. Nous appliquons les normes les plus exigeantes en matière de discrétion, de consentement et de protection technique de vos données.
+            </p>
+          </div>
+
+          <!-- SECTION 1 -->
+          <article class="privacy-article-card" id="section-1" data-section-num="1">
+            <header class="privacy-article-header">
+              <div class="privacy-article-header-left">
+                <div class="privacy-article-badge-row">
+                  <span class="privacy-badge-pill">Section 01</span>
+                  <span class="privacy-tag-sub">Cadre général</span>
+                </div>
+                <h2 class="privacy-article-title">Introduction</h2>
+              </div>
+              <button type="button" class="privacy-copy-link-btn" onclick="copySectionLink('section-1', this)" title="Copier le lien direct vers cette section">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <span>Lien direct</span>
+              </button>
+            </header>
+            <div class="privacy-article-body">
+              <p>
+                PAAD respecte scrupuleusement votre vie privée et s’engage résolument à protéger l’intégrité et la confidentialité des données personnelles qui lui sont confiées.
+              </p>
+              <p>
+                La présente <strong>Politique de confidentialité</strong> explicite la façon dont <strong>PAAD – Passerelle d’Actions pour l’Autonomie et le Développement</strong> collecte, traite, conserve, sécurise et, lorsque la mise en œuvre de nos missions l'exige, partage vos données personnelles lorsque vous consultez notre plateforme numérique, participez à nos programmes d'éducation, faites un don, posez une question ou collaborez avec notre organisation.
+              </p>
+              <p>
+                Elle détaille également l’ensemble des prérogatives et droits fondamentaux dont vous disposez sur vos informations.
+              </p>
+            </div>
+          </article>
+
+          <!-- SECTION 2 -->
+          <article class="privacy-article-card" id="section-2" data-section-num="2">
+            <header class="privacy-article-header">
+              <div class="privacy-article-header-left">
+                <div class="privacy-article-badge-row">
+                  <span class="privacy-badge-pill">Section 02</span>
+                  <span class="privacy-tag-sub">Responsable de traitement</span>
+                </div>
+                <h2 class="privacy-article-title">Qui sommes-nous ?</h2>
+              </div>
+              <button type="button" class="privacy-copy-link-btn" onclick="copySectionLink('section-2', this)">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <span>Lien direct</span>
+              </button>
+            </header>
+            <div class="privacy-article-body">
+              <p>
+                <strong>PAAD – Passerelle d’Actions pour l’Autonomie et le Développement</strong> est une organisation laïque, indépendante et à but non lucratif, engagée sur le terrain en Haïti dans les domaines suivants :
+              </p>
+
+              <div class="privacy-chips-grid">
+                <div class="privacy-chip-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/></svg>
+                  <span>L’éducation</span>
+                </div>
+                <div class="privacy-chip-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>
+                  <span>La formation professionnelle</span>
+                </div>
+                <div class="privacy-chip-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/></svg>
+                  <span>L’autonomisation économique</span>
+                </div>
+                <div class="privacy-chip-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                  <span>Le développement communautaire</span>
+                </div>
+                <div class="privacy-chip-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3"/></svg>
+                  <span>L’accompagnement des jeunes</span>
+                </div>
+                <div class="privacy-chip-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <span>Le développement des compétences</span>
+                </div>
+                <div class="privacy-chip-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 14.14 14.14"/></svg>
+                  <span>L’inclusion sociale et économique</span>
+                </div>
+                <div class="privacy-chip-item">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                  <span>Création d’opportunités durables</span>
+                </div>
+              </div>
+
+              <div class="privacy-callout-box green">
+                <div class="privacy-callout-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                </div>
+                <div class="privacy-callout-body">
+                  <strong>Point de contact direct pour vos données personnelles</strong>
+                  Pour toute interrogation relative à la présente politique ou pour exercer vos prérogatives légales :<br>
+                  • <strong>E-mail :</strong> <a href="mailto:contact@paad-haiti.org" style="color:var(--purple);font-weight:700;">contact@paad-haiti.org</a><br>
+                  • <strong>Adresse :</strong> Port-au-Prince, République d’Haïti<br>
+                  • <strong>Assistance en ligne :</strong> via notre formulaire sur <a href="./contact.html" style="color:var(--purple);font-weight:700;">la page contact</a>.
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- SECTION 3 -->
+          <article class="privacy-article-card" id="section-3" data-section-num="3">
+            <header class="privacy-article-header">
+              <div class="privacy-article-header-left">
+                <div class="privacy-article-badge-row">
+                  <span class="privacy-badge-pill">Section 03</span>
+                  <span class="privacy-tag-sub">Catégories d'informations</span>
+                </div>
+                <h2 class="privacy-article-title">Données personnelles que nous pouvons collecter</h2>
+              </div>
+              <button type="button" class="privacy-copy-link-btn" onclick="copySectionLink('section-3', this)">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <span>Lien direct</span>
+              </button>
+            </header>
+            <div class="privacy-article-body">
+              <p>
+                Une donnée personnelle désigne toute information permettant d’identifier directement ou indirectement un individu physique. Selon la nature de vos échanges avec PAAD, nous pouvons recueillir :
+              </p>
+
+              <h3 style="font-family:'Manrope',Arial,sans-serif;font-size:18px;color:var(--purple-dark);margin:20px 0 8px;">1. Données d’identité</h3>
+              <ul class="privacy-checklist">
+                <li>
+                  <span class="privacy-checklist-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                  <span class="privacy-checklist-text">Nom et prénom ;</span>
+                </li>
+                <li>
+                  <span class="privacy-checklist-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                  <span class="privacy-checklist-text">Date de naissance et sexe (uniquement lorsque cela est requis par le cadre d’un projet éducatif ou institutionnel) ;</span>
+                </li>
+                <li>
+                  <span class="privacy-checklist-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                  <span class="privacy-checklist-text">Profession, fonction ou organisation d’appartenance (notamment pour les partenaires et donateurs institutionnels).</span>
+                </li>
+              </ul>
+
+              <h3 style="font-family:'Manrope',Arial,sans-serif;font-size:18px;color:var(--purple-dark);margin:20px 0 8px;">2. Données de contact</h3>
+              <ul class="privacy-checklist">
+                <li>
+                  <span class="privacy-checklist-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                  <span class="privacy-checklist-text">Adresse e-mail personnelle ou professionnelle ;</span>
+                </li>
+                <li>
+                  <span class="privacy-checklist-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                  <span class="privacy-checklist-text">Numéro de téléphone (mobile ou fixe) ;</span>
+                </li>
+                <li>
+                  <span class="privacy-checklist-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                  <span class="privacy-checklist-text">Adresse postale, ville, pays ou région de résidence.</span>
+                </li>
+              </ul>
+
+              <h3 style="font-family:'Manrope',Arial,sans-serif;font-size:18px;color:var(--purple-dark);margin:20px 0 8px;">3. Données relatives aux dons</h3>
+              <p>
+                Lorsque vous effectuez une contribution au bénéfice de PAAD, nous enregistrons les métadonnées nécessaires à la traçabilité comptable et à l'émission de justificatifs : identité déclarée, montant versé, date de transaction, devise, moyen de paiement utilisé et historique des dons.
+              </p>
+              <div class="privacy-callout-box">
+                <div class="privacy-callout-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+                </div>
+                <div class="privacy-callout-body">
+                  <strong>Sécurité des coordonnées bancaires</strong>
+                  Les coordonnées bancaires (numéros de carte, cryptogrammes) sont traitées en direct et de manière chiffrée par nos prestataires de paiement sécurisé agréés. PAAD ne stocke jamais vos coordonnées bancaires intégrales.
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- SECTION 4 -->
+          <article class="privacy-article-card" id="section-4" data-section-num="4">
+            <header class="privacy-article-header">
+              <div class="privacy-article-header-left">
+                <div class="privacy-article-badge-row">
+                  <span class="privacy-badge-pill">Section 04</span>
+                  <span class="privacy-tag-sub">Terrain &amp; Éducation</span>
+                </div>
+                <h2 class="privacy-article-title">Données liées aux bénéficiaires et aux programmes</h2>
+              </div>
+              <button type="button" class="privacy-copy-link-btn" onclick="copySectionLink('section-4', this)">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <span>Lien direct</span>
+              </button>
+            </header>
+            <div class="privacy-article-body">
+              <p>
+                Dans le cadre de l’exécution de nos projets de terrain en Haïti, PAAD peut être amenée à recueillir des données relatives aux élèves scolarisés, aux bénéficiaires de bourses, aux apprenants en ateliers techniques, aux femmes et entrepreneurs soutenus ou aux familles accompagnées.
+              </p>
+              <p>
+                Ces informations portent notamment sur la situation scolaire ou professionnelle, les besoins socio-éducatifs identifiés, l’assiduité aux cursus de formation et les compétences acquises.
+              </p>
+              <p>
+                PAAD s’astreint au principe de minimisation : <strong>seules les informations strictement indispensables au bon déroulement, au suivi pédagogique et à l’évaluation d’impact de nos actions sont collectées.</strong>
+              </p>
+            </div>
+          </article>
+
+          <!-- SECTION 5 -->
+          <article class="privacy-article-card" id="section-5" data-section-num="5">
+            <header class="privacy-article-header">
+              <div class="privacy-article-header-left">
+                <div class="privacy-article-badge-row">
+                  <span class="privacy-badge-pill">Section 05</span>
+                  <span class="privacy-tag-sub">Navigation web</span>
+                </div>
+                <h2 class="privacy-article-title">Données techniques</h2>
+              </div>
+              <button type="button" class="privacy-copy-link-btn" onclick="copySectionLink('section-5', this)">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <span>Lien direct</span>
+              </button>
+            </header>
+            <div class="privacy-article-body">
+              <p>
+                Lors de votre navigation sur notre site, certains éléments techniques sont générés automatiquement par vos requêtes réseau, incluant :
+              </p>
+              <ul class="privacy-checklist">
+                <li>
+                  <span class="privacy-checklist-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                  <span class="privacy-checklist-text">L’adresse IP (anonymisée dès que possible) ;</span>
+                </li>
+                <li>
+                  <span class="privacy-checklist-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                  <span class="privacy-checklist-text">Le type et la version de votre navigateur web ;</span>
+                </li>
+                <li>
+                  <span class="privacy-checklist-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                  <span class="privacy-checklist-text">Le type d’appareil (ordinateur, tablette, smartphone) et son système d'exploitation ;</span>
+                </li>
+                <li>
+                  <span class="privacy-checklist-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                  <span class="privacy-checklist-text">Les pages visitées, la durée de consultation et les parcours de navigation.</span>
+                </li>
+              </ul>
+              <p>
+                Ces journaux système servent uniquement à assurer la sécurité du serveur, prévenir les actes de malveillance et mesurer la performance globale de la plateforme.
+              </p>
+            </div>
+          </article>
+
+          <!-- SECTION 6 -->
+          <article class="privacy-article-card" id="section-6" data-section-num="6">
+            <header class="privacy-article-header">
+              <div class="privacy-article-header-left">
+                <div class="privacy-article-badge-row">
+                  <span class="privacy-badge-pill">Section 06</span>
+                  <span class="privacy-tag-sub">Origine des données</span>
+                </div>
+                <h2 class="privacy-article-title">Comment collectons-nous vos données ?</h2>
+              </div>
+              <button type="button" class="privacy-copy-link-btn" onclick="copySectionLink('section-6', this)">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <span>Lien direct</span>
+              </button>
+            </header>
+            <div class="privacy-article-body">
+              <p>PAAD rassemble vos données selon trois canaux complémentaires :</p>
+              
+              <div class="privacy-callout-box">
+                <div class="privacy-callout-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </div>
+                <div class="privacy-callout-body">
+                  <strong>1. Directement auprès de vous</strong>
+                  Lorsque vous renseignez un formulaire de contact, souscrivez à la newsletter, faites un don, candidatez à une offre de bénévolat, vous inscrivez à un séminaire ou nous transmettez un témoignage volontaire.
+                </div>
+              </div>
+
+              <div class="privacy-callout-box">
+                <div class="privacy-callout-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="12" cy="12" r="10"/><path d="m10 15 5-3-5-3v6z"/></svg>
+                </div>
+                <div class="privacy-callout-body">
+                  <strong>2. Automatiquement lors de la navigation</strong>
+                  Par l'intermédiaire de technologies techniques standards nécessaires à l'acheminement des pages et au maintien de la session.
+                </div>
+              </div>
+
+              <div class="privacy-callout-box">
+                <div class="privacy-callout-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <div class="privacy-callout-body">
+                  <strong>3. Par l’intermédiaire de partenaires institutionnels</strong>
+                  Dans le cadre de projets cofinancés ou communautaires (écoles partenaires, centres de formation technique, collectivités locales), dans le strict respect des protocoles légaux de transmission.
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- SECTION 7 -->
+          <article class="privacy-article-card" id="section-7" data-section-num="7">
+            <header class="privacy-article-header">
+              <div class="privacy-article-header-left">
+                <div class="privacy-article-badge-row">
+                  <span class="privacy-badge-pill">Section 07</span>
+                  <span class="privacy-tag-sub">Finalités légitimes</span>
+                </div>
+                <h2 class="privacy-article-title">Pourquoi utilisons-nous vos données ?</h2>
+              </div>
+              <button type="button" class="privacy-copy-link-btn" onclick="copySectionLink('section-7', this)">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <span>Lien direct</span>
+              </button>
+            </header>
+            <div class="privacy-article-body">
+              <p>
+                PAAD traite vos données personnelles exclusivement dans le cadre de ses missions statutaires et pour des objectifs précis et déclarés :
+              </p>
+              <ul class="privacy-checklist">
+                <li>
+                  <span class="privacy-checklist-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                  <span class="privacy-checklist-text"><strong>Gestion et confirmation des dons :</strong> traitement comptable, émission des reçus, traçabilité et remerciements ;</span>
+                </li>
+                <li>
+                  <span class="privacy-checklist-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                  <span class="privacy-checklist-text"><strong>Suivi des programmes :</strong> inscription des bénéficiaires, attribution des aides scolaires et animation des formations ;</span>
+                </li>
+                <li>
+                  <span class="privacy-checklist-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                  <span class="privacy-checklist-text"><strong>Relation sympathisants &amp; bénévoles :</strong> réponses à vos messages, coordination des volontaires et partenariats ;</span>
+                </li>
+                <li>
+                  <span class="privacy-checklist-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                  <span class="privacy-checklist-text"><strong>Information &amp; redevabilité :</strong> envoi d'actualités et bilans d'impact avec votre accord ;</span>
+                </li>
+                <li>
+                  <span class="privacy-checklist-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                  <span class="privacy-checklist-text"><strong>Obligations légales :</strong> respect des exigences comptables, administratives et juridiques applicables en Haïti.</span>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- SECTION 8 -->
+          <article class="privacy-article-card" id="section-8" data-section-num="8">
+            <header class="privacy-article-header">
+              <div class="privacy-article-header-left">
+                <div class="privacy-article-badge-row">
+                  <span class="privacy-badge-pill">Section 08</span>
+                  <span class="privacy-tag-sub">Légalité du traitement</span>
+                </div>
+                <h2 class="privacy-article-title">Bases de traitement des données</h2>
+              </div>
+              <button type="button" class="privacy-copy-link-btn" onclick="copySectionLink('section-8', this)">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <span>Lien direct</span>
+              </button>
+            </header>
+            <div class="privacy-article-body">
+              <p>Chaque traitement repose sur une base légale clairement établie :</p>
+              <ul class="privacy-checklist">
+                <li>
+                  <span class="privacy-checklist-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                  <span class="privacy-checklist-text"><strong>Votre consentement explicite</strong> (ex. : inscription volontaire à notre newsletter, envoi de témoignage) ;</span>
+                </li>
+                <li>
+                  <span class="privacy-checklist-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                  <span class="privacy-checklist-text"><strong>L’exécution d’un engagement ou convention</strong> (ex. : versement d'un don, convention de partenariat, convention de bénévolat) ;</span>
+                </li>
+                <li>
+                  <span class="privacy-checklist-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                  <span class="privacy-checklist-text"><strong>Le respect d’une obligation légale</strong> (archivage comptable des transactions) ;</span>
+                </li>
+                <li>
+                  <span class="privacy-checklist-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                  <span class="privacy-checklist-text"><strong>L’intérêt légitime de PAAD</strong> à assurer le bon fonctionnement de ses activités caritatives sans porter atteinte à vos libertés fondamentales.</span>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- SECTION 9 -->
+          <article class="privacy-article-card" id="section-9" data-section-num="9">
+            <header class="privacy-article-header">
+              <div class="privacy-article-header-left">
+                <div class="privacy-article-badge-row">
+                  <span class="privacy-badge-pill">Section 09</span>
+                  <span class="privacy-tag-sub">Lettres d'information</span>
+                </div>
+                <h2 class="privacy-article-title">Newsletter et communications</h2>
+              </div>
+              <button type="button" class="privacy-copy-link-btn" onclick="copySectionLink('section-9', this)">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <span>Lien direct</span>
+              </button>
+            </header>
+            <div class="privacy-article-body">
+              <p>
+                Si vous avez consenti à recevoir nos communications, vous recevrez périodiquement des informations sur nos chantiers en cours, nos bilans d'action, des invitations à des événements ou des appels à la solidarité.
+              </p>
+              <div class="privacy-callout-box green">
+                <div class="privacy-callout-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6 6 18M6 6l12 12"/></svg>
+                </div>
+                <div class="privacy-callout-body">
+                  <strong>Liberté totale de désinscription à tout moment</strong>
+                  Chaque courriel comporte un lien de désabonnement instantané en bas de page. Vous pouvez également nous signifier votre souhait de retrait en écrivant à <a href="mailto:contact@paad-haiti.org" style="color:var(--purple);font-weight:700;">contact@paad-haiti.org</a>.
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- SECTION 10 -->
+          <article class="privacy-article-card" id="section-10" data-section-num="10">
+            <header class="privacy-article-header">
+              <div class="privacy-article-header-left">
+                <div class="privacy-article-badge-row">
+                  <span class="privacy-badge-pill">Section 10</span>
+                  <span class="privacy-tag-sub">Traceurs &amp; Cookies</span>
+                </div>
+                <h2 class="privacy-article-title">Cookies</h2>
+              </div>
+              <button type="button" class="privacy-copy-link-btn" onclick="copySectionLink('section-10', this)">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <span>Lien direct</span>
+              </button>
+            </header>
+            <div class="privacy-article-body">
+              <p>
+                Un cookie est un fichier texte de faible taille déposé sur votre terminal lors de la consultation d’un site internet.
+              </p>
+              <p>
+                PAAD utilise des cookies principalement techniques pour mémoriser vos préférences d'affichage (ex. : choix de la langue FR/EN/ES) et assurer la sécurité de navigation. Des outils de mesure d'audience anonymisés (comme Google Analytics ou équivalents respectueux de la vie privée) peuvent être mobilisés pour évaluer les performances globales du site.
+              </p>
+              <p>
+                Vous conservez la possibilité de configurer votre navigateur pour bloquer ou supprimer ces cookies à votre convenance.
+              </p>
+            </div>
+          </article>
+
+          <!-- SECTION 11 -->
+          <article class="privacy-article-card" id="section-11" data-section-num="11">
+            <header class="privacy-article-header">
+              <div class="privacy-article-header-left">
+                <div class="privacy-article-badge-row">
+                  <span class="privacy-badge-pill" style="background:#eaf6ed;color:#08773e;">Section 11</span>
+                  <span class="privacy-tag-sub">Absence de commercialisation</span>
+                </div>
+                <h2 class="privacy-article-title">Partage des données personnelles</h2>
+              </div>
+              <button type="button" class="privacy-copy-link-btn" onclick="copySectionLink('section-11', this)">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <span>Lien direct</span>
+              </button>
+            </header>
+            <div class="privacy-article-body">
+              <div class="privacy-callout-box green">
+                <div class="privacy-callout-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 12 15 15 9"/></svg>
+                </div>
+                <div class="privacy-callout-body">
+                  <strong>Engagement formel de non-commercialisation</strong>
+                  PAAD ne vend, ne loue, n'échange et ne cède jamais vos données personnelles à des tiers à des fins publicitaires ou commerciales.
+                </div>
+              </div>
+              <p>
+                Des transferts techniques limités sont uniquement opérés auprès de sous-traitants indispensables à notre mission (hébergeurs web sécurisés, prestataires de paiement certifiés, cabinets d'audit comptable et juridique, partenaires de programme habilités ou autorités publiques lorsqu'une disposition légale l'impose strictement).
+              </p>
+            </div>
+          </article>
+
+          <!-- SECTION 12 -->
+          <article class="privacy-article-card" id="section-12" data-section-num="12">
+            <header class="privacy-article-header">
+              <div class="privacy-article-header-left">
+                <div class="privacy-article-badge-row">
+                  <span class="privacy-badge-pill">Section 12</span>
+                  <span class="privacy-tag-sub">Flux transfrontaliers</span>
+                </div>
+                <h2 class="privacy-article-title">Transfert international des données</h2>
+              </div>
+              <button type="button" class="privacy-copy-link-btn" onclick="copySectionLink('section-12', this)">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <span>Lien direct</span>
+              </button>
+            </header>
+            <div class="privacy-article-body">
+              <p>
+                Certains outils technologiques mobilisés par PAAD (services cloud, serveurs de messagerie, passerelles bancaires) peuvent être hébergés sur des infrastructures situées hors de la République d’Haïti (notamment aux États-Unis, au Canada ou dans l’Union européenne).
+              </p>
+              <p>
+                Dans ces circonstances, PAAD s’assure que ces prestataires offrent des garanties de sécurité éprouvées (chiffrement de bout en bout, clauses contractuelles types, respect des standards internationaux de protection).
+              </p>
+            </div>
+          </article>
+
+          <!-- SECTION 13 -->
+          <article class="privacy-article-card" id="section-13" data-section-num="13">
+            <header class="privacy-article-header">
+              <div class="privacy-article-header-left">
+                <div class="privacy-article-badge-row">
+                  <span class="privacy-badge-pill">Section 13</span>
+                  <span class="privacy-tag-sub">Mesures techniques</span>
+                </div>
+                <h2 class="privacy-article-title">Sécurité des données</h2>
+              </div>
+              <button type="button" class="privacy-copy-link-btn" onclick="copySectionLink('section-13', this)">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <span>Lien direct</span>
+              </button>
+            </header>
+            <div class="privacy-article-body">
+              <p>
+                PAAD déploie un ensemble de mesures organisationnelles et techniques appropriées destinées à prémunir vos informations contre tout accès non autorisé, altération, perte ou divulgation illégitime :
+              </p>
+              <ul class="privacy-checklist">
+                <li>
+                  <span class="privacy-checklist-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                  <span class="privacy-checklist-text">Chiffrement SSL / HTTPS systématique sur l’ensemble de notre domaine ;</span>
+                </li>
+                <li>
+                  <span class="privacy-checklist-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                  <span class="privacy-checklist-text">Gestion rigoureuse des droits d’accès réservée aux seuls personnels et bénévoles habilités ;</span>
+                </li>
+                <li>
+                  <span class="privacy-checklist-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                  <span class="privacy-checklist-text">Mots de passe renforcés, authentification multi-facteurs (MFA) et sauvegardes régulières ;</span>
+                </li>
+                <li>
+                  <span class="privacy-checklist-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                  <span class="privacy-checklist-text">Engagements stricts de confidentialité signés par les collaborateurs de PAAD.</span>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- SECTION 14 -->
+          <article class="privacy-article-card" id="section-14" data-section-num="14">
+            <header class="privacy-article-header">
+              <div class="privacy-article-header-left">
+                <div class="privacy-article-badge-row">
+                  <span class="privacy-badge-pill" style="background:#fce8f3;color:#8e0e5a;">Section 14</span>
+                  <span class="privacy-tag-sub">Sauvegarde des mineurs</span>
+                </div>
+                <h2 class="privacy-article-title">Protection des enfants</h2>
+              </div>
+              <button type="button" class="privacy-copy-link-btn" onclick="copySectionLink('section-14', this)">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <span>Lien direct</span>
+              </button>
+            </header>
+            <div class="privacy-article-body">
+              <p>
+                L’éducation des enfants constitue le cœur battant de l’action de PAAD. La protection de leurs données et de leur image bénéficie d’un protocole de vigilance absolue :
+              </p>
+              <div class="privacy-callout-box" style="border-left-color:#8e0e5a;background:#fff8fc;">
+                <div class="privacy-callout-icon" style="color:#8e0e5a;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div class="privacy-callout-body">
+                  <strong>Consentement légal préalable des représentants</strong>
+                  Aucune information nominative, aucun dossier de bourse et aucun cliché d’enfant n’est traité ou diffusé sans l’autorisation formelle et préalable de son représentant légal et le strict respect de sa dignité et de sa sécurité physique et morale.
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- SECTION 15 -->
+          <article class="privacy-article-card" id="section-15" data-section-num="15">
+            <header class="privacy-article-header">
+              <div class="privacy-article-header-left">
+                <div class="privacy-article-badge-row">
+                  <span class="privacy-badge-pill">Section 15</span>
+                  <span class="privacy-tag-sub">Droit à l'image</span>
+                </div>
+                <h2 class="privacy-article-title">Photographies, vidéos et témoignages</h2>
+              </div>
+              <button type="button" class="privacy-copy-link-btn" onclick="copySectionLink('section-15', this)">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <span>Lien direct</span>
+              </button>
+            </header>
+            <div class="privacy-article-body">
+              <p>
+                Les visuels publiés sur le site illustrent l’impact réel et vérifié de nos initiatives sur le terrain en Haïti.
+              </p>
+              <p>
+                PAAD s'attache à recueillir l’accord des personnes photographiées ou filmées. Toute personne figurant sur un document peut faire valoir son droit à l’image et demander le retrait ou le floutage de sa représentation en contactant l’équipe PAAD par courriel.
+              </p>
+            </div>
+          </article>
+
+          <!-- SECTION 16 -->
+          <article class="privacy-article-card" id="section-16" data-section-num="16">
+            <header class="privacy-article-header">
+              <div class="privacy-article-header-left">
+                <div class="privacy-article-badge-row">
+                  <span class="privacy-badge-pill">Section 16</span>
+                  <span class="privacy-tag-sub">Archivage &amp; Purge</span>
+                </div>
+                <h2 class="privacy-article-title">Conservation des données</h2>
+              </div>
+              <button type="button" class="privacy-copy-link-btn" onclick="copySectionLink('section-16', this)">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <span>Lien direct</span>
+              </button>
+            </header>
+            <div class="privacy-article-body">
+              <p>
+                Vos informations ne sont conservées que pendant la durée strictement indispensable aux finalités de leur collecte, augmentée des délais légaux de prescription :
+              </p>
+              <ul class="privacy-checklist">
+                <li>
+                  <span class="privacy-checklist-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                  <span class="privacy-checklist-text"><strong>Données des donateurs :</strong> conservées conformément aux impératifs comptables et fiscaux en vigueur ;</span>
+                </li>
+                <li>
+                  <span class="privacy-checklist-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                  <span class="privacy-checklist-text"><strong>Données de prospection et newsletter :</strong> conservées jusqu’à désinscription ou après 3 années d’inactivité constatée ;</span>
+                </li>
+                <li>
+                  <span class="privacy-checklist-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                  <span class="privacy-checklist-text"><strong>Données liées aux programmes de terrain :</strong> archivées pour la durée d’évaluation fixée avec les partenaires et bailleurs de fonds.</span>
+                </li>
+              </ul>
+              <p>
+                Au terme de ces durées, les données sont soit supprimées de façon sécurisée, soit définitivement anonymisées à des fins purement statistiques.
+              </p>
+            </div>
+          </article>
+
+          <!-- SECTION 17 -->
+          <article class="privacy-article-card" id="section-17" data-section-num="17">
+            <header class="privacy-article-header">
+              <div class="privacy-article-header-left">
+                <div class="privacy-article-badge-row">
+                  <span class="privacy-badge-pill" style="background:#f2e8f4;color:var(--purple);">Section 17</span>
+                  <span class="privacy-tag-sub">Prérogatives légales</span>
+                </div>
+                <h2 class="privacy-article-title">Vos droits</h2>
+              </div>
+              <button type="button" class="privacy-copy-link-btn" onclick="copySectionLink('section-17', this)">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <span>Lien direct</span>
+              </button>
+            </header>
+            <div class="privacy-article-body">
+              <p>
+                Vous bénéficiez d'un éventail complet de droits fondamentaux concernant vos données personnelles :
+              </p>
+
+              <div class="privacy-rights-grid">
+                <div class="privacy-right-card">
+                  <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg> Droit d’accès</h4>
+                  <p>Obtenir la confirmation que vos données sont traitées et en recevoir une copie claire.</p>
+                </div>
+                <div class="privacy-right-card">
+                  <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Droit de rectification</h4>
+                  <p>Faire corriger toute information inexacte, obsolète ou incomplète vous concernant.</p>
+                </div>
+                <div class="privacy-right-card">
+                  <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg> Droit à l’effacement</h4>
+                  <p>Solliciter la suppression définitive de vos données lorsqu’un motif légal le justifie.</p>
+                </div>
+                <div class="privacy-right-card">
+                  <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="12" cy="12" r="10"/><line x1="4.93" x2="19.07" y1="4.93" y2="19.07"/></svg> Droit d’opposition</h4>
+                  <p>Vous opposer à tout moment au traitement de vos données pour motifs légitimes.</p>
+                </div>
+                <div class="privacy-right-card">
+                  <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><rect width="18" height="18" x="3" y="3" rx="2"/><line x1="8" x2="16" y1="12" y2="12"/></svg> Droit à la limitation</h4>
+                  <p>Geler temporairement l'utilisation de vos données le temps d’une vérification.</p>
+                </div>
+                <div class="privacy-right-card">
+                  <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg> Retrait du consentement</h4>
+                  <p>Retirer votre accord à tout moment pour les opérations fondées sur le consentement.</p>
+                </div>
+                <div class="privacy-right-card">
+                  <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg> Droit à la portabilité</h4>
+                  <p>Recevoir vos informations fournies dans un format lisible et structuré par machine.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- SECTION 18 -->
+          <article class="privacy-article-card" id="section-18" data-section-num="18">
+            <header class="privacy-article-header">
+              <div class="privacy-article-header-left">
+                <div class="privacy-article-badge-row">
+                  <span class="privacy-badge-pill">Section 18</span>
+                  <span class="privacy-tag-sub">Procédure de demande</span>
+                </div>
+                <h2 class="privacy-article-title">Exercice de vos droits</h2>
+              </div>
+              <button type="button" class="privacy-copy-link-btn" onclick="copySectionLink('section-18', this)">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <span>Lien direct</span>
+              </button>
+            </header>
+            <div class="privacy-article-body">
+              <p>
+                Pour faire valoir l’un de vos droits, il vous suffit de transmettre une demande circonstanciée à l’adresse électronique :
+              </p>
+              <p style="font-size:18px;font-weight:800;color:var(--purple);margin:12px 0;">
+                <a href="mailto:contact@paad-haiti.org">contact@paad-haiti.org</a>
+              </p>
+              <p>
+                Afin d’assurer la sécurité de nos bases et d'empêcher les usurpations d'identité, un justificatif probant pourra vous être demandé si un doute raisonnable persiste. PAAD s'engage à traiter votre demande dans un délai d’un mois calendaire.
+              </p>
+            </div>
+          </article>
+
+          <!-- SECTION 19 -->
+          <article class="privacy-article-card" id="section-19" data-section-num="19">
+            <header class="privacy-article-header">
+              <div class="privacy-article-header-left">
+                <div class="privacy-article-badge-row">
+                  <span class="privacy-badge-pill">Section 19</span>
+                  <span class="privacy-tag-sub">Écosystème externe</span>
+                </div>
+                <h2 class="privacy-article-title">Liens vers des sites tiers</h2>
+              </div>
+              <button type="button" class="privacy-copy-link-btn" onclick="copySectionLink('section-19', this)">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <span>Lien direct</span>
+              </button>
+            </header>
+            <div class="privacy-article-body">
+              <p>
+                Notre plateforme peut afficher des liens redirigeant vers des portails extérieurs (bailleurs, réseaux sociaux, plateformes de paiement, articles de presse).
+              </p>
+              <p>
+                PAAD n’exerce aucun contrôle sur la gestion de la confidentialité pratiquée par ces services indépendants. Nous vous conseillons vivement de prendre connaissance de leurs règles de traitement respectives avant de leur soumettre des données sensibles.
+              </p>
+            </div>
+          </article>
+
+          <!-- SECTION 20 -->
+          <article class="privacy-article-card" id="section-20" data-section-num="20">
+            <header class="privacy-article-header">
+              <div class="privacy-article-header-left">
+                <div class="privacy-article-badge-row">
+                  <span class="privacy-badge-pill">Section 20</span>
+                  <span class="privacy-tag-sub">Mises à jour</span>
+                </div>
+                <h2 class="privacy-article-title">Modification de la Politique de confidentialité</h2>
+              </div>
+              <button type="button" class="privacy-copy-link-btn" onclick="copySectionLink('section-20', this)">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <span>Lien direct</span>
+              </button>
+            </header>
+            <div class="privacy-article-body">
+              <p>
+                PAAD peut actualiser la présente politique à tout moment pour refléter les évolutions de ses programmes sur le terrain, l'intégration de nouvelles solutions numériques ou les exigences législatives.
+              </p>
+              <p>
+                La mention de dernière mise à jour en en-tête atteste de la version en vigueur. Nous vous recommandons de consulter cette page périodiquement.
+              </p>
+            </div>
+          </article>
+
+          <!-- SECTION 21 -->
+          <article class="privacy-article-card" id="section-21" data-section-num="21">
+            <header class="privacy-article-header">
+              <div class="privacy-article-header-left">
+                <div class="privacy-article-badge-row">
+                  <span class="privacy-badge-pill" style="background:#f2e8f4;color:var(--purple);">Section 21</span>
+                  <span class="privacy-tag-sub">Renseignements légaux</span>
+                </div>
+                <h2 class="privacy-article-title">Contact</h2>
+              </div>
+              <button type="button" class="privacy-copy-link-btn" onclick="copySectionLink('section-21', this)">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <span>Lien direct</span>
+              </button>
+            </header>
+            <div class="privacy-article-body">
+              <p>
+                Pour toute préoccupation relative à vos informations ou à l'application de la présente Politique de confidentialité :
+              </p>
+
+              <div class="privacy-contact-card">
+                <h3>PAAD – Passerelle d’Actions pour l’Autonomie et le Développement</h3>
+                <p>Organisation à but non lucratif engagée pour l’éducation et l’autonomie en Haïti.</p>
+
+                <div class="privacy-contact-details">
+                  <div class="privacy-contact-item">
+                    <span>Courrier électronique</span>
+                    <strong><a href="mailto:contact@paad-haiti.org">contact@paad-haiti.org</a></strong>
+                  </div>
+                  <div class="privacy-contact-item">
+                    <span>Siège social</span>
+                    <strong>Port-au-Prince, Haïti</strong>
+                  </div>
+                  <div class="privacy-contact-item">
+                    <span>Formulaire officiel</span>
+                    <strong><a href="./contact.html">Nous écrire directement →</a></strong>
+                  </div>
+                  <div class="privacy-contact-item">
+                    <span>Date d'application</span>
+                    <strong>7 octobre 2026</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. BANNIÈRE DE CONCLUSION ET D'ENGAGEMENT -->
+    <section class="privacy-footer-callout">
+      <div class="wrap privacy-callout-grid">
+        <div>
+          <h2>Un engagement de transparence avec chaque citoyen et donateur.</h2>
+          <p>
+            En protégeant vos données, nous garantissons la confiance indispensable pour bâtir ensemble des solutions d'autonomie durables en Haïti.
+          </p>
+        </div>
+        <div class="privacy-callout-actions">
+          <button type="button" class="privacy-action-btn primary" onclick="openModal('donModal')" style="width:100%;justify-content:center;">
+            <span>Soutenir nos programmes</span>
+            <span aria-hidden="true">♡</span>
+          </button>
+          <a href="./qui-sommes-nous.html" class="privacy-action-btn outline" style="width:100%;justify-content:center;color:var(--purple-dark);border-color:#cfbed3;">
+            <span>Découvrir nos valeurs</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER OFFICIEL DU SITE -->
+  <footer class="footer" style="background:var(--purple-dark);color:#FAF8FB;border-top:none">
+    <div class="wrap mockup-footer-top">
+      <div class="mockup-footer-brand">
+        <a class="ocean-logo-badge footer-menu-logo" href="./index.html">
+          <img src="./public/images/paad-emblem-white-trans.png" alt="Logo PAAD" class="ocean-logo-emblem" width="40" height="40">
+          <span class="ocean-logo-text">PAAD</span>
+        </a>
+        <p>Passerelle d’Actions pour l’Autonomie et le Développement. Agir avec les communautés en Haïti pour un avenir durable.</p>
+        <span class="mockup-social-label">Suivez-nous</span>
+        <div class="mockup-social-icons">
+          <a href="#" class="mockup-social-btn" aria-label="Facebook">f</a>
+          <a href="#" class="mockup-social-btn" aria-label="X / Twitter">𝕏</a>
+          <a href="https://www.instagram.com/paad_developpement/" target="_blank" rel="noopener noreferrer" class="mockup-social-btn" aria-label="Instagram">ig</a>
+          <a href="#" class="mockup-social-btn" aria-label="LinkedIn">in</a>
+        </div>
+      </div>
+
+      <div class="mockup-footer-col">
+        <h4>PAAD</h4>
+        <a href="./qui-sommes-nous.html">Qui sommes-nous</a>
+        <a href="./qui-sommes-nous.html#origines">Notre histoire</a>
+        <a href="./qui-sommes-nous.html#equipe">Notre équipe</a>
+        <a href="./faq.html">FAQ</a>
+        <a href="./contact.html">Contact</a>
+      </div>
+
+      <div class="mockup-footer-col">
+        <h4>Nos actions</h4>
+        <a href="./index.html#domaines">Éducation</a>
+        <a href="./index.html#domaines">Développement économique</a>
+        <a href="./index.html#programmes">Nos projets</a>
+        <a href="./index.html#impact">Impact</a>
+      </div>
+
+      <div class="mockup-footer-col">
+        <h4>Nous soutenir</h4>
+        <a href="#don" onclick="openModal('donModal'); return false;">Faire un don</a>
+        <a href="./contact.html#formulaire">Devenir bénévole</a>
+        <a href="./devenir-partenaire.html">Devenir partenaire</a>
+      </div>
+
+      <div class="mockup-footer-col">
+        <h4>Ressources</h4>
+        <a href="./actualites.html">Actualités</a>
+        <a href="./rapports.html">Rapports</a>
+        <a href="./media.html">Espace média</a>
+        <a href="./conditions-utilisation.html">Conditions d’utilisation</a>
+      </div>
+    </div>
+
+    <div class="wrap mockup-footer-bottom">
+      <span>© 2026 PAAD. Tous droits réservés.</span>
+      <div class="mockup-footer-links">
+        <a href="./politique-de-confidentialite.html" style="font-weight:700;color:#ffffff;">Politique de confidentialité</a>
+        <a href="./conditions-utilisation.html">Conditions d’utilisation</a>
+        <a href="./contact.html">Mentions légales</a>
+        <a href="./faq.html">Assistance</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOUTON FLOTTANT RETOUR EN HAUT -->
+  <button type="button" id="scrollToTopBtn" class="scroll-to-top-btn" aria-label="Remonter en haut de la page" title="Remonter en haut" style="display:none;">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m18 15-6-6-6 6"/>
+    </svg>
+  </button>
+
+  <!-- MODALE DON (STYLE FARM AFRICA / PAAD) -->
+  <div class="modal-backdrop" id="donModal" onclick="if(event.target === this) closeModal('donModal');" role="dialog" aria-modal="true" aria-labelledby="donTitle">
+    <div class="modal-content farm-modal-content">
+      <button class="modal-close" onclick="closeModal('donModal')" aria-label="Fermer la boîte de dialogue">✕</button>
+      
+      <div class="farm-donate-card" style="display:grid;grid-template-columns:1fr 1.25fr;min-height:540px;">
+        <!-- Colonne visuelle gauche -->
+        <div class="farm-donate-visual" style="position:relative;background:var(--purple-dark);overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;padding:36px 30px;">
+          <img src="./public/images/haiti-student-classroom.jpg" alt="Écoliers en Haïti" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.4;">
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(50,19,51,.55) 0%,rgba(50,19,51,.94) 100%);"></div>
+          
+          <div style="position:relative;z-index:2;display:flex;align-items:center;gap:10px;">
+            <img src="./public/images/paad-emblem-white-trans.png" alt="Logo PAAD" width="34" height="34">
+            <span style="font-weight:900;font-size:19px;color:#fff;">PAAD</span>
+          </div>
+
+          <div style="position:relative;z-index:2;color:#fff;">
+            <span style="font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#dcb7df;">Soutenir notre action</span>
+            <h3 style="font-family:'Manrope',Arial,sans-serif;font-size:22px;margin:8px 0 10px;color:#fff;">Chaque don ouvre des chemins vers l’autonomie.</h3>
+            <p style="font-size:13.5px;color:#e7d6ec;line-height:1.5;margin:0;">Votre soutien finance les bourses, le matériel pédagogique et les formations pratiques de jeunes Haïtiens.</p>
+          </div>
+        </div>
+
+        <!-- Colonne formulaire droite -->
+        <div style="padding:36px 32px;display:flex;flex-direction:column;justify-content:center;">
+          <h2 id="donTitle" style="font-family:'Manrope',Arial,sans-serif;font-size:24px;font-weight:800;color:var(--purple-dark);margin:0 0 8px;">Faire un don à PAAD</h2>
+          <p style="font-size:14px;color:#665a6a;margin:0 0 24px;line-height:1.5;">Paiement 100% sécurisé et traçable en soutien à nos programmes en Haïti.</p>
+
+          <div style="display:flex;gap:10px;margin-bottom:20px;">
+            <button type="button" style="flex:1;padding:12px;border:2px solid var(--purple);background:var(--purple);color:#fff;font-weight:800;font-size:13px;cursor:pointer;">Don ponctuel</button>
+            <button type="button" style="flex:1;padding:12px;border:1px solid #d9cadb;background:#fff;color:var(--purple-dark);font-weight:800;font-size:13px;cursor:pointer;">Don mensuel</button>
+          </div>
+
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:24px;">
+            <button type="button" style="padding:14px;border:1.5px solid #d9cadb;background:#fff;font-weight:800;color:var(--purple-dark);font-size:17px;cursor:pointer;">25 $</button>
+            <button type="button" style="padding:14px;border:2px solid var(--purple);background:#f2e8f4;font-weight:800;color:var(--purple);font-size:17px;cursor:pointer;">50 $</button>
+            <button type="button" style="padding:14px;border:1.5px solid #d9cadb;background:#fff;font-weight:800;color:var(--purple-dark);font-size:17px;cursor:pointer;">100 $</button>
+          </div>
+
+          <a href="./contact.html" style="display:block;text-align:center;padding:16px;background:var(--purple);color:#fff;font-family:'Manrope',Arial,sans-serif;font-weight:800;font-size:14px;text-transform:uppercase;letter-spacing:.04em;text-decoration:none;box-shadow:0 6px 18px rgba(113,16,111,.3);">
+            Valider et continuer →
+          </a>
+          <span style="display:block;text-align:center;font-size:11.5px;color:#857889;margin-top:12px;">Transparence garantie · Reçu délivré</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPTS D'INTERACTIVITÉ -->
+  <script>
+    // 1. GESTION DES MODALES
+    function openModal(id) {
+      const modal = document.getElementById(id);
+      if (modal) {
+        modal.classList.add('active');
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      }
+    }
+    function closeModal(id) {
+      const modal = document.getElementById(id);
+      if (modal) {
+        modal.classList.remove('active');
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    }
+
+    // 2. RECHERCHE INTERACTIVE EN TEMPS RÉEL
+    const searchInput = document.getElementById('privacySearchInput');
+    const resetSearchBtn = document.getElementById('resetPrivacySearchBtn');
+    const articleCards = document.querySelectorAll('.privacy-article-card');
+    const countBadge = document.getElementById('privacyCountBadge');
+
+    function filterPrivacySections(query) {
+      const term = query.trim().toLowerCase();
+      let matchCount = 0;
+
+      articleCards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        const matches = term === '' || text.includes(term);
+        card.hidden = !matches;
+        if (matches) matchCount++;
+      });
+
+      if (term !== '') {
+        resetSearchBtn.style.display = 'inline-flex';
+        countBadge.textContent = matchCount + ' section' + (matchCount > 1 ? 's trouvées' : ' trouvée');
+      } else {
+        resetSearchBtn.style.display = 'none';
+        countBadge.textContent = '21 sections applicables';
+      }
+    }
+
+    searchInput?.addEventListener('input', (e) => {
+      filterPrivacySections(e.target.value);
+    });
+
+    function resetPrivacySearch() {
+      if (searchInput) {
+        searchInput.value = '';
+        filterPrivacySections('');
+        searchInput.focus();
+      }
+    }
+
+    // 3. COPIE DU LIEN DIRECT D'UNE SECTION
+    function copySectionLink(sectionId, btn) {
+      const url = window.location.origin + window.location.pathname + '#' + sectionId;
+      navigator.clipboard.writeText(url).then(() => {
+        const originalText = btn.innerHTML;
+        btn.innerHTML = `
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Lien copié !</span>
+        `;
+        btn.style.background = '#71106f';
+        btn.style.color = '#ffffff';
+        btn.style.borderColor = '#71106f';
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+          btn.style.background = '';
+          btn.style.color = '';
+          btn.style.borderColor = '';
+        }, 2200);
+      }).catch(() => {
+        location.hash = sectionId;
+      });
+    }
+
+    // 4. SUIVI DU DÉFILEMENT POUR SURBRILLANCE DU SOMMAIRE
+    const tocLinks = document.querySelectorAll('.privacy-toc-link');
+    const observerOptions = {
+      root: null,
+      rootMargin: '-120px 0px -60% 0px',
+      threshold: 0
+    };
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          tocLinks.forEach(link => {
+            if (link.getAttribute('href') === '#' + id) {
+              link.classList.add('is-active');
+              link.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+            } else {
+              link.classList.remove('is-active');
+            }
+          });
+        }
+      });
+    }, observerOptions);
+
+    articleCards.forEach(card => sectionObserver.observe(card));
+
+    // 5. GESTION DU SCROLL TO TOP
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+    if (scrollToTopBtn) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+          scrollToTopBtn.style.display = 'flex';
+        } else {
+          scrollToTopBtn.style.display = 'none';
+        }
+      }, { passive: true });
+
+      scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+    // 6. MENU MOBILE & RECHERCHE GLOBALE
+    function toggleMobileAcc(trigger) {
+      const item = trigger.closest('.mobile-acc-item');
+      if (!item) return;
+      const wasOpen = item.classList.contains('is-open');
+      document.querySelectorAll('.mobile-acc-item').forEach(el => el.classList.remove('is-open'));
+      if (!wasOpen) item.classList.add('is-open');
+    }
+
+    function handleSearch() {
+      const q = prompt('Rechercher sur PAAD :');
+      if (q) {
+        if (searchInput) {
+          searchInput.value = q;
+          filterPrivacySections(q);
+          location.hash = '#section-1';
+        } else {
+          location.href = './actualites.html';
+        }
+      }
+    }
+
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIconOpen = document.getElementById('menu-icon-open');
+    const menuIconClose = document.getElementById('menu-icon-close');
+
+    if (menuBtn && mobileNav) {
+      menuBtn.addEventListener('click', () => {
+        const isOpen = mobileNav.style.display === 'flex';
+        mobileNav.style.display = isOpen ? 'none' : 'flex';
+        menuBtn.setAttribute('aria-expanded', String(!isOpen));
+        if (menuIconOpen && menuIconClose) {
+          menuIconOpen.style.display = isOpen ? 'block' : 'none';
+          menuIconClose.style.display = isOpen ? 'none' : 'block';
+        }
+      });
+    }
+
+    // 7. SURBRILLANCE D'UNE SECTION CIBLÉE PAR HASH
+    function highlightHashTarget() {
+      const hash = window.location.hash;
+      if (hash && hash.startsWith('#section-')) {
+        document.querySelectorAll('.privacy-article-card').forEach(c => c.classList.remove('highlight-target'));
+        const target = document.querySelector(hash);
+        if (target) {
+          target.classList.add('highlight-target');
+          setTimeout(() => target.classList.remove('highlight-target'), 3000);
+        }
+      }
+    }
+    window.addEventListener('hashchange', highlightHashTarget);
+    window.addEventListener('DOMContentLoaded', highlightHashTarget);
+  </script>
+</body>
+</html>

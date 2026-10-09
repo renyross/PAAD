@@ -7,3 +7,5 @@ PAAD/
 *.tsbuildinfo
 scratch/
 ~$*
+/*.jpeg
+/*.png

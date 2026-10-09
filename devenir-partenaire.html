@@ -1,0 +1,1875 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Devenir partenaire & Bailleurs de fonds | PAAD · Haïti</title>
+  <meta name="description" content="Pour les bailleurs de fonds, entreprises, fondations et la diaspora : financez un avenir plus autonome en Haïti aux côtés de PAAD. Éducation, formation, autonomie économique et gouvernance transparente.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./app/globals.css">
+  <link rel="stylesheet" href="./app/resource-pages.css">
+  <script src="./public/resource-pages.js" defer></script>
+  <style>
+    /* ========================================================
+       STYLES DÉDIÉS : DEVENIR PARTENAIRE & BAILLEURS DE FONDS
+       Identité PAAD : Violet Signature (#71106F, #321333),
+       Vert Émeraude (#08773E), Perle (#FAF8FB), Or ambré (#d97706)
+       ======================================================== */
+    :root {
+      --partner-border: #e8dfea;
+      --partner-card-bg: #ffffff;
+      --partner-pill-bg: #f2e8f4;
+      --partner-pill-text: #71106f;
+    }
+
+    body.partner-page {
+      background: #faf8fb;
+      color: #230a25;
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    /* 1. HERO BAILLEURS MONUMENTAL */
+    .partner-hero {
+      position: relative;
+      min-height: min(720px, 86vh);
+      display: grid;
+      align-items: end;
+      overflow: hidden;
+      background: var(--purple-dark, #321333);
+      color: #ffffff;
+    }
+    .partner-hero-media,
+    .partner-hero-media::after {
+      position: absolute;
+      inset: 0;
+    }
+    .partner-hero-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 36%;
+      opacity: 0.44;
+    }
+    .partner-hero-media::after {
+      content: "";
+      background: linear-gradient(180deg, rgba(35, 10, 37, 0.4) 0%, rgba(35, 10, 37, 0.8) 50%, rgba(35, 10, 37, 0.98) 100%);
+    }
+    .partner-hero-content {
+      position: relative;
+      z-index: 2;
+      padding-top: clamp(140px, 16vw, 210px);
+      padding-bottom: clamp(54px, 7vw, 84px);
+    }
+    .partner-kicker-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      color: #f3dcf7;
+      font-size: 11.5px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      margin-bottom: 20px;
+    }
+    .partner-kicker-dot {
+      width: 8px;
+      height: 8px;
+      background: #c888cf;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .partner-hero h1 {
+      font-family: 'Manrope', Arial, sans-serif;
+      font-weight: 800;
+      font-size: clamp(38px, 5.2vw, 68px);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      max-width: 980px;
+      margin: 0 0 16px;
+    }
+    .partner-hero-subtitle {
+      font-family: 'DM Sans', Arial, sans-serif;
+      font-size: clamp(17px, 1.8vw, 21px);
+      line-height: 1.6;
+      color: #ecd7ef;
+      max-width: 780px;
+      margin: 0 0 28px;
+    }
+
+    /* Bande trajectoire d'autonomie */
+    .partner-trajectory-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 20px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      max-width: 980px;
+      margin-bottom: 30px;
+    }
+    .partner-trajectory-label {
+      font-family: 'Manrope', Arial, sans-serif;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #dcb7df;
+      margin-right: 8px;
+    }
+    .partner-trajectory-step {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+    .partner-trajectory-step svg {
+      color: #c888cf;
+    }
+
+    .partner-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .partner-action-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 26px;
+      font-family: 'Manrope', Arial, sans-serif;
+      font-size: 13.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all 0.2s ease;
+    }
+    .partner-action-btn.primary {
+      background: var(--purple, #71106f);
+      color: #ffffff;
+      box-shadow: 0 6px 20px rgba(113, 16, 111, 0.4);
+    }
+    .partner-action-btn.primary:hover {
+      background: var(--purple-hover, #581056);
+      transform: translateY(-2px);
+    }
+    .partner-action-btn.secondary {
+      background: var(--purple, #71106f);
+      color: #ffffff;
+    }
+    .partner-action-btn.secondary:hover {
+      background: var(--purple-hover, #581056);
+      transform: translateY(-2px);
+    }
+    .partner-action-btn.outline {
+      background: rgba(255, 255, 255, 0.08);
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.35);
+    }
+    .partner-action-btn.outline:hover {
+      background: #ffffff;
+      color: var(--purple-dark, #321333);
+      transform: translateY(-2px);
+    }
+
+    /* 2. BARRE DE NAVIGATION INTERNE (JUMPLINKS) */
+    .partner-subnav-band {
+      background: #ffffff;
+      border-bottom: 1px solid var(--partner-border);
+      position: sticky;
+      top: 64px;
+      z-index: 40;
+      box-shadow: 0 4px 16px rgba(50, 19, 51, 0.04);
+    }
+    .partner-subnav-inner {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 12px 0;
+      scrollbar-width: none;
+    }
+    .partner-subnav-inner::-webkit-scrollbar { display: none; }
+    .partner-subnav-link {
+      white-space: nowrap;
+      padding: 8px 16px;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #554a59;
+      text-decoration: none;
+      border-radius: 0;
+      border: 1px solid transparent;
+      transition: all 0.2s;
+    }
+    .partner-subnav-link:hover,
+    .partner-subnav-link.active {
+      color: var(--purple, #71106f);
+      background: #f2e8f4;
+      border-color: #e0d0e3;
+    }
+
+    /* 3. SECTION IMPACT COMMUNAUTAIRE */
+    .partner-section {
+      padding: clamp(64px, 8vw, 108px) 0;
+    }
+    .partner-section.white {
+      background: #ffffff;
+      border-bottom: 1px solid var(--partner-border);
+    }
+    .partner-section.pearl {
+      background: #faf8fb;
+      border-bottom: 1px solid var(--partner-border);
+    }
+    .partner-section-header {
+      max-width: 820px;
+      margin-bottom: 48px;
+    }
+    .partner-section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--purple, #71106f);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .partner-section-eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 2px;
+      background: currentColor;
+    }
+    .partner-section-title {
+      font-family: 'Manrope', Arial, sans-serif;
+      font-size: clamp(30px, 3.8vw, 48px);
+      font-weight: 800;
+      line-height: 1.12;
+      color: var(--purple-dark, #321333);
+      margin: 0 0 16px;
+    }
+    .partner-section-lead {
+      font-size: clamp(16px, 1.6vw, 18.5px);
+      line-height: 1.65;
+      color: #5e5163;
+      margin: 0;
+    }
+
+    /* Citation centrale */
+    .partner-quote-callout {
+      background: linear-gradient(135deg, var(--purple-dark, #321333) 0%, #461448 100%);
+      color: #ffffff;
+      padding: clamp(36px, 5vw, 54px);
+      margin-bottom: 48px;
+      border-left: 6px solid var(--purple, #71106f);
+    }
+    .partner-quote-callout blockquote {
+      margin: 0;
+      font-family: 'Manrope', Arial, sans-serif;
+      font-size: clamp(20px, 2.3vw, 28px);
+      font-weight: 800;
+      line-height: 1.35;
+      color: #ffffff;
+    }
+    .partner-quote-callout p {
+      margin: 14px 0 0;
+      color: #ecd7ef;
+      font-size: 15px;
+    }
+
+    /* Grille 8 piliers */
+    .partner-pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .partner-pillar-card {
+      background: #ffffff;
+      border: 1px solid var(--partner-border);
+      padding: 28px 24px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      transition: all 0.2s;
+    }
+    .partner-pillar-card:hover {
+      border-color: #d1b8d6;
+      box-shadow: 0 10px 24px rgba(50, 19, 51, 0.05);
+      transform: translateY(-2px);
+    }
+    .partner-pillar-icon {
+      width: 44px;
+      height: 44px;
+      background: #f2e8f4;
+      color: var(--purple, #71106f);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .partner-pillar-content h3 {
+      font-family: 'Manrope', Arial, sans-serif;
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--purple-dark, #321333);
+      margin: 0 0 6px;
+    }
+    .partner-pillar-content p {
+      font-size: 14px;
+      line-height: 1.55;
+      color: #635667;
+      margin: 0;
+    }
+
+    /* 4. PRIORITÉS DE FINANCEMENT (GRILLES DÉTAILLÉES) */
+    .partner-priorities-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+    .partner-priority-card {
+      background: #ffffff;
+      border: 1px solid var(--partner-border);
+      padding: clamp(32px, 4vw, 44px);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .partner-priority-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--purple, #71106f);
+    }
+    .partner-priority-card.green::before {
+      background: #08773e;
+    }
+    .partner-priority-num {
+      font-family: 'Manrope', Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--purple, #71106f);
+      margin-bottom: 8px;
+      display: block;
+    }
+    .partner-priority-card.green .partner-priority-num {
+      color: #08773e;
+    }
+    .partner-priority-card h3 {
+      font-family: 'Manrope', Arial, sans-serif;
+      font-size: clamp(22px, 2.5vw, 28px);
+      font-weight: 800;
+      color: var(--purple-dark, #321333);
+      margin: 0 0 6px;
+    }
+    .partner-priority-subtitle {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: #7b6f80;
+      margin: 0 0 18px;
+    }
+    .partner-priority-desc {
+      font-size: 15px;
+      line-height: 1.65;
+      color: #554a59;
+      margin: 0 0 24px;
+    }
+    .partner-funded-list-title {
+      font-family: 'Manrope', Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--purple-dark, #321333);
+      margin: 0 0 12px;
+      padding-top: 16px;
+      border-top: 1px dashed #e8dfea;
+    }
+    .partner-checklist {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .partner-checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: #493e4d;
+      line-height: 1.5;
+    }
+    .partner-check-icon {
+      width: 18px;
+      height: 18px;
+      background: #f2e8f4;
+      color: var(--purple, #71106f);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .partner-check-icon.green {
+      background: #eaf6ed;
+      color: #08773e;
+    }
+    .partner-priority-ambition {
+      margin-top: auto;
+      background: #faf4fc;
+      border-left: 3px solid var(--purple, #71106f);
+      padding: 14px 18px;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--purple-dark, #321333);
+    }
+    .partner-priority-card.green .partner-priority-ambition {
+      background: #f4fbf7;
+      border-left-color: #08773e;
+    }
+
+    /* 5. MODALITÉS DE FINANCEMENT (3 BLOCS MAJEURS) */
+    .partner-modalities-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .partner-modality-card {
+      background: #ffffff;
+      border: 1px solid var(--partner-border);
+      padding: 36px 28px;
+      display: flex;
+      flex-direction: column;
+    }
+    .partner-modality-card h3 {
+      font-family: 'Manrope', Arial, sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--purple-dark, #321333);
+      margin: 0 0 12px;
+    }
+    .partner-modality-card p {
+      font-size: 14.5px;
+      line-height: 1.65;
+      color: #554a59;
+      margin: 0 0 20px;
+    }
+
+    /* Cadre de projet fourni */
+    .partner-framework-box {
+      background: #fbf9fc;
+      border: 1px solid #ebdfee;
+      padding: 24px;
+      margin-top: 36px;
+    }
+    .partner-framework-box h4 {
+      font-family: 'Manrope', Arial, sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--purple-dark, #321333);
+      margin: 0 0 10px;
+    }
+    .partner-framework-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .partner-framework-tag {
+      background: #ffffff;
+      border: 1px solid #d8c5da;
+      padding: 6px 14px;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--purple-dark, #321333);
+    }
+
+    /* 6. TYPOLOGIES DE PARTENAIRES (ENTREPRISES, FONDATIONS, DIASPORA) */
+    .partner-profiles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .partner-profile-card {
+      background: #ffffff;
+      border: 1px solid var(--partner-border);
+      padding: 36px 30px;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.2s;
+    }
+    .partner-profile-card:hover {
+      box-shadow: 0 14px 34px rgba(50, 19, 51, 0.08);
+      transform: translateY(-3px);
+    }
+    .partner-profile-badge {
+      font-family: 'Manrope', Arial, sans-serif;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--purple, #71106f);
+      background: var(--partner-pill-bg);
+      padding: 4px 10px;
+      align-self: flex-start;
+      margin-bottom: 14px;
+    }
+    .partner-profile-card h3 {
+      font-family: 'Manrope', Arial, sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--purple-dark, #321333);
+      margin: 0 0 12px;
+    }
+    .partner-profile-card p {
+      font-size: 14.5px;
+      line-height: 1.65;
+      color: #5d5162;
+      margin: 0 0 20px;
+    }
+
+    /* 7. TRANSPARENCE, SUIVI & MESURE D'IMPACT */
+    .partner-accountability-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+    }
+    .partner-accountability-card {
+      background: #ffffff;
+      border: 1px solid var(--partner-border);
+      padding: 40px 34px;
+    }
+    .partner-accountability-card h3 {
+      font-family: 'Manrope', Arial, sans-serif;
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--purple-dark, #321333);
+      margin: 0 0 14px;
+    }
+    .partner-accountability-card p {
+      font-size: 15px;
+      line-height: 1.65;
+      color: #554a59;
+      margin: 0 0 22px;
+    }
+
+    /* 8. BIBLIOTHÈQUE DE RESSOURCES POUR BAILLEURS */
+    .partner-resources-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 36px;
+    }
+    .partner-resource-item {
+      background: #ffffff;
+      border: 1px solid var(--partner-border);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.2s;
+      text-decoration: none;
+      color: inherit;
+    }
+    .partner-resource-item:hover {
+      border-color: var(--purple, #71106f);
+      box-shadow: 0 8px 24px rgba(50, 19, 51, 0.06);
+      transform: translateY(-2px);
+    }
+    .partner-resource-item svg {
+      color: var(--purple, #71106f);
+      margin-bottom: 14px;
+    }
+    .partner-resource-item h4 {
+      font-family: 'Manrope', Arial, sans-serif;
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--purple-dark, #321333);
+      margin: 0 0 6px;
+    }
+    .partner-resource-item p {
+      font-size: 13px;
+      line-height: 1.5;
+      color: #6a5e6e;
+      margin: 0;
+    }
+
+    /* 9. FORMULAIRE INTERACTIF PARTENARIAT & CONTACT */
+    .partner-contact-section {
+      background: #f4ecf6;
+      border-top: 1px solid var(--partner-border);
+      padding: clamp(64px, 8vw, 110px) 0;
+    }
+    .partner-contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: clamp(36px, 5vw, 64px);
+      align-items: start;
+    }
+    .partner-contact-info h2 {
+      font-family: 'Manrope', Arial, sans-serif;
+      font-size: clamp(32px, 3.8vw, 48px);
+      font-weight: 800;
+      color: var(--purple-dark, #321333);
+      line-height: 1.1;
+      margin: 0 0 16px;
+    }
+    .partner-contact-info p {
+      font-size: 16px;
+      line-height: 1.65;
+      color: #554a59;
+      margin: 0 0 28px;
+    }
+    .partner-contact-box {
+      background: #ffffff;
+      border: 1px solid #dfd0e1;
+      padding: 28px;
+      margin-bottom: 24px;
+    }
+    .partner-contact-box strong {
+      display: block;
+      font-family: 'Manrope', Arial, sans-serif;
+      font-size: 16px;
+      color: var(--purple-dark, #321333);
+      margin-bottom: 6px;
+    }
+    .partner-contact-box a {
+      color: var(--purple, #71106f);
+      font-weight: 800;
+      text-decoration: underline;
+      font-size: 17px;
+    }
+
+    /* Formulaire propre */
+    .partner-form-card {
+      background: #ffffff;
+      border: 1px solid var(--partner-border);
+      padding: clamp(28px, 4vw, 44px);
+      box-shadow: 0 16px 40px rgba(50, 19, 51, 0.05);
+    }
+    .partner-form-card h3 {
+      font-family: 'Manrope', Arial, sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--purple-dark, #321333);
+      margin: 0 0 8px;
+    }
+    .partner-form-card p {
+      font-size: 14px;
+      color: #6a5e6e;
+      margin: 0 0 24px;
+    }
+    .partner-form-group {
+      margin-bottom: 18px;
+    }
+    .partner-form-label {
+      display: block;
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--purple-dark, #321333);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .partner-form-input,
+    .partner-form-select,
+    .partner-form-textarea {
+      width: 100%;
+      padding: 13px 16px;
+      background: #faf8fb;
+      border: 1px solid #d9cadb;
+      font-family: inherit;
+      font-size: 14.5px;
+      color: var(--purple-dark, #321333);
+      outline: none;
+      transition: all 0.2s;
+    }
+    .partner-form-input:focus,
+    .partner-form-select:focus,
+    .partner-form-textarea:focus {
+      border-color: var(--purple, #71106f);
+      background: #ffffff;
+      box-shadow: 0 0 0 3px rgba(113, 16, 111, 0.12);
+    }
+    .partner-form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .partner-form-submit {
+      width: 100%;
+      padding: 16px;
+      background: var(--purple, #71106f);
+      color: #ffffff;
+      border: none;
+      font-family: 'Manrope', Arial, sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 6px 20px rgba(113, 16, 111, 0.35);
+      transition: all 0.2s;
+      margin-top: 10px;
+    }
+    .partner-form-submit:hover {
+      background: var(--purple-hover, #581056);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(113, 16, 111, 0.5);
+    }
+
+    /* 10. BANNIÈRE FINALE MOTIVATION */
+    .partner-final-banner {
+      background: var(--purple-dark, #321333);
+      color: #ffffff;
+      padding: clamp(64px, 8vw, 96px) 0;
+      text-align: center;
+    }
+    .partner-final-wrap {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+    .partner-final-banner h2 {
+      font-family: 'Manrope', Arial, sans-serif;
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 800;
+      color: #ffffff;
+      margin: 0 0 16px;
+      line-height: 1.15;
+    }
+    .partner-final-banner p {
+      font-size: clamp(16.5px, 1.8vw, 20px);
+      line-height: 1.65;
+      color: #edd9f0;
+      margin: 0 0 32px;
+    }
+    .partner-final-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .partner-priorities-grid {
+        grid-template-columns: 1fr;
+      }
+      .partner-modalities-grid,
+      .partner-profiles-grid {
+        grid-template-columns: 1fr;
+      }
+      .partner-accountability-grid {
+        grid-template-columns: 1fr;
+      }
+      .partner-contact-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 680px) {
+      .partner-hero {
+        min-height: 660px;
+      }
+      .partner-form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+      .partner-action-btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body class="partner-page" data-page="partenaire">
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <!-- HEADER (STYLE THE OCEAN CLEANUP / PAAD) -->
+  <header class="ocean-header site-header">
+    <!-- NIVEAU 1 : Barre Blanche Supérieure -->
+    <div class="ocean-top-bar">
+      <!-- Bloc Logo Cyan Gauche -->
+      <a class="ocean-logo-badge" href="./index.html" aria-label="PAAD, accueil">
+        <img src="./public/images/paad-emblem.webp" alt="Logo PAAD" class="ocean-logo-emblem" width="36" height="36">
+        <span class="ocean-logo-text">PAAD</span>
+      </a>
+
+      <!-- Navigation Principale Majeure -->
+      <nav class="ocean-nav-strip" aria-label="Navigation principale">
+        <!-- À PROPOS -->
+        <div class="ocean-nav-item has-mega">
+          <a href="./qui-sommes-nous.html" class="ocean-nav-anchor">
+            <span>À propos</span>
+            <svg class="ocean-caret-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m6 9 6 6 6-6"/></svg>
+          </a>
+          <div class="ocean-mega-dropdown">
+            <div class="wrap ocean-mega-inner">
+              <a href="./qui-sommes-nous.html" class="ocean-mega-card">
+                <img src="./public/images/community-haiti.webp" alt="Notre mission en Haïti" class="ocean-mega-card-img">
+                <div class="ocean-mega-card-overlay"></div>
+                <div class="ocean-mega-card-dock">
+                  <span class="ocean-mega-circle-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </span>
+                  <span class="ocean-mega-card-title">Notre mission</span>
+                </div>
+              </a>
+              <a href="./qui-sommes-nous.html#equipe" class="ocean-mega-card">
+                <img src="./public/images/haiti-cinematic-hero.jpg" alt="Notre équipe et communauté" class="ocean-mega-card-img">
+                <div class="ocean-mega-card-overlay"></div>
+                <div class="ocean-mega-card-dock">
+                  <span class="ocean-mega-circle-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </span>
+                  <span class="ocean-mega-card-title">Notre équipe</span>
+                </div>
+              </a>
+              <div class="ocean-mega-col-side">
+                <div class="ocean-mega-side-header">
+                  <span class="ocean-mega-side-title">DÉCOUVRIR PAAD</span>
+                </div>
+                <div class="ocean-mega-side-links">
+                  <a href="./qui-sommes-nous.html" class="ocean-mega-side-link">Qui sommes-nous</a>
+                  <a href="./qui-sommes-nous.html#origines" class="ocean-mega-side-link">Nos origines &amp; histoire</a>
+                  <a href="./qui-sommes-nous.html#valeurs" class="ocean-mega-side-link">Nos valeurs</a>
+                  <a href="./faq.html" class="ocean-mega-side-link">Foire aux questions (FAQ)</a>
+                  <a href="./contact.html" class="ocean-mega-side-link">Nous contacter</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROGRAMMES -->
+        <div class="ocean-nav-item has-mega">
+          <a href="./index.html#domaines" class="ocean-nav-anchor">
+            <span>Programmes</span>
+            <svg class="ocean-caret-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m6 9 6 6 6-6"/></svg>
+          </a>
+          <div class="ocean-mega-dropdown">
+            <div class="wrap ocean-mega-inner">
+              <a href="./index.html#domaines" class="ocean-mega-card">
+                <img src="./public/images/haiti-student-classroom.jpg" alt="Bourses & Écoles en Haïti" class="ocean-mega-card-img">
+                <div class="ocean-mega-card-overlay"></div>
+                <div class="ocean-mega-card-dock">
+                  <span class="ocean-mega-circle-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </span>
+                  <span class="ocean-mega-card-title">Bourses &amp; Écoles</span>
+                </div>
+              </a>
+              <a href="./index.html#domaines" class="ocean-mega-card">
+                <img src="./public/images/haiti-tech-workshop.jpg" alt="Formations professionnelles en Haïti" class="ocean-mega-card-img">
+                <div class="ocean-mega-card-overlay"></div>
+                <div class="ocean-mega-card-dock">
+                  <span class="ocean-mega-circle-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </span>
+                  <span class="ocean-mega-card-title">Formations &amp; Autonomie</span>
+                </div>
+              </a>
+              <div class="ocean-mega-col-side">
+                <div class="ocean-mega-side-header">
+                  <span class="ocean-mega-side-title">DOMAINES PRIORITAIRES</span>
+                </div>
+                <div class="ocean-mega-side-links">
+                  <a href="./index.html#domaines" class="ocean-mega-side-link">Éducation &amp; Bourses d’excellence</a>
+                  <a href="./index.html#domaines" class="ocean-mega-side-link">Digital Lab &amp; Technologies</a>
+                  <a href="./index.html#domaines" class="ocean-mega-side-link">Formations professionnelles certifiantes</a>
+                  <a href="./index.html#domaines" class="ocean-mega-side-link">Entrepreneuriat local &amp; Artisanat</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DEVENIR PARTENAIRE (PAGE ACTIVE) -->
+        <div class="ocean-nav-item has-mega">
+          <a href="./devenir-partenaire.html" class="ocean-nav-anchor" style="color:var(--purple);font-weight:800;">
+            <span>Devenir partenaire</span>
+            <svg class="ocean-caret-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m6 9 6 6 6-6"/></svg>
+          </a>
+          <div class="ocean-mega-dropdown">
+            <div class="wrap ocean-mega-inner">
+              <a href="./devenir-partenaire.html" class="ocean-mega-card">
+                <img src="./public/images/workshop-haiti.webp" alt="Partenariats institutionnels" class="ocean-mega-card-img">
+                <div class="ocean-mega-card-overlay"></div>
+                <div class="ocean-mega-card-dock">
+                  <span class="ocean-mega-circle-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </span>
+                  <span class="ocean-mega-card-title">Pour les bailleurs</span>
+                </div>
+              </a>
+              <a href="./qui-sommes-nous.html#valeurs" class="ocean-mega-card">
+                <img src="./public/images/community-haiti.webp" alt="Nos partenaires de terrain" class="ocean-mega-card-img">
+                <div class="ocean-mega-card-overlay"></div>
+                <div class="ocean-mega-card-dock">
+                  <span class="ocean-mega-circle-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </span>
+                  <span class="ocean-mega-card-title">Nos partenaires</span>
+                </div>
+              </a>
+              <div class="ocean-mega-col-side">
+                <div class="ocean-mega-side-header">
+                  <span class="ocean-mega-side-title">COOPÉRATION &amp; ALLIANCES</span>
+                </div>
+                <div class="ocean-mega-side-links">
+                  <a href="./devenir-partenaire.html" class="ocean-mega-side-link" style="font-weight:800;color:var(--purple);">Pour les bailleurs de fonds</a>
+                  <a href="./devenir-partenaire.html#entreprises" class="ocean-mega-side-link">Mécénat d’entreprise</a>
+                  <a href="./devenir-partenaire.html#fondations" class="ocean-mega-side-link">Fondations &amp; Philanthropie</a>
+                  <a href="./devenir-partenaire.html#diaspora" class="ocean-mega-side-link">Diaspora &amp; International</a>
+                  <a href="./contact.html#formulaire" class="ocean-mega-side-link">Devenir bénévole</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Utilitaires Droite (Recherche, Langue, Menu Burger) -->
+      <div class="ocean-top-right">
+        <button class="ocean-top-search-btn" aria-label="Recherche sur le site" onclick="handleSearch()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        </button>
+
+        <div class="ocean-lang-switch">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20M2 12h20"/></svg>
+          <select aria-label="Choisir la langue">
+            <option value="fr" selected>FR</option>
+            <option value="en">EN</option>
+            <option value="es">ES</option>
+          </select>
+        </div>
+
+        <button class="ocean-mobile-burger" id="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false">
+          <svg id="menu-icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+          <svg id="menu-icon-close" style="display:none;" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- NAVIGATION MOBILE AVEC ACCORDÉONS, CARTES ET LIENS FLÉCHÉS -->
+    <nav class="ocean-mobile-drawer mobile-nav" id="mobile-nav" aria-label="Navigation mobile" style="display:none;">
+      <!-- ACCORDÉON : DEVENIR PARTENAIRE (OUVERT PAR DÉFAUT ICI) -->
+      <div class="mobile-acc-item is-open" data-acc="partenaire">
+        <button type="button" class="mobile-acc-trigger" onclick="toggleMobileAcc(this)">
+          <span>Devenir partenaire</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="mobile-acc-panel">
+          <div class="mobile-acc-cards">
+            <a href="./devenir-partenaire.html" class="mobile-acc-card">
+              <img src="./public/images/workshop-haiti.webp" alt="Pour les bailleurs de fonds" class="mobile-acc-card-img">
+              <div class="mobile-acc-card-overlay"></div>
+              <div class="mobile-acc-card-dock">
+                <span class="mobile-acc-card-title">Pour les bailleurs</span>
+                <span class="mobile-acc-circle-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </span>
+              </div>
+            </a>
+            <a href="./qui-sommes-nous.html#valeurs" class="mobile-acc-card">
+              <img src="./public/images/community-haiti.webp" alt="Nos partenaires" class="mobile-acc-card-img">
+              <div class="mobile-acc-card-overlay"></div>
+              <div class="mobile-acc-card-dock">
+                <span class="mobile-acc-card-title">Nos partenaires</span>
+                <span class="mobile-acc-circle-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </span>
+              </div>
+            </a>
+          </div>
+
+          <div class="mobile-acc-section-header">
+            <span class="mobile-acc-section-title">ALLIANCES &amp; BAILLEURS</span>
+          </div>
+
+          <div class="mobile-acc-links">
+            <a href="./devenir-partenaire.html" class="mobile-acc-link" style="font-weight:800;color:var(--purple);">
+              <span>Pour les bailleurs de fonds</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+            <a href="./devenir-partenaire.html#entreprises" class="mobile-acc-link">
+              <span>Mécénat d’entreprise</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+            <a href="./devenir-partenaire.html#fondations" class="mobile-acc-link">
+              <span>Fondations &amp; Philanthropie</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+            <a href="./devenir-partenaire.html#diaspora" class="mobile-acc-link">
+              <span>Diaspora &amp; International</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ACCORDÉON : À PROPOS -->
+      <div class="mobile-acc-item" data-acc="about">
+        <button type="button" class="mobile-acc-trigger" onclick="toggleMobileAcc(this)">
+          <span>À propos de nous</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="mobile-acc-panel">
+          <div class="mobile-acc-links">
+            <a href="./qui-sommes-nous.html" class="mobile-acc-link"><span>Qui sommes-nous</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
+            <a href="./qui-sommes-nous.html#origines" class="mobile-acc-link"><span>Notre histoire</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
+            <a href="./qui-sommes-nous.html#equipe" class="mobile-acc-link"><span>Notre équipe</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
+            <a href="./faq.html" class="mobile-acc-link"><span>FAQ</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ACCORDÉON : PROGRAMMES -->
+      <div class="mobile-acc-item" data-acc="programmes">
+        <button type="button" class="mobile-acc-trigger" onclick="toggleMobileAcc(this)">
+          <span>Programmes</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="mobile-acc-panel">
+          <div class="mobile-acc-links">
+            <a href="./index.html#domaines" class="mobile-acc-link"><span>Éducation &amp; Bourses</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
+            <a href="./index.html#domaines" class="mobile-acc-link"><span>Formations &amp; Autonomie</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bouton Rectangulaire Signature FAITES UN DON MAINTENANT -->
+      <a href="#don" class="ocean-drawer-donate-btn" onclick="openModal('donModal'); return false;">
+        FAITES UN DON MAINTENANT
+      </a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- 1. HERO BAILLEURS MONUMENTAL -->
+    <section class="partner-hero" id="top">
+      <div class="partner-hero-media">
+        <img src="./public/images/haiti-tech-workshop.jpg" alt="Jeunesse haïtienne en formation technique au PAAD">
+      </div>
+      <div class="wrap partner-hero-content">
+        <div class="partner-kicker-badge">
+          <span class="partner-kicker-dot"></span>
+          Pour les bailleurs de fonds &amp; Partenaires institutionnels
+        </div>
+        <h1>Financer un avenir plus autonome en Haïti.</h1>
+        <p class="partner-hero-subtitle">
+          Votre soutien permet à <strong>PAAD</strong> de transformer des besoins concrets en solutions durables. En investissant dans nos programmes, vous renforcez l’accès à l’éducation, développez les compétences techniques et créez de véritables perspectives économiques.
+        </p>
+
+        <!-- Trajectoire clé d'autonomie -->
+        <div class="partner-trajectory-bar" aria-label="Trajectoire d'autonomie PAAD">
+          <span class="partner-trajectory-label">Notre boussole :</span>
+          <span class="partner-trajectory-step">Apprendre <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m9 18 6-6-6-6"/></svg></span>
+          <span class="partner-trajectory-step">Se former <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m9 18 6-6-6-6"/></svg></span>
+          <span class="partner-trajectory-step">Développer ses compétences <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m9 18 6-6-6-6"/></svg></span>
+          <span class="partner-trajectory-step">Accéder à des opportunités <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m9 18 6-6-6-6"/></svg></span>
+          <span class="partner-trajectory-step" style="color:#dcb7df;">Devenir autonome</span>
+        </div>
+
+        <div class="partner-hero-actions">
+          <a href="#contact-partenaire" class="partner-action-btn primary">
+            <span>Devenir partenaire financier</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="#priorites" class="partner-action-btn secondary">
+            <span>Nos 4 priorités de financement</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m6 9 6 6 6-6"/></svg>
+          </a>
+          <a href="#ressources" class="partner-action-btn outline">
+            <span>Ressources bailleurs</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. BARRE DE NAVIGATION RAPIDE (JUMPLINKS) -->
+    <div class="partner-subnav-band">
+      <div class="wrap partner-subnav-inner">
+        <a href="#impact" class="partner-subnav-link">1. Impact communautaire</a>
+        <a href="#priorites" class="partner-subnav-link">2. Priorités financées</a>
+        <a href="#modalites" class="partner-subnav-link">3. Modalités de soutien</a>
+        <a href="#entreprises" class="partner-subnav-link">4. Entreprises &amp; Mécénat</a>
+        <a href="#fondations" class="partner-subnav-link">5. Fondations &amp; Diaspora</a>
+        <a href="#transparence" class="partner-subnav-link">6. Transparence &amp; Suivi</a>
+        <a href="#ressources" class="partner-subnav-link">7. Bibliothèque bailleurs</a>
+        <a href="#contact-partenaire" class="partner-subnav-link" style="color:var(--purple);font-weight:800;">8. Nous contacter</a>
+      </div>
+    </div>
+
+    <!-- 3. SECTION IMPACT AVEC LES COMMUNAUTÉS -->
+    <section class="partner-section white" id="impact">
+      <div class="wrap">
+        <div class="partner-section-header">
+          <span class="partner-section-eyebrow">Approche collaborative</span>
+          <h2 class="partner-section-title">Construire un impact réel avec les communautés.</h2>
+          <p class="partner-section-lead">
+            Nous développons nos programmes au plus près des réalités du terrain en Haïti, en partenariat direct avec les acteurs éducatifs, les professionnels locaux, les autorités et nos bailleurs.
+          </p>
+        </div>
+
+        <div class="partner-quote-callout">
+          <blockquote>
+            « Les solutions les plus durables sont celles qui sont construites avec les communautés, et non simplement pour elles. »
+          </blockquote>
+          <p>
+            Chez PAAD, nous croyons qu’un financement utile ne se limite pas à soutenir une action ponctuelle : il dote les personnes et les familles d’outils d’autonomie pérennes.
+          </p>
+        </div>
+
+        <h3 style="font-family:'Manrope',Arial,sans-serif;font-size:22px;color:var(--purple-dark);margin:0 0 24px;">Les financements reçus permettent concrètement de :</h3>
+
+        <div class="partner-pillars-grid">
+          <div class="partner-pillar-card">
+            <div class="partner-pillar-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/></svg></div>
+            <div class="partner-pillar-content">
+              <h3>Éducation de qualité</h3>
+              <p>Renforcer l’accès pérenne à une scolarisation inclusive et sécurisée.</p>
+            </div>
+          </div>
+          <div class="partner-pillar-card">
+            <div class="partner-pillar-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+            <div class="partner-pillar-content">
+              <h3>Programmes de formation</h3>
+              <p>Développer des cursus certifiants adaptés aux besoins réels du marché.</p>
+            </div>
+          </div>
+          <div class="partner-pillar-card">
+            <div class="partner-pillar-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect width="20" height="14" x="2" y="7" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+            <div class="partner-pillar-content">
+              <h3>Emploi &amp; Entrepreneuriat</h3>
+              <p>Accompagner les jeunes vers l'insertion professionnelle et l’auto-emploi.</p>
+            </div>
+          </div>
+          <div class="partner-pillar-card">
+            <div class="partner-pillar-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+            <div class="partner-pillar-content">
+              <h3>Initiatives économiques</h3>
+              <p>Financer les activités génératrices de revenus et les coopératives locales.</p>
+            </div>
+          </div>
+          <div class="partner-pillar-card">
+            <div class="partner-pillar-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 21h18M3 10h18M5 10v11M19 10v11M9 10v11M15 10v11M12 2 2 7h20L12 2z"/></svg></div>
+            <div class="partner-pillar-content">
+              <h3>Infrastructures scolaires</h3>
+              <p>Construire, réhabiliter et équiper les centres éducatifs et communautaires.</p>
+            </div>
+          </div>
+          <div class="partner-pillar-card">
+            <div class="partner-pillar-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect width="18" height="12" x="3" y="4" rx="2"/><path d="M2 20h20"/></svg></div>
+            <div class="partner-pillar-content">
+              <h3>Inclusion numérique</h3>
+              <p>Créer des Digital Labs, fournir du matériel informatique et connecter les écoles.</p>
+            </div>
+          </div>
+          <div class="partner-pillar-card">
+            <div class="partner-pillar-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg></div>
+            <div class="partner-pillar-content">
+              <h3>Capacité des acteurs locaux</h3>
+              <p>Former les enseignants, encadrants communautaires et comités de gestion.</p>
+            </div>
+          </div>
+          <div class="partner-pillar-card">
+            <div class="partner-pillar-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <div class="partner-pillar-content">
+              <h3>Résilience durable</h3>
+              <p>Accompagner les populations dans la prise en main autonome de leur destin.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. SECTION : NOS 4 PRIORITÉS DE FINANCEMENT -->
+    <section class="partner-section pearl" id="priorites">
+      <div class="wrap">
+        <div class="partner-section-header">
+          <span class="partner-section-eyebrow">Programmes structurants</span>
+          <h2 class="partner-section-title">Nos 4 priorités d'investissement social.</h2>
+          <p class="partner-section-lead">
+            Chaque priorité répond à un diagnostic précis et fait l’objet d’un plan d’action mesurable, piloté avec rigueur et transparence.
+          </p>
+        </div>
+
+        <div class="partner-priorities-grid">
+          
+          <!-- PRIORITÉ 1 : ÉDUCATION -->
+          <article class="partner-priority-card">
+            <span class="partner-priority-num">Priorité 01 · Éducation</span>
+            <h3>Donner à chaque enfant la possibilité d’apprendre</h3>
+            <p class="partner-priority-subtitle">L’accès à une éducation inclusive et sécurisée</p>
+            <p class="partner-priority-desc">
+              L’éducation constitue le pilier fondateur de PAAD. Nous créons des environnements d’apprentissage sûrs, stimulants et adaptés aux réalités locales.
+            </p>
+            <div class="partner-funded-list-title">Votre soutien permet de financer :</div>
+            <ul class="partner-checklist">
+              <li><span class="partner-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>La construction et réhabilitation d’écoles communautaires</span></li>
+              <li><span class="partner-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>L’équipement en mobilier, pupitres et tableaux</span></li>
+              <li><span class="partner-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>L’accès gratuit aux fournitures et kits scolaires complets</span></li>
+              <li><span class="partner-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Les bibliothèques scolaires et espaces numériques</span></li>
+              <li><span class="partner-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Les programmes de soutien et de remédiation pédagogique</span></li>
+              <li><span class="partner-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>La formation continue et valorisation des enseignants</span></li>
+              <li><span class="partner-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>La prise en charge des enfants les plus vulnérables</span></li>
+            </ul>
+            <div class="partner-priority-ambition">
+              Ambition : faire de l’éducation le point de départ d'une émancipation définitive.
+            </div>
+          </article>
+
+          <!-- PRIORITÉ 2 : FORMATION & COMPÉTENCES -->
+          <article class="partner-priority-card green">
+            <span class="partner-priority-num">Priorité 02 · Compétences</span>
+            <h3>Transformer le potentiel en compétences</h3>
+            <p class="partner-priority-subtitle">L’apprentissage pratique au-delà de l’école</p>
+            <p class="partner-priority-desc">
+              Pour PAAD, l’éducation doit ouvrir des portes professionnelles. Nous dotons les jeunes et les adultes des compétences demandées par l'économie de demain.
+            </p>
+            <div class="partner-funded-list-title">Votre soutien permet de financer :</div>
+            <ul class="partner-checklist">
+              <li><span class="partner-check-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Les formations techniques professionnelles (artisanat, énergie solaire, BTP)</span></li>
+              <li><span class="partner-check-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Les cursus numériques certifiants (PAAD Digital Lab)</span></li>
+              <li><span class="partner-check-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Les ateliers pratiques immersifs avec des maîtres d'apprentissage</span></li>
+              <li><span class="partner-check-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Les programmes de mentorat individuel avec des professionnels</span></li>
+              <li><span class="partner-check-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>L’orientation professionnelle et préparation aux entretiens</span></li>
+              <li><span class="partner-check-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Le développement des compétences relationnelles et de leadership</span></li>
+            </ul>
+            <div class="partner-priority-ambition">
+              Objectif : permettre à chacun de transformer ses savoirs en véritables opportunités d'emploi.
+            </div>
+          </article>
+
+          <!-- PRIORITÉ 3 : AUTONOMIE ÉCONOMIQUE -->
+          <article class="partner-priority-card green">
+            <span class="partner-priority-num">Priorité 03 · Autonomie économique</span>
+            <h3>Créer les conditions pour entreprendre et progresser</h3>
+            <p class="partner-priority-subtitle">Des revenus réguliers et pérennes</p>
+            <p class="partner-priority-desc">
+              L’autonomie financière renforce la résilience de toute la communauté. PAAD soutient les porteurs de projet qui développent une activité viable.
+            </p>
+            <div class="partner-funded-list-title">Votre soutien permet de financer :</div>
+            <ul class="partner-checklist">
+              <li><span class="partner-check-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Les fonds d’amorçage pour micro-entreprises locales</span></li>
+              <li><span class="partner-check-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>L’entrepreneuriat des jeunes et des coopératives de femmes</span></li>
+              <li><span class="partner-check-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>L’appui aux activités génératrices de revenus (AGR) durables</span></li>
+              <li><span class="partner-check-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>La formation en gestion financière, tenue de caisse et commercialisation</span></li>
+              <li><span class="partner-check-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>L’accès aux outils numériques de paiement et de gestion</span></li>
+              <li><span class="partner-check-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>L’incubation et l’accélération sur 12 à 24 mois</span></li>
+            </ul>
+            <div class="partner-priority-ambition">
+              Vision : passer du statut de bénéficiaire à celui d'acteur économique à part entière.
+            </div>
+          </article>
+
+          <!-- PRIORITÉ 4 : DÉVELOPPEMENT COMMUNAUTAIRE -->
+          <article class="partner-priority-card">
+            <span class="partner-priority-num">Priorité 04 · Développement communautaire</span>
+            <h3>Renforcer les communautés sur le long terme</h3>
+            <p class="partner-priority-subtitle">Des réponses collectives et pérennes</p>
+            <p class="partner-priority-desc">
+              Les défis structurels exigent des infrastructures partagées. PAAD co-conçoit des projets qui améliorent durablement le cadre de vie.
+            </p>
+            <div class="partner-funded-list-title">Votre soutien permet de financer :</div>
+            <ul class="partner-checklist">
+              <li><span class="partner-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Les infrastructures collectives (salles polyvalentes, centres d’apprentissage)</span></li>
+              <li><span class="partner-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>L’accès à l’eau potable et installations sanitaires salubres</span></li>
+              <li><span class="partner-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>L’électrification solaire des écoles et centres techniques</span></li>
+              <li><span class="partner-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Les initiatives écologiques, reboisement et gestion des déchets</span></li>
+              <li><span class="partner-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Les plans de résilience face aux aléas climatiques</span></li>
+              <li><span class="partner-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>La gouvernance participative et l’entretien local des équipements</span></li>
+            </ul>
+            <div class="partner-priority-ambition">
+              Garantie : chaque réalisation est pensée pour être pleinement appropriée et entretenue par les habitants.
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. SECTION : COMMENT POUVEZ-VOUS SOUTENIR PAAD ? -->
+    <section class="partner-section white" id="modalites">
+      <div class="wrap">
+        <div class="partner-section-header">
+          <span class="partner-section-eyebrow">Modes d'engagement</span>
+          <h2 class="partner-section-title">Comment pouvez-vous soutenir PAAD ?</h2>
+          <p class="partner-section-lead">
+            Nous adaptons nos cadres de collaboration aux attentes stratégiques de chaque bailleur, avec un impératif constant d’efficacité et de transparence.
+          </p>
+        </div>
+
+        <div class="partner-modalities-grid">
+          
+          <!-- MODALITÉ 1 : INSTITUTIONNEL -->
+          <div class="partner-modality-card">
+            <span style="color:var(--purple);font-weight:800;font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;">Formule 01</span>
+            <h3>Financement institutionnel</h3>
+            <p>
+              Le financement non affecté à un projet unique renforce durablement notre capacité d’action globale. Il nous permet d'investir dans notre gouvernance, de retenir des talents locaux et de réagir immédiatement aux urgences émergentes.
+            </p>
+            <ul class="partner-checklist">
+              <li><span class="partner-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Consolidation des équipes de terrain</span></li>
+              <li><span class="partner-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Développement des outils de pilotage</span></li>
+              <li><span class="partner-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Préparation d’initiatives innovantes</span></li>
+            </ul>
+          </div>
+
+          <!-- MODALITÉ 2 : FINANCEMENT DE PROJET -->
+          <div class="partner-modality-card" style="border-top:3px solid var(--purple);">
+            <span style="color:var(--purple);font-weight:800;font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;">Formule 02</span>
+            <h3>Financement ciblé de projet</h3>
+            <p>
+              Les partenaires choisissent d'affecter leur soutien à un programme précis (ex. : construction d'une école, création d'un Digital Lab, bourse annuelle pour 50 étudiants, ateliers solaires).
+            </p>
+            <ul class="partner-checklist">
+              <li><span class="partner-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Périmètre géographique et thématique précis</span></li>
+              <li><span class="partner-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Rapports d'étapes photographiés et documentés</span></li>
+              <li><span class="partner-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Affectation 100% dédiée au livrable convenu</span></li>
+            </ul>
+          </div>
+
+          <!-- MODALITÉ 3 : PLURIANNUEL -->
+          <div class="partner-modality-card">
+            <span style="color:var(--purple);font-weight:800;font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;">Formule 03</span>
+            <h3>Partenariats pluriannuels</h3>
+            <p>
+              Les transformations sociales d’ampleur demandent du temps. Des accords triennaux ou quinquennaux apportent la visibilité indispensable pour déployer des programmes d'envergure.
+            </p>
+            <ul class="partner-checklist">
+              <li><span class="partner-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Suivi longitudinal des apprenants</span></li>
+              <li><span class="partner-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Mesure des changements économiques réels</span></li>
+              <li><span class="partner-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Modélisation et réplication de projets pilotes</span></li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Cadre de gestion standardisé -->
+        <div class="partner-framework-box">
+          <h4>Notre cadre de projet standardisé pour chaque financement :</h4>
+          <div class="partner-framework-tags">
+            <span class="partner-framework-tag">✓ Objectifs quantifiés</span>
+            <span class="partner-framework-tag">✓ Typologie des bénéficiaires</span>
+            <span class="partner-framework-tag">✓ Calendrier jalonné</span>
+            <span class="partner-framework-tag">✓ Budget prévisionnel analytique</span>
+            <span class="partner-framework-tag">✓ Indicateurs de résultat (KPI)</span>
+            <span class="partner-framework-tag">✓ Rapports financiers trimestriels</span>
+            <span class="partner-framework-tag">✓ Visites de contrôle sur site</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. SECTION : PROFILS DE PARTENAIRES -->
+    <section class="partner-section pearl" id="entreprises">
+      <div class="wrap">
+        <div class="partner-section-header">
+          <span class="partner-section-eyebrow">Écosystème de soutien</span>
+          <h2 class="partner-section-title">Des coopérations adaptées à chaque profil.</h2>
+          <p class="partner-section-lead">
+            Que vous représentiez une entreprise, une fondation abritée ou la diaspora haïtienne, construisons une passerelle sur-mesure.
+          </p>
+        </div>
+
+        <div class="partner-profiles-grid">
+          
+          <!-- ENTREPRISES -->
+          <article class="partner-profile-card">
+            <span class="partner-profile-badge">Entreprises &amp; Mécénat</span>
+            <h3>Transformer l’engagement RSE en impact</h3>
+            <p>
+              Associez vos collaborateurs et donnez du sens à votre politique RSE à travers des actions directes et vérifiées sur le terrain :
+            </p>
+            <ul class="partner-checklist">
+              <li><span class="partner-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Mécénat financier ou don d'équipements</span></li>
+              <li><span class="partner-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Mécénat de compétences (ingénierie, tech, gestion)</span></li>
+              <li><span class="partner-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Campagnes d’arrondi sur salaire ou dons jumelés</span></li>
+              <li><span class="partner-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Valorisation et rapports RSE clés en main</span></li>
+            </ul>
+          </article>
+
+          <!-- FONDATIONS -->
+          <article class="partner-profile-card" id="fondations">
+            <span class="partner-profile-badge">Fondations &amp; Philanthropie</span>
+            <h3>Co-construire des programmes d'excellence</h3>
+            <p>
+              Les fondations familiales et institutionnelles jouent un rôle clé pour amorcer ou amplifier des projets à fort impact :
+            </p>
+            <ul class="partner-checklist">
+              <li><span class="partner-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Priorités alignées (enfance, éducation, climat)</span></li>
+              <li><span class="partner-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Gouvernance documentée et comités conjoints</span></li>
+              <li><span class="partner-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Effet de levier auprès d’autres co-financeurs</span></li>
+              <li><span class="partner-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Évaluation d’impact rigoureuse</span></li>
+            </ul>
+          </article>
+
+          <!-- DIASPORA -->
+          <article class="partner-profile-card" id="diaspora">
+            <span class="partner-profile-badge">Diaspora &amp; International</span>
+            <h3>Bâtir la passerelle avec notre terre d’origine</h3>
+            <p>
+              La diaspora haïtienne dispose d'une force humaine et d'une expertise uniques. PAAD mobilise ces passerelles vers le pays natal :
+            </p>
+            <ul class="partner-checklist">
+              <li><span class="partner-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Mentorat et parrainage de jeunes boursiers</span></li>
+              <li><span class="partner-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Transferts d’expertises technologiques et médicales</span></li>
+              <li><span class="partner-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Collectes collectives d’associations régionales</span></li>
+              <li><span class="partner-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Mise en relation avec des bailleurs internationaux</span></li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. SECTION : TRANSPARENCE & SUIVI DE L'IMPACT -->
+    <section class="partner-section white" id="transparence">
+      <div class="wrap">
+        <div class="partner-accountability-grid">
+          
+          <div class="partner-accountability-card">
+            <span style="color:var(--purple);font-weight:800;font-size:11px;letter-spacing:.12em;text-transform:uppercase;">Exigence financière</span>
+            <h3>Chaque contribution doit pouvoir être suivie</h3>
+            <p>
+              La confiance se bâtit sur la traçabilité intégrale de chaque dollar engagé. Notre engagement auprès des bailleurs garantit :
+            </p>
+            <ul class="partner-checklist">
+              <li><span class="partner-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Des budgets d'exécution détaillés ligne par ligne</span></li>
+              <li><span class="partner-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Des journaux de dépenses certifiés avec justificatifs</span></li>
+              <li><span class="partner-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Des rapports narratifs semestriels et annuels</span></li>
+              <li><span class="partner-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Une documentation photographique et vidéo horodatée</span></li>
+            </ul>
+            <div style="background:#f2e8f4;padding:16px;border-left:3px solid var(--purple);font-size:13.5px;color:var(--purple-dark);font-weight:700;">
+              Clarté absolue : comprendre ce qui a été financé, ce qui a été réalisé et quel changement durable a été généré.
+            </div>
+          </div>
+
+          <div class="partner-accountability-card" style="border-top:3px solid #08773e;">
+            <span style="color:#08773e;font-weight:800;font-size:11px;letter-spacing:.12em;text-transform:uppercase;">Évaluation d'impact</span>
+            <h3>Mesurer notre impact réel sur le terrain</h3>
+            <p>
+              PAAD déploie un système continu de suivi et évaluation pour mesurer les progrès tangibles dans la vie des personnes :
+            </p>
+            <ul class="partner-checklist">
+              <li><span class="partner-check-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Nombre d'élèves scolarisés et taux de réussite aux examens</span></li>
+              <li><span class="partner-check-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Nombre d'heures de formation technique dispensées</span></li>
+              <li><span class="partner-check-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Taux d'insertion professionnelle à 6 et 12 mois</span></li>
+              <li><span class="partner-check-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Micro-entreprises pérennes et revenus nets générés</span></li>
+              <li><span class="partner-check-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span>Infrastructures livrées et autonomie des comités locaux</span></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. SECTION : RESSOURCES BAILLEURS DE FONDS -->
+    <section class="partner-section pearl" id="ressources">
+      <div class="wrap">
+        <div class="partner-section-header">
+          <span class="partner-section-eyebrow">Documentation officielle</span>
+          <h2 class="partner-section-title">Ressources &amp; Documents pour bailleurs.</h2>
+          <p class="partner-section-lead">
+            Accédez à l'ensemble de notre documentation de cadrage pour instruire votre décision de subvention ou de mécénat.
+          </p>
+        </div>
+
+        <div class="partner-resources-grid">
+          <div class="partner-resource-item">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/></svg>
+            <h4>Rapport annuel</h4>
+            <p>Présentation des programmes, gouvernance, résultats et états financiers.</p>
+          </div>
+          <div class="partner-resource-item">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m10 15 5-3-5-3v6z"/></svg>
+            <h4>Rapports d’impact</h4>
+            <p>Analyses qualitatives et quantitatives des résultats obtenus auprès des populations.</p>
+          </div>
+          <div class="partner-resource-item">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+            <h4>Fiches projets à financer</h4>
+            <p>Cahiers des charges de projets prêts au déploiement avec budgets prévisionnels.</p>
+          </div>
+          <div class="partner-resource-item">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <h4>Budgets &amp; Plans de financement</h4>
+            <p>Décompositions financières analytiques et devis détaillés des investissements.</p>
+          </div>
+          <div class="partner-resource-item">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            <h4>Études &amp; Diagnostics terrain</h4>
+            <p>Enquêtes préliminaires de besoins menées avec les communautés bénéficiaires.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. SECTION : CONTACT & FORMULAIRE PARTENARIAT -->
+    <section class="partner-contact-section" id="contact-partenaire">
+      <div class="wrap partner-contact-layout">
+        
+        <!-- Colonne gauche : infos directes -->
+        <div class="partner-contact-info">
+          <span style="color:var(--purple);font-weight:800;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:8px;">Construire l'alliance</span>
+          <h2>Vous souhaitez financer un programme ou bâtir un partenariat ?</h2>
+          <p>
+            Nos représentants sont à votre disposition pour vous présenter les dossiers d'instruction, organiser une visioconférence ou échanger sur vos priorités d'investissement social.
+          </p>
+
+          <div class="partner-contact-box">
+            <strong>Contact Bailleurs &amp; Partenariats :</strong>
+            <a href="mailto:contact@paad-haiti.org">contact@paad-haiti.org</a>
+            <p style="font-size:13px;color:#776b7b;margin:8px 0 0;">Siège : Port-au-Prince, République d’Haïti</p>
+          </div>
+
+          <div style="background:#ffffff;border:1px solid #dfd0e1;padding:24px;">
+            <strong style="color:var(--purple-dark);font-size:15px;display:block;margin-bottom:6px;">Processus d'accueil d'un bailleur :</strong>
+            <ol style="margin:0;padding-left:18px;font-size:13.5px;color:#554a59;line-height:1.6;">
+              <li>Réception et étude de votre manifestation d’intérêt sous 48h</li>
+              <li>Transmission de la fiche projet détaillée et du budget prévisionnel</li>
+              <li>Échange bilatéral avec la coordination exécutive de PAAD</li>
+              <li>Signature de la convention de partenariat et calendrier de décaissement</li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- Colonne droite : formulaire interactif -->
+        <div class="partner-form-card">
+          <h3>Proposer un partenariat ou un financement</h3>
+          <p>Remplissez les informations ci-dessous afin que notre équipe puisse préparer une proposition adaptée :</p>
+
+          <form id="partnerForm" onsubmit="handlePartnerSubmit(event)">
+            <div class="partner-form-row">
+              <div class="partner-form-group">
+                <label class="partner-form-label" for="partnerName">Votre Nom &amp; Prénom *</label>
+                <input class="partner-form-input" type="text" id="partnerName" required placeholder="Ex. : Marie Dupont">
+              </div>
+              <div class="partner-form-group">
+                <label class="partner-form-label" for="partnerOrg">Organisation / Entreprise *</label>
+                <input class="partner-form-input" type="text" id="partnerOrg" required placeholder="Ex. : Fondation Horizon">
+              </div>
+            </div>
+
+            <div class="partner-form-row">
+              <div class="partner-form-group">
+                <label class="partner-form-label" for="partnerEmail">Adresse E-mail *</label>
+                <input class="partner-form-input" type="email" id="partnerEmail" required placeholder="contact@organisation.org">
+              </div>
+              <div class="partner-form-group">
+                <label class="partner-form-label" for="partnerPhone">Téléphone</label>
+                <input class="partner-form-input" type="tel" id="partnerPhone" placeholder="+509... ou international">
+              </div>
+            </div>
+
+            <div class="partner-form-row">
+              <div class="partner-form-group">
+                <label class="partner-form-label" for="partnerType">Type d'entité</label>
+                <select class="partner-form-select" id="partnerType">
+                  <option value="fondation">Fondation philanthropique</option>
+                  <option value="entreprise">Entreprise / Mécénat d'entreprise</option>
+                  <option value="institutionnel">Bailleur institutionnel / ONG</option>
+                  <option value="diaspora">Membre ou réseau de la diaspora</option>
+                  <option value="autre">Autre organisme</option>
+                </select>
+              </div>
+              <div class="partner-form-group">
+                <label class="partner-form-label" for="partnerDomain">Domaine d'intérêt prioritaire</label>
+                <select class="partner-form-select" id="partnerDomain">
+                  <option value="education">Éducation &amp; Bourses scolaires</option>
+                  <option value="formation">Formations techniques &amp; Digital Lab</option>
+                  <option value="economie">Entrepreneuriat &amp; Autonomie économique</option>
+                  <option value="communautaire">Infrastructures communautaires &amp; Eau/Énergie</option>
+                  <option value="institutionnel">Financement institutionnel global</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="partner-form-group">
+              <label class="partner-form-label" for="partnerMessage">Présentation succincte de votre démarche *</label>
+              <textarea class="partner-form-textarea" id="partnerMessage" rows="4" required placeholder="Précisez votre souhait de financement, calendrier souhaité ou modalités d'action..."></textarea>
+            </div>
+
+            <button type="submit" class="partner-form-submit">
+              <span>Envoyer ma proposition de partenariat</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </button>
+            <span style="display:block;text-align:center;font-size:12px;color:#7a6e7f;margin-top:10px;">Réponse personnalisée sous 48h ouvrées</span>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 10. BANNIÈRE FINALE MOTIVATION -->
+    <section class="partner-final-banner">
+      <div class="wrap partner-final-wrap">
+        <h2>Ensemble, construisons des opportunités durables.</h2>
+        <p>
+          Fondations, entreprises, institutions, membres de la diaspora et donateurs individuels : chacun peut contribuer à faire avancer notre mission.<br>
+          <strong>Votre soutien peut devenir une école, une formation, une compétence, une entreprise, un emploi ou une nouvelle opportunité.</strong>
+        </p>
+        <div class="partner-final-actions">
+          <a href="#contact-partenaire" class="partner-action-btn primary" style="font-size:15px;padding:16px 32px;">
+            <span>Devenir partenaire financier</span>
+            <span aria-hidden="true">→</span>
+          </a>
+          <button type="button" class="partner-action-btn outline" onclick="openModal('donModal')" style="font-size:15px;padding:16px 32px;">
+            <span>Faire un don direct</span>
+            <span aria-hidden="true">♡</span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER OFFICIEL DU SITE -->
+  <footer class="footer" style="background:var(--purple-dark);color:#FAF8FB;border-top:none">
+    <div class="wrap mockup-footer-top">
+      <div class="mockup-footer-brand">
+        <a class="ocean-logo-badge footer-menu-logo" href="./index.html">
+          <img src="./public/images/paad-emblem-white-trans.png" alt="Logo PAAD" class="ocean-logo-emblem" width="40" height="40">
+          <span class="ocean-logo-text">PAAD</span>
+        </a>
+        <p>Passerelle d’Actions pour l’Autonomie et le Développement. Agir avec les communautés en Haïti pour un avenir durable.</p>
+        <span class="mockup-social-label">Suivez-nous</span>
+        <div class="mockup-social-icons">
+          <a href="#" class="mockup-social-btn" aria-label="Facebook">f</a>
+          <a href="#" class="mockup-social-btn" aria-label="X / Twitter">𝕏</a>
+          <a href="https://www.instagram.com/paad_developpement/" target="_blank" rel="noopener noreferrer" class="mockup-social-btn" aria-label="Instagram">ig</a>
+          <a href="#" class="mockup-social-btn" aria-label="LinkedIn">in</a>
+        </div>
+      </div>
+
+      <div class="mockup-footer-col">
+        <h4>PAAD</h4>
+        <a href="./qui-sommes-nous.html">Qui sommes-nous</a>
+        <a href="./qui-sommes-nous.html#origines">Notre histoire</a>
+        <a href="./qui-sommes-nous.html#equipe">Notre équipe</a>
+        <a href="./faq.html">FAQ</a>
+        <a href="./contact.html">Contact</a>
+      </div>
+
+      <div class="mockup-footer-col">
+        <h4>Partenariats</h4>
+        <a href="./devenir-partenaire.html" style="font-weight:700;color:#ffffff;">Pour les bailleurs</a>
+        <a href="./devenir-partenaire.html#entreprises">Mécénat d’entreprise</a>
+        <a href="./devenir-partenaire.html#fondations">Fondations</a>
+        <a href="./devenir-partenaire.html#diaspora">Diaspora internationale</a>
+      </div>
+
+      <div class="mockup-footer-col">
+        <h4>Ressources</h4>
+        <a href="./actualites.html">Actualités</a>
+        <a href="./rapports.html">Rapports &amp; publications</a>
+        <a href="./media.html">Espace média</a>
+        <a href="./conditions-utilisation.html">Conditions d’utilisation</a>
+      </div>
+    </div>
+
+    <div class="wrap mockup-footer-bottom">
+      <span>© 2026 PAAD. Tous droits réservés.</span>
+      <div class="mockup-footer-links">
+        <a href="./devenir-partenaire.html" style="font-weight:700;color:#ffffff;">Devenir partenaire</a>
+        <a href="./politique-de-confidentialite.html">Confidentialité</a>
+        <a href="./conditions-utilisation.html">Conditions d’utilisation</a>
+        <a href="./contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOUTON FLOTTANT RETOUR EN HAUT -->
+  <button type="button" id="scrollToTopBtn" class="scroll-to-top-btn" aria-label="Remonter en haut de la page" title="Remonter en haut" style="display:none;">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m18 15-6-6-6 6"/>
+    </svg>
+  </button>
+
+  <!-- MODALE DON (STYLE FARM AFRICA / PAAD) -->
+  <div class="modal-backdrop" id="donModal" onclick="if(event.target === this) closeModal('donModal');" role="dialog" aria-modal="true" aria-labelledby="donTitle">
+    <div class="modal-content farm-modal-content">
+      <button class="modal-close" onclick="closeModal('donModal')" aria-label="Fermer la boîte de dialogue">✕</button>
+      
+      <div class="farm-donate-card" style="display:grid;grid-template-columns:1fr 1.25fr;min-height:540px;">
+        <!-- Colonne visuelle gauche -->
+        <div class="farm-donate-visual" style="position:relative;background:var(--purple-dark);overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;padding:36px 30px;">
+          <img src="./public/images/haiti-student-classroom.jpg" alt="Écoliers en Haïti" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.4;">
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(50,19,51,.55) 0%,rgba(50,19,51,.94) 100%);"></div>
+          
+          <div style="position:relative;z-index:2;display:flex;align-items:center;gap:10px;">
+            <img src="./public/images/paad-emblem-white-trans.png" alt="Logo PAAD" width="34" height="34">
+            <span style="font-weight:900;font-size:19px;color:#fff;">PAAD</span>
+          </div>
+
+          <div style="position:relative;z-index:2;color:#fff;">
+            <span style="font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#dcb7df;">Soutenir notre action</span>
+            <h3 style="font-family:'Manrope',Arial,sans-serif;font-size:22px;margin:8px 0 10px;color:#fff;">Chaque don ouvre des chemins vers l’autonomie.</h3>
+            <p style="font-size:13.5px;color:#e7d6ec;line-height:1.5;margin:0;">Votre soutien finance les bourses, le matériel pédagogique et les formations pratiques de jeunes Haïtiens.</p>
+          </div>
+        </div>
+
+        <!-- Colonne formulaire droite -->
+        <div style="padding:36px 32px;display:flex;flex-direction:column;justify-content:center;">
+          <h2 id="donTitle" style="font-family:'Manrope',Arial,sans-serif;font-size:24px;font-weight:800;color:var(--purple-dark);margin:0 0 8px;">Faire un don à PAAD</h2>
+          <p style="font-size:14px;color:#665a6a;margin:0 0 24px;line-height:1.5;">Paiement 100% sécurisé et traçable en soutien à nos programmes en Haïti.</p>
+
+          <div style="display:flex;gap:10px;margin-bottom:20px;">
+            <button type="button" style="flex:1;padding:12px;border:2px solid var(--purple);background:var(--purple);color:#fff;font-weight:800;font-size:13px;cursor:pointer;">Don ponctuel</button>
+            <button type="button" style="flex:1;padding:12px;border:1px solid #d9cadb;background:#fff;color:var(--purple-dark);font-weight:800;font-size:13px;cursor:pointer;">Don mensuel</button>
+          </div>
+
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:24px;">
+            <button type="button" style="padding:14px;border:1.5px solid #d9cadb;background:#fff;font-weight:800;color:var(--purple-dark);font-size:17px;cursor:pointer;">25 $</button>
+            <button type="button" style="padding:14px;border:2px solid var(--purple);background:#f2e8f4;font-weight:800;color:var(--purple);font-size:17px;cursor:pointer;">50 $</button>
+            <button type="button" style="padding:14px;border:1.5px solid #d9cadb;background:#fff;font-weight:800;color:var(--purple-dark);font-size:17px;cursor:pointer;">100 $</button>
+          </div>
+
+          <a href="./contact.html" style="display:block;text-align:center;padding:16px;background:var(--purple);color:#fff;font-family:'Manrope',Arial,sans-serif;font-weight:800;font-size:14px;text-transform:uppercase;letter-spacing:.04em;text-decoration:none;box-shadow:0 6px 18px rgba(113,16,111,.3);">
+            Valider et continuer →
+          </a>
+          <span style="display:block;text-align:center;font-size:11.5px;color:#857889;margin-top:12px;">Transparence garantie · Reçu délivré</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPTS D'INTERACTIVITÉ -->
+  <script>
+    // 1. GESTION DES MODALES
+    function openModal(id) {
+      const modal = document.getElementById(id);
+      if (modal) {
+        modal.classList.add('active');
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      }
+    }
+    function closeModal(id) {
+      const modal = document.getElementById(id);
+      if (modal) {
+        modal.classList.remove('active');
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    }
+
+    // 2. SOUMISSION DU FORMULAIRE PARTENAIRE
+    function handlePartnerSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('partnerName').value;
+      const org = document.getElementById('partnerOrg').value;
+      const email = document.getElementById('partnerEmail').value;
+      const phone = document.getElementById('partnerPhone').value;
+      const type = document.getElementById('partnerType').value;
+      const domain = document.getElementById('partnerDomain').value;
+      const message = document.getElementById('partnerMessage').value;
+
+      const subject = encodeURIComponent(`Proposition de Partenariat PAAD - ${org} (${name})`);
+      const body = encodeURIComponent(
+        `Bonjour l'équipe PAAD,\n\n` +
+        `Je souhaite initier une démarche de partenariat / financement avec votre organisation.\n\n` +
+        `• Nom : ${name}\n` +
+        `• Organisation : ${org}\n` +
+        `• E-mail : ${email}\n` +
+        `• Téléphone : ${phone || 'Non renseigné'}\n` +
+        `• Type d'entité : ${type}\n` +
+        `• Domaine d'intérêt : ${domain}\n\n` +
+        `Détails de notre démarche :\n${message}\n\n` +
+        `Dans l'attente de votre retour.`
+      );
+
+      window.location.href = `mailto:contact@paad-haiti.org?subject=${subject}&body=${body}`;
+    }
+
+    // 3. JUMPLINKS ET SURBRILLANCE
+    const subnavLinks = document.querySelectorAll('.partner-subnav-link');
+    window.addEventListener('scroll', () => {
+      const fromTop = window.scrollY + 120;
+      subnavLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          const section = document.querySelector(href);
+          if (section) {
+            if (section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
+              subnavLinks.forEach(l => l.classList.remove('active'));
+              link.classList.add('active');
+            }
+          }
+        }
+      });
+    }, { passive: true });
+
+    // 4. SCROLL TO TOP
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+    if (scrollToTopBtn) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+          scrollToTopBtn.style.display = 'flex';
+        } else {
+          scrollToTopBtn.style.display = 'none';
+        }
+      }, { passive: true });
+
+      scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+    // 5. MENU MOBILE & RECHERCHE
+    function toggleMobileAcc(trigger) {
+      const item = trigger.closest('.mobile-acc-item');
+      if (!item) return;
+      const wasOpen = item.classList.contains('is-open');
+      document.querySelectorAll('.mobile-acc-item').forEach(el => el.classList.remove('is-open'));
+      if (!wasOpen) item.classList.add('is-open');
+    }
+
+    function handleSearch() {
+      const q = prompt('Rechercher sur PAAD :');
+      if (q) {
+        alert('Recherche : ' + q + ' - Redirection vers les actualités.');
+        location.href = './actualites.html';
+      }
+    }
+
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIconOpen = document.getElementById('menu-icon-open');
+    const menuIconClose = document.getElementById('menu-icon-close');
+
+    if (menuBtn && mobileNav) {
+      menuBtn.addEventListener('click', () => {
+        const isOpen = mobileNav.style.display === 'flex';
+        mobileNav.style.display = isOpen ? 'none' : 'flex';
+        menuBtn.setAttribute('aria-expanded', String(!isOpen));
+        if (menuIconOpen && menuIconClose) {
+          menuIconOpen.style.display = isOpen ? 'block' : 'none';
+          menuIconClose.style.display = isOpen ? 'none' : 'block';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

@@ -31,6 +31,8 @@ export const pages: Record<string, { title: string; kicker: string; text: string
   'confidentialite': { title: 'Politique de confidentialité', kicker: 'Données personnelles', text: 'La politique détaillée sera publiée avant l’activation des formulaires et outils de suivi.', type: 'reports' },
   'cookies': { title: 'Gestion des cookies', kicker: 'Vie privée', text: 'Ce site n’active actuellement aucun outil de suivi publicitaire. Une politique détaillée sera ajoutée avant tout nouveau traceur.', type: 'legal' },
   'conditions-de-don': { title: 'Conditions de don', kicker: 'Faire un don', text: 'Le paiement en ligne sera proposé après validation des conditions et de la plateforme officielle de collecte.', type: 'legal' },
+  'conditions-utilisation': { title: 'Conditions générales d’utilisation du site web', kicker: 'Cadre juridique', text: 'Conditions générales d’utilisation du site web de PAAD – Passerelle d’Actions pour l’Autonomie et le Développement.', type: 'legal' },
+  'cgu': { title: 'Conditions générales d’utilisation', kicker: 'Cadre juridique', text: 'Conditions générales d’utilisation du site web de PAAD.', type: 'legal' },
 };
 
 for (const action of actions) pages[`actions/${action.slug}`] = { title: action.title, kicker: 'Nos domaines d’intervention', text: action.text, type: 'action' };

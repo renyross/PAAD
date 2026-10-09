@@ -16,8 +16,8 @@
     .about-milestone-actions .hero-donate-btn,
     .hero-donate-btn,
     .hero-donate-btn-green {
-      background: #08773e !important;
-      background-color: #08773e !important;
+      background: var(--purple, #71106f) !important;
+      background-color: var(--purple, #71106f) !important;
       color: #ffffff !important;
       border: none !important;
       border-radius: 0 !important;
@@ -28,7 +28,7 @@
       text-transform: uppercase !important;
       min-height: 52px !important;
       padding: 0 32px !important;
-      box-shadow: 0 4px 18px rgba(8, 119, 62, 0.45) !important;
+      box-shadow: 0 4px 18px rgba(113, 16, 111, 0.45) !important;
       display: inline-flex !important;
       align-items: center !important;
       justify-content: center !important;
@@ -40,9 +40,9 @@
     .about-milestone-actions .hero-donate-btn:hover,
     .hero-donate-btn:hover,
     .hero-donate-btn-green:hover {
-      background: #066132 !important;
-      background-color: #066132 !important;
-      box-shadow: 0 6px 24px rgba(8, 119, 62, 0.65) !important;
+      background: var(--purple-hover, #581056) !important;
+      background-color: var(--purple-hover, #581056) !important;
+      box-shadow: 0 6px 24px rgba(113, 16, 111, 0.65) !important;
       transform: translateY(-2px);
     }
     .hero-action-group {
@@ -77,8 +77,8 @@
       min-height: 52px !important;
     }
     .hero-link-btn:hover {
-      color: #a7f3d0 !important;
-      background: rgba(255, 255, 255, 0.12) !important;
+      color: #f3dcf7 !important;
+      background: rgba(255, 255, 255, 0.15) !important;
     }
     .hero-dropdown-panel {
       display: none;
@@ -87,8 +87,8 @@
       left: 0;
       min-width: 250px;
       background: #ffffff;
-      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.28);
-      border-top: 3px solid #08773e;
+      box-shadow: 0 14px 35px rgba(50, 19, 51, 0.22);
+      border-top: 3px solid var(--purple, #71106f);
       padding: 8px 0;
       z-index: 120;
     }
@@ -113,8 +113,8 @@
       transition: all 0.15s ease !important;
     }
     .hero-dropdown-panel a:hover {
-      background: #f0fdf4 !important;
-      color: #08773e !important;
+      background: #f7f0f8 !important;
+      color: var(--purple, #71106f) !important;
       padding-left: 24px !important;
     }
     .mega-menu { display: none; }
@@ -710,20 +710,20 @@
 
         <!-- DEVENIR PARTENAIRE -->
         <div class="ocean-nav-item has-mega">
-          <a href="./contact.html" class="ocean-nav-anchor">
+          <a href="./devenir-partenaire.html" class="ocean-nav-anchor">
             <span>Devenir partenaire</span>
             <svg class="ocean-caret-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m6 9 6 6 6-6"/></svg>
           </a>
           <div class="ocean-mega-dropdown">
             <div class="wrap ocean-mega-inner">
-              <a href="./contact.html" class="ocean-mega-card">
+              <a href="./devenir-partenaire.html" class="ocean-mega-card">
                 <img src="./public/images/workshop-haiti.webp" alt="Partenariats et coopération en Haïti" class="ocean-mega-card-img">
                 <div class="ocean-mega-card-overlay"></div>
                 <div class="ocean-mega-card-dock">
                   <span class="ocean-mega-circle-btn">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                   </span>
-                  <span class="ocean-mega-card-title">Agir ensemble</span>
+                  <span class="ocean-mega-card-title">Bailleurs & Partenaires</span>
                 </div>
               </a>
               <a href="./qui-sommes-nous.html#valeurs" class="ocean-mega-card">
@@ -886,11 +886,11 @@
         </button>
         <div class="mobile-acc-panel">
           <div class="mobile-acc-cards">
-            <a href="./contact.html" class="mobile-acc-card">
+            <a href="./devenir-partenaire.html" class="mobile-acc-card">
               <img src="./public/images/workshop-haiti.webp" alt="Agir ensemble" class="mobile-acc-card-img">
               <div class="mobile-acc-card-overlay"></div>
               <div class="mobile-acc-card-dock">
-                <span class="mobile-acc-card-title">Agir ensemble</span>
+                <span class="mobile-acc-card-title">Bailleurs & Partenaires</span>
                 <span class="mobile-acc-circle-btn">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                 </span>
@@ -1021,8 +1021,8 @@
             <span>ÉCRIVEZ-NOUS</span>
           </a>
 
-          <!-- FAITES UN DON MAINTENANT (Bouton Vert #08773e) -->
-          <a href="#don" class="hero-donate-btn hero-donate-btn-green" onclick="openModal('donModal'); return false;">
+          <!-- FAITES UN DON MAINTENANT (Bouton Signature Violet #71106f) -->
+          <a href="#don" class="hero-donate-btn" onclick="openModal('donModal'); return false;">
             FAITES UN DON MAINTENANT
           </a>
 
@@ -1247,7 +1247,7 @@
     </section>
 
     <!-- SECTION : NOTRE VISION -->
-    <section class="about-new-vision"><img src="./public/images/community-haiti.webp" alt="Communauté réunie en Haïti"><div></div><div class="wrap"><span>Notre vision</span><h2>Construire des communautés capables de créer elles-mêmes leur avenir.</h2><p>PAAD défend un développement durable fondé sur l’éducation, l’autonomie économique et la participation locale.</p><div class="about-vision-actions"><a href="#don" onclick="openModal('donModal'); return false;" class="about-vision-btn-primary">Faire un don</a><a href="./contact.html" class="about-vision-btn-secondary">Devenir partenaire</a></div></div></section>
+    <section class="about-new-vision"><img src="./public/images/community-haiti.webp" alt="Communauté réunie en Haïti"><div></div><div class="wrap"><span>Notre vision</span><h2>Construire des communautés capables de créer elles-mêmes leur avenir.</h2><p>PAAD défend un développement durable fondé sur l’éducation, l’autonomie économique et la participation locale.</p><div class="about-vision-actions"><a href="#don" onclick="openModal('donModal'); return false;" class="about-vision-btn-primary">Faire un don</a><a href="./devenir-partenaire.html" class="about-vision-btn-secondary">Devenir partenaire</a></div></div></section>
 
     <!-- SECTION : NOS PRIORITÉS -->
     <section class="about-new-priorities"><div class="wrap"><div class="about-new-heading"><span class="about-new-label">Nos priorités</span><h2>Trois leviers pour agir dans la durée.</h2><p>Une action cohérente, de l’apprentissage à l’autonomie économique et communautaire.</p></div><div class="about-new-priority-grid"><article><span>01</span><h3>Éducation</h3><p>Améliorer l’accès à l’apprentissage, soutenir les écoles et développer les compétences des enfants et des jeunes.</p></article><article><span>02</span><h3>Développement économique</h3><p>Renforcer la formation professionnelle, l’employabilité, l’entrepreneuriat et les activités génératrices de revenus.</p></article><article><span>03</span><h3>Développement communautaire</h3><p>Accompagner des initiatives locales qui renforcent durablement les capacités et l’autonomie des communautés.</p></article></div></div></section>
@@ -1599,7 +1599,7 @@
         <h4>Nous soutenir</h4>
         <a href="#don" onclick="openModal('donModal'); return false;">Faire un don</a>
         <a href="#contact" onclick="openModal('contactModal', 'Bénévolat'); return false;">Devenir bénévole</a>
-        <a href="#contact" onclick="openModal('contactModal', 'Partenariat'); return false;">Devenir partenaire</a>
+        <a href="./devenir-partenaire.html">Devenir partenaire</a>
       </div>
       <div class="mockup-footer-col">
         <h4>Ressources</h4>

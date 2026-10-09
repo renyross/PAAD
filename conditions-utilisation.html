@@ -1,0 +1,2240 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conditions générales d’utilisation | PAAD · Haïti</title>
+  <meta name="description" content="Conditions générales d’utilisation (CGU) du site web de PAAD – Passerelle d’Actions pour l’Autonomie et le Développement. Modalités d’accès, propriété intellectuelle, dons, responsabilités et protection des bénéficiaires.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./app/globals.css">
+  <link rel="stylesheet" href="./app/resource-pages.css">
+  <script src="./public/resource-pages.js" defer></script>
+  <style>
+    /* ========================================================
+       STYLES DÉDIÉS : CONDITIONS GÉNÉRALES D'UTILISATION (CGU)
+       Esthétique officielle PAAD : Violet (#71106F, #321333),
+       Blanc (#FFFFFF), Perle (#FAF8FB), Émeraude (#08773E)
+       ======================================================== */
+    :root {
+      --legal-border: #e8dfea;
+      --legal-card-bg: #ffffff;
+      --legal-pill-bg: #f2e8f4;
+      --legal-pill-text: #71106f;
+      --legal-accent-border: #71106f;
+    }
+
+    body.legal-page {
+      background: #faf8fb;
+      color: #230a25;
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    /* 1. HERO LÉGAL MONUMENTAL */
+    .legal-hero {
+      position: relative;
+      min-height: min(680px, 80vh);
+      display: grid;
+      align-items: end;
+      overflow: hidden;
+      background: var(--purple-dark, #321333);
+      color: #ffffff;
+    }
+    .legal-hero-media,
+    .legal-hero-media::after {
+      position: absolute;
+      inset: 0;
+    }
+    .legal-hero-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 38%;
+      opacity: 0.42;
+    }
+    .legal-hero-media::after {
+      content: "";
+      background: linear-gradient(180deg, rgba(35, 10, 37, 0.45) 0%, rgba(35, 10, 37, 0.82) 48%, rgba(35, 10, 37, 0.98) 100%);
+    }
+    .legal-hero-content {
+      position: relative;
+      z-index: 2;
+      padding-top: clamp(140px, 16vw, 210px);
+      padding-bottom: clamp(54px, 7vw, 84px);
+    }
+    .legal-kicker-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      color: #f3dcf7;
+      font-size: 11.5px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      margin-bottom: 20px;
+    }
+    .legal-kicker-dot {
+      width: 8px;
+      height: 8px;
+      background: #c888cf;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .legal-hero h1 {
+      font-family: 'Manrope', Arial, sans-serif;
+      font-weight: 800;
+      font-size: clamp(38px, 5.2vw, 68px);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      max-width: 980px;
+      margin: 0 0 16px;
+    }
+    .legal-hero-subtitle {
+      font-family: 'Manrope', Arial, sans-serif;
+      font-size: clamp(18px, 2vw, 23px);
+      font-weight: 700;
+      color: #ecd7ef;
+      margin: 0 0 24px;
+    }
+    .legal-hero-meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
+    }
+    .legal-meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .legal-meta-item svg {
+      color: #dfb2e4;
+      flex-shrink: 0;
+    }
+    .legal-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .legal-action-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 22px;
+      font-family: 'Manrope', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all 0.2s ease;
+    }
+    .legal-action-btn.primary {
+      background: var(--purple, #71106f);
+      color: #ffffff;
+    }
+    .legal-action-btn.primary:hover {
+      background: var(--purple-hover, #581056);
+      transform: translateY(-2px);
+    }
+    .legal-action-btn.outline {
+      background: rgba(255, 255, 255, 0.08);
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.35);
+    }
+    .legal-action-btn.outline:hover {
+      background: #ffffff;
+      color: var(--purple-dark, #321333);
+      transform: translateY(-2px);
+    }
+
+    /* 2. BARRE D'OUTILS ET RECHERCHE */
+    .legal-toolbar-band {
+      background: #ffffff;
+      border-bottom: 1px solid var(--legal-border);
+      position: sticky;
+      top: 64px;
+      z-index: 40;
+      box-shadow: 0 4px 16px rgba(50, 19, 51, 0.04);
+    }
+    .legal-toolbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 14px 0;
+      flex-wrap: wrap;
+    }
+    .legal-search-box {
+      position: relative;
+      flex: 1;
+      max-width: 460px;
+      min-width: 240px;
+    }
+    .legal-search-box svg {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--purple, #71106f);
+      pointer-events: none;
+    }
+    .legal-search-input {
+      width: 100%;
+      padding: 11px 16px 11px 40px;
+      background: #faf8fb;
+      border: 1px solid #d9cadb;
+      font-family: inherit;
+      font-size: 14px;
+      color: var(--purple-dark, #321333);
+      outline: none;
+      transition: all 0.2s;
+    }
+    .legal-search-input:focus {
+      border-color: var(--purple, #71106f);
+      background: #ffffff;
+      box-shadow: 0 0 0 3px rgba(113, 16, 111, 0.12);
+    }
+    .legal-toolbar-stats {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #635768;
+    }
+    .legal-btn-pill {
+      background: transparent;
+      border: 1px solid #d9cadb;
+      padding: 7px 14px;
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--purple-dark, #321333);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.2s;
+    }
+    .legal-btn-pill:hover {
+      background: #f2e8f4;
+      border-color: var(--purple, #71106f);
+    }
+
+    /* 3. DISPOSITION PRINCIPALE (SOMMAIRE + ARTICLES) */
+    .legal-main-section {
+      padding: clamp(48px, 6vw, 84px) 0 100px;
+    }
+    .legal-grid-layout {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: clamp(36px, 4vw, 64px);
+      align-items: start;
+    }
+
+    /* 4. COLONNE SOMMAIRE FLOTTANT (SIDEBAR) */
+    .legal-sidebar {
+      position: sticky;
+      top: 136px;
+      max-height: calc(100vh - 160px);
+      overflow-y: auto;
+      background: #ffffff;
+      border: 1px solid var(--legal-border);
+      padding: 24px;
+      scrollbar-width: thin;
+      scrollbar-color: #d7c5da transparent;
+    }
+    .legal-sidebar-title {
+      font-family: 'Manrope', Arial, sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--purple-dark, #321333);
+      margin: 0 0 6px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .legal-sidebar-desc {
+      font-size: 12px;
+      color: #7a6e7f;
+      margin: 0 0 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--legal-border);
+    }
+    .legal-toc-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .legal-toc-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 10px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      color: #554a59;
+      border-left: 2px solid transparent;
+      transition: all 0.15s ease;
+      line-height: 1.35;
+    }
+    .legal-toc-num {
+      font-family: 'Manrope', Arial, sans-serif;
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--purple, #71106f);
+      background: var(--legal-pill-bg);
+      padding: 2px 6px;
+      min-width: 26px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    .legal-toc-link:hover {
+      background: #faf4fc;
+      color: var(--purple, #71106f);
+      border-left-color: var(--purple, #71106f);
+    }
+    .legal-toc-link.is-active {
+      background: #f2e8f4;
+      color: var(--purple-dark, #321333);
+      font-weight: 800;
+      border-left-color: var(--purple, #71106f);
+    }
+
+    /* 5. CARTES D'ARTICLES */
+    .legal-articles-container {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      min-width: 0;
+    }
+    .legal-preamble-card {
+      background: linear-gradient(135deg, #ffffff 0%, #faf5fc 100%);
+      border: 1px solid var(--legal-border);
+      border-left: 4px solid var(--purple, #71106f);
+      padding: 32px 36px;
+      margin-bottom: 8px;
+    }
+    .legal-preamble-card h2 {
+      font-family: 'Manrope', Arial, sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--purple-dark, #321333);
+      margin: 0 0 12px;
+    }
+    .legal-preamble-card p {
+      font-size: 15.5px;
+      line-height: 1.7;
+      color: #524756;
+      margin: 0;
+    }
+
+    .legal-article-card {
+      background: var(--legal-card-bg);
+      border: 1px solid var(--legal-border);
+      padding: clamp(28px, 4vw, 42px);
+      position: relative;
+      scroll-margin-top: 140px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .legal-article-card:hover {
+      border-color: #d1b8d6;
+      box-shadow: 0 10px 30px rgba(50, 19, 51, 0.04);
+    }
+    .legal-article-card.highlight-target {
+      border-color: var(--purple, #71106f);
+      box-shadow: 0 0 0 2px var(--purple, #71106f), 0 14px 40px rgba(113, 16, 111, 0.12);
+    }
+    .legal-article-card[hidden] {
+      display: none !important;
+    }
+
+    .legal-article-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      padding-bottom: 18px;
+      margin-bottom: 22px;
+      border-bottom: 1px solid #f0e6f2;
+    }
+    .legal-article-header-left {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .legal-article-badge-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .legal-badge-pill {
+      font-family: 'Manrope', Arial, sans-serif;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--purple, #71106f);
+      background: var(--legal-pill-bg);
+      padding: 4px 10px;
+    }
+    .legal-tag-sub {
+      font-size: 11.5px;
+      color: #7b6f80;
+      font-weight: 600;
+    }
+    .legal-article-title {
+      font-family: 'Manrope', Arial, sans-serif;
+      font-size: clamp(22px, 2.6vw, 29px);
+      font-weight: 800;
+      color: var(--purple-dark, #321333);
+      margin: 4px 0 0;
+      line-height: 1.2;
+    }
+    .legal-copy-link-btn {
+      background: transparent;
+      border: 1px solid #e0d0e3;
+      padding: 6px 10px;
+      color: #6a5e6e;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      flex-shrink: 0;
+      transition: all 0.2s;
+    }
+    .legal-copy-link-btn:hover {
+      background: var(--purple, #71106f);
+      color: #ffffff;
+      border-color: var(--purple, #71106f);
+    }
+
+    .legal-article-body {
+      font-size: 15.5px;
+      line-height: 1.75;
+      color: #433947;
+    }
+    .legal-article-body p {
+      margin: 0 0 16px;
+    }
+    .legal-article-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Listes personnalisées */
+    .legal-checklist {
+      list-style: none;
+      padding: 0;
+      margin: 18px 0 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .legal-checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 6px 0;
+    }
+    .legal-checklist-icon {
+      width: 20px;
+      height: 20px;
+      background: #f2e8f4;
+      color: var(--purple, #71106f);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+    .legal-checklist-icon svg {
+      width: 12px;
+      height: 12px;
+    }
+    .legal-checklist-icon.cross {
+      background: #fde8e8;
+      color: #b91c1c;
+    }
+    .legal-checklist-text {
+      flex: 1;
+      line-height: 1.6;
+    }
+
+    /* Encadrés d'alerte / focus juridique */
+    .legal-callout-box {
+      background: #fcf9fd;
+      border: 1px solid #ebdfee;
+      border-left: 3px solid var(--purple, #71106f);
+      padding: 18px 22px;
+      margin: 20px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .legal-callout-box.green {
+      background: #f4fbf7;
+      border-color: #d1eadb;
+      border-left-color: #08773e;
+    }
+    .legal-callout-box.green .legal-callout-icon {
+      color: #08773e;
+    }
+    .legal-callout-box.warning {
+      background: #fffcf4;
+      border-color: #faeec7;
+      border-left-color: #b45309;
+    }
+    .legal-callout-box.warning .legal-callout-icon {
+      color: #b45309;
+    }
+    .legal-callout-icon {
+      color: var(--purple, #71106f);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .legal-callout-body {
+      font-size: 14px;
+      line-height: 1.65;
+      color: #514455;
+    }
+    .legal-callout-body strong {
+      display: block;
+      color: var(--purple-dark, #321333);
+      margin-bottom: 4px;
+      font-size: 14.5px;
+    }
+
+    /* Grille de domaines PAAD (Article 2) */
+    .legal-domains-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 12px;
+      margin: 20px 0;
+    }
+    .legal-domain-chip {
+      background: #faf4fc;
+      border: 1px solid #ebdcee;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--purple-dark, #321333);
+    }
+    .legal-domain-chip svg {
+      color: var(--purple, #71106f);
+      flex-shrink: 0;
+    }
+
+    /* Encadré contact officiel (Article 18) */
+    .legal-contact-card {
+      background: linear-gradient(135deg, var(--purple-dark, #321333) 0%, #4a154d 100%);
+      color: #ffffff;
+      padding: clamp(30px, 4vw, 44px);
+      margin-top: 16px;
+    }
+    .legal-contact-card h3 {
+      font-family: 'Manrope', Arial, sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      color: #ffffff;
+      margin: 0 0 8px;
+    }
+    .legal-contact-card p {
+      color: #ecd7ef;
+      font-size: 15px;
+      margin: 0 0 24px;
+    }
+    .legal-contact-details {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
+    }
+    .legal-contact-item span {
+      display: block;
+      color: #dfb2e4;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 6px;
+    }
+    .legal-contact-item strong {
+      font-size: 16px;
+      color: #ffffff;
+      font-family: 'Manrope', Arial, sans-serif;
+    }
+    .legal-contact-item a {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+    .legal-contact-item a:hover {
+      color: #f7e6f9;
+    }
+
+    /* 6. BANNIÈRE DE CONCLUSION / ENGAGEMENT */
+    .legal-footer-callout {
+      background: #f2e8f4;
+      border-top: 1px solid var(--legal-border);
+      padding: clamp(54px, 7vw, 84px) 0;
+    }
+    .legal-callout-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .legal-callout-grid h2 {
+      font-family: 'Manrope', Arial, sans-serif;
+      font-size: clamp(28px, 3.5vw, 42px);
+      font-weight: 800;
+      color: var(--purple-dark, #321333);
+      line-height: 1.15;
+      margin: 0 0 14px;
+    }
+    .legal-callout-grid p {
+      font-size: 16px;
+      color: #554a59;
+      margin: 0;
+      line-height: 1.65;
+    }
+    .legal-callout-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    /* 7. MODALE DON & CONTACT */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(20, 5, 22, 0.82);
+      backdrop-filter: blur(6px);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .modal-backdrop.active { display: flex; }
+    .modal-content.farm-modal-content {
+      max-width: 960px;
+      padding: 0;
+      overflow: hidden;
+      background: #fbf9f4;
+      position: relative;
+      border: 1px solid rgba(113, 16, 111, 0.15);
+      box-shadow: 0 30px 70px rgba(15, 30, 20, 0.4);
+    }
+    .modal-close {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+      color: #554e5b;
+      font-size: 24px;
+      z-index: 10;
+    }
+    .modal-close:hover { color: var(--purple, #71106f); }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .legal-grid-layout {
+        grid-template-columns: 260px 1fr;
+        gap: 28px;
+      }
+    }
+    @media (max-width: 860px) {
+      .legal-grid-layout {
+        grid-template-columns: 1fr;
+      }
+      .legal-sidebar {
+        display: none; /* Le sommaire devient un menu déroulant ou la recherche prend le relais */
+      }
+      .legal-callout-grid {
+        grid-template-columns: 1fr;
+      }
+      .legal-toolbar-inner {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .legal-search-box {
+        max-width: none;
+      }
+    }
+    @media (max-width: 600px) {
+      .legal-hero {
+        min-height: 600px;
+      }
+      .legal-article-card {
+        padding: 22px 18px;
+      }
+      .legal-article-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .legal-copy-link-btn {
+        align-self: flex-start;
+      }
+      .legal-domains-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* MODE IMPRESSION */
+    @media print {
+      .ocean-header,
+      .legal-toolbar-band,
+      .legal-sidebar,
+      .legal-hero-actions,
+      .legal-footer-callout,
+      .footer,
+      .scroll-to-top-btn,
+      .legal-copy-link-btn {
+        display: none !important;
+      }
+      body.legal-page {
+        background: #ffffff !important;
+        color: #000000 !important;
+      }
+      .legal-hero {
+        min-height: auto !important;
+        background: none !important;
+        color: #000000 !important;
+        padding: 20px 0 !important;
+      }
+      .legal-hero h1,
+      .legal-hero-subtitle,
+      .legal-article-title {
+        color: #000000 !important;
+      }
+      .legal-article-card {
+        border: 1px solid #ccc !important;
+        page-break-inside: avoid;
+        margin-bottom: 20px;
+        box-shadow: none !important;
+      }
+      .legal-main-section {
+        padding: 0 !important;
+      }
+      .legal-grid-layout {
+        display: block !important;
+      }
+    }
+  </style>
+</head>
+<body class="legal-page" data-page="cgu">
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <!-- HEADER (STYLE THE OCEAN CLEANUP / PAAD) -->
+  <header class="ocean-header site-header">
+    <!-- NIVEAU 1 : Barre Blanche Supérieure -->
+    <div class="ocean-top-bar">
+      <!-- Bloc Logo Cyan Gauche -->
+      <a class="ocean-logo-badge" href="./index.html" aria-label="PAAD, accueil">
+        <img src="./public/images/paad-emblem.webp" alt="Logo PAAD" class="ocean-logo-emblem" width="36" height="36">
+        <span class="ocean-logo-text">PAAD</span>
+      </a>
+
+      <!-- Navigation Principale Majeure -->
+      <nav class="ocean-nav-strip" aria-label="Navigation principale">
+        <!-- À PROPOS -->
+        <div class="ocean-nav-item has-mega">
+          <a href="./qui-sommes-nous.html" class="ocean-nav-anchor">
+            <span>À propos</span>
+            <svg class="ocean-caret-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m6 9 6 6 6-6"/></svg>
+          </a>
+          <div class="ocean-mega-dropdown">
+            <div class="wrap ocean-mega-inner">
+              <a href="./qui-sommes-nous.html" class="ocean-mega-card">
+                <img src="./public/images/community-haiti.webp" alt="Notre mission en Haïti" class="ocean-mega-card-img">
+                <div class="ocean-mega-card-overlay"></div>
+                <div class="ocean-mega-card-dock">
+                  <span class="ocean-mega-circle-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </span>
+                  <span class="ocean-mega-card-title">Notre mission</span>
+                </div>
+              </a>
+              <a href="./qui-sommes-nous.html#equipe" class="ocean-mega-card">
+                <img src="./public/images/haiti-cinematic-hero.jpg" alt="Notre équipe et communauté" class="ocean-mega-card-img">
+                <div class="ocean-mega-card-overlay"></div>
+                <div class="ocean-mega-card-dock">
+                  <span class="ocean-mega-circle-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </span>
+                  <span class="ocean-mega-card-title">Notre équipe</span>
+                </div>
+              </a>
+              <div class="ocean-mega-col-side">
+                <div class="ocean-mega-side-header">
+                  <span class="ocean-mega-side-title">DÉCOUVRIR PAAD</span>
+                </div>
+                <div class="ocean-mega-side-links">
+                  <a href="./qui-sommes-nous.html" class="ocean-mega-side-link">Qui sommes-nous</a>
+                  <a href="./qui-sommes-nous.html#origines" class="ocean-mega-side-link">Nos origines &amp; histoire</a>
+                  <a href="./qui-sommes-nous.html#valeurs" class="ocean-mega-side-link">Nos valeurs</a>
+                  <a href="./faq.html" class="ocean-mega-side-link">Foire aux questions (FAQ)</a>
+                  <a href="./contact.html" class="ocean-mega-side-link">Nous contacter</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROGRAMMES -->
+        <div class="ocean-nav-item has-mega">
+          <a href="./index.html#domaines" class="ocean-nav-anchor">
+            <span>Programmes</span>
+            <svg class="ocean-caret-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m6 9 6 6 6-6"/></svg>
+          </a>
+          <div class="ocean-mega-dropdown">
+            <div class="wrap ocean-mega-inner">
+              <a href="./index.html#domaines" class="ocean-mega-card">
+                <img src="./public/images/haiti-student-classroom.jpg" alt="Bourses & Écoles en Haïti" class="ocean-mega-card-img">
+                <div class="ocean-mega-card-overlay"></div>
+                <div class="ocean-mega-card-dock">
+                  <span class="ocean-mega-circle-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </span>
+                  <span class="ocean-mega-card-title">Bourses &amp; Écoles</span>
+                </div>
+              </a>
+              <a href="./index.html#domaines" class="ocean-mega-card">
+                <img src="./public/images/haiti-tech-workshop.jpg" alt="Formations professionnelles en Haïti" class="ocean-mega-card-img">
+                <div class="ocean-mega-card-overlay"></div>
+                <div class="ocean-mega-card-dock">
+                  <span class="ocean-mega-circle-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </span>
+                  <span class="ocean-mega-card-title">Formations &amp; Autonomie</span>
+                </div>
+              </a>
+              <div class="ocean-mega-col-side">
+                <div class="ocean-mega-side-header">
+                  <span class="ocean-mega-side-title">DOMAINES PRIORITAIRES</span>
+                </div>
+                <div class="ocean-mega-side-links">
+                  <a href="./index.html#domaines" class="ocean-mega-side-link">Éducation &amp; Bourses d’excellence</a>
+                  <a href="./index.html#domaines" class="ocean-mega-side-link">Digital Lab &amp; Technologies</a>
+                  <a href="./index.html#domaines" class="ocean-mega-side-link">Formations professionnelles certifiantes</a>
+                  <a href="./index.html#domaines" class="ocean-mega-side-link">Entrepreneuriat local &amp; Artisanat</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DEVENIR PARTENAIRE -->
+        <div class="ocean-nav-item has-mega">
+          <a href="./devenir-partenaire.html" class="ocean-nav-anchor">
+            <span>Devenir partenaire</span>
+            <svg class="ocean-caret-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m6 9 6 6 6-6"/></svg>
+          </a>
+          <div class="ocean-mega-dropdown">
+            <div class="wrap ocean-mega-inner">
+              <a href="./devenir-partenaire.html" class="ocean-mega-card">
+                <img src="./public/images/workshop-haiti.webp" alt="Partenariats institutionnels" class="ocean-mega-card-img">
+                <div class="ocean-mega-card-overlay"></div>
+                <div class="ocean-mega-card-dock">
+                  <span class="ocean-mega-circle-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </span>
+                  <span class="ocean-mega-card-title">Bailleurs & Partenaires</span>
+                </div>
+              </a>
+              <a href="./qui-sommes-nous.html#valeurs" class="ocean-mega-card">
+                <img src="./public/images/community-haiti.webp" alt="Nos partenaires de terrain" class="ocean-mega-card-img">
+                <div class="ocean-mega-card-overlay"></div>
+                <div class="ocean-mega-card-dock">
+                  <span class="ocean-mega-circle-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </span>
+                  <span class="ocean-mega-card-title">Nos partenaires</span>
+                </div>
+              </a>
+              <div class="ocean-mega-col-side">
+                <div class="ocean-mega-side-header">
+                  <span class="ocean-mega-side-title">COOPÉRATION &amp; ALLIANCES</span>
+                </div>
+                <div class="ocean-mega-side-links">
+                  <a href="./contact.html" class="ocean-mega-side-link">Proposer un partenariat</a>
+                  <a href="./qui-sommes-nous.html#valeurs" class="ocean-mega-side-link">Partenaires de terrain</a>
+                  <a href="./contact.html#formulaire" class="ocean-mega-side-link">Devenir bénévole</a>
+                  <a href="./contact.html" class="ocean-mega-side-link">Mécénat d’entreprise</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Utilitaires Droite (Recherche, Langue, Menu Burger) -->
+      <div class="ocean-top-right">
+        <button class="ocean-top-search-btn" aria-label="Recherche sur le site" onclick="handleSearch()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        </button>
+
+        <div class="ocean-lang-switch">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20M2 12h20"/></svg>
+          <select aria-label="Choisir la langue">
+            <option value="fr" selected>FR</option>
+            <option value="en">EN</option>
+            <option value="es">ES</option>
+          </select>
+        </div>
+
+        <button class="ocean-mobile-burger" id="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false">
+          <svg id="menu-icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+          <svg id="menu-icon-close" style="display:none;" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- NAVIGATION MOBILE AVEC ACCORDÉONS, CARTES ET LIENS FLÉCHÉS -->
+    <nav class="ocean-mobile-drawer mobile-nav" id="mobile-nav" aria-label="Navigation mobile" style="display:none;">
+      <!-- 1. ACCORDÉON : NOTRE APPROCHE -->
+      <div class="mobile-acc-item is-open" data-acc="about">
+        <button type="button" class="mobile-acc-trigger" onclick="toggleMobileAcc(this)">
+          <span>À propos de nous</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="mobile-acc-panel">
+          <div class="mobile-acc-cards">
+            <a href="./qui-sommes-nous.html" class="mobile-acc-card">
+              <img src="./public/images/community-haiti.webp" alt="Notre mission" class="mobile-acc-card-img">
+              <div class="mobile-acc-card-overlay"></div>
+              <div class="mobile-acc-card-dock">
+                <span class="mobile-acc-card-title">Notre mission</span>
+                <span class="mobile-acc-circle-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </span>
+              </div>
+            </a>
+            <a href="./qui-sommes-nous.html#equipe" class="mobile-acc-card">
+              <img src="./public/images/haiti-cinematic-hero.jpg" alt="Notre équipe" class="mobile-acc-card-img">
+              <div class="mobile-acc-card-overlay"></div>
+              <div class="mobile-acc-card-dock">
+                <span class="mobile-acc-card-title">Notre équipe</span>
+                <span class="mobile-acc-circle-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </span>
+              </div>
+            </a>
+          </div>
+
+          <div class="mobile-acc-section-header">
+            <span class="mobile-acc-section-title">NOTRE DÉMARCHE</span>
+          </div>
+
+          <div class="mobile-acc-links">
+            <a href="./qui-sommes-nous.html" class="mobile-acc-link">
+              <span>Qui sommes-nous</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+            <a href="./qui-sommes-nous.html#origines" class="mobile-acc-link">
+              <span>Nos origines &amp; histoire</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+            <a href="./qui-sommes-nous.html#valeurs" class="mobile-acc-link">
+              <span>Nos valeurs</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+            <a href="./faq.html" class="mobile-acc-link">
+              <span>Foire aux questions (FAQ)</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+            <a href="./contact.html" class="mobile-acc-link">
+              <span>Nous contacter</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. ACCORDÉON : PROGRAMMES -->
+      <div class="mobile-acc-item" data-acc="programmes">
+        <button type="button" class="mobile-acc-trigger" onclick="toggleMobileAcc(this)">
+          <span>Programmes</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="mobile-acc-panel">
+          <div class="mobile-acc-cards">
+            <a href="./index.html#domaines" class="mobile-acc-card">
+              <img src="./public/images/haiti-student-classroom.jpg" alt="Bourses & Écoles" class="mobile-acc-card-img">
+              <div class="mobile-acc-card-overlay"></div>
+              <div class="mobile-acc-card-dock">
+                <span class="mobile-acc-card-title">Bourses &amp; Écoles</span>
+                <span class="mobile-acc-circle-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </span>
+              </div>
+            </a>
+            <a href="./index.html#domaines" class="mobile-acc-card">
+              <img src="./public/images/haiti-tech-workshop.jpg" alt="Formations techniques" class="mobile-acc-card-img">
+              <div class="mobile-acc-card-overlay"></div>
+              <div class="mobile-acc-card-dock">
+                <span class="mobile-acc-card-title">Formations &amp; Autonomie</span>
+                <span class="mobile-acc-circle-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </span>
+              </div>
+            </a>
+          </div>
+
+          <div class="mobile-acc-section-header">
+            <span class="mobile-acc-section-title">DOMAINES D'INTERVENTION</span>
+          </div>
+
+          <div class="mobile-acc-links">
+            <a href="./index.html#domaines" class="mobile-acc-link">
+              <span>Éducation &amp; Bourses d’excellence</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+            <a href="./index.html#domaines" class="mobile-acc-link">
+              <span>Digital Lab &amp; Technologies</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+            <a href="./index.html#domaines" class="mobile-acc-link">
+              <span>Formations professionnelles certifiantes</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+            <a href="./index.html#domaines" class="mobile-acc-link">
+              <span>Entrepreneuriat local &amp; Artisanat</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. ACCORDÉON : DEVENIR PARTENAIRE -->
+      <div class="mobile-acc-item" data-acc="partenaire">
+        <button type="button" class="mobile-acc-trigger" onclick="toggleMobileAcc(this)">
+          <span>Devenir partenaire</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="mobile-acc-panel">
+          <div class="mobile-acc-cards">
+            <a href="./devenir-partenaire.html" class="mobile-acc-card">
+              <img src="./public/images/workshop-haiti.webp" alt="Agir ensemble" class="mobile-acc-card-img">
+              <div class="mobile-acc-card-overlay"></div>
+              <div class="mobile-acc-card-dock">
+                <span class="mobile-acc-card-title">Bailleurs & Partenaires</span>
+                <span class="mobile-acc-circle-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </span>
+              </div>
+            </a>
+            <a href="./qui-sommes-nous.html#valeurs" class="mobile-acc-card">
+              <img src="./public/images/community-haiti.webp" alt="Nos partenaires" class="mobile-acc-card-img">
+              <div class="mobile-acc-card-overlay"></div>
+              <div class="mobile-acc-card-dock">
+                <span class="mobile-acc-card-title">Nos partenaires</span>
+                <span class="mobile-acc-circle-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </span>
+              </div>
+            </a>
+          </div>
+
+          <div class="mobile-acc-section-header">
+            <span class="mobile-acc-section-title">COOPÉRATION &amp; ALLIANCES</span>
+          </div>
+
+          <div class="mobile-acc-links">
+            <a href="./contact.html" class="mobile-acc-link">
+              <span>Proposer un partenariat</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+            <a href="./qui-sommes-nous.html#valeurs" class="mobile-acc-link">
+              <span>Partenaires de terrain</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+            <a href="./contact.html#formulaire" class="mobile-acc-link">
+              <span>Devenir bénévole</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+            <a href="./contact.html" class="mobile-acc-link">
+              <span>Mécénat d’entreprise</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. ACCORDÉON : PRESSE & ACTUALITÉS -->
+      <div class="mobile-acc-item" data-acc="actualites">
+        <button type="button" class="mobile-acc-trigger" onclick="toggleMobileAcc(this)">
+          <span>Presse &amp; Actualités</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="mobile-acc-panel">
+          <div class="mobile-acc-cards">
+            <a href="./actualites.html" class="mobile-acc-card">
+              <img src="./public/images/haiti-cinematic-hero.jpg" alt="Dernières actualités" class="mobile-acc-card-img">
+              <div class="mobile-acc-card-overlay"></div>
+              <div class="mobile-acc-card-dock">
+                <span class="mobile-acc-card-title">Dernières actualités</span>
+                <span class="mobile-acc-circle-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </span>
+              </div>
+            </a>
+            <a href="./actualites.html" class="mobile-acc-card">
+              <img src="./public/images/community-haiti.webp" alt="Communiqués & Presse" class="mobile-acc-card-img">
+              <div class="mobile-acc-card-overlay"></div>
+              <div class="mobile-acc-card-dock">
+                <span class="mobile-acc-card-title">Communiqués &amp; Presse</span>
+                <span class="mobile-acc-circle-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </span>
+              </div>
+            </a>
+          </div>
+
+          <div class="mobile-acc-section-header">
+            <span class="mobile-acc-section-title">ACTUALITÉS &amp; MÉDIAS</span>
+          </div>
+
+          <div class="mobile-acc-links">
+            <a href="./actualites.html" class="mobile-acc-link">
+              <span>Toutes les actualités</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+            <a href="./actualites.html" class="mobile-acc-link">
+              <span>Communiqués de presse</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+            <a href="./actualites.html" class="mobile-acc-link">
+              <span>Rapports &amp; publications</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+            <a href="./contact.html" class="mobile-acc-link">
+              <span>Contact presse</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bouton Rectangulaire Signature FAITES UN DON MAINTENANT -->
+      <a href="#don" class="ocean-drawer-donate-btn" onclick="openModal('donModal'); return false;">
+        FAITES UN DON MAINTENANT
+      </a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- 1. HERO LÉGAL MONUMENTAL -->
+    <section class="legal-hero" id="top">
+      <div class="legal-hero-media">
+        <img src="./public/images/haiti-cinematic-hero.jpg" alt="PAAD Haïti - Jeunesse et engagement communautaire">
+      </div>
+      <div class="wrap legal-hero-content">
+        <div class="legal-kicker-badge">
+          <span class="legal-kicker-dot"></span>
+          Cadre juridique &amp; Transparence institutionnelle
+        </div>
+        <h1>Conditions générales d’utilisation du site web</h1>
+        <p class="legal-hero-subtitle">PAAD – Passerelle d’Actions pour l’Autonomie et le Développement</p>
+
+        <div class="legal-hero-meta-row">
+          <div class="legal-meta-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 21h18M3 10h18M5 10v11M19 10v11M9 10v11M15 10v11M12 2 2 7h20L12 2z"/></svg>
+            <span>Organisation à but non lucratif</span>
+          </div>
+          <div class="legal-meta-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20M2 12h20"/></svg>
+            <span>Droit applicable : République d’Haïti</span>
+          </div>
+          <div class="legal-meta-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+            <span>Dernière mise à jour : 7 octobre 2026</span>
+          </div>
+          <div class="legal-meta-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/></svg>
+            <span>18 articles complets</span>
+          </div>
+        </div>
+
+        <div class="legal-hero-actions">
+          <a href="#article-1" class="legal-action-btn primary">
+            <span>Lire les conditions</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m6 9 6 6 6-6"/></svg>
+          </a>
+          <button type="button" class="legal-action-btn outline" onclick="window.print()">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect width="12" height="8" x="6" y="14"/></svg>
+            <span>Imprimer / PDF</span>
+          </button>
+          <a href="./contact.html" class="legal-action-btn outline">
+            <span>Poser une question</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. BARRE D'OUTILS ET RECHERCHE INTERACTIVE -->
+    <div class="legal-toolbar-band">
+      <div class="wrap legal-toolbar-inner">
+        <div class="legal-search-box">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <input type="text" id="legalSearchInput" class="legal-search-input" placeholder="Rechercher un terme (ex: dons, propriété, mineurs, responsabilité)..." aria-label="Rechercher dans les conditions">
+        </div>
+        <div class="legal-toolbar-stats">
+          <span id="articleCountBadge">18 articles applicables</span>
+          <button type="button" class="legal-btn-pill" id="resetSearchBtn" style="display:none;" onclick="resetLegalSearch()">
+            ✕ Réinitialiser
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. SECTION PRINCIPALE (SOMMAIRE + 18 ARTICLES) -->
+    <section class="legal-main-section">
+      <div class="wrap legal-grid-layout">
+        
+        <!-- SOMMAIRE LATÉRAL (STICKY SIDEBAR) -->
+        <aside class="legal-sidebar" aria-label="Sommaire des articles">
+          <div class="legal-sidebar-title">
+            <span>Sommaire</span>
+            <span style="font-size:12px;color:var(--purple);font-weight:800;">18 Art.</span>
+          </div>
+          <p class="legal-sidebar-desc">Cliquez sur un article pour y accéder directement :</p>
+
+          <nav>
+            <ul class="legal-toc-list" id="legalTocList">
+              <li><a href="#article-1" class="legal-toc-link"><span class="legal-toc-num">01</span><span>Acceptation des conditions</span></a></li>
+              <li><a href="#article-2" class="legal-toc-link"><span class="legal-toc-num">02</span><span>Présentation de PAAD</span></a></li>
+              <li><a href="#article-3" class="legal-toc-link"><span class="legal-toc-num">03</span><span>Propriété intellectuelle</span></a></li>
+              <li><a href="#article-4" class="legal-toc-link"><span class="legal-toc-num">04</span><span>Utilisation du site</span></a></li>
+              <li><a href="#article-5" class="legal-toc-link"><span class="legal-toc-num">05</span><span>Exactitude des informations</span></a></li>
+              <li><a href="#article-6" class="legal-toc-link"><span class="legal-toc-num">06</span><span>Dons et contributions</span></a></li>
+              <li><a href="#article-7" class="legal-toc-link"><span class="legal-toc-num">07</span><span>Paiements en ligne</span></a></li>
+              <li><a href="#article-8" class="legal-toc-link"><span class="legal-toc-num">08</span><span>Contributions utilisateurs</span></a></li>
+              <li><a href="#article-9" class="legal-toc-link"><span class="legal-toc-num">09</span><span>Protection des enfants</span></a></li>
+              <li><a href="#article-10" class="legal-toc-link"><span class="legal-toc-num">10</span><span>Liens externes</span></a></li>
+              <li><a href="#article-11" class="legal-toc-link"><span class="legal-toc-num">11</span><span>Liens vers le site de PAAD</span></a></li>
+              <li><a href="#article-12" class="legal-toc-link"><span class="legal-toc-num">12</span><span>Disponibilité du site</span></a></li>
+              <li><a href="#article-13" class="legal-toc-link"><span class="legal-toc-num">13</span><span>Limitation de responsabilité</span></a></li>
+              <li><a href="#article-14" class="legal-toc-link"><span class="legal-toc-num">14</span><span>Respect des valeurs</span></a></li>
+              <li><a href="#article-15" class="legal-toc-link"><span class="legal-toc-num">15</span><span>Données personnelles</span></a></li>
+              <li><a href="#article-16" class="legal-toc-link"><span class="legal-toc-num">16</span><span>Modifications du site</span></a></li>
+              <li><a href="#article-17" class="legal-toc-link"><span class="legal-toc-num">17</span><span>Droit applicable</span></a></li>
+              <li><a href="#article-18" class="legal-toc-link"><span class="legal-toc-num">18</span><span>Contact &amp; Assistance</span></a></li>
+            </ul>
+          </nav>
+        </aside>
+
+        <!-- CORPS DU TEXTE : LES 18 ARTICLES -->
+        <div class="legal-articles-container" id="articlesContainer">
+          
+          <!-- Préambule d'accueil -->
+          <div class="legal-preamble-card">
+            <h2>Préambule &amp; Portée juridique</h2>
+            <p>
+              Les présentes Conditions générales d’utilisation régissent l’accès, la navigation et l’utilisation de la plateforme numérique officielle de <strong>PAAD – Passerelle d’Actions pour l’Autonomie et le Développement</strong>. Elles s’appliquent à l’ensemble des visiteurs, donateurs, partenaires, bénévoles et bénéficiaires accédant à nos services en ligne.
+            </p>
+          </div>
+
+          <!-- ARTICLE 1 -->
+          <article class="legal-article-card" id="article-1" data-article-num="1">
+            <header class="legal-article-header">
+              <div class="legal-article-header-left">
+                <div class="legal-article-badge-row">
+                  <span class="legal-badge-pill">Article 01</span>
+                  <span class="legal-tag-sub">Cadre contractuel</span>
+                </div>
+                <h2 class="legal-article-title">Acceptation des conditions</h2>
+              </div>
+              <button type="button" class="legal-copy-link-btn" onclick="copyArticleLink('article-1', this)" title="Copier le lien direct vers cet article">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <span>Lien direct</span>
+              </button>
+            </header>
+            <div class="legal-article-body">
+              <p>
+                En accédant au site internet de <strong>PAAD – Passerelle d’Actions pour l’Autonomie et le Développement</strong>, vous acceptez expressément et sans réserve les présentes Conditions générales d’utilisation.
+              </p>
+              <div class="legal-callout-box warning">
+                <div class="legal-callout-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+                </div>
+                <div class="legal-callout-body">
+                  <strong>Non-acceptation des conditions</strong>
+                  Si vous n’acceptez pas tout ou partie de ces conditions, nous vous invitons à cesser immédiatement la navigation et l’utilisation du site.
+                </div>
+              </div>
+              <p>
+                PAAD se réserve le droit de modifier ou de mettre à jour les présentes conditions à tout moment afin de tenir compte de l’évolution de ses activités, de ses programmes de terrain, de ses services numériques ou des impératifs du cadre juridique applicable en République d’Haïti et à l’international.
+              </p>
+            </div>
+          </article>
+
+          <!-- ARTICLE 2 -->
+          <article class="legal-article-card" id="article-2" data-article-num="2">
+            <header class="legal-article-header">
+              <div class="legal-article-header-left">
+                <div class="legal-article-badge-row">
+                  <span class="legal-badge-pill">Article 02</span>
+                  <span class="legal-tag-sub">Mission institutionnelle</span>
+                </div>
+                <h2 class="legal-article-title">Présentation de PAAD</h2>
+              </div>
+              <button type="button" class="legal-copy-link-btn" onclick="copyArticleLink('article-2', this)">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <span>Lien direct</span>
+              </button>
+            </header>
+            <div class="legal-article-body">
+              <p>
+                <strong>PAAD</strong> est une organisation laïque, indépendante et à but non lucratif, engagée dans la construction de solutions concrètes et durables aux côtés des communautés locales. L’organisation œuvre notamment dans les domaines suivants :
+              </p>
+              
+              <div class="legal-domains-grid">
+                <div class="legal-domain-chip">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10M6 10h10"/></svg>
+                  <span>L’éducation</span>
+                </div>
+                <div class="legal-domain-chip">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8M16 17H8M10 9H8"/></svg>
+                  <span>La formation professionnelle</span>
+                </div>
+                <div class="legal-domain-chip">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                  <span>L’autonomisation économique</span>
+                </div>
+                <div class="legal-domain-chip">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                  <span>Le développement communautaire</span>
+                </div>
+                <div class="legal-domain-chip">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                  <span>L’accompagnement des jeunes</span>
+                </div>
+                <div class="legal-domain-chip">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <span>Le développement des compétences</span>
+                </div>
+                <div class="legal-domain-chip">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                  <span>Création d’opportunités durables</span>
+                </div>
+              </div>
+
+              <p>
+                Le site internet de PAAD a pour objectif d’informer le public, les bénéficiaires, la diaspora et les partenaires sur sa mission, ses programmes d’action, ses projets de terrain en Haïti, ses résultats mesurés et les différentes manières de s’engager ou de soutenir financièrement nos initiatives.
+              </p>
+            </div>
+          </article>
+
+          <!-- ARTICLE 3 -->
+          <article class="legal-article-card" id="article-3" data-article-num="3">
+            <header class="legal-article-header">
+              <div class="legal-article-header-left">
+                <div class="legal-article-badge-row">
+                  <span class="legal-badge-pill">Article 03</span>
+                  <span class="legal-tag-sub">Droits d'auteur &amp; Marques</span>
+                </div>
+                <h2 class="legal-article-title">Propriété intellectuelle</h2>
+              </div>
+              <button type="button" class="legal-copy-link-btn" onclick="copyArticleLink('article-3', this)">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <span>Lien direct</span>
+              </button>
+            </header>
+            <div class="legal-article-body">
+              <p>
+                Sauf indication expresse contraire, l’ensemble des contenus présents sur la plateforme officielle de PAAD est protégé par les lois régissant la propriété intellectuelle et le droit d’auteur. Cela comprend notamment :
+              </p>
+              
+              <ul class="legal-checklist">
+                <li>
+                  <span class="legal-checklist-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                  <span class="legal-checklist-text">Les textes, récits de vie, rapports d’impact, études de terrain et documentations pédagogiques ;</span>
+                </li>
+                <li>
+                  <span class="legal-checklist-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                  <span class="legal-checklist-text">Les photographies panoramiques, portraits, vidéos cinématiques et témoignages audiovisuels ;</span>
+                </li>
+                <li>
+                  <span class="legal-checklist-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                  <span class="legal-checklist-text">L’emblème PAAD, logos, chartes graphiques, illustrations et bases de données constituées.</span>
+                </li>
+              </ul>
+
+              <div class="legal-callout-box warning">
+                <div class="legal-callout-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+                </div>
+                <div class="legal-callout-body">
+                  <strong>Interdiction d’exploitation commerciale</strong>
+                  Toute reproduction, modification, distribution, rediffusion, publication ou utilisation commerciale de ces éléments sans autorisation écrite préalable et expresse de PAAD est strictement interdite.
+                </div>
+              </div>
+
+              <p>
+                Les contenus peuvent toutefois être consultés, téléchargés ou imprimés à des fins strictement personnelles, éducatives, de recherche ou non commerciales, sous réserve expresse de mentionner la source : <em>« PAAD – Passerelle d’Actions pour l’Autonomie et le Développement »</em> et de préserver l’intégrité des droits moraux des auteurs.
+              </p>
+            </div>
+          </article>
+
+          <!-- ARTICLE 4 -->
+          <article class="legal-article-card" id="article-4" data-article-num="4">
+            <header class="legal-article-header">
+              <div class="legal-article-header-left">
+                <div class="legal-article-badge-row">
+                  <span class="legal-badge-pill">Article 04</span>
+                  <span class="legal-tag-sub">Obligations des usagers</span>
+                </div>
+                <h2 class="legal-article-title">Utilisation du site</h2>
+              </div>
+              <button type="button" class="legal-copy-link-btn" onclick="copyArticleLink('article-4', this)">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <span>Lien direct</span>
+              </button>
+            </header>
+            <div class="legal-article-body">
+              <p>
+                L’utilisateur s’engage à utiliser les services et informations mis à disposition sur le site de manière légale, responsable, bienveillante et respectueuse des tiers.
+              </p>
+              <p>Il est formellement interdit :</p>
+              
+              <ul class="legal-checklist">
+                <li>
+                  <span class="legal-checklist-icon cross"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+                  <span class="legal-checklist-text">D’utiliser le site ou ses formulaires à des fins frauduleuses, illicites ou trompeuses ;</span>
+                </li>
+                <li>
+                  <span class="legal-checklist-icon cross"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+                  <span class="legal-checklist-text">De tenter de pénétrer, de saturer ou d’accéder sans autorisation aux systèmes informatiques, serveurs ou bases de données de PAAD ;</span>
+                </li>
+                <li>
+                  <span class="legal-checklist-icon cross"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+                  <span class="legal-checklist-text">D’introduire intentionnellement des virus, vers, chevaux de Troie ou tout autre code malveillant ;</span>
+                </li>
+                <li>
+                  <span class="legal-checklist-icon cross"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+                  <span class="legal-checklist-text">De diffuser des propos diffamatoires, discriminatoires, injurieux ou contraires à l’ordre public ;</span>
+                </li>
+                <li>
+                  <span class="legal-checklist-icon cross"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+                  <span class="legal-checklist-text">De porter atteinte, de quelque manière que ce soit, à l’image, à l’intégrité morale ou aux opérations de secours et d’éducation de PAAD.</span>
+                </li>
+              </ul>
+
+              <p>
+                PAAD se réserve le droit souverain de limiter, suspendre ou révoquer l’accès à tout ou partie de la plateforme en cas d’agissements illicites ou abusifs, sans préjudice de poursuites civiles ou pénales.
+              </p>
+            </div>
+          </article>
+
+          <!-- ARTICLE 5 -->
+          <article class="legal-article-card" id="article-5" data-article-num="5">
+            <header class="legal-article-header">
+              <div class="legal-article-header-left">
+                <div class="legal-article-badge-row">
+                  <span class="legal-badge-pill">Article 05</span>
+                  <span class="legal-tag-sub">Transparence de l'information</span>
+                </div>
+                <h2 class="legal-article-title">Exactitude des informations</h2>
+              </div>
+              <button type="button" class="legal-copy-link-btn" onclick="copyArticleLink('article-5', this)">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <span>Lien direct</span>
+              </button>
+            </header>
+            <div class="legal-article-body">
+              <p>
+                PAAD déploie les meilleurs efforts pour fournir des informations rigoureusement vérifiées, fiables, datées et régulièrement actualisées concernant la vie de l’organisation, ses chantiers d’intervention et l’avancée de ses programmes.
+              </p>
+              <p>
+                Toutefois, en raison de l’évolution rapide des réalités opérationnelles sur le terrain en Haïti, certaines données peuvent faire l’objet d’ajustements, être temporairement incomplètes ou indisponibles. PAAD ne saurait donc garantir une exhaustivité absolue en temps réel de tous les contenus publiés.
+              </p>
+            </div>
+          </article>
+
+          <!-- ARTICLE 6 -->
+          <article class="legal-article-card" id="article-6" data-article-num="6">
+            <header class="legal-article-header">
+              <div class="legal-article-header-left">
+                <div class="legal-article-badge-row">
+                  <span class="legal-badge-pill">Article 06</span>
+                  <span class="legal-tag-sub">Financement associatif</span>
+                </div>
+                <h2 class="legal-article-title">Dons et contributions</h2>
+              </div>
+              <button type="button" class="legal-copy-link-btn" onclick="copyArticleLink('article-6', this)">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <span>Lien direct</span>
+              </button>
+            </header>
+            <div class="legal-article-body">
+              <p>
+                La plateforme PAAD offre aux citoyens, donateurs individuels, entreprises mécènes et institutions partenaires la possibilité de soutenir directement nos missions par des dons ponctuels, réguliers ou des campagnes de financement participatif.
+              </p>
+              
+              <div class="legal-callout-box green">
+                <div class="legal-callout-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                </div>
+                <div class="legal-callout-body">
+                  <strong>Affectation &amp; Traçabilité des fonds collectés</strong>
+                  L’ensemble des sommes réunies est alloué exclusivement au financement des programmes éducatifs, techniques et communautaires, dans le strict respect de la charte de transparence de PAAD.
+                </div>
+              </div>
+
+              <p>
+                PAAD s’engage à promouvoir une gouvernance financière intègre, transparente et documentée. Des politiques spécifiques régissant les modalités de reçus fiscaux, de suivi d’affectation et de traitement des réclamations sont applicables selon les pays de résidence des contributeurs.
+              </p>
+            </div>
+          </article>
+
+          <!-- ARTICLE 7 -->
+          <article class="legal-article-card" id="article-7" data-article-num="7">
+            <header class="legal-article-header">
+              <div class="legal-article-header-left">
+                <div class="legal-article-badge-row">
+                  <span class="legal-badge-pill">Article 07</span>
+                  <span class="legal-tag-sub">Sécurité des transactions</span>
+                </div>
+                <h2 class="legal-article-title">Paiements en ligne</h2>
+              </div>
+              <button type="button" class="legal-copy-link-btn" onclick="copyArticleLink('article-7', this)">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <span>Lien direct</span>
+              </button>
+            </header>
+            <div class="legal-article-body">
+              <p>
+                Afin de garantir le plus haut niveau de protection contre la fraude, les dons monétaires sont acheminés par l’intermédiaire de passerelles de paiement partenaires certifiées (notamment Zeffy, PayPal, Stripe ou réseaux bancaires agréés).
+              </p>
+              <p>
+                <strong>PAAD ne conserve à aucun moment sur ses serveurs les numéros intégraux de cartes bancaires ou données d’authentification sensibles.</strong> Les transactions sont chiffrées selon les protocoles sécurisés TLS / SSL. Les donateurs sont invités à consulter les conditions générales propres à chaque intermédiaire financier lors de la finalisation de leur règlement.
+              </p>
+            </div>
+          </article>
+
+          <!-- ARTICLE 8 -->
+          <article class="legal-article-card" id="article-8" data-article-num="8">
+            <header class="legal-article-header">
+              <div class="legal-article-header-left">
+                <div class="legal-article-badge-row">
+                  <span class="legal-badge-pill">Article 08</span>
+                  <span class="legal-tag-sub">Participation &amp; Retours</span>
+                </div>
+                <h2 class="legal-article-title">Contributions des utilisateurs</h2>
+              </div>
+              <button type="button" class="legal-copy-link-btn" onclick="copyArticleLink('article-8', this)">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <span>Lien direct</span>
+              </button>
+            </header>
+            <div class="legal-article-body">
+              <p>
+                Lorsque les outils interactifs du site permettent aux internautes d’adresser des commentaires, témoignages écrits, propositions de projet, photographies ou documents d’appui, l’utilisateur certifie expressément détenir l’ensemble des droits et autorisations nécessaires à leur transmission.
+              </p>
+              <p>
+                Par cet envoi bénévole, vous consentez à ce que PAAD puisse exploiter, adapter ou publier ces retours dans ses supports de communication ou ses bilans d’activité, sauf mention inverse stipulée par écrit. PAAD s’accorde la pleine liberté de modérer, refuser ou retirer tout propos contraire à ses valeurs fondatrices.
+              </p>
+            </div>
+          </article>
+
+          <!-- ARTICLE 9 -->
+          <article class="legal-article-card" id="article-9" data-article-num="9">
+            <header class="legal-article-header">
+              <div class="legal-article-header-left">
+                <div class="legal-article-badge-row">
+                  <span class="legal-badge-pill" style="background:#fce8f3;color:#8e0e5a;">Article 09</span>
+                  <span class="legal-tag-sub">Éthique &amp; Dignité</span>
+                </div>
+                <h2 class="legal-article-title">Protection des enfants et des bénéficiaires</h2>
+              </div>
+              <button type="button" class="legal-copy-link-btn" onclick="copyArticleLink('article-9', this)">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <span>Lien direct</span>
+              </button>
+            </header>
+            <div class="legal-article-body">
+              <p>
+                Conformément à la convention internationale des droits de l’enfant et à notre éthique humanitaire, PAAD applique une politique rigoureuse de sauvegarde et de sauvegarde des personnes vulnérables.
+              </p>
+              
+              <div class="legal-callout-box" style="border-left-color:#8e0e5a;background:#fff8fc;">
+                <div class="legal-callout-icon" style="color:#8e0e5a;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div class="legal-callout-body">
+                  <strong>Principes cardinaux de publication</strong>
+                  Toute diffusion de visuels, récits ou séquences vidéo mettant en scène des écoliers, étudiants ou familles bénéficiaires fait l’objet d’un consentement éclairé et garantit le respect absolu de leur dignité, de leur intimité et de leur sécurité.
+                </div>
+              </div>
+
+              <p>
+                PAAD s’abstient de toute communication sensationnaliste ou misérabiliste susceptible de porter préjudice à un enfant ou à un membre des communautés locales partenaires.
+              </p>
+            </div>
+          </article>
+
+          <!-- ARTICLE 10 -->
+          <article class="legal-article-card" id="article-10" data-article-num="10">
+            <header class="legal-article-header">
+              <div class="legal-article-header-left">
+                <div class="legal-article-badge-row">
+                  <span class="legal-badge-pill">Article 10</span>
+                  <span class="legal-tag-sub">Écosystème partenaire</span>
+                </div>
+                <h2 class="legal-article-title">Liens vers des sites externes</h2>
+              </div>
+              <button type="button" class="legal-copy-link-btn" onclick="copyArticleLink('article-10', this)">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <span>Lien direct</span>
+              </button>
+            </header>
+            <div class="legal-article-body">
+              <p>
+                Le site web peut intégrer des hyperliens orientant vers des plateformes tierces administrées par des partenaires institutionnels, agences de presse, réseaux éducatifs ou prestataires de paiement.
+              </p>
+              <p>
+                N’exerçant aucune maîtrise technique ni éditoriale sur ces domaines extérieurs, PAAD décline toute responsabilité quant à l’exactitude de leurs informations, leur disponibilité ou leurs pratiques en matière de confidentialité. La présence d’un lien hypertexte ne constitue en aucun cas une validation inconditionnelle de la teneur de ces sites tiers.
+              </p>
+            </div>
+          </article>
+
+          <!-- ARTICLE 11 -->
+          <article class="legal-article-card" id="article-11" data-article-num="11">
+            <header class="legal-article-header">
+              <div class="legal-article-header-left">
+                <div class="legal-article-badge-row">
+                  <span class="legal-badge-pill">Article 11</span>
+                  <span class="legal-tag-sub">Référencement &amp; Affiliation</span>
+                </div>
+                <h2 class="legal-article-title">Liens vers le site de PAAD</h2>
+              </div>
+              <button type="button" class="legal-copy-link-btn" onclick="copyArticleLink('article-11', this)">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <span>Lien direct</span>
+              </button>
+            </header>
+            <div class="legal-article-body">
+              <p>
+                L’établissement d’un lien pointant vers l’une quelconque des pages du site officiel de PAAD est autorisé et encouragé pour sensibiliser le public, sous réserve que ce lien :
+              </p>
+              
+              <ul class="legal-checklist">
+                <li>
+                  <span class="legal-checklist-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                  <span class="legal-checklist-text">Ne présente pas de caractère fallacieux, diffamatoire ou contraire à la réputation de PAAD ;</span>
+                </li>
+                <li>
+                  <span class="legal-checklist-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                  <span class="legal-checklist-text">N’induise pas l’existence d’un parrainage, d’une accréditation ou d’un partenariat inexistant ;</span>
+                </li>
+                <li>
+                  <span class="legal-checklist-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                  <span class="legal-checklist-text">Ne s’insère pas au sein d’environnements numériques véhiculant des contenus illégaux ou violents.</span>
+                </li>
+              </ul>
+
+              <p>
+                PAAD se réserve la faculté d’exiger la suppression immédiate de tout hyperlien jugé non conforme à ses intérêts ou à son éthique.
+              </p>
+            </div>
+          </article>
+
+          <!-- ARTICLE 12 -->
+          <article class="legal-article-card" id="article-12" data-article-num="12">
+            <header class="legal-article-header">
+              <div class="legal-article-header-left">
+                <div class="legal-article-badge-row">
+                  <span class="legal-badge-pill">Article 12</span>
+                  <span class="legal-tag-sub">Continuité de service</span>
+                </div>
+                <h2 class="legal-article-title">Disponibilité du site</h2>
+              </div>
+              <button type="button" class="legal-copy-link-btn" onclick="copyArticleLink('article-12', this)">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <span>Lien direct</span>
+              </button>
+            </header>
+            <div class="legal-article-body">
+              <p>
+                PAAD déploie ses efforts techniques pour maintenir la plateforme opérationnelle et accessible 24 heures sur 24.
+              </p>
+              <p>
+                Toutefois, des interruptions temporaires peuvent survenir lors d’opérations de maintenance technique, de renforcement de sécurité, de pannes d’hébergement ou lors de circonstances imprévues échappant à notre contrôle raisonnable. PAAD ne garantit pas une continuité absolue et sans faille du service numérique.
+              </p>
+            </div>
+          </article>
+
+          <!-- ARTICLE 13 -->
+          <article class="legal-article-card" id="article-13" data-article-num="13">
+            <header class="legal-article-header">
+              <div class="legal-article-header-left">
+                <div class="legal-article-badge-row">
+                  <span class="legal-badge-pill">Article 13</span>
+                  <span class="legal-tag-sub">Responsabilité légale</span>
+                </div>
+                <h2 class="legal-article-title">Limitation de responsabilité</h2>
+              </div>
+              <button type="button" class="legal-copy-link-btn" onclick="copyArticleLink('article-13', this)">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <span>Lien direct</span>
+              </button>
+            </header>
+            <div class="legal-article-body">
+              <p>
+                Dans toute la mesure permise par les lois en vigueur, PAAD, ses administrateurs, bénévoles et salariés ne sauraient être tenus responsables des préjudices directs, indirects ou accessoires découlant :
+              </p>
+              
+              <ul class="legal-checklist">
+                <li>
+                  <span class="legal-checklist-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                  <span class="legal-checklist-text">De l’accès, de l’usage ou de l’impossibilité temporaire d’utiliser le site ;</span>
+                </li>
+                <li>
+                  <span class="legal-checklist-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                  <span class="legal-checklist-text">D’une inadvertance, erreur matérielle ou omission présente dans les articles informatifs ;</span>
+                </li>
+                <li>
+                  <span class="legal-checklist-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                  <span class="legal-checklist-text">De la fréquentation de services externes accessibles par des liens hypertextes.</span>
+                </li>
+              </ul>
+
+              <p>
+                L’utilisateur assume la pleine et entière responsabilité de l’interprétation et de l’utilisation qu’il fait des ressources partagées sur le site.
+              </p>
+            </div>
+          </article>
+
+          <!-- ARTICLE 14 -->
+          <article class="legal-article-card" id="article-14" data-article-num="14">
+            <header class="legal-article-header">
+              <div class="legal-article-header-left">
+                <div class="legal-article-badge-row">
+                  <span class="legal-badge-pill" style="background:#eaf6ed;color:#08773e;">Article 14</span>
+                  <span class="legal-tag-sub">Charte humaniste</span>
+                </div>
+                <h2 class="legal-article-title">Respect des valeurs de PAAD</h2>
+              </div>
+              <button type="button" class="legal-copy-link-btn" onclick="copyArticleLink('article-14', this)">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <span>Lien direct</span>
+              </button>
+            </header>
+            <div class="legal-article-body">
+              <p>
+                PAAD conduit son action en s’appuyant sur des principes universels et intangibles :
+              </p>
+              
+              <div class="legal-domains-grid">
+                <div class="legal-domain-chip">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                  <span>Dignité humaine</span>
+                </div>
+                <div class="legal-domain-chip">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                  <span>Inclusion et solidarité</span>
+                </div>
+                <div class="legal-domain-chip">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20M2 12h20"/></svg>
+                  <span>Égalité &amp; Non-discrimination</span>
+                </div>
+                <div class="legal-domain-chip">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                  <span>Transparence financière</span>
+                </div>
+              </div>
+
+              <div class="legal-callout-box warning">
+                <div class="legal-callout-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" x2="12" y1="9" y2="13"/><line x1="12" x2="12.01" y1="17" y2="17"/></svg>
+                </div>
+                <div class="legal-callout-body">
+                  <strong>Tolérance zéro</strong>
+                  PAAD ne tolère ni ne cautionne aucune démarche encourageant la violence, la corruption, l’exploitation, les discriminations de genre ou d’origine, ni aucune manœuvre répréhensible au regard de la loi.
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- ARTICLE 15 -->
+          <article class="legal-article-card" id="article-15" data-article-num="15">
+            <header class="legal-article-header">
+              <div class="legal-article-header-left">
+                <div class="legal-article-badge-row">
+                  <span class="legal-badge-pill">Article 15</span>
+                  <span class="legal-tag-sub">Vie privée &amp; Données</span>
+                </div>
+                <h2 class="legal-article-title">Protection des données personnelles</h2>
+              </div>
+              <button type="button" class="legal-copy-link-btn" onclick="copyArticleLink('article-15', this)">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <span>Lien direct</span>
+              </button>
+            </header>
+            <div class="legal-article-body">
+              <p>
+                Les informations nominatives collectées au moyen des interfaces du site (formulaires de contact, promesses de don, candidatures au bénévolat ou inscriptions à nos lettres d’information) sont traitées avec la plus grande probité et dans le respect de la vie privée des utilisateurs.
+              </p>
+              <p>
+                Ces données sont employées exclusivement pour administrer nos relations avec les donateurs et sympathisants, coordonner les projets de terrain et acheminer nos comptes-rendus d’activité. Vous bénéficiez d’un droit permanent d’accès, de rectification ou d’effacement de vos données en adressant une simple demande écrite à l’adresse électronique : <a href="mailto:contact@paad-haiti.org" style="color:var(--purple);font-weight:800;">contact@paad-haiti.org</a>.
+              </p>
+            </div>
+          </article>
+
+          <!-- ARTICLE 16 -->
+          <article class="legal-article-card" id="article-16" data-article-num="16">
+            <header class="legal-article-header">
+              <div class="legal-article-header-left">
+                <div class="legal-article-badge-row">
+                  <span class="legal-badge-pill">Article 16</span>
+                  <span class="legal-tag-sub">Évolution des services</span>
+                </div>
+                <h2 class="legal-article-title">Modifications du site</h2>
+              </div>
+              <button type="button" class="legal-copy-link-btn" onclick="copyArticleLink('article-16', this)">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <span>Lien direct</span>
+              </button>
+            </header>
+            <div class="legal-article-body">
+              <p>
+                PAAD se réserve la prérogative d’adapter, actualiser, suspendre ou supprimer à tout instant, sans préavis formel, toute section, outil interactif, documentation téléchargeable ou projet présenté sur le site, en fonction des priorités d’action en Haïti et des moyens opérationnels mobilisés.
+              </p>
+            </div>
+          </article>
+
+          <!-- ARTICLE 17 -->
+          <article class="legal-article-card" id="article-17" data-article-num="17">
+            <header class="legal-article-header">
+              <div class="legal-article-header-left">
+                <div class="legal-article-badge-row">
+                  <span class="legal-badge-pill">Article 17</span>
+                  <span class="legal-tag-sub">Juridiction &amp; Litiges</span>
+                </div>
+                <h2 class="legal-article-title">Droit applicable</h2>
+              </div>
+              <button type="button" class="legal-copy-link-btn" onclick="copyArticleLink('article-17', this)">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <span>Lien direct</span>
+              </button>
+            </header>
+            <div class="legal-article-body">
+              <p>
+                Les présentes Conditions générales d’utilisation sont soumises et interprétées conformément au droit positif applicable en <strong>République d’Haïti</strong>, sous réserve des règles d’ordre public éventuellement impératives dans les pays où résident nos donateurs internationaux.
+              </p>
+              <div class="legal-callout-box green">
+                <div class="legal-callout-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                </div>
+                <div class="legal-callout-body">
+                  <strong>Règlement amiable prioritaire</strong>
+                  En cas de différend ou de litige relatif à l’interprétation ou à l’exécution des présentes, les parties s’engagent à rechercher prioritairement une issue amiable et concertée avant d’engager toute démarche contentieuse devant les juridictions compétentes.
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- ARTICLE 18 -->
+          <article class="legal-article-card" id="article-18" data-article-num="18">
+            <header class="legal-article-header">
+              <div class="legal-article-header-left">
+                <div class="legal-article-badge-row">
+                  <span class="legal-badge-pill" style="background:#f2e8f4;color:var(--purple);">Article 18</span>
+                  <span class="legal-tag-sub">Contacts institutionnels</span>
+                </div>
+                <h2 class="legal-article-title">Contact &amp; Renseignements</h2>
+              </div>
+              <button type="button" class="legal-copy-link-btn" onclick="copyArticleLink('article-18', this)">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <span>Lien direct</span>
+              </button>
+            </header>
+            <div class="legal-article-body">
+              <p>
+                Pour toute question, demande de clarification, signalement technique ou remarque concernant ces Conditions générales d’utilisation ou le fonctionnement du site internet, vous pouvez contacter les équipes de PAAD :
+              </p>
+
+              <div class="legal-contact-card">
+                <h3>PAAD – Passerelle d’Actions pour l’Autonomie et le Développement</h3>
+                <p>Organisation à but non lucratif engagée aux côtés des communautés haïtiennes.</p>
+
+                <div class="legal-contact-details">
+                  <div class="legal-contact-item">
+                    <span>Courrier électronique</span>
+                    <strong><a href="mailto:contact@paad-haiti.org">contact@paad-haiti.org</a></strong>
+                  </div>
+                  <div class="legal-contact-item">
+                    <span>Siège opérationnel</span>
+                    <strong>Port-au-Prince, Haïti</strong>
+                  </div>
+                  <div class="legal-contact-item">
+                    <span>Formulaire direct</span>
+                    <strong><a href="./contact.html">Nous écrire en ligne →</a></strong>
+                  </div>
+                  <div class="legal-contact-item">
+                    <span>Version en vigueur</span>
+                    <strong>7 octobre 2026</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. BANNIÈRE DE CONCLUSION ET D'ENGAGEMENT -->
+    <section class="legal-footer-callout">
+      <div class="wrap legal-callout-grid">
+        <div>
+          <h2>Construire ensemble un avenir d’autonomie en Haïti.</h2>
+          <p>
+            La rigueur de notre cadre juridique reflète l’exigence de transparence que nous devons à chaque jeune soutenu, à chaque école accompagnée et à chacun de nos donateurs.
+          </p>
+        </div>
+        <div class="legal-callout-actions">
+          <button type="button" class="legal-action-btn primary" onclick="openModal('donModal')" style="width:100%;justify-content:center;">
+            <span>Soutenir nos actions</span>
+            <span aria-hidden="true">♡</span>
+          </button>
+          <a href="./qui-sommes-nous.html" class="legal-action-btn outline" style="width:100%;justify-content:center;color:var(--purple-dark);border-color:#cfbed3;">
+            <span>Découvrir notre équipe</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER OFFICIEL DU SITE -->
+  <footer class="footer" style="background:var(--purple-dark);color:#FAF8FB;border-top:none">
+    <div class="wrap mockup-footer-top">
+      <div class="mockup-footer-brand">
+        <a class="ocean-logo-badge footer-menu-logo" href="./index.html">
+          <img src="./public/images/paad-emblem-white-trans.png" alt="Logo PAAD" class="ocean-logo-emblem" width="40" height="40">
+          <span class="ocean-logo-text">PAAD</span>
+        </a>
+        <p>Passerelle d’Actions pour l’Autonomie et le Développement. Agir avec les communautés en Haïti pour un avenir durable.</p>
+        <span class="mockup-social-label">Suivez-nous</span>
+        <div class="mockup-social-icons">
+          <a href="#" class="mockup-social-btn" aria-label="Facebook">f</a>
+          <a href="#" class="mockup-social-btn" aria-label="X / Twitter">𝕏</a>
+          <a href="https://www.instagram.com/paad_developpement/" target="_blank" rel="noopener noreferrer" class="mockup-social-btn" aria-label="Instagram">ig</a>
+          <a href="#" class="mockup-social-btn" aria-label="LinkedIn">in</a>
+        </div>
+      </div>
+
+      <div class="mockup-footer-col">
+        <h4>PAAD</h4>
+        <a href="./qui-sommes-nous.html">Qui sommes-nous</a>
+        <a href="./qui-sommes-nous.html#origines">Notre histoire</a>
+        <a href="./qui-sommes-nous.html#equipe">Notre équipe</a>
+        <a href="./faq.html">FAQ</a>
+        <a href="./contact.html">Contact</a>
+      </div>
+
+      <div class="mockup-footer-col">
+        <h4>Nos actions</h4>
+        <a href="./index.html#domaines">Éducation</a>
+        <a href="./index.html#domaines">Développement économique</a>
+        <a href="./index.html#programmes">Nos projets</a>
+        <a href="./index.html#impact">Impact</a>
+      </div>
+
+      <div class="mockup-footer-col">
+        <h4>Nous soutenir</h4>
+        <a href="#don" onclick="openModal('donModal'); return false;">Faire un don</a>
+        <a href="./contact.html#formulaire">Devenir bénévole</a>
+        <a href="./devenir-partenaire.html">Devenir partenaire</a>
+      </div>
+
+      <div class="mockup-footer-col">
+        <h4>Ressources</h4>
+        <a href="./actualites.html">Actualités</a>
+        <a href="./rapports.html">Rapports</a>
+        <a href="./media.html">Espace média</a>
+        <a href="./conditions-utilisation.html" style="font-weight:700;color:#ffffff;">Conditions d’utilisation</a>
+      </div>
+    </div>
+
+    <div class="wrap mockup-footer-bottom">
+      <span>© 2026 PAAD. Tous droits réservés.</span>
+      <div class="mockup-footer-links">
+        <a href="./conditions-utilisation.html">Conditions d’utilisation</a>
+        <a href="./politique-de-confidentialite.html">Confidentialité</a>
+        <a href="./contact.html">Mentions légales</a>
+        <a href="./faq.html">Assistance</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOUTON FLOTTANT RETOUR EN HAUT -->
+  <button type="button" id="scrollToTopBtn" class="scroll-to-top-btn" aria-label="Remonter en haut de la page" title="Remonter en haut" style="display:none;">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m18 15-6-6-6 6"/>
+    </svg>
+  </button>
+
+  <!-- MODALE DON (STYLE FARM AFRICA / PAAD) -->
+  <div class="modal-backdrop" id="donModal" onclick="if(event.target === this) closeModal('donModal');" role="dialog" aria-modal="true" aria-labelledby="donTitle">
+    <div class="modal-content farm-modal-content">
+      <button class="modal-close" onclick="closeModal('donModal')" aria-label="Fermer la boîte de dialogue">✕</button>
+      
+      <div class="farm-donate-card" style="display:grid;grid-template-columns:1fr 1.25fr;min-height:540px;">
+        <!-- Colonne visuelle gauche -->
+        <div class="farm-donate-visual" style="position:relative;background:var(--purple-dark);overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;padding:36px 30px;">
+          <img src="./public/images/haiti-student-classroom.jpg" alt="Écoliers en Haïti" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.4;">
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(50,19,51,.55) 0%,rgba(50,19,51,.94) 100%);"></div>
+          
+          <div style="position:relative;z-index:2;display:flex;align-items:center;gap:10px;">
+            <img src="./public/images/paad-emblem-white-trans.png" alt="Logo PAAD" width="34" height="34">
+            <span style="font-weight:900;font-size:19px;color:#fff;">PAAD</span>
+          </div>
+
+          <div style="position:relative;z-index:2;color:#fff;">
+            <span style="font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#dcb7df;">Soutenir notre action</span>
+            <h3 style="font-family:'Manrope',Arial,sans-serif;font-size:22px;margin:8px 0 10px;color:#fff;">Chaque don ouvre des chemins vers l’autonomie.</h3>
+            <p style="font-size:13.5px;color:#e7d6ec;line-height:1.5;margin:0;">Votre soutien finance les bourses, le matériel pédagogique et les formations pratiques de jeunes Haïtiens.</p>
+          </div>
+        </div>
+
+        <!-- Colonne formulaire droite -->
+        <div style="padding:36px 32px;display:flex;flex-direction:column;justify-content:center;">
+          <h2 id="donTitle" style="font-family:'Manrope',Arial,sans-serif;font-size:24px;font-weight:800;color:var(--purple-dark);margin:0 0 8px;">Faire un don à PAAD</h2>
+          <p style="font-size:14px;color:#665a6a;margin:0 0 24px;line-height:1.5;">Paiement 100% sécurisé et traçable en soutien à nos programmes en Haïti.</p>
+
+          <div style="display:flex;gap:10px;margin-bottom:20px;">
+            <button type="button" style="flex:1;padding:12px;border:2px solid var(--purple);background:var(--purple);color:#fff;font-weight:800;font-size:13px;cursor:pointer;">Don ponctuel</button>
+            <button type="button" style="flex:1;padding:12px;border:1px solid #d9cadb;background:#fff;color:var(--purple-dark);font-weight:800;font-size:13px;cursor:pointer;">Don mensuel</button>
+          </div>
+
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:24px;">
+            <button type="button" style="padding:14px;border:1.5px solid #d9cadb;background:#fff;font-weight:800;color:var(--purple-dark);font-size:17px;cursor:pointer;">25 $</button>
+            <button type="button" style="padding:14px;border:2px solid var(--purple);background:#f2e8f4;font-weight:800;color:var(--purple);font-size:17px;cursor:pointer;">50 $</button>
+            <button type="button" style="padding:14px;border:1.5px solid #d9cadb;background:#fff;font-weight:800;color:var(--purple-dark);font-size:17px;cursor:pointer;">100 $</button>
+          </div>
+
+          <a href="./contact.html" style="display:block;text-align:center;padding:16px;background:var(--purple);color:#fff;font-family:'Manrope',Arial,sans-serif;font-weight:800;font-size:14px;text-transform:uppercase;letter-spacing:.04em;text-decoration:none;box-shadow:0 6px 18px rgba(113,16,111,.3);">
+            Valider et continuer →
+          </a>
+          <span style="display:block;text-align:center;font-size:11.5px;color:#857889;margin-top:12px;">Transparence garantie · Reçu délivré</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPTS D'INTERACTIVITÉ -->
+  <script>
+    // 1. GESTION DES MODALES
+    function openModal(id) {
+      const modal = document.getElementById(id);
+      if (modal) {
+        modal.classList.add('active');
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      }
+    }
+    function closeModal(id) {
+      const modal = document.getElementById(id);
+      if (modal) {
+        modal.classList.remove('active');
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    }
+
+    // 2. RECHERCHE INTERACTIVE EN TEMPS RÉEL
+    const searchInput = document.getElementById('legalSearchInput');
+    const resetSearchBtn = document.getElementById('resetSearchBtn');
+    const articleCards = document.querySelectorAll('.legal-article-card');
+    const articleCountBadge = document.getElementById('articleCountBadge');
+
+    function filterArticles(query) {
+      const term = query.trim().toLowerCase();
+      let matchCount = 0;
+
+      articleCards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        const matches = term === '' || text.includes(term);
+        card.hidden = !matches;
+        if (matches) matchCount++;
+      });
+
+      if (term !== '') {
+        resetSearchBtn.style.display = 'inline-flex';
+        articleCountBadge.textContent = matchCount + ' article' + (matchCount > 1 ? 's trouvés' : ' trouvé');
+      } else {
+        resetSearchBtn.style.display = 'none';
+        articleCountBadge.textContent = '18 articles applicables';
+      }
+    }
+
+    searchInput?.addEventListener('input', (e) => {
+      filterArticles(e.target.value);
+    });
+
+    function resetLegalSearch() {
+      if (searchInput) {
+        searchInput.value = '';
+        filterArticles('');
+        searchInput.focus();
+      }
+    }
+
+    // 3. COPIE DU LIEN DIRECT D'UN ARTICLE
+    function copyArticleLink(articleId, btn) {
+      const url = window.location.origin + window.location.pathname + '#' + articleId;
+      navigator.clipboard.writeText(url).then(() => {
+        const originalText = btn.innerHTML;
+        btn.innerHTML = `
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Lien copié !</span>
+        `;
+        btn.style.background = '#71106f';
+        btn.style.color = '#ffffff';
+        btn.style.borderColor = '#71106f';
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+          btn.style.background = '';
+          btn.style.color = '';
+          btn.style.borderColor = '';
+        }, 2200);
+      }).catch(() => {
+        location.hash = articleId;
+      });
+    }
+
+    // 4. SUIVI DU DÉFILEMENT POUR SURBRILLANCE DU SOMMAIRE (INTERSECTION OBSERVER)
+    const tocLinks = document.querySelectorAll('.legal-toc-link');
+    const observerOptions = {
+      root: null,
+      rootMargin: '-120px 0px -60% 0px',
+      threshold: 0
+    };
+
+    const articleObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          tocLinks.forEach(link => {
+            if (link.getAttribute('href') === '#' + id) {
+              link.classList.add('is-active');
+              // Faire défiler doucement la sidebar si nécessaire
+              link.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+            } else {
+              link.classList.remove('is-active');
+            }
+          });
+        }
+      });
+    }, observerOptions);
+
+    articleCards.forEach(card => articleObserver.observe(card));
+
+    // 5. GESTION DU SCROLL TO TOP
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+    if (scrollToTopBtn) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+          scrollToTopBtn.style.display = 'flex';
+        } else {
+          scrollToTopBtn.style.display = 'none';
+        }
+      }, { passive: true });
+
+      scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+    // 6. MENU MOBILE & RECHERCHE GLOBALE
+    function toggleMobileAcc(trigger) {
+      const item = trigger.closest('.mobile-acc-item');
+      if (!item) return;
+      const wasOpen = item.classList.contains('is-open');
+      document.querySelectorAll('.mobile-acc-item').forEach(el => el.classList.remove('is-open'));
+      if (!wasOpen) item.classList.add('is-open');
+    }
+
+    function handleSearch() {
+      const q = prompt('Rechercher sur PAAD :');
+      if (q) {
+        if (searchInput) {
+          searchInput.value = q;
+          filterArticles(q);
+          location.hash = '#article-1';
+        } else {
+          location.href = './actualites.html';
+        }
+      }
+    }
+
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+    const menuIconOpen = document.getElementById('menu-icon-open');
+    const menuIconClose = document.getElementById('menu-icon-close');
+
+    if (menuBtn && mobileNav) {
+      menuBtn.addEventListener('click', () => {
+        const isOpen = mobileNav.style.display === 'flex';
+        mobileNav.style.display = isOpen ? 'none' : 'flex';
+        menuBtn.setAttribute('aria-expanded', String(!isOpen));
+        if (menuIconOpen && menuIconClose) {
+          menuIconOpen.style.display = isOpen ? 'block' : 'none';
+          menuIconClose.style.display = isOpen ? 'none' : 'block';
+        }
+      });
+    }
+
+    // 7. SURBRILLANCE D'UN ARTICLE CIBLÉ PAR HASH DANS L'URL
+    function highlightHashTarget() {
+      const hash = window.location.hash;
+      if (hash && hash.startsWith('#article-')) {
+        document.querySelectorAll('.legal-article-card').forEach(c => c.classList.remove('highlight-target'));
+        const target = document.querySelector(hash);
+        if (target) {
+          target.classList.add('highlight-target');
+          setTimeout(() => target.classList.remove('highlight-target'), 3000);
+        }
+      }
+    }
+    window.addEventListener('hashchange', highlightHashTarget);
+    window.addEventListener('DOMContentLoaded', highlightHashTarget);
+  </script>
+</body>
+</html>
